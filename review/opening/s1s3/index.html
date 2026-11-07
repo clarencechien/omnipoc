@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尋寶開場 草稿 S1–S3</title>
+<style>
+:root { --bg:#fff; --fg:#111; --mut:#666; --card:#f6f6f6; --line:#ddd; --acc:#0b57d0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; } }
+:root[data-theme="dark"] { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; }
+html, body { overflow-x:hidden; }
+body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui,-apple-system,"Noto Sans TC",sans-serif; max-width:960px; margin-inline:auto; }
+h1 { font-size:1.3rem; margin:0 0 4px; } h2 { font-size:1rem; margin:0 0 8px; }
+.mut { color:var(--mut); font-weight:400; font-size:.8rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin:16px 0; }
+video, img { width:100%; border-radius:8px; display:block; background:#000; } img { margin-top:8px; }
+.note { margin:8px 0 4px; } .prompt { font-size:.85rem; color:var(--mut); border-left:3px solid var(--acc); padding-left:10px; }
+summary { cursor:pointer; color:var(--acc); font-size:.9rem; }
+</style></head><body>
+<h1>尋寶開場 S1–S3 草稿（Omni 1.2，360p，8 支，$1.53）</h1>
+<p class="mut">全部 360p 草稿，風格 1 實拍。要決定的：S1 用不用參考圖（建議用）、S2 指南針用哪種做法（建議 ref2）、S3 連續性走分開生成還是 15 秒 timecode。</p>
+
+<div class="card"><h2>1. s1-hunter-ref <span class="mut">8.0s · $0.197 · 35.1s · refs 1 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s1-hunter-ref.mp4"></video>
+<img src="s1-hunter-ref.jpg" alt="contact sheet s1-hunter-ref" loading="lazy">
+<p class="note">S1 有參考圖（style-live 定裝圖）。人物、背包＋側背袋、船、海岸都跟定裝圖一致；動作完整：下船、走三步、停、回頭看鏡頭，最後兩格是回頭特寫。建議採用。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is a style and character reference: match its look, the same woman (treasure hunter in her 30s, short dark hair, sun-worn linen shirt, leather satchel), the same volcanic shore and rowboat. Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade, shallow depth of field. One continuous handheld tracking shot: she steps out of the wooden rowboat onto wet black sand, takes three steps up the beach, then stops and glances back over her shoulder toward the camera, an antique brass compass in her hand. Waves break behind her, sea spray, wind in her hair. No cuts. No dialogue. No music; only wind, surf and footsteps.</p></details></div>
+<div class="card"><h2>2. s1-hunter-noref <span class="mut">8.0s · $0.198 · 22.5s · refs 0 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s1-hunter-noref.mp4"></video>
+<img src="s1-hunter-noref.jpg" alt="contact sheet s1-hunter-noref" loading="lazy">
+<p class="note">S1 無參考圖。同樣做完動作，但調色偏淡、只有側背袋、臉不同人。證明參考圖有效鎖定人物與色調。</p>
+<details><summary>prompt</summary><p class="prompt">Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade, shallow depth of field, golden-hour light breaking through storm clouds. One continuous handheld tracking shot: a treasure hunter in her 30s, short dark hair, sun-worn linen shirt, leather satchel, steps out of a wooden rowboat onto the wet black sand of a wild volcanic island shore, takes three steps up the beach, then stops and glances back over her shoulder toward the camera, an antique brass compass in her hand. Waves break behind her, sea spray, wind in her hair. No cuts. No dialogue. No music; only wind, surf and footsteps.</p></details></div>
+<div class="card"><h2>3. s2-compass-text <span class="mut">6.0s · $0.145 · 19.4s · refs 0 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s2-compass-text.mp4"></video>
+<img src="s2-compass-text.jpg" alt="contact sheet s2-compass-text" loading="lazy">
+<p class="note">S2 純文字加強描述。這次沒變時鐘：N E S W、度數環、單一磁針，針擺動後指向 W。但盤面有些字母印錯位置（左上寫 SW）。</p>
+<details><summary>prompt</summary><p class="prompt">Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. Extreme close-up of an antique brass MAGNETIC COMPASS held open in a weathered hand. The dial is white enamel with a printed compass rose and the cardinal letters N, E, S, W and a degree ring. There is exactly ONE slender steel needle on a central pivot, blued steel on its north half. NO clock numerals, NO clock hands, NO Roman numerals, NO minute track. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.</p></details></div>
+<div class="card"><h2>4. s2-compass-ref1 <span class="mut">6.0s · $0.146 · 19.8s · refs 1 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s2-compass-ref1.mp4"></video>
+<img src="s2-compass-ref1.jpg" alt="contact sheet s2-compass-ref1" loading="lazy">
+<p class="note">S2 餵 compass-front 參考圖。盤面與參考圖一致（含 NE/NW 小字與度數環），針擺動後指 W。注意：畫面上下有黑邊（模型自己加了 letterbox）。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use: reproduce its dial (compass rose, letters N E S W, degree ring) and its single blued-steel needle; do not add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. Extreme close-up of this compass held open in a weathered hand. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.</p></details></div>
+<div class="card"><h2>5. s2-compass-ref2 <span class="mut">6.0s · $0.147 · 19.8s · refs 2 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s2-compass-ref2.mp4"></video>
+<img src="s2-compass-ref2.jpg" alt="contact sheet s2-compass-ref2" loading="lazy">
+<p class="note">S2 餵 compass-front + compass-live 兩張。構圖、手、金色背景都接近 compass-live 定裝圖，盤面一致，針指 W。無黑邊。三種做法裡最穩，建議採用。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use (dial with compass rose, letters N E S W, degree ring, single blued-steel needle); the second image shows the shot's framing, lighting and the hand holding it: start from that framing. Do not add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.</p></details></div>
+<div class="card"><h2>6. s3a-sea <span class="mut">8.0s · $0.194 · 22.5s · refs 0 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s3a-sea.mp4"></video>
+<img src="s3a-sea.jpg" alt="contact sheet s3a-sea" loading="lazy">
+<p class="note">S3a 海面建立鏡頭（獨立生成）。破帆木船、火山口發光、暴風雨都有；第 3 格鏡頭上有水珠散景。有 letterbox 黑邊。</p>
+<details><summary>prompt</summary><p class="prompt">Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade. Wide establishing shot at dusk: a small wooden sailing ship with a single tattered sail pitches through heavy storm swells, rain and spray, a volcanic island with a glowing crater just visible on the horizon through breaking clouds. Slow aerial drift forward toward the ship. No cuts. No dialogue. No music; only wind, rain and waves.</p></details></div>
+<div class="card"><h2>7. s3a-cabin <span class="mut">6.0s · $0.147 · 21.9s · refs 1 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s3a-cabin.mp4"></video>
+<img src="s3a-cabin.jpg" alt="contact sheet s3a-cabin" loading="lazy">
+<p class="note">S3a 船艙開盒（獨立生成，餵 compass-front）。油燈、鐵箍木盒、手開蓋露出指南針放在地圖上，盤面大致一致。無黑邊。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use; do not add clock numerals or clock hands. Cinematic live-action footage, 35mm film grain, warm swinging lantern light, shallow depth of field. Inside a cramped wooden ship's cabin at night, the hull creaking and tilting with the storm: a weathered hand lifts the lid of a small iron-banded wooden box on a table, revealing this brass compass resting on a folded parchment map. Slow push-in toward the box. No cuts. No dialogue. No music; only creaking timbers, muffled storm and rain.</p></details></div>
+<div class="card"><h2>8. s3b-timecode <span class="mut">15.0s · $0.355 · 38.1s · refs 1 · audio mean ? / max ? dB</span></h2>
+<video controls playsinline preload="metadata" src="s3b-timecode.mp4"></video>
+<img src="s3b-timecode.jpg" alt="contact sheet s3b-timecode" loading="lazy">
+<p class="note">S3b 一支 15 秒 timecode 版：[0-8s] 海面 → [8-15s] 船艙。**第 8 秒準確切換**，前後段調色一致，還多了一道閃電。有 letterbox 黑邊。價格跟兩支分開生成一樣（$0.355 vs $0.341）。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use; do not add clock numerals or clock hands. Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade. [0-8s] Wide establishing shot at dusk: a small wooden sailing ship with a single tattered sail pitches through heavy storm swells, rain and spray, a volcanic island with a glowing crater just visible on the horizon. Slow aerial drift forward toward the ship. [8-15s] Cut to the cramped wooden cabin inside the ship at night, lantern swinging: a weathered hand lifts the lid of a small iron-banded wooden box on a table, revealing the brass compass resting on a folded parchment map. Slow push-in. No dialogue. No music; only wind, rain, waves and creaking timbers.</p></details></div>
+</body></html>

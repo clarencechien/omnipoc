@@ -6,9 +6,15 @@ def key():
     if not k: raise SystemExit("no GEMINI_API_KEY / gemini_key in env")
     return k
 
-def generate(model_id, prompt, duration_s, resolution, aspect, out_path, timeout_s=900):
+def generate(model_id, prompt, duration_s, resolution, aspect, out_path, timeout_s=900, ref_images=()):
     H = {"x-goog-api-key": key(), "Content-Type": "application/json"}
-    body = {"model": model_id, "input": prompt,
+    import base64
+    inp = prompt
+    if ref_images:
+        inp = [{"type": "image", "mime_type": "image/png" if p.endswith(".png") else "image/jpeg",
+                "data": base64.b64encode(open(p, "rb").read()).decode()} for p in ref_images]
+        inp.append({"type": "text", "text": prompt})
+    body = {"model": model_id, "input": inp,
             "response_format": {"type": "video", "duration": f"{duration_s}s", "resolution": resolution,
                                 "aspect_ratio": aspect, "delivery": "uri"},
             "store": True, "background": False, "stream": False}  # store=true is required for delivery=uri (API 400 otherwise)

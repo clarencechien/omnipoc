@@ -1,0 +1,29 @@
+# Single source of truth: model IDs, prices, budget caps. Plan: docs/PLAN.md v0.2
+budget:
+  caps_usd:
+    omni: 1.10          # new spend on gemini-omni-1.2-flash
+    xai: 1.50           # new spend on grok-imagine-video-1.5 (excludes the $0.70 accidental S0 smoke)
+  stop_if_actual_vs_est_over: 0.30
+  max_retries: 2
+models:
+  omni_12:
+    id: gemini-omni-1.2-flash
+    provider: gemini
+    api: interactions
+    max_s: 15
+    verified: 2026-11-07
+  grok_15:
+    id: grok-imagine-video-1.5
+    provider: xai
+    api: videos.generations
+    max_s: 15
+    verified: 2026-11-07
+pricing_usd:
+  omni_tokens_per_s: { 360p: 1931, 720p: 5792, 1080p: 8688, 4k: 17376 }
+  omni_12_output_per_m_tok: 12.00
+  omni_input_per_m_tok: 1.50
+  grok_15_per_s: { 480p: 0.08, 720p: 0.14, 1080p: null }   # 720p measured on S0; 480p from docs headline
+defaults:
+  resolution: 720p
+  aspect: "16:9"
+  duration_s: 5

@@ -1,0 +1,10 @@
+id: obj-compass-v1
+type: object hero / product-style single shot
+source: 'Google Cloud Veo prompt guide, ''Camera movements'' example: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/video/video-gen-prompt-guide'
+text: A slow, dramatic zoom in on a mysterious, ancient compass lying on a dusty map.
+checklist:
+- single continuous shot, no cuts
+- slow zoom in (camera moves toward subject)
+- compass is the clear subject
+- dusty map visible as surface
+- ancient / mysterious mood (lighting, texture)

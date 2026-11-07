@@ -12,3 +12,4 @@ assets/**/*.mov
 __pycache__/
 .venv/
 *.pyc
+runs/*.log

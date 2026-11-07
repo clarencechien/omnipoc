@@ -1,0 +1,13 @@
+id: cine-redcoat-v1
+type: cinematic scene with human subject
+source: 'GLBGPT ''AI Video Prompt Adherence Comparison'', Prompt 1 (run there at 5s/720p/16:9 on Wan 3.0, Kling 3.0, Seedance 2.5, Grok Imagine, Happy Horse 1.0, Veo 3.1): https://www.glbgpt.com/hub/ai-video-prompt-adherence-comparison/'
+text: A cinematic tracking shot follows a woman in a long red coat walking through a rain-soaked neon street at night. She turns toward the camera as a tram passes behind her, reflections moving naturally across the wet pavement. Realistic human motion, consistent face and clothing, shallow depth of field, controlled handheld camera, no cuts.
+checklist:
+- woman in long red coat
+- rain-soaked neon street, night
+- tracking shot (camera follows)
+- she turns toward camera
+- tram passes behind her
+- reflections on wet pavement
+- consistent face/clothing
+- no cuts

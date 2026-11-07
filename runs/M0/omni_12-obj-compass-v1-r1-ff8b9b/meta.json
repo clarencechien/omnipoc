@@ -1,0 +1,9 @@
+{
+ "run_id": "M0/omni_12-obj-compass-v1-r1-ff8b9b",
+ "error": "HTTP 400: {\"error\": {\"message\": \"store=true is required when response format has video delivery set to URI.\", \"code\": \"invalid_request\"}}",
+ "params": {
+  "duration_s": 3,
+  "resolution": "360p",
+  "aspect": "16:9"
+ }
+}

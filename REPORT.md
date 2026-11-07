@@ -65,12 +65,29 @@
 
 **對照 GLBGPT 的描述**：他們說 Grok「kept the red coat, rain, neon street, and tram, with the tram clearly crossing behind the subject」，跟我們這支一致；他們說 Veo 3.1 的鏡頭「more static」，而我們 Omni 這支也是偏靜態機位。
 
+## 3b. Clarence 初評（2026-11-07，看盲測頁口述，尚未填分數表）
+
+| 盲測碼 | 模型 | Clarence 的話 | Claude 核對（放大最後一格，`review/media/C-dial.jpg`、`D-dial.jpg`） |
+|---|---|---|---|
+| A | Omni 1.2 · redcoat | A 比較真實 | — |
+| B | Grok 1.5 · redcoat | B 看起來像假的 | — |
+| C | Grok 1.5 · compass | 不像指南針，物理怪 | 盤面有 N/E/S/W 與羅盤玫瑰，但左側 N 字鏡像、字體崩壞；沒有獨立的指針，只有一個固定的星形玫瑰在「轉」，不是磁針運動 |
+| D | Omni 1.2 · compass | **被當成時鐘了**；不像指南針，物理怪 | **確認**：盤面是 I–XII 羅馬數字 + 5/10/15/30 分鐘刻度 + 三根時鐘指針（含紅尖秒針），中間疊一個羅盤玫瑰。是「懷錶 × 指南針」混合體。指針在 6 格裡方向亂跳，不是磁針的擺動 |
+
+### 這改寫了第 3 節 P1 的結論
+
+- 第 3 節我寫「兩邊都完全遵循」是錯的：我只核了鏡頭與構圖，沒放大看盤面。**兩個模型都把 "compass" 畫錯**，Omni 錯得更明顯（整個變懷錶）。
+- 原因推測（未驗證）：prompt 只有一句、「ancient / mysterious」+「dusty map」把兩個模型都帶往「古董懷錶 / 寶藏地圖」的視覺先驗；P1 這句是 Google 官方 prompt guide 的範例，官方範例本身沒有約束盤面內容。
+- 給下一輪的 prompt 修正方向（不另開 id，開 `obj-compass-v2`）：明寫 "a magnetic compass with a single needle that swings and settles pointing north, cardinal letters N E S W, **no clock numerals, no clock hands**"。這題正好可以順便測 negative 描述在兩邊的效果（Omni 不支援 negative prompt 參數，只能寫進正文）。
+- P2 紅大衣：Clarence 的「A 真、B 假」與我的觀察方向一致（Omni 現代實景感、Grok 偏 CG 調色）。n=1，但這是目前唯一一個兩人獨立看都指向同一邊的結果。
+
+
 ## 4. 這次 $2.9 能說和不能說的
 
 能說：
 1. 同設定 **Grok 1.5 720p 單價是 Omni 1.2 的 2 倍**（$0.14 vs $0.07 /s），而且 Grok 文件上的單價會讓人低估。
 2. Omni 的計費可完全從 usage 欄位重建，誤差 < 2%；thought tokens 有獨立欄位。
-3. 兩邊對這兩個公開 prompt 的**遵循度都高**，沒有明顯翻車；差異主要在美術方向（Omni 偏明亮現代、Grok 偏暗調復古）。
+3. P2（紅大衣）兩邊遵循度都高，Clarence 與 Claude 都認為 Omni 較真實。**P1（指南針）兩邊都畫錯物件**：Omni 畫成懷錶、Grok 盤面字體崩壞且沒有可動磁針（見 3b）。
 4. 延遲 Omni 約 30 s、Grok 約 47 s（各 n=2）。
 
 不能說：

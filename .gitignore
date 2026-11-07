@@ -1,0 +1,14 @@
+# secrets
+.env
+*.key
+# generated media (keep ledger + meta.json)
+runs/**/*.mp4
+runs/**/*.webm
+runs/**/*.png
+runs/**/*.jpg
+assets/**/*.mp4
+assets/**/*.mov
+# python
+__pycache__/
+.venv/
+*.pyc

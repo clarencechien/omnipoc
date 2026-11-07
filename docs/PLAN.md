@@ -1,251 +1,219 @@
-# omnipoc 計劃 v0.1 — 影片生成 API 盤點 + US$5 Veo vs Omni 小比較
+# omnipoc 計劃 v0.2 — Omni 1.2 vs Grok Imagine 1.5，各約 US$1
 
 - 日期：2026-11-07
-- 狀態：**計劃，尚未花任何錢**（本文件所有探針都是免費呼叫：`GET /models`、故意送無效參數拿 400）
-- 原始需求：handoff v0.1（`docs/handoff-v0.1.md`）+ Clarence 口頭追加：
-  1. 先整理目前能產影片的 API 服務有哪些、什麼類型用什麼比較好（Google、xAI 要含，中國廠商排除）
-  2. 用 Gemini key、預算 US$5 以內，做一次 Veo vs Omni 比較
-  3. 先寫計劃
+- 取代 v0.1 的實驗設計（v0.1 的「Veo 路徑選擇」作廢；市場盤點保留在第 5 節）
+- 已花：**$0.70**（一次意外的 xAI 探針，見第 2 節；`ledger/spend.jsonl` 第 1 筆）
+- 需求（Clarence 2026-11-07）：只測 Omni 1.2 vs xAI；用 env 的 key；各花 US$1 左右；prompt 從「商品」到「電影場景」，拿別人做過的 prompt 或評測。
 
 ---
 
-## 0. 先講結論（開工前要 Clarence 決定一件事）
+## 0. 結論先講
 
-**Veo 3.1 已經不在 Gemini API 上了。** 官方 deprecations 頁：`veo-3.1-generate-preview`、`veo-3.1-fast-generate-preview`、`veo-3.1-lite-generate-preview` 三個 ID 全部於 **2026-10-22 shut down**，replacement 都寫 `gemini-omni-1.2-flash`。我用這把 key 打 `GET /v1beta/models` 列了 61 個模型，沒有任何 `veo-*`；直接 GET 九個候選 Veo ID 全部 404（見附錄 A）。
+| 項目 | 決定 |
+|---|---|
+| 對照組 | `gemini-omni-1.2-flash`（Gemini key，直連 Interactions API）vs `grok-imagine-video-1.5`（`xai_key`，直連 xAI Videos API） |
+| 為什麼不走 OpenRouter | `or_key` 可用（剩 $5.05 額度），OpenRouter 有 `google/gemini-omni-1.2-flash`，但**沒有任何 xAI 影片模型**；且走中介拿不到 Google 原生 usage。Omni 直連、xAI 直連最乾淨。 |
+| 對齊條件 | 720p、16:9、5 s、文字生影片、同一 prompt 原文 |
+| 預算 | Omni ≤ $1.10、xAI ≤ $1.10（不含已花的 $0.70）；超過停 |
+| 建議版本（二選一，見第 3 節） | **方案 1**：2 個 prompt（商品 hero + 電影場景）× 720p × 5 s，Omni $0.70、Grok $1.40 |
 
-所以「用 Gemini key 比 Veo vs Omni」在字面上做不到。Veo 3.1 現在只剩三條路，三條都不是 Gemini key：
-
-| 路徑 | 需要什麼 | Veo 牌價（720p 含音訊，/s） | 優點 | 缺點 |
-|---|---|---|---|---|
-| **A. Vertex AI（現名 Gemini Enterprise Agent Platform）** | GCP 專案 + 開 billing + `gcloud auth`（sandbox 已預裝 gcloud，目前無帳號） | Standard $0.40 / Fast $0.15 / Lite $0.05（第三方轉述，官方價格頁是 JS 渲染抓不到 → **待驗證**） | 官方、完整參數（seed、首尾幀、extension、reference images）、有 usage metadata | 要 GCP 專案；Lite 仍是 Preview、English only、不支援 reference images |
-| **B. Runway Dev API** | Runway 開發者帳號，credits $0.01/顆 | veo3.1 $0.40 / veo3.1_fast $0.15（官方 pricing 頁，有抓到） | 一把 key 同時有 Veo 3.1、Omni 1.1/1.2、Grok Imagine、Gen-4.5；價格與 Google 牌價相同 | 看不到 Google 端 usage/thought token 欄位（E1 做不了）；多一層中介的延遲 |
-| **C. fal.ai / Replicate** | 各自帳號 | Veo 3.1 約 $0.40（第三方，數字互相矛盾） | 彈性 | 同 B，且價格更不透明 |
-
-**我的建議**：
-- 若 Clarence 有現成 GCP 專案 → 走 **A**（最貼近 handoff 原意，也最便宜能跑 Lite）。
-- 若沒有、不想開 → 走 **B**（Runway 一把 key 最省事，而且順便能接 Grok Imagine 當第三個對照）。
-- **不管選哪條，先用 Gemini key 把「Omni 1.1 vs 1.2」跑掉**（第 4 節 M1）。這部分只要 Gemini key、有 12/03 期限（1.1 之後被自動導到 1.2），而且是 handoff E7 的縮小版。
+**關鍵價格發現**：xAI 牌價 `$0.080/s` 是 480p；實測 **720p 是 $0.14/s**（5 s = $0.70，回應的 `usage.cost_in_usd_ticks: 7000000000`，1 tick = 1e-10 USD）。所以同樣 720p 5 s，Grok 1.5 是 Omni 1.2 的 **2 倍價**（$0.70 vs $0.35）。這個數字本身就是結論之一。
 
 ---
 
-## 1. 市場盤點：能產影片的 API（2026-11 現況，排除中國廠商）
+## 1. 兩邊 API 事實（本輪免費探針 + 文件）
 
-來源等級：**官** = 官方文件/價格頁本輪抓到；**三** = 第三方整理，數字可能過時或互相矛盾；**驗** = 本輪用免費 API 呼叫驗證。
+| | Gemini Omni 1.2 Flash | Grok Imagine Video 1.5 |
+|---|---|---|
+| Model ID | `gemini-omni-1.2-flash`（`GET /models` 有列） | `grok-imagine-video-1.5`（alias `-preview`、`-2026-05-30`；`GET /v1/video-generation-models` 列 input `text,image,audio`） |
+| 端點 | `POST /v1beta/interactions`，`response_format: {type: video, duration, resolution, aspect_ratio}` | `POST /v1/videos/generations` → `request_id`；`GET /v1/videos/{id}` 輪詢到 `status: done`，`video.url` |
+| 長度 | 3–15 s 整秒（探針證實上限 15） | 1–15 s（探針證實） |
+| 解析度 | `360p` `720p`(預設) `1080p`/`4k`(upscale) | `480p` `720p` `1080p`（422 錯誤訊息列出） |
+| 比例 | `16:9` `9:16` | `1:1 16:9 9:16 4:3 3:4 3:2 2:3 21:9 5:2` |
+| 音訊 | 原生 | 原生（smoke 檔有 AAC 48k 立體聲） |
+| 牌價 720p | $0.07/s（5,792 tok/s × $12/1M；thinking 計入輸出） | **$0.14/s 實測**（文件只寫 $0.08/s，未標解析度） |
+| 計費回饋 | 預期回 usage tokens（M0 驗證） | `usage.cost_in_usd_ticks`（直接給美元，很好用） |
+| 實際輸出（smoke） | 待測 | 1280×720、24 fps、5.04 s、h264+aac、7.0 MB |
+| 不支援 | temperature / system prompt / negative prompt | 文件未列 seed |
+| 語言 | 官方只評估英文 | 未說明 |
+| 地區 | sandbox 出口美國，無 EEA 限制 | 同 |
 
-### 1.1 仍在線、可直接用的
+---
+
+## 2. 已花的 $0.70（意外，記錄在案）
+
+探 xAI 欄位時我送了四個 body：前三個故意無效（duration 999、resolution bogus、aspect bogus），拿到 400/422 並得到允許值；**第四個 body 是合法的**（只多塞一個未知欄位 `bogus_field`，被忽略），端點直接受理並生成。結果：
+
+- `runs/S0/xai-smoke-2f0a5942/`：`meta.json`（已 commit）+ `video.mp4`（gitignore）
+- `ledger/spend.jsonl` 第 1 筆：est $0.40、actual **$0.70**
+- 收穫：xAI 回應 schema、720p 真實單價、ffprobe 規格。它就是 xAI 的 M0 smoke，**不再另跑**。
+- 教訓寫進規則：探 schema 一律用無效值，**永遠不送合法 body**。
+
+---
+
+## 3. 實驗設計（二選一）
+
+### 方案 1（建議）：公平對齊，2 個 prompt
+
+| prompt | 類型 | Omni 1.2 720p 5 s | Grok 1.5 720p 5 s |
+|---|---|---|---|
+| P1 商品 / 物件 hero | 官方 Veo prompt guide 例句 | $0.35 | $0.70 |
+| P2 電影場景 | GLBGPT 六模型同題測試 Prompt 1 | $0.35 | $0.70 |
+| 小計 | | **$0.70** | **$1.40** |
+
+- 加上已花 $0.70 → xAI 共 $2.10。超過「各 $1」，但這是唯一不混淆畫質評分的做法。
+- 若要壓回 $1：Grok 改 4 s（$0.56 × 2 = $1.12），Omni 同步 4 s（$0.56）。4 s 對電影場景偏短，但可接受。
+
+### 方案 2：3 個 prompt，Grok 降到 480p
+
+| prompt | Omni 1.2 720p 5 s | Grok 1.5 480p 5 s（假設 $0.08/s，**未驗證**） |
+|---|---|---|
+| P1 商品 hero | $0.35 | $0.40 |
+| P2 電影場景 | $0.35 | $0.40 |
+| P3 對白 + 原生音訊 | $0.35 | $0.40 |
+| 小計 | **$1.05** | **$1.20** |
+
+- 多一個「人物對白 lip-sync」題（Grok 評測常被說強項），但 480p vs 720p **畫質欄不能比**，只能比遵循度、運鏡、音訊。
+- 480p 單價是推測（文件 $0.08/s 沒標解析度），第一支跑完若不是 $0.40 就停。
+
+### 兩案共用
+
+- 每題 **1 rep**（$1 買不到 3 reps）。報告會明寫 n=1，只做「觀察」不下「結論」；若兩邊差異明顯到 n=1 也能看出，才寫。
+- 順序：Omni M0 smoke（360p 3 s，$0.07，拿 usage 欄位）→ P1 兩邊 → P2 兩邊 →（方案 2 的 P3）。每支跑完先落檔、記 ledger、印累計。
+- 預算斷路：Omni 累計 > $1.10 或 xAI 新增 > $1.50（方案 1）/ $1.30（方案 2）就停。
+
+---
+
+## 4. Prompt（都是別人公開用過的，原文照抄，版本化到 `prompts/`）
+
+### P1 `obj-compass-v1` — 物件 hero / 商品型鏡頭
+> A slow, dramatic zoom in on a mysterious, ancient compass lying on a dusty map.
+
+來源：Google Cloud 官方 Veo prompt guide「Camera movements」例句。沒有商業商品字眼但就是「單一物件 + 慢推 + 質感」的商品 hero 結構。
+**為什麼不用 handoff p01**：Clarence 要「別人做過的」。p01 留作後續正式跑。
+
+### P2 `cine-redcoat-v1` — 電影場景（第三方六模型同題）
+> A cinematic tracking shot follows a woman in a long red coat walking through a rain-soaked neon street at night. She turns toward the camera as a tram passes behind her, reflections moving naturally across the wet pavement. Realistic human motion, consistent face and clothing, shallow depth of field, controlled handheld camera, no cuts.
+
+來源：GLBGPT「AI Video Prompt Adherence Comparison」Prompt 1，他們用 5 s / 720p / 16:9 跑過 Wan 3.0、Kling 3.0、Seedance 2.5、**Grok Imagine**、Happy Horse、Veo 3.1。我們用**完全相同設定**，所以可以跟他們對 Grok 的觀察（紅大衣、電車過背景有做到）直接對照。
+
+### P3 `dlg-train-v1` — 對白 + 原生音訊（方案 2 才跑）
+> Inside a quiet train compartment, a woman says, "We missed the last stop." A man across from her replies, "Then we ride to the end." Keep the two voices distinct, synchronize each line to the correct speaker, include subtle train ambience and wheel sounds, and do not add music.
+
+來源：同上 Prompt 4（他們跑了 Grok，說兩人同框但音訊未細評）。
+
+### 備用（不跑，列著）
+- GLBGPT Prompt 3 複雜運鏡（單車衝下地中海市場，低角→側→俯瞰）：他們說 Grok 運鏡路徑最完整。
+- VBench-2.0 物理題：「A clear glass of oil is gently poured into a glass of milk.」「A sturdy steel key is dropped onto a hard marble floor」。
+- Omni 官方文件例句：「A single unbroken tracking shot following a paper airplane gliding through a bustling library.」
+
+---
+
+## 5. 評分與產出
+
+- 自動：ffprobe（實際秒數、解析度、fps、音軌）、檔案大小、延遲、實際費用 vs 估價。
+- 人評（Clarence，盲測頁隨機、藏模型名）：畫質、prompt 遵循（P2 有 checklist：紅大衣／雨夜霓虹／轉頭／電車過背景／倒影／無剪接）、動作物理、音訊，各 1–5。
+- 影片放 `review/media/` 360p 預覽（總量 < 20 MB）進 repo，`review/index.html` 純靜態。
+- `REPORT.md`：費用表（實際 vs 牌價，含 Grok 720p = 2× Omni 的發現）、每題兩邊觀察、對照 GLBGPT 的 Grok 描述、「n=1 的限制」。
+
+---
+
+## 6. 執行順序
+
+1. Clarence 選方案 1 或 2（或說「方案 1 改 4 s」）。
+2. 建 `config.yaml`、`prompts/*.yaml`、`src/`（omni / xai client、budget、probe、run）。
+3. Omni M0 smoke（$0.07）→ 看 usage 欄位 → 回報一行。
+4. 跑矩陣，每支記 ledger。
+5. 盲測頁 → Clarence 打分 → REPORT.md。
+
+停下來問：任何一支實際費用與估價差 > 30%；xAI 480p 單價不是 $0.40/5 s；任一端回地區／審核錯誤；預算斷路觸發。
+
+---
+
+## 7. 市場盤點（v0.1 原文保留，供背景）
+
+來源等級：**官** = 官方文件/價格頁本輪抓到；**三** = 第三方整理；**驗** = 本輪免費 API 呼叫驗證。
+
+### 7.1 仍在線、可直接用的（排除中國廠商）
 
 | 廠商 / 模型 | 存取方式 | 牌價（720p 含音訊，/s） | 單支長度 | 音訊 | 特色 / 限制 | 等級 |
 |---|---|---|---|---|---|---|
-| **Google Gemini Omni 1.2 Flash** `gemini-omni-1.2-flash` | Gemini API，`POST /v1beta/interactions`（Interactions API） | $0.07（360p $0.023；1080p/4K 為 upscale $0.104/$0.209）；輸出 $12/1M tok，720p = 5,792 tok/s | 3–15 s 整秒，預設 10 s | 原生 | 多輪對話式編輯、extend 到 30 s、最多 6 張參考圖、timecode prompt、畫面文字；無 temperature/system prompt/negative prompt；官方只評估英文；無 free tier；**thinking tokens 計入輸出價**（價格頁原文 "including thinking tokens"） | 官 + 驗（key 能打到 1.2，最長 15 s） |
-| **Google Gemini Omni 1.1 Flash** `gemini-omni-1.1-flash` | 同上 | $0.10（輸出 $17.50/1M tok） | 3–10 s | 原生 | **2026-12-03 起自動導流到 1.2、以 1.2 計價**（官方 deprecations 頁，已證實 handoff 第 1 節的「待驗證」） | 官 + 驗（key 能打到 1.1，最長 10 s） |
-| **Google Veo 3.1 / Fast / Lite** `veo-3.1-generate-001` / `veo-3.1-fast-generate-001` / `veo-3.1-lite-generate-001` | **只剩 Vertex**（`us-central1`），或經 Runway / Replicate / fal 轉售 | $0.40 / $0.15 / $0.05（Vertex 數字為第三方；Runway 頁官方：veo3.1 40 credits/s、fast 15、無音訊減半） | 4 / 6 / 8 s | 原生 | Standard 到 4K、首尾幀、extension、reference images（Lite 不支援）、C2PA；Standard/Fast GA，Lite Preview；Vertex 頁寫「不支援 pay-as-you-go」只列 Provisioned Throughput / Fixed quota → **待驗證實際能否按量計費** | 官（Vertex 模型頁、Runway 價格頁）|
-| **xAI Grok Imagine Video 1.5 / 1.5 Lite / (舊版)** `grok-imagine-video-1.5` / `grok-imagine-video-1.5-lite` / `grok-imagine-video` | xAI API（docs.x.ai） | $0.08 / $0.02 / $0.05（官方 models 頁）；Runway 轉售 1.5 720p $0.16、Lite 720p $0.03 | 官方頁未列 | 1.5 有 | 第三方評測常把它列為 talking head / 對白最佳；Lite 是目前最便宜的 720p 選項之一 | 官（價格）+ 三（能力） |
-| **Runway Gen-4.5 / Gen-4 Turbo / Aleph 2 / Act-Two** | Runway Dev API | Gen-4.5 $0.12、Gen-4 Turbo $0.05、Aleph 2（影片編輯）$0.28、Act-Two（表演驅動）$0.05 | 2–10 s（Gen-4.5） | 否（Gen-4.5） | 鏡頭控制、影片轉影片編輯、表演捕捉；Runway 平台也轉售 Veo / Omni / Grok | 官 |
-| **Luma Ray3.14 / Ray3.2** | Dream Machine API / Luma Agents API | 官方價未抓到；第三方 720p 約 $0.06–0.09 | 5–10 s | 部分 | HDR、專業後製管線；HDR/企業層要 sales 報價 | 三 |
-| **Pika 2.x** | Pika API | 約 $0.12（單一來源） | ≤5 s | — | 特效類，業務用途少 | 三 |
-| **Adobe Firefly Video（Firefly Services API）** | Adobe 企業 API | 以 credits 計，USD 換算未公開 | — | — | 賣點是訓練資料商業安全 / 版權賠償，不是畫質或價格 | 三 |
-| **Lightricks LTX-2** `ltx-2-fast` / `ltx-2-pro` | 自家 API，或開放權重自架 | fal 以 $0.0018/megapixel 計，不能直接換算 | — | 有 | 開放權重，自架最便宜；畫質在第三方評比中屬中段 | 三 |
-| **Genmo Mochi** | 開放權重 | 自架 | — | 無 | 研究用，無音訊 | 三 |
+| Google Gemini Omni 1.2 Flash | Gemini API Interactions；OpenRouter 也有 | $0.07（360p $0.023；1080p/4K upscale $0.104/$0.209） | 3–15 s | 原生 | 多輪編輯、extend 到 30 s、6 張參考圖、timecode、畫面文字；無 temperature/negative prompt；官方只評估英文；thinking 計入輸出價 | 官 + 驗 |
+| Google Gemini Omni 1.1 Flash | 同上 | $0.10 | 3–10 s | 原生 | 2026-12-03 起自動導流到 1.2 | 官 + 驗 |
+| Google Veo 3.1 / Fast / Lite | **只剩 Vertex**（us-central1）或 Runway / Replicate / fal 轉售；Gemini API 三個 preview ID 已 2026-10-22 下架 | $0.40 / $0.15 / $0.05（Runway 價格頁；Vertex 頁 JS 擋抓） | 4/6/8 s | 原生 | 首尾幀、extension、reference images（Lite 不支援）、4K（Standard） | 官 |
+| xAI Grok Imagine Video 1.5 / 1.5 Lite / 1.0 | xAI API | 文件 $0.08 / $0.02 / $0.05（未標解析度）；**1.5 720p 實測 $0.14** | 1–15 s | 原生 | 480p/720p/1080p、9 種比例、14 張參考圖、3 段聲音參考；評測說 talking head 強；Arena Elo 墊底 | 官 + 驗 |
+| Runway Gen-4.5 / Gen-4 Turbo / Aleph 2 / Act-Two | Runway Dev API（$0.01/credit） | $0.12 / $0.05 / $0.28 / $0.05 | 2–10 s | 否（Gen-4.5） | 鏡頭控制、video-to-video、表演驅動；平台也轉售 Veo、Omni、Grok | 官 |
+| Luma Ray3.14 / Ray3.2 | Dream Machine / Luma Agents API | 第三方 720p 約 $0.06–0.09 | 5–10 s | 部分 | HDR、專業後製 | 三 |
+| Pika 2.x | Pika API | 約 $0.12 | ≤5 s | — | 特效類 | 三 |
+| Adobe Firefly Video | Firefly Services API | credits 計 | — | — | 商業安全／版權賠償 | 三 |
+| Lightricks LTX-2 | 自家 API 或開放權重 | fal $0.0018/megapixel | — | 有 | 自架最便宜 | 三 |
+| Genmo Mochi | 開放權重 | 自架 | — | 無 | 研究用 | 三 |
 
-### 1.2 已下架 / 不要排進計劃的
+### 7.2 已下架：OpenAI Sora 2 API（2026-09）、Amazon Nova Reel（2026-09-30 EOL）、Veo 3.1 Preview on Gemini API、`gemini-omni-flash-preview`（2026-10-22）。
+### 7.3 排除（中國廠商）：Kling、Seedance、Hailuo/MiniMax、Wan、Vidu、Hunyuan。
 
-| 項目 | 狀態 | 來源 |
+### 7.4 場景 → 模型（第三方評測推論，未自測）
+
+| 場景 | 第一選擇 | 備選 |
 |---|---|---|
-| OpenAI Sora 2 / Sora 2 Pro API | 2026-03-24 宣布停止；App 4 月關、API 9 月關（9/24 日期為第三方） | 多家媒體引述 OpenAI 聲明；官方 help 頁未抓到 |
-| Amazon Nova Reel v1:0 / v1:1 | AWS lifecycle 頁：2026-03-30 Legacy、**2026-09-30 EOL**；無 Nova 2 影片替代 | AWS 官方 lifecycle 頁（搜尋摘要） |
-| Veo 3.1 Preview（Gemini API 三個 ID）、`gemini-omni-flash-preview` | 2026-10-22 shut down | 官方 deprecations 頁 |
-| 中國廠商（依 Clarence 指示排除）：Kling（快手）、Seedance（字節）、Hailuo/MiniMax、Wan（阿里）、Vidu、Hunyuan（騰訊） | 不納入 | — |
-
-### 1.3 聚合平台（一把 key 打很多模型）
-
-- **Runway Dev API**：模型最齊（Veo 3.1、Omni 1.1/1.2、Grok 1.5、自家 Gen-4.5），價格頁公開且等於各家牌價。缺點：拿不到各家原生 usage 欄位。
-- **fal.ai / Replicate**：模型多但價格矛盾多、文件品質參差；適合臨時試一支，不適合做計費解剖。
-
-### 1.4 「什麼類型用什麼」初步對照（**全部是第三方評測與官方 feature 表推論，沒有自測，當假設用**）
-
-| 場景 | 第一選擇 | 備選 | 依據 |
-|---|---|---|---|
-| 商品 hero、單鏡頭電影感 | Veo 3.1 Standard | Omni 1.2（便宜 6 倍）、Runway Gen-4.5（鏡頭控制） | 第三方評測多說 Veo Standard 單鏡頭質感較好；但 Arena 盲測 Omni 領先，**互相矛盾**，正是本 PoC 要自己驗的 |
-| 人物對白、lip-sync | Omni 1.2（官方稱 7 語 lip-sync）、Grok Imagine 1.5（評測說 talking head 最佳） | Veo 3.1（原生音訊） | 第三方；中文對白沒人測過 → handoff E3 |
-| 多鏡頭敘事、timecode 分段 | Omni 1.2（官方文件直接教 `[0-3s]` 語法） | Veo 3.1（8 s 內切鏡要靠 prompt） | 官方文件 |
-| 對話式編輯（換色、換背景、保留其他） | Omni 1.2（唯一有 multi-turn edit 的） | Runway Aleph 2（video-to-video） | 官方 |
-| 延伸到 30 s+、尾幀控制 | Veo 3.1 Standard（官方原本建議） | Omni 1.2（文件現在也說能 extend 到 30 s，首尾幀用自然語言描述） | 官方文件自相矛盾 → handoff E5 |
-| 角色 / 商品一致性（參考圖） | Omni 1.2（6 張參考圖、每角色 3 張）| Veo 3.1 Standard（reference images；Lite 不支援）| 官方 |
-| 大量草稿、最便宜 | Grok 1.5 Lite $0.02、Omni 360p $0.023、Veo Lite $0.05 | LTX-2 自架 | 官方價格 |
-| 版權 / 商業安全優先 | Adobe Firefly | Google（Vertex 有 indemnity，Gemini API 端**待確認**） | 三 |
-| 表演驅動 / 數位人 | Runway Act-Two | 專門 lip-sync 工具（多為中國廠商，排除） | 三 |
+| 商品 hero、單鏡頭電影感 | Veo 3.1 Standard | Omni 1.2、Runway Gen-4.5 |
+| 人物對白、lip-sync | Omni 1.2、Grok 1.5 | Veo 3.1 |
+| timecode 多鏡頭 | Omni 1.2 | — |
+| 對話式編輯 | Omni 1.2（唯一） | Runway Aleph 2 |
+| 延伸 / 尾幀 | Veo 3.1 Standard | Omni 1.2 |
+| 角色一致性 | Omni 1.2（6 參考圖）、Grok 1.5（14 參考圖） | Veo 3.1 Standard |
+| 最便宜草稿 | Grok 1.5 Lite、Omni 360p | Veo Lite、LTX-2 自架 |
+| 商業安全 | Adobe Firefly | Google（Vertex indemnity） |
 
 ---
 
-## 2. 這把 Gemini key 目前能做什麼（免費探針結果，附錄 A 有原始輸出）
-
-- 連線：`generativelanguage.googleapis.com` 通；sandbox 出口 **美國（Ohio，Google LLC AS396982）**，沒有 EEA/UK/CH 限制問題。
-- `GET /v1beta/models` 200，61 個模型；含 `gemini-omni-1.2-flash`、`gemini-omni-1.1-flash`、`gemini-omni-flash-preview`（後者文件說已 10/22 下架，list 還在）；**無任何 Veo**。
-- Interactions 端點對 1.1 / 1.2 都能解析模型（故意送 `duration: 99s`，分別回「最大 10 s」與「最大 15 s」的 `invalid_request`，未產生影片、未計費）。
-- 注意：`GET /models/gemini-omni-1.2-flash` 的 `supportedGenerationMethods` 列 `generateContent`，但官方 Omni 文件只教 Interactions API；**不要走 generateContent**，避免行為與計價不明。
-- gcloud 已安裝但 `No credentialed accounts`、無 project → Vertex 路徑目前打不通。
-- 工具：Python 3.13、ffmpeg/ffprobe 有；`google-genai` 最新 3.0.0（要裝，確認有 `client.interactions`）。
-
----
-
-## 3. 花錢規則（沿用 handoff 第 3 節，預算改成 US$5）
-
-1. 全專案上限 **US$5.00**；單一實驗 cap 見第 4 節；**用到 $3.50（70%）停下回報**。
-2. 先估價 → 寫 `ledger/spend.jsonl` → 呼叫 → 影片 + usage 落檔 → 才發下一筆。
-3. 重試上限 2；同 spec 連續失敗標 `failed`，不重排。
-4. 預設 720p、16:9、8 s（Veo 上限、兩邊對齊）；不跑 1080p/4K、不跑 Veo Standard（一支 8 s 就 $3.20，直接吃掉 64% 預算）。
-5. `config.yaml` 是單一事實來源（草稿見附錄 B）；model ID 只填本輪 `GET /models` 或 Vertex 模型頁驗過的。
-6. Secret 只從環境變數讀（目前 sandbox 變數名是 `gemini_key`），不進 log、不進 ledger。
-
-### 估價公式（Omni，官方 token 計量）
+## 附錄 A：本輪探針原始輸出
 
 ```
-cost = seconds × tokens_per_second[res] × output_price_per_token
-720p: 5,792 tok/s   360p: 1,931 tok/s   1080p(up): 8,688 tok/s   4K(up): 17,376 tok/s
-Omni 1.2 output $12.00 / 1M tok   → 720p 8 s = 46,336 tok = $0.556
-Omni 1.1 output $17.50 / 1M tok   → 720p 8 s = 46,336 tok = $0.811
-Omni 1.2 360p 3 s = 5,793 tok = $0.070（最便宜的 smoke）
-輸入 $1.50 / 1M tok（prompt 很短，忽略；參考圖另計）
+# Gemini
+GET /v1beta/models → 61 models，含 gemini-omni-1.2-flash / 1.1-flash；無 veo-*
+POST /v1beta/interactions duration=99s → 1.1: "maximum allowed 10s"；1.2: "maximum allowed 15s"
+
+# xAI
+GET /v1/video-generation-models → grok-imagine-video (text,image,video→video) / -1.5 (text,image,audio→video) / -1.5-lite (text,image→video)
+POST /v1/videos/generations duration=999 → 400 "Duration must be between 1 and 15 seconds"
+  resolution=bogus → 422 expected one of `480p`, `720p`, `1080p`
+  aspect_ratio=bogus → 422 expected one of `1:1`,`16:9`,`9:16`,`4:3`,`3:4`,`3:2`,`2:3`,`21:9`,`5:2`
+  (valid body, 5s 720p 16:9) → 200 request_id → ~40 s 後 status done,
+  usage.cost_in_usd_ticks=7000000000 (= $0.70), video 1280x720 24fps 5.04s h264+aac 7.0MB
+
+# OpenRouter
+GET /api/v1/models → google/gemini-omni-1.2-flash (output text,video)；無 xai 影片模型
+GET /api/v1/auth/key → limit 10, remaining 5.05
+
+# egress: US (Ohio)
 ```
 
-Veo（Vertex 或 Runway）按秒：Lite $0.05、Fast $0.15、Standard $0.40 → 8 s = $0.40 / $1.20 / $3.20。
-
----
-
-## 4. US$5 實驗設計
-
-原則：$5 買不到 handoff 要求的「每設定 3 reps × 6 prompts」。這是 **pilot**，目的是（a）把管線、ledger、ffprobe、盲測頁跑通，（b）拿到第一批可看的對照片，（c）量出實際帳單 vs 牌價。**不是**定論；報告會明寫 n。
-
-### M0 Smoke（cap $0.30）— 只要 Gemini key
-
-| # | 模型 | 設定 | 估價 |
-|---|---|---|---|
-| s1 | Omni 1.2 | 360p、3 s、p01 | $0.07 |
-| s2 | Omni 1.1 | 360p、3 s、p01 | $0.10 |
-
-出口：usage 欄位長什麼樣（有沒有 thought tokens、分不分開計）、延遲、`delivery: uri` 流程、ffprobe 實際秒數/解析度/音軌。**M0 做完先回報一次**（對應 handoff E1 的固定回報點）。
-
-### M1 Omni 1.1 vs 1.2 回歸（cap $2.10）— 只要 Gemini key，**12/03 前要做**
-
-3 個 prompt × 2 模型 × 1 rep，720p、8 s、16:9：
-
-| prompt | 測什麼 | Omni 1.2 | Omni 1.1 |
-|---|---|---|---|
-| p04 timecode 多鏡頭 | `[0-3s]` 語法有沒有照切 | $0.56 | $0.81 |
-| p01 商品單鏡頭 | 連續鏡頭、不亂切 | $0.56 | $0.81 |
-| p-text（新，畫面文字：招牌「台北夜市」）| 繁中字卡正確率 | $0.56 | $0.81 |
-| 小計 | | $1.67 | $2.43 |
-
-合計 **$4.10**。這已經超過 M1 cap，所以 **M1 預設只跑 p04 + p-text（$2.74）**，p01 留給 M2 當 Omni 那邊的樣本。
-
-### M2 Veo vs Omni（cap $2.20）— **需要 Clarence 先選路徑 A 或 B**
-
-| prompt | Omni 1.2（Gemini key） | Veo 3.1 Lite（Vertex 或 Runway） |
-|---|---|---|
-| p01 商品單鏡頭 | $0.56 | $0.40 |
-| p02 人物對白 lip-sync | $0.56 | $0.40 |
-| 小計 | $1.12 | $0.80 |
-
-合計 **$1.92**。Veo Fast / Standard 一支就 $1.20 / $3.20，$5 內放不下；若 Clarence 願意把 M1 砍到只剩 p04（省 $1.37），可以換一支 **Veo 3.1 Fast × p01（$1.20）** 當 Veo 真正實力的錨點。
-
-### 總表
-
-| 區塊 | 估價 | 累計 | 備註 |
-|---|---|---|---|
-| M0 smoke | $0.17 | $0.17 | |
-| M1 Omni 1.1 vs 1.2（p04 + p-text） | $2.74 | $2.91 | |
-| M2 Veo Lite vs Omni 1.2（p01 + p02） | $1.92 | $4.83 | |
-| 緩衝（1 次重試） | — | → $5.00 | 超過就停 |
-
-70% 回報點 $3.50 會落在 M2 中間；屆時回報一次再跑完。
-
-### 若 Clarence 不開 Vertex 也不開 Runway
-
-M2 改成 **Omni 1.2 × p01、p02 各 2 reps（$2.24）**，純量 Omni 的自然變異，Veo 那欄留白、報告明寫「Veo 不可達，原因：Gemini API 已下架」。
-
----
-
-## 5. 指標與產出（pilot 版）
-
-- 每支：`run_id, exp, model, prompt_id, rep, params, est_cost, usage{...原樣}, latency_s, ffprobe{duration, w×h, fps, audio}`。
-- 人評（Clarence）：畫質、prompt 遵循、物理、音訊各 1–5；盲測頁隨機排序、隱藏模型名。
-- 影片存放：pilot 只有 ~6–8 支，轉 360p 低碼率預覽放 `review/media/`（總量 < 30 MB）進 repo，Chromebook/手機直接開 `review/index.html`；R2 等正式跑再說。
-- `REPORT.md`：M0 計費解剖（thought 有沒有另計、實際 vs 牌價誤差）、M1 回歸觀察、M2 對照 + 盲測結果、以及「第 1.4 節哪些假設被推翻」。
-
----
-
-## 6. 執行順序與停下來問的點
-
-1. **現在**：Clarence 決定 M2 路徑（A Vertex / B Runway / 不做）；確認 $5 與 70% 回報點。
-2. 建 `config.yaml`、`src/`（omni client、budget、probe、run）、`prompts/*.yaml`（p01、p02、p04、p-text 版本化）。
-3. M0 → 回報（usage 欄位、thought 計費、實際成本）。
-4. M1（12/03 前）。
-5. M2（拿到 A 或 B 的憑證後）。
-6. 盲測頁 → Clarence 打分 → REPORT.md。
-
-停下來問：M0 完成時；花到 $3.50；任何「User location is not supported」或 404 model；需要 Vertex/Runway 憑證；估價與實際帳單差 >30%。
-
----
-
-## 附錄 A：本輪免費探針原始輸出（2026-11-07）
-
-```
-GET /v1beta/models?pageSize=200 → 200, 61 models, 影片相關：
-  models/gemini-omni-flash-preview | generateContent, countTokens
-  models/gemini-omni-1.1-flash     | generateContent, countTokens
-  models/gemini-omni-1.2-flash     | generateContent, countTokens   (thinking: true)
-  (無 veo-*)
-
-GET /v1beta/models/veo-3.1-generate-preview … veo-2.0-generate-001（9 個候選）→ 全部 404
-
-POST /v1beta/interactions {"model":"gemini-omni-1.1-flash","input":"test",
-  "response_format":{"type":"video","duration":"99s","resolution":"360p"},"store":false,"background":false}
-  → {"error":{"message":"Requested video duration 99s 0ns exceeds the maximum allowed 10s 0ns","code":"invalid_request"}}
-同請求換 gemini-omni-1.2-flash
-  → {"error":{"message":"Requested video duration 99s 0ns exceeds the maximum allowed 15s 0ns","code":"invalid_request"}}
-
-gcloud auth list → No credentialed accounts; project (unset)
-egress: US / Columbus, Ohio / AS396982 Google LLC
-```
-
-## 附錄 B：`config.yaml` 草稿（開工時落檔）
+## 附錄 B：`config.yaml` 草稿
 
 ```yaml
 budget:
-  project_cap_usd: 5.00
-  report_at_fraction: 0.70
-  caps_usd: { M0: 0.30, M1: 2.10, M2: 2.20 }
+  omni_cap_usd: 1.10
+  xai_cap_usd_new: 1.50          # 不含已花 0.70
+  stop_if_actual_vs_est_over: 0.30
   max_retries: 2
 models:
-  omni_12: { id: gemini-omni-1.2-flash, api: interactions, max_s: 15, verified: 2026-11-07 }
-  omni_11: { id: gemini-omni-1.1-flash, api: interactions, max_s: 10, verified: 2026-11-07,
-             note: "auto-routes to 1.2 from 2026-12-03" }
-  veo_31_lite: { id: veo-3.1-lite-generate-001, api: vertex|runway, max_s: 8, verified: null }
-  veo_31_fast: { id: veo-3.1-fast-generate-001, api: vertex|runway, max_s: 8, verified: null }
+  omni_12: { id: gemini-omni-1.2-flash, provider: gemini, api: interactions, max_s: 15, verified: 2026-11-07 }
+  grok_15: { id: grok-imagine-video-1.5, provider: xai, api: videos.generations, max_s: 15, verified: 2026-11-07 }
 pricing_usd:
-  omni_tokens_per_s: { 360p: 1931, 720p: 5792, 1080p: 8688, 4k: 17376 }
+  omni_tokens_per_s: { 360p: 1931, 720p: 5792 }
   omni_12_output_per_m_tok: 12.00
-  omni_11_output_per_m_tok: 17.50
-  omni_input_per_m_tok: 1.50
-  veo_per_s_720p_audio: { lite: 0.05, fast: 0.15, standard: 0.40 }   # 第三方/Runway，待 Vertex 驗證
-defaults: { resolution: 720p, aspect: "16:9", duration_s: 8 }
+  grok_15_per_s: { 480p: 0.08, 720p: 0.14 }   # 720p 實測；480p 為文件推測
+defaults: { resolution: 720p, aspect: "16:9", duration_s: 5 }
 ```
 
 ## 附錄 C：來源
 
-官方（本輪抓到）
-- Gemini API 價格頁 https://aistudio.google.com/docs/pricing（Omni 1.1/1.2 token 價與 tok/s；無 Veo）
-- Gemini API deprecations https://aistudio.google.com/docs/deprecations（Veo 3.1 三 ID 10/22 下架；Omni 1.1 12/03 導流）
-- Gemini API video 頁 https://aistudio.google.com/docs/video.md.txt（Veo Preview shutdown 聲明）
-- Omni 指南 https://aistudio.google.com/docs/omni.md.txt
+- Gemini 價格 https://aistudio.google.com/docs/pricing ；deprecations https://aistudio.google.com/docs/deprecations ；Omni 指南 https://aistudio.google.com/docs/omni.md.txt
+- xAI 影片指南 https://docs.x.ai/docs/guides/video-generation ；模型頁 https://docs.x.ai/docs/models/grok-imagine-video-1.5 ；價格 https://docs.x.ai/developers/pricing
+- Google Cloud Veo prompt guide（P1 來源）https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/video/video-gen-prompt-guide
+- GLBGPT 同題六模型測試（P2、P3 來源）https://www.glbgpt.com/hub/ai-video-prompt-adherence-comparison/
+- VBench-2.0 prompt 清單 https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts
+- Arena 排名引用 https://videogen.io/best-ai-video-models ；Higgsfield 評測 https://higgsfield.ai/blog/5-Best-AI-Video-Models-2026-Tested-Compared
+- Runway API 價格（Veo / Omni / Grok 轉售價）https://docs.dev.runwayml.com/guides/pricing/
 - Vertex Veo 3.1 模型頁 https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-1-generate
-- Vertex express mode https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview（不含 Veo）
-- xAI models https://docs.x.ai/docs/models
-- Runway API pricing https://docs.dev.runwayml.com/guides/pricing/
-
-第三方（數字僅供參考）
-- Sora 停止：https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/
-- Nova Reel EOL：https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html（AWS 官方，經搜尋摘要）
-- 市場價格綜整：https://www.atlascloud.ai/blog/tips/cheapest-ai-video-generation-api-2026 、https://morphed.app/blog/ai-video-generation-cost
-- Luma：https://wavespeed.ai/blog/cost-and-billing/luma-ai-pricing/
-- 場景評測：https://videogen.io/best-ai-video-models 、https://pixverse.ai/en/blog/best-ai-lip-sync-video-generators-2026

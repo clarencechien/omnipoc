@@ -32,7 +32,21 @@ def spent(provider, exclude_exp=("S0",)):
                 tot += e.get("est_cost", 0)   # failed (4xx) calls are not billed
     return round(tot, 4)
 
-def check_cap(provider, est):
+def spent_opening():
+    pre = CFG["budget"].get("opening_exp_prefix", "O"); tot = 0.0
+    for e in entries():
+        if str(e.get("exp", "")).startswith(pre) and e.get("status") == "ok":
+            tot += e.get("actual_cost") if e.get("actual_cost") is not None else e.get("est_cost", 0)
+    return round(tot, 4)
+
+def check_cap(provider, est, exp=None):
+    if provider == "opening" or (exp and str(exp).startswith(CFG["budget"].get("opening_exp_prefix", "O"))):
+        cap = CFG["budget"]["caps_usd"]["opening"]; s = spent_opening()
+        if s + est > cap:
+            raise SystemExit(f"BUDGET STOP: opening spent {s:.3f} + est {est:.3f} > cap {cap:.2f}")
+        if s + est > 0.7 * cap:
+            print(f"WARNING: opening spend {s+est:.2f} passes 70% of cap {cap:.2f}", flush=True)
+        return s
     cap = CFG["budget"]["caps_usd"][provider]
     s = spent(provider)
     if s + est > cap:

@@ -9,3 +9,5 @@ for (exp, prov, model), r in sorted(rows.items()):
 print(f"{'TOTAL':6} {'':8} {'':28} {'':>2} {'':>2} {te:>7.3f} {ta:>8.3f}")
 for prov in ("omni", "xai"):
     print(f"new spend {prov}: {budget.spent(prov):.3f} / cap {budget.CFG['budget']['caps_usd'][prov]:.2f}")
+
+print(f"opening (O*) spend: {budget.spent_opening():.3f} / cap {budget.CFG['budget']['caps_usd']['opening']:.2f}")

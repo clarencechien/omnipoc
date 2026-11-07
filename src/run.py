@@ -14,7 +14,7 @@ cfg = budget.CFG; m = cfg["models"][a.model]; d = cfg["defaults"]
 dur = a.duration or d["duration_s"]; res = a.res or d["resolution"]; asp = a.aspect or d["aspect"]
 p = yaml.safe_load(open(a.prompt))
 est = budget.estimate(a.model, dur, res)
-spent_before = budget.check_cap(m["provider"] if m["provider"] != "gemini" else "omni", est)
+spent_before = budget.check_cap(m["provider"] if m["provider"] != "gemini" else "omni", est, exp=a.exp)
 prov = "omni" if m["provider"] == "gemini" else m["provider"]
 run_id = f"{a.exp}/{a.model}-{p['id']}-r{a.rep}-{uuid.uuid4().hex[:6]}"
 out_dir = os.path.join(budget.ROOT, "runs", run_id); os.makedirs(out_dir, exist_ok=True)

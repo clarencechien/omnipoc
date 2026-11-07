@@ -1,0 +1,55 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尋寶開場 定裝圖</title>
+<style>
+:root { --bg:#fff; --fg:#111; --mut:#666; --card:#f6f6f6; --line:#ddd; --acc:#0b57d0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; } }
+:root[data-theme="dark"] { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; }
+html, body { overflow-x:hidden; }
+body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui,-apple-system,"Noto Sans TC",sans-serif; max-width:960px; margin-inline:auto; }
+h1 { font-size:1.3rem; margin:0 0 4px; } h2 { font-size:1rem; margin:0 0 8px; }
+.mut { color:var(--mut); font-weight:400; font-size:.85rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin:16px 0; }
+img { width:100%; border-radius:8px; display:block; }
+.note { margin:8px 0 4px; } .prompt { font-size:.85rem; color:var(--mut); border-left:3px solid var(--acc); padding-left:10px; }
+summary { cursor:pointer; color:var(--acc); font-size:.9rem; }
+</style></head><body>
+<h1>尋寶開場 S0 定裝圖（Nano Banana 2，9 張，$0.64）</h1>
+<p class="mut">前三張是同一拍（尋寶者上島回頭）的三種風格；接著是指南針參考圖與三種風格的指南針特寫；最後是地圖。要選的是：風格 1／2／3，以及指南針特寫是否可接受。</p>
+
+<div class="card"><h2>1. style-live <span class="mut">1K · 16:9 · $0.067 · 9.0s</span></h2>
+<img src="style-live.jpg" alt="style-live" loading="lazy">
+<p class="note">實拍電影感。指南針在手上但很小；角色多了一個背包（spec 只寫 satchel）。</p>
+<details><summary>prompt</summary><p class="prompt">Cinematic live-action film still, anamorphic lens, 35mm film grain. A weathered treasure hunter in her 30s, sun-worn linen shirt, leather satchel, short dark hair, steps from a wooden rowboat onto a wild volcanic island shore at golden hour and glances back over her shoulder toward the camera. In her hand an antique brass magnetic compass. Storm clouds breaking behind her, wet black sand, sea spray. Shallow depth of field, moody teal-and-amber grade. No text.</p></details></div>
+<div class="card"><h2>2. style-3d <span class="mut">1K · 16:9 · $0.067 · 9.1s</span></h2>
+<img src="style-3d.jpg" alt="style-3d" loading="lazy">
+<p class="note">3D 動畫。注意：她左手好像拿著兩個指南針（或是蓋子被畫成第二個錶盤）；船身出現 THE VOYAGER 字樣（prompt 有寫 No text）。</p>
+<details><summary>prompt</summary><p class="prompt">High-end 3D animated feature film still, stylized but detailed, in the manner of a modern animated adventure movie (subsurface skin, painterly textures, volumetric light). A treasure hunter in her 30s, sun-worn linen shirt, leather satchel, short dark hair, steps from a wooden rowboat onto a wild volcanic island shore at golden hour and glances back over her shoulder toward the camera. In her hand an antique brass magnetic compass. Storm clouds breaking behind her, wet black sand, sea spray. Warm cinematic lighting. No text.</p></details></div>
+<div class="card"><h2>3. style-2d <span class="mut">1K · 16:9 · $0.067 · 8.5s</span></h2>
+<img src="style-2d.jpg" alt="style-2d" loading="lazy">
+<p class="note">2D 水粉。構圖最有海報味；指南針很小；角色變成短褲赤腳（prompt 沒寫）。</p>
+<details><summary>prompt</summary><p class="prompt">2D hand-painted animation key frame, gouache and ink, visible brush texture, limited palette of deep teal, sand ochre and brass gold, graphic shapes, slight paper grain. A treasure hunter in her 30s, sun-worn linen shirt, leather satchel, short dark hair, steps from a wooden rowboat onto a wild volcanic island shore at golden hour and glances back over her shoulder toward the camera. In her hand an antique brass magnetic compass. Storm clouds breaking behind her. No text.</p></details></div>
+<div class="card"><h2>4. compass-front <span class="mut">1K · 1:1 · $0.067 · 8.7s</span></h2>
+<img src="compass-front.jpg" alt="compass-front" loading="lazy">
+<p class="note">物件參考圖（之後所有指南針鏡頭都用它當 reference）。N E S W + 度數環 + 單一磁針，沒有時鐘元素。</p>
+<details><summary>prompt</summary><p class="prompt">Product design reference sheet of a single antique brass MAGNETIC COMPASS, top-down view, centered on plain dark grey background. Round brass case with a hinged lid open flat, glass face, white enamel dial printed with a 16-point compass rose and the cardinal letters N, E, S, W in black serif, degree ticks around the rim. ONE slender steel needle, blued steel on the north half, bright steel on the south half, pivoting on a central brass pin. NO clock numerals, NO clock hands, NO Roman numerals, NO minute track. Scratched, patinated brass. Studio lighting, sharp focus. No text other than N E S W.</p></details></div>
+<div class="card"><h2>5. compass-angle <span class="mut">1K · 1:1 · $0.068 · 9.0s</span></h2>
+<img src="compass-angle.jpg" alt="compass-angle" loading="lazy">
+<p class="note">用 compass-front 當參考重畫 3/4 角度：盤面、指針、外殼完全一致。地圖上有半真半假的字。</p>
+<details><summary>prompt</summary><p class="prompt">The same antique brass magnetic compass as the reference image, now seen from a 3/4 angle resting on a weathered parchment map, lid open, glass catching a warm highlight. Same white enamel dial with compass rose and letters N E S W, same single blued-steel needle. NO clock numerals, NO clock hands. Shallow depth of field. No text other than N E S W.</p></details></div>
+<div class="card"><h2>6. compass-live <span class="mut">1K · 16:9 · $0.068 · 8.8s</span></h2>
+<img src="compass-live.jpg" alt="compass-live" loading="lazy">
+<p class="note">實拍風格 + 參考圖：一致性好，細節到度數環都對。</p>
+<details><summary>prompt</summary><p class="prompt">Cinematic live-action macro film still, 35mm film grain. Extreme close-up of the antique brass magnetic compass from the reference image held in a weathered hand, lid open, the single blued-steel needle swinging. Dial shows compass rose and letters N E S W only. NO clock numerals, NO clock hands. Golden hour rim light, shallow depth of field. No text.</p></details></div>
+<div class="card"><h2>7. compass-3d <span class="mut">1K · 16:9 · $0.068 · 8.7s</span></h2>
+<img src="compass-3d.jpg" alt="compass-3d" loading="lazy">
+<p class="note">3D 風格 + 參考圖：只剩 N E S W 四個字母（沒有度數環），指針變藍色；算一致。</p>
+<details><summary>prompt</summary><p class="prompt">High-end 3D animated feature film still, stylized but detailed. Extreme close-up of the antique brass magnetic compass from the reference image held in a hand, lid open, the single blued-steel needle swinging. Dial shows compass rose and letters N E S W only. NO clock numerals, NO clock hands. Warm volumetric light, shallow depth of field. No text.</p></details></div>
+<div class="card"><h2>8. compass-2d <span class="mut">1K · 16:9 · $0.068 · 8.5s</span></h2>
+<img src="compass-2d.jpg" alt="compass-2d" loading="lazy">
+<p class="note">2D 風格 + 參考圖：一致，線稿化。</p>
+<details><summary>prompt</summary><p class="prompt">2D hand-painted animation key frame, gouache and ink, teal / ochre / brass palette, paper grain. Extreme close-up of the antique brass magnetic compass from the reference image held in a hand, lid open, single blued-steel needle. Dial shows compass rose and letters N E S W only. NO clock numerals, NO clock hands. No text.</p></details></div>
+<div class="card"><h2>9. map <span class="mut">2K · 16:9 · $0.101 · 16.9s</span></h2>
+<img src="map.jpg" alt="map" loading="lazy">
+<p class="note">2K。有可用的紅色路線和 X；但出現真字（X MARKS THE SPOT、River、Swamp、Landing Cove），prompt 要求亂寫字沒完全遵守。</p>
+<details><summary>prompt</summary><p class="prompt">An old hand-drawn treasure map on aged, stained parchment, seen flat from above, filling the frame. Ink coastline of a volcanic island, a winding dotted route, a compass rose in one corner, small sea-monster and sailing-ship illustrations, faint latitude lines, a red X near a cove. Burnt edges, wax stain, fold creases. Warm candle-lit tone. Do not write any real words; use illegible scribbles for place names.</p></details></div>
+</body></html>

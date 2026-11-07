@@ -1,10 +1,11 @@
-# Single source of truth: model IDs, prices, budget caps. Plan: docs/PLAN.md v0.2
 budget:
   caps_usd:
-    omni: 1.10          # new spend on gemini-omni-1.2-flash
-    xai: 1.50           # new spend on grok-imagine-video-1.5 (excludes the $0.70 accidental S0 smoke)
-  stop_if_actual_vs_est_over: 0.30
+    omni: 1.1
+    xai: 1.5
+    opening: 8.0
+  stop_if_actual_vs_est_over: 0.3
   max_retries: 2
+  opening_exp_prefix: O
 models:
   omni_12:
     id: gemini-omni-1.2-flash
@@ -18,12 +19,32 @@ models:
     api: videos.generations
     max_s: 15
     verified: 2026-11-07
+  nb2:
+    id: gemini-3.1-flash-image
+    provider: gemini
+    api: interactions
+    verified: '2026-11-07'
+    note: Nano Banana 2; up to 14 reference images (10 object + 4 character)
 pricing_usd:
-  omni_tokens_per_s: { 360p: 1931, 720p: 5792, 1080p: 8688, 4k: 17376 }
-  omni_12_output_per_m_tok: 12.00
-  omni_input_per_m_tok: 1.50
-  grok_15_per_s: { 480p: 0.08, 720p: 0.14, 1080p: null }   # 720p measured on S0; 480p from docs headline
+  omni_tokens_per_s:
+    360p: 1931
+    720p: 5792
+    1080p: 8688
+    4k: 17376
+  omni_12_output_per_m_tok: 12.0
+  omni_input_per_m_tok: 1.5
+  grok_15_per_s:
+    480p: 0.08
+    720p: 0.14
+    1080p: null
+  nb2_output_per_m_tok: 60.0
+  nb2_input_per_m_tok: 0.5
+  nb2_tokens_per_image:
+    0.5K: 747
+    1K: 1120
+    2K: 1680
+    4K: 2520
 defaults:
   resolution: 720p
-  aspect: "16:9"
+  aspect: '16:9'
   duration_s: 5

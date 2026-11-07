@@ -1,4 +1,39 @@
-# REPORT — Omni 1.2 Flash vs Grok Imagine Video 1.5（M1 pilot）
+# omnipoc REPORT — 總結（2026-11-07 告一段落）
+
+專案狀態：**告一段落**。兩段工作都做完到預定停點，總花費 **$7.53**（明細見文末帳表）。接續點：第二部分第 4 節的 S5／S6。
+
+## 0. 結論（場景 → 做法）
+
+| 問題 | 結論 | 依據 |
+|---|---|---|
+| Veo 還能不能用 Gemini key 叫？ | **不能。** Veo 3.1 三個 preview ID 於 2026-10-22 從 Gemini API 下架，replacement 是 `gemini-omni-1.2-flash`；Veo 只剩 Vertex（需 GCP 專案）或 Runway／fal／Replicate 轉售 | 官方 deprecations 頁 + `GET /models` 實測 |
+| Omni 1.2 能不能當影片預設？ | **可以，而且目前是唯一用 Gemini key 能叫的影片模型。** 12 支生成零失敗；usage 可完全重建帳單（誤差 < 6%，來自 thought 與參考圖輸入 token） | 第一、二部分全部 run |
+| Omni vs Grok 1.5（同 prompt、720p、5 s） | 紅大衣電影場景：Clarence 與 Claude 獨立看都認為 **Omni 較真實**。指南針：**兩邊都畫錯**（Omni 畫成懷錶、Grok 盤面崩壞）。Grok 720p 實價 $0.14/s 是 Omni 的 2 倍。n=1，只算觀察 | 第一部分 3、3b |
+| 物件一致性（指南針翻車）怎麼解？ | **先用 Nano Banana 2 出物件參考圖，再餵給 Omni。** 之後 8 支指南針相關影片盤面全部正確 | 第二部分 S0、S2、S3、S4 |
+| 人物／調色一致性 | 餵一張定裝圖即可鎖人物、裝備、場景、調色；不餵就換人換色 | S1 對照、S4 |
+| 多鏡頭 | 一支 15 s 用 `[0-8s] … [8-15s] …` timecode，切點準確、調色一致，價格與分開生成相同 | S3b、S4 |
+| 草稿→定稿流程 | 360p 草稿（$0.023/s）驗 prompt，720p 定稿（$0.07/s），行為一致沒翻車 | S1–S3 → S4 |
+| 1080p / 4K | 都是 Google 端 upsampling（$0.104／$0.209 /s），API 無「升級既有影片」操作；建議本機放大。未實測（S5 未做） | 價格頁、Omni 指南 |
+| 投影片式靜態畫面 | 不要用影片，按秒計費、畫面文字會錯；用 Nano Banana 圖（1K $0.067）+ ffmpeg | 價格頁 + S0 |
+| 已知坑 | (1) 模型會自己加 letterbox 黑邊，prompt 禁止無效，要用 `cropdetect` 量；(2) 「No text」指令圖像模型不一定聽；(3) `delivery=uri` 必須 `store=true`；(4) 探 schema 不可送合法 body（xAI 意外 $0.70） | 各節 |
+
+## 0b. 花費總表
+
+| 段落 | 內容 | 實際 |
+|---|---|---|
+| S0（意外） | xAI 探針生成 1 支 | $0.70 |
+| M0 | Omni smoke 360p 3 s | $0.08 |
+| M1 | Omni ×2 + Grok ×2，720p 5 s | $2.11 |
+| O0 | Nano Banana 2 定裝圖 9 張 | $0.64 |
+| O1 | Omni 360p 草稿 8 支 | $1.53 |
+| O4 | Omni 720p 定稿 4 支 | $2.47 |
+| **合計** | 12 支 Omni 影片、3 支 Grok、9 張圖 | **$7.53** |
+
+Omni 影片 12 支實際 $4.86，估價 $4.73（+2.7%）。待 Clarence 對 Cloud Billing 確認 thought token 費率（目前以 $9/1M 入帳，影響 < 2%）。
+
+---
+
+# 第一部分 — Omni 1.2 Flash vs Grok Imagine Video 1.5（M1 pilot）
 
 - 日期：2026-11-07 · 計劃：`docs/PLAN.md` v0.2 方案 1 · 帳本：`ledger/spend.jsonl`
 - 設定：文字生影片、720p、16:9、5 s、同一 prompt 原文、每題 **1 rep**

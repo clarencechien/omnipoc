@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>omnipoc 盲測</title>
+<style>
+  :root { --bg:#fff; --fg:#111; --mut:#666; --card:#f6f6f6; --line:#ddd; --acc:#0b57d0; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; } }
+  :root[data-theme="dark"] { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; }
+  html, body { overflow-x:hidden; }
+  body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, -apple-system, "Noto Sans TC", sans-serif; max-width:900px; margin-inline:auto; }
+  h1 { font-size:1.3rem; margin:0 0 4px; }
+  .mut { color:var(--mut); font-size:.9rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin:16px 0; }
+  video { width:100%; border-radius:8px; background:#000; }
+  img.sheet { width:100%; border-radius:8px; margin-top:8px; }
+  .code { font-weight:700; font-size:1.1rem; }
+  .prompt { font-size:.9rem; border-left:3px solid var(--acc); padding-left:10px; margin:8px 0; }
+  .row { display:grid; grid-template-columns: 1fr auto; gap:8px 12px; align-items:center; margin:6px 0; }
+  .scale { display:flex; gap:4px; }
+  .scale label { padding:4px 9px; border:1px solid var(--line); border-radius:8px; cursor:pointer; }
+  .scale input { display:none; }
+  .scale input:checked + span { background:var(--acc); color:#fff; border-radius:8px; padding:4px 9px; margin:-4px -9px; }
+  ul.chk { padding-left:0; list-style:none; margin:8px 0; font-size:.9rem; }
+  ul.chk li { margin:2px 0; }
+  textarea { width:100%; box-sizing:border-box; border:1px solid var(--line); border-radius:8px; padding:8px; background:var(--bg); color:var(--fg); }
+  button { padding:8px 14px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer; }
+  button.primary { background:var(--acc); color:#fff; border-color:var(--acc); }
+  .reveal { display:none; color:var(--acc); font-weight:600; }
+  body.revealed .reveal { display:inline; }
+  pre { white-space:pre-wrap; word-break:break-all; font-size:.8rem; background:var(--card); padding:10px; border-radius:8px; }
+</style>
+</head>
+<body>
+<h1>omnipoc 盲測 — M1（2 prompt × 2 模型，720p / 5 s / 16:9）</h1>
+<p class="mut">順序已隨機、模型名隱藏。每支打完 4 個分數和 checklist 後按「複製評分」，把 JSON 貼回給 Claude。打完分才按「揭曉」。預覽是 360p 轉檔；右鍵／長按可看 6 格 contact sheet。</p>
+<div id="list"></div>
+<div class="card">
+  <button class="primary" onclick="exportScores()">匯出評分 JSON</button>
+  <button onclick="exportScores();navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('out').textContent).then(()=>alert('已複製'))">複製評分</button>
+  <button onclick="reveal()">揭曉模型</button>
+  <button onclick="if(confirm('清除本機評分？')){localStorage.removeItem('omnipoc_scores');location.reload()}">清除</button>
+  <pre id="out" hidden></pre>
+</div>
+<script type="application/json" id="manifest-data">[
+ {
+  "code": "A",
+  "run_id": "M1/omni_12-cine-redcoat-v1-r1-9ab089",
+  "model": "gemini-omni-1.2-flash",
+  "prompt_id": "cine-redcoat-v1",
+  "prompt_text": "A cinematic tracking shot follows a woman in a long red coat walking through a rain-soaked neon street at night. She turns toward the camera as a tram passes behind her, reflections moving naturally across the wet pavement. Realistic human motion, consistent face and clothing, shallow depth of field, controlled handheld camera, no cuts.",
+  "checklist": [
+   "woman in long red coat",
+   "rain-soaked neon street, night",
+   "tracking shot (camera follows)",
+   "she turns toward camera",
+   "tram passes behind her",
+   "reflections on wet pavement",
+   "consistent face/clothing",
+   "no cuts"
+  ],
+  "params": {
+   "duration_s": 5,
+   "resolution": "720p",
+   "aspect": "16:9"
+  },
+  "actual_cost": 0.3559,
+  "latency_s": 30.4,
+  "ffprobe": {
+   "duration_s": 5.035,
+   "size_bytes": 3535309,
+   "width": 1280,
+   "height": 720,
+   "fps": "24/1",
+   "vcodec": "h264",
+   "audio": true,
+   "acodec": "aac",
+   "channels": 2
+  }
+ },
+ {
+  "code": "B",
+  "run_id": "M1/grok_15-cine-redcoat-v1-r1-000135",
+  "model": "grok-imagine-video-1.5",
+  "prompt_id": "cine-redcoat-v1",
+  "prompt_text": "A cinematic tracking shot follows a woman in a long red coat walking through a rain-soaked neon street at night. She turns toward the camera as a tram passes behind her, reflections moving naturally across the wet pavement. Realistic human motion, consistent face and clothing, shallow depth of field, controlled handheld camera, no cuts.",
+  "checklist": [
+   "woman in long red coat",
+   "rain-soaked neon street, night",
+   "tracking shot (camera follows)",
+   "she turns toward camera",
+   "tram passes behind her",
+   "reflections on wet pavement",
+   "consistent face/clothing",
+   "no cuts"
+  ],
+  "params": {
+   "duration_s": 5,
+   "resolution": "720p",
+   "aspect": "16:9"
+  },
+  "actual_cost": 0.7,
+  "latency_s": 46.9,
+  "ffprobe": {
+   "duration_s": 5.042,
+   "size_bytes": 4434974,
+   "width": 1280,
+   "height": 720,
+   "fps": "24/1",
+   "vcodec": "h264",
+   "audio": true,
+   "acodec": "aac",
+   "channels": 2
+  }
+ },
+ {
+  "code": "C",
+  "run_id": "M1/grok_15-obj-compass-v1-r1-77db01",
+  "model": "grok-imagine-video-1.5",
+  "prompt_id": "obj-compass-v1",
+  "prompt_text": "A slow, dramatic zoom in on a mysterious, ancient compass lying on a dusty map.",
+  "checklist": [
+   "single continuous shot, no cuts",
+   "slow zoom in (camera moves toward subject)",
+   "compass is the clear subject",
+   "dusty map visible as surface",
+   "ancient / mysterious mood (lighting, texture)"
+  ],
+  "params": {
+   "duration_s": 5,
+   "resolution": "720p",
+   "aspect": "16:9"
+  },
+  "actual_cost": 0.7,
+  "latency_s": 46.9,
+  "ffprobe": {
+   "duration_s": 5.042,
+   "size_bytes": 6073962,
+   "width": 1280,
+   "height": 720,
+   "fps": "24/1",
+   "vcodec": "h264",
+   "audio": true,
+   "acodec": "aac",
+   "channels": 2
+  }
+ },
+ {
+  "code": "D",
+  "run_id": "M1/omni_12-obj-compass-v1-r1-1f8fa1",
+  "model": "gemini-omni-1.2-flash",
+  "prompt_id": "obj-compass-v1",
+  "prompt_text": "A slow, dramatic zoom in on a mysterious, ancient compass lying on a dusty map.",
+  "checklist": [
+   "single continuous shot, no cuts",
+   "slow zoom in (camera moves toward subject)",
+   "compass is the clear subject",
+   "dusty map visible as surface",
+   "ancient / mysterious mood (lighting, texture)"
+  ],
+  "params": {
+   "duration_s": 5,
+   "resolution": "720p",
+   "aspect": "16:9"
+  },
+  "actual_cost": 0.3528,
+  "latency_s": 27.6,
+  "ffprobe": {
+   "duration_s": 5.035,
+   "size_bytes": 3602358,
+   "width": 1280,
+   "height": 720,
+   "fps": "24/1",
+   "vcodec": "h264",
+   "audio": true,
+   "acodec": "aac",
+   "channels": 2
+  }
+ }
+]</script>
+<script type="application/json" id="key-data">{
+ "A": {
+  "model": "gemini-omni-1.2-flash",
+  "prompt_id": "cine-redcoat-v1",
+  "run_id": "M1/omni_12-cine-redcoat-v1-r1-9ab089"
+ },
+ "B": {
+  "model": "grok-imagine-video-1.5",
+  "prompt_id": "cine-redcoat-v1",
+  "run_id": "M1/grok_15-cine-redcoat-v1-r1-000135"
+ },
+ "C": {
+  "model": "grok-imagine-video-1.5",
+  "prompt_id": "obj-compass-v1",
+  "run_id": "M1/grok_15-obj-compass-v1-r1-77db01"
+ },
+ "D": {
+  "model": "gemini-omni-1.2-flash",
+  "prompt_id": "obj-compass-v1",
+  "run_id": "M1/omni_12-obj-compass-v1-r1-1f8fa1"
+ }
+}</script>
+<script>
+const DIMS = [["quality","畫質"],["adherence","prompt 遵循"],["motion","動作／物理"],["audio","音訊"]];
+let manifest = JSON.parse(document.getElementById("manifest-data").textContent);
+let key = JSON.parse(document.getElementById("key-data").textContent);
+const store = () => JSON.parse(localStorage.getItem("omnipoc_scores") || "{}");
+const save = (s) => localStorage.setItem("omnipoc_scores", JSON.stringify(s));
+function render() {
+  const s = store();
+  document.getElementById("list").innerHTML = manifest.map(m => `
+  <div class="card" id="card-${m.code}">
+    <div><span class="code">${m.code}</span> <span class="mut">· ${m.prompt_id} · ${m.params.duration_s}s ${m.params.resolution}</span> <span class="reveal" id="rev-${m.code}"></span></div>
+    <video controls playsinline preload="metadata" src="media/${m.code}.mp4"></video>
+    <img class="sheet" src="media/${m.code}.jpg" alt="contact sheet ${m.code}" loading="lazy">
+    <div class="prompt">${m.prompt_text}</div>
+    ${DIMS.map(([k,l]) => `
+    <div class="row"><span>${l}</span>
+      <div class="scale">${[1,2,3,4,5].map(v => `<label><input type="radio" name="${m.code}-${k}" value="${v}" ${s[m.code]?.[k]==v?"checked":""} onchange="set('${m.code}','${k}',${v})"><span>${v}</span></label>`).join("")}</div>
+    </div>`).join("")}
+    <ul class="chk">${(m.checklist||[]).map((c,i) => `<li><label><input type="checkbox" ${s[m.code]?.chk?.[i]?"checked":""} onchange="chk('${m.code}',${i},this.checked)"> ${c}</label></li>`).join("")}</ul>
+    <textarea rows="2" placeholder="備註" onchange="note('${m.code}',this.value)">${s[m.code]?.note||""}</textarea>
+  </div>`).join("");
+}
+function set(c,k,v){ const s=store(); (s[c]??={})[k]=v; save(s); }
+function chk(c,i,v){ const s=store(); (s[c]??={}); (s[c].chk??={})[i]=v; save(s); }
+function note(c,v){ const s=store(); (s[c]??={}).note=v; save(s); }
+function exportScores(){ const o=document.getElementById("out"); o.hidden=false; o.textContent=JSON.stringify({exported_at:new Date().toISOString(), scores:store()}, null, 1); }
+function reveal(){ for(const c in key){ const el=document.getElementById("rev-"+c); if(el) el.textContent = "→ " + key[c].model; } document.body.classList.add("revealed"); }
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+ "run_id": "M1/grok_15-obj-compass-v1-r1-77db01",
+ "model": "grok-imagine-video-1.5",
+ "prompt": {
+  "id": "obj-compass-v1",
+  "type": "object hero / product-style single shot",
+  "source": "Google Cloud Veo prompt guide, 'Camera movements' example: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/video/video-gen-prompt-guide",
+  "text": "A slow, dramatic zoom in on a mysterious, ancient compass lying on a dusty map.",
+  "checklist": [
+   "single continuous shot, no cuts",
+   "slow zoom in (camera moves toward subject)",
+   "compass is the clear subject",
+   "dusty map visible as surface",
+   "ancient / mysterious mood (lighting, texture)"
+  ]
+ },
+ "params": {
+  "duration_s": 5,
+  "resolution": "720p",
+  "aspect": "16:9"
+ },
+ "est_cost": 0.7,
+ "actual_cost": 0.7,
+ "latency_s": 46.9,
+ "ffprobe": {
+  "duration_s": 5.042,
+  "size_bytes": 6073962,
+  "width": 1280,
+  "height": 720,
+  "fps": "24/1",
+  "vcodec": "h264",
+  "audio": true,
+  "acodec": "aac",
+  "channels": 2
+ },
+ "response": {
+  "request_id": "7206f50c-9eab-9503-8dd2-ca992dfaaac4",
+  "status": "done",
+  "video": {
+   "url": "https://vidgen.x.ai/xai-vidgen-bucket/xai-video-7206f50c-9eab-9503-8dd2-ca992dfaaac4.mp4",
+   "duration": 5,
+   "respect_moderation": true
+  },
+  "model": "grok-imagine-video-1.5",
+  "usage": {
+   "cost_in_usd_ticks": 7000000000
+  },
+  "progress": 100
+ }
+}

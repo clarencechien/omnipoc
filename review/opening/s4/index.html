@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尋寶開場 定稿 S4</title>
+<style>
+:root { --bg:#fff; --fg:#111; --mut:#666; --card:#f6f6f6; --line:#ddd; --acc:#0b57d0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; } }
+:root[data-theme="dark"] { --bg:#111; --fg:#eee; --mut:#aaa; --card:#1c1c1c; --line:#333; --acc:#8ab4f8; }
+html, body { overflow-x:hidden; }
+body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui,-apple-system,"Noto Sans TC",sans-serif; max-width:960px; margin-inline:auto; }
+h1 { font-size:1.3rem; margin:0 0 4px; } h2 { font-size:1rem; margin:0 0 8px; }
+.mut { color:var(--mut); font-weight:400; font-size:.8rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin:16px 0; }
+video, img { width:100%; border-radius:8px; display:block; background:#000; } img { margin-top:8px; }
+.note { margin:8px 0 4px; } .prompt { font-size:.85rem; color:var(--mut); border-left:3px solid var(--acc); padding-left:10px; }
+summary { cursor:pointer; color:var(--acc); font-size:.9rem; }
+</style></head><body>
+<h1>尋寶開場 S4 定稿（Omni 1.2，720p，4 支，$2.47）</h1>
+<p class="mut">預覽轉成 854 寬；原檔 1280×720 在 runs/O4/。crop 欄是 ffmpeg cropdetect 偵測到的實際畫面範圍，1280:720:0:0 代表沒黑邊。</p>
+
+<div class="card"><h2>1. s4-sea-cabin-r1 <span class="mut">15.0s · $1.055 · 60.7s · crop 1280:594:0:64 · audio mean -21.1 / max -0.6 dB</span></h2>
+<video controls playsinline preload="metadata" src="s4-sea-cabin-r1.mp4"></video>
+<img src="s4-sea-cabin-r1.jpg" alt="contact sheet s4-sea-cabin-r1" loading="lazy">
+<p class="note">鏡頭 #2＋#3，15 秒 timecode。第 8 秒準確切到船艙，開盒露出指南針放在地圖上，盤面對；海面段有閃電、船尾燈。**仍有 letterbox 黑邊（上下各 64 px，實際畫面 1280×594）**，prompt 明寫 no letterbox 沒用。組裝時用 ffmpeg 裁成 2.15:1 或整支開場統一加黑邊。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use; do not add clock numerals or clock hands. Cinematic live-action footage, subtle 35mm film grain, moody teal-and-amber grade. Full-frame 16:9 image, no letterbox or black bars. [0-8s] Wide establishing shot at dusk: a small wooden sailing ship with a single tattered sail pitches through heavy storm swells, rain and spray, a volcanic island with a glowing crater just visible on the horizon. Slow aerial drift forward toward the ship. [8-15s] Cut to the cramped wooden cabin inside the ship at night, lantern swinging: a weathered hand lifts the lid of a small iron-banded wooden box on a table, revealing the brass compass resting on a folded parchment map. Slow push-in. No dialogue. No music; only wind, rain, waves and creaking timbers.</p></details></div>
+<div class="card"><h2>2. s4-compass-r1 <span class="mut">6.0s · $0.427 · 32.0s · crop 1280:684:0:18 · audio mean -40.4 / max -11.1 dB</span></h2>
+<video controls playsinline preload="metadata" src="s4-compass-r1.mp4"></video>
+<img src="s4-compass-r1.jpg" alt="contact sheet s4-compass-r1" loading="lazy">
+<p class="note">鏡頭 #4，rep 1。盤面與參考圖一致，針擺動後指 W。極輕微黑邊（上下各 18 px）。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use (dial with compass rose, letters N E S W, degree ring, single blued-steel needle); the second image shows the shot's framing, lighting and the hand holding it: start from that framing. Do not add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. Full-frame 16:9 image, no letterbox or black bars. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.</p></details></div>
+<div class="card"><h2>3. s4-compass-r2 <span class="mut">6.0s · $0.426 · 31.9s · crop 1280:720:0:0 · audio mean -38.0 / max -7.0 dB</span></h2>
+<video controls playsinline preload="metadata" src="s4-compass-r2.mp4"></video>
+<img src="s4-compass-r2.jpg" alt="contact sheet s4-compass-r2" loading="lazy">
+<p class="note">鏡頭 #4，rep 2。構圖、手、光線與 rep 1 幾乎相同（兩支都從 compass-live 定裝圖的構圖起手），針同樣指 W。無黑邊。兩 reps 差異很小，代表「餵兩張參考圖」這條路在 720p 也穩。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is the exact compass to use (dial with compass rose, letters N E S W, degree ring, single blued-steel needle); the second image shows the shot's framing, lighting and the hand holding it: start from that framing. Do not add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. Full-frame 16:9 image, no letterbox or black bars. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.</p></details></div>
+<div class="card"><h2>4. s4-hunter-r1 <span class="mut">8.0s · $0.563 · 35.3s · crop 1280:720:0:0 · audio mean -30.7 / max -12.6 dB</span></h2>
+<video controls playsinline preload="metadata" src="s4-hunter-r1.mp4"></video>
+<img src="s4-hunter-r1.jpg" alt="contact sheet s4-hunter-r1" loading="lazy">
+<p class="note">鏡頭 #6。人物、背包＋側背袋、船、海岸與定裝圖一致；下船、走、停、回頭看鏡頭完整；最後三格的回頭特寫表情到位。無黑邊。</p>
+<details><summary>prompt</summary><p class="prompt">The first image is a style and character reference: match its look, the same woman (treasure hunter in her 30s, short dark hair, sun-worn linen shirt, leather satchel), the same volcanic shore and rowboat. Cinematic live-action footage, subtle 35mm film grain, moody teal-and-amber grade, shallow depth of field. Full-frame 16:9 image, no letterbox or black bars. One continuous handheld tracking shot: she steps out of the wooden rowboat onto wet black sand, takes three steps up the beach, then stops and glances back over her shoulder toward the camera, an antique brass compass in her hand. Waves break behind her, sea spray, wind in her hair. No cuts. No dialogue. No music; only wind, surf and footsteps.</p></details></div>
+</body></html>

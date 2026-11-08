@@ -1,0 +1,117 @@
+[
+ {
+  "id": "s1-hunter-ref",
+  "run_id": "O1/omni_12-s1-hunter-ref-r1-402779",
+  "dur": 8.043,
+  "cost": 0.1972,
+  "latency": 35.1,
+  "refs": [
+   "review/opening/s0/style-live.jpg"
+  ],
+  "text": "The first image is a style and character reference: match its look, the same woman (treasure hunter in her 30s, short dark hair, sun-worn linen shirt, leather satchel), the same volcanic shore and rowboat. Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade, shallow depth of field. One continuous handheld tracking shot: she steps out of the wooden rowboat onto wet black sand, takes three steps up the beach, then stops and glances back over her shoulder toward the camera, an antique brass compass in her hand. Waves break behind her, sea spray, wind in her hair. No cuts. No dialogue. No music; only wind, surf and footsteps.",
+  "vol": {
+   "mean": -27.1,
+   "max": -10.9
+  }
+ },
+ {
+  "id": "s1-hunter-noref",
+  "run_id": "O1/omni_12-s1-hunter-noref-r1-fc15d1",
+  "dur": 8.043,
+  "cost": 0.1977,
+  "latency": 22.5,
+  "refs": [],
+  "text": "Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade, shallow depth of field, golden-hour light breaking through storm clouds. One continuous handheld tracking shot: a treasure hunter in her 30s, short dark hair, sun-worn linen shirt, leather satchel, steps out of a wooden rowboat onto the wet black sand of a wild volcanic island shore, takes three steps up the beach, then stops and glances back over her shoulder toward the camera, an antique brass compass in her hand. Waves break behind her, sea spray, wind in her hair. No cuts. No dialogue. No music; only wind, surf and footsteps.",
+  "vol": {
+   "mean": -27.7,
+   "max": -9.0
+  }
+ },
+ {
+  "id": "s2-compass-text",
+  "run_id": "O1/omni_12-s2-compass-text-r1-6a1e07",
+  "dur": 6.037,
+  "cost": 0.1448,
+  "latency": 19.4,
+  "refs": [],
+  "text": "Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. Extreme close-up of an antique brass MAGNETIC COMPASS held open in a weathered hand. The dial is white enamel with a printed compass rose and the cardinal letters N, E, S, W and a degree ring. There is exactly ONE slender steel needle on a central pivot, blued steel on its north half. NO clock numerals, NO clock hands, NO Roman numerals, NO minute track. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.",
+  "vol": {
+   "mean": -43.5,
+   "max": -15.8
+  }
+ },
+ {
+  "id": "s2-compass-ref1",
+  "run_id": "O1/omni_12-s2-compass-ref1-r1-a3d0b8",
+  "dur": 6.037,
+  "cost": 0.146,
+  "latency": 19.8,
+  "refs": [
+   "review/opening/s0/compass-front.jpg"
+  ],
+  "text": "The first image is the exact compass to use: reproduce its dial (compass rose, letters N E S W, degree ring) and its single blued-steel needle; do not add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. Extreme close-up of this compass held open in a weathered hand. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.",
+  "vol": {
+   "mean": -42.0,
+   "max": -12.3
+  }
+ },
+ {
+  "id": "s2-compass-ref2",
+  "run_id": "O1/omni_12-s2-compass-ref2-r1-2be845",
+  "dur": 6.037,
+  "cost": 0.1473,
+  "latency": 19.8,
+  "refs": [
+   "review/opening/s0/compass-front.jpg",
+   "review/opening/s0/compass-live.jpg"
+  ],
+  "text": "The first image is the exact compass to use (dial with compass rose, letters N E S W, degree ring, single blued-steel needle); the second image shows the shot's framing, lighting and the hand holding it: start from that framing. Do not add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow depth of field. The needle swings left and right, slows, and settles pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a faint metallic tick.",
+  "vol": {
+   "mean": -40.3,
+   "max": -5.6
+  }
+ },
+ {
+  "id": "s3a-sea",
+  "run_id": "O1/omni_12-s3a-sea-r1-e0018a",
+  "dur": 8.043,
+  "cost": 0.1943,
+  "latency": 22.5,
+  "refs": [],
+  "text": "Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade. Wide establishing shot at dusk: a small wooden sailing ship with a single tattered sail pitches through heavy storm swells, rain and spray, a volcanic island with a glowing crater just visible on the horizon through breaking clouds. Slow aerial drift forward toward the ship. No cuts. No dialogue. No music; only wind, rain and waves.",
+  "vol": {
+   "mean": -20.8,
+   "max": -4.3
+  }
+ },
+ {
+  "id": "s3a-cabin",
+  "run_id": "O1/omni_12-s3a-cabin-r1-8f2522",
+  "dur": 6.037,
+  "cost": 0.147,
+  "latency": 21.9,
+  "refs": [
+   "review/opening/s0/compass-front.jpg"
+  ],
+  "text": "The first image is the exact compass to use; do not add clock numerals or clock hands. Cinematic live-action footage, 35mm film grain, warm swinging lantern light, shallow depth of field. Inside a cramped wooden ship's cabin at night, the hull creaking and tilting with the storm: a weathered hand lifts the lid of a small iron-banded wooden box on a table, revealing this brass compass resting on a folded parchment map. Slow push-in toward the box. No cuts. No dialogue. No music; only creaking timbers, muffled storm and rain.",
+  "vol": {
+   "mean": -23.5,
+   "max": -2.0
+  }
+ },
+ {
+  "id": "s3b-timecode",
+  "run_id": "O1/omni_12-s3b-timecode-r1-aea176",
+  "dur": 15.04,
+  "cost": 0.3553,
+  "latency": 38.1,
+  "refs": [
+   "review/opening/s0/compass-front.jpg"
+  ],
+  "text": "The first image is the exact compass to use; do not add clock numerals or clock hands. Cinematic live-action footage, anamorphic lens, subtle 35mm film grain, moody teal-and-amber grade. [0-8s] Wide establishing shot at dusk: a small wooden sailing ship with a single tattered sail pitches through heavy storm swells, rain and spray, a volcanic island with a glowing crater just visible on the horizon. Slow aerial drift forward toward the ship. [8-15s] Cut to the cramped wooden cabin inside the ship at night, lantern swinging: a weathered hand lifts the lid of a small iron-banded wooden box on a table, revealing the brass compass resting on a folded parchment map. Slow push-in. No dialogue. No music; only wind, rain, waves and creaking timbers.",
+  "vol": {
+   "mean": -21.0,
+   "max": -2.7
+  }
+ }
+]

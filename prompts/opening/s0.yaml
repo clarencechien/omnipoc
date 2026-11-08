@@ -1,0 +1,81 @@
+# S0 — reference / style frames for the treasure-hunt game title sequence. Model: gemini-3.1-flash-image (Nano Banana 2)
+version: s0-v1
+images:
+  # --- three style frames of the same beat (shot #6: the treasure hunter steps onto the island shore and looks back)
+  - id: style-live
+    aspect: "16:9"
+    size: 1K
+    text: >-
+      Cinematic live-action film still, anamorphic lens, 35mm film grain. A weathered treasure hunter in her 30s, sun-worn
+      linen shirt, leather satchel, short dark hair, steps from a wooden rowboat onto a wild volcanic island shore at golden hour
+      and glances back over her shoulder toward the camera. In her hand an antique brass magnetic compass. Storm clouds breaking
+      behind her, wet black sand, sea spray. Shallow depth of field, moody teal-and-amber grade. No text.
+  - id: style-3d
+    aspect: "16:9"
+    size: 1K
+    text: >-
+      High-end 3D animated feature film still, stylized but detailed, in the manner of a modern animated adventure movie
+      (subsurface skin, painterly textures, volumetric light). A treasure hunter in her 30s, sun-worn linen shirt, leather
+      satchel, short dark hair, steps from a wooden rowboat onto a wild volcanic island shore at golden hour and glances
+      back over her shoulder toward the camera. In her hand an antique brass magnetic compass. Storm clouds breaking behind
+      her, wet black sand, sea spray. Warm cinematic lighting. No text.
+  - id: style-2d
+    aspect: "16:9"
+    size: 1K
+    text: >-
+      2D hand-painted animation key frame, gouache and ink, visible brush texture, limited palette of deep teal, sand ochre
+      and brass gold, graphic shapes, slight paper grain. A treasure hunter in her 30s, sun-worn linen shirt, leather satchel,
+      short dark hair, steps from a wooden rowboat onto a wild volcanic island shore at golden hour and glances back over her
+      shoulder toward the camera. In her hand an antique brass magnetic compass. Storm clouds breaking behind her. No text.
+  # --- compass prop design (style-neutral, to be used as object reference)
+  - id: compass-front
+    aspect: "1:1"
+    size: 1K
+    text: >-
+      Product design reference sheet of a single antique brass MAGNETIC COMPASS, top-down view, centered on plain dark grey
+      background. Round brass case with a hinged lid open flat, glass face, white enamel dial printed with a 16-point compass
+      rose and the cardinal letters N, E, S, W in black serif, degree ticks around the rim. ONE slender steel needle, blued
+      steel on the north half, bright steel on the south half, pivoting on a central brass pin. NO clock numerals, NO clock
+      hands, NO Roman numerals, NO minute track. Scratched, patinated brass. Studio lighting, sharp focus. No text other than N E S W.
+  - id: compass-angle
+    aspect: "1:1"
+    size: 1K
+    text: >-
+      The same antique brass magnetic compass as the reference image, now seen from a 3/4 angle resting on a weathered
+      parchment map, lid open, glass catching a warm highlight. Same white enamel dial with compass rose and letters N E S W,
+      same single blued-steel needle. NO clock numerals, NO clock hands. Shallow depth of field. No text other than N E S W.
+    refs: [runs/O0/_compass-front.jpg]
+  # --- compass close-up in each of the three styles (how each style renders the hero prop)
+  - id: compass-live
+    aspect: "16:9"
+    size: 1K
+    text: >-
+      Cinematic live-action macro film still, 35mm film grain. Extreme close-up of the antique brass magnetic compass from
+      the reference image held in a weathered hand, lid open, the single blued-steel needle swinging. Dial shows compass rose
+      and letters N E S W only. NO clock numerals, NO clock hands. Golden hour rim light, shallow depth of field. No text.
+    refs: [runs/O0/_compass-front.jpg]
+  - id: compass-3d
+    aspect: "16:9"
+    size: 1K
+    text: >-
+      High-end 3D animated feature film still, stylized but detailed. Extreme close-up of the antique brass magnetic compass
+      from the reference image held in a hand, lid open, the single blued-steel needle swinging. Dial shows compass rose and
+      letters N E S W only. NO clock numerals, NO clock hands. Warm volumetric light, shallow depth of field. No text.
+    refs: [runs/O0/_compass-front.jpg]
+  - id: compass-2d
+    aspect: "16:9"
+    size: 1K
+    text: >-
+      2D hand-painted animation key frame, gouache and ink, teal / ochre / brass palette, paper grain. Extreme close-up of
+      the antique brass magnetic compass from the reference image held in a hand, lid open, single blued-steel needle. Dial
+      shows compass rose and letters N E S W only. NO clock numerals, NO clock hands. No text.
+    refs: [runs/O0/_compass-front.jpg]
+  # --- the treasure map (for the Ken Burns segment)
+  - id: map
+    aspect: "16:9"
+    size: 2K
+    text: >-
+      An old hand-drawn treasure map on aged, stained parchment, seen flat from above, filling the frame. Ink coastline of a
+      volcanic island, a winding dotted route, a compass rose in one corner, small sea-monster and sailing-ship illustrations,
+      faint latitude lines, a red X near a cove. Burnt edges, wax stain, fold creases. Warm candle-lit tone. Do not write any
+      real words; use illegible scribbles for place names.

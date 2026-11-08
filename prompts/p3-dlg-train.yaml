@@ -1,0 +1,4 @@
+id: dlg-train-v1
+type: dialogue + native audio (RESERVED, not in plan option 1)
+source: GLBGPT 'AI Video Prompt Adherence Comparison', Prompt 4
+text: Inside a quiet train compartment, a woman says, "We missed the last stop." A man across from her replies, "Then we ride to the end." Keep the two voices distinct, synchronize each line to the correct speaker, include subtle train ambience and wheel sounds, and do not add music.

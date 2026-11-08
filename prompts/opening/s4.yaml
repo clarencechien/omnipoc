@@ -1,0 +1,36 @@
+# S4 — 720p finals. Decisions from S1–S3: always use reference images; compass = ref2 approach; sea+cabin = one 15 s timecode clip.
+# Added to every prompt: "Full-frame 16:9 image, no letterbox or black bars." (4 of 8 drafts had model-added letterboxing.)
+version: s4-v1
+videos:
+  - id: s4-sea-cabin
+    duration: 15
+    text: >-
+      The first image is the exact compass to use; do not add clock numerals or clock hands. Cinematic live-action footage,
+      subtle 35mm film grain, moody teal-and-amber grade. Full-frame 16:9 image, no letterbox or black bars.
+      [0-8s] Wide establishing shot at dusk: a small wooden sailing ship with a single tattered sail pitches through heavy
+      storm swells, rain and spray, a volcanic island with a glowing crater just visible on the horizon. Slow aerial drift
+      forward toward the ship.
+      [8-15s] Cut to the cramped wooden cabin inside the ship at night, lantern swinging: a weathered hand lifts the lid of a
+      small iron-banded wooden box on a table, revealing the brass compass resting on a folded parchment map. Slow push-in.
+      No dialogue. No music; only wind, rain, waves and creaking timbers.
+    refs: [review/opening/s0/compass-front.jpg]
+  - id: s4-compass
+    duration: 6
+    text: >-
+      The first image is the exact compass to use (dial with compass rose, letters N E S W, degree ring, single blued-steel
+      needle); the second image shows the shot's framing, lighting and the hand holding it: start from that framing. Do not
+      add clock numerals or clock hands. Cinematic live-action macro footage, 35mm film grain, golden-hour rim light, shallow
+      depth of field. Full-frame 16:9 image, no letterbox or black bars. The needle swings left and right, slows, and settles
+      pointing firmly toward the letter W, not north. Locked-off camera, slow push-in. No dialogue. No music; only wind and a
+      faint metallic tick.
+    refs: [review/opening/s0/compass-front.jpg, review/opening/s0/compass-live.jpg]
+  - id: s4-hunter
+    duration: 8
+    text: >-
+      The first image is a style and character reference: match its look, the same woman (treasure hunter in her 30s, short
+      dark hair, sun-worn linen shirt, leather satchel), the same volcanic shore and rowboat. Cinematic live-action footage,
+      subtle 35mm film grain, moody teal-and-amber grade, shallow depth of field. Full-frame 16:9 image, no letterbox or
+      black bars. One continuous handheld tracking shot: she steps out of the wooden rowboat onto wet black sand, takes three
+      steps up the beach, then stops and glances back over her shoulder toward the camera, an antique brass compass in her
+      hand. Waves break behind her, sea spray, wind in her hair. No cuts. No dialogue. No music; only wind, surf and footsteps.
+    refs: [review/opening/s0/style-live.jpg]

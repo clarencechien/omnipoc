@@ -1,0 +1,22 @@
+{
+ "A": {
+  "model": "gemini-omni-1.2-flash",
+  "prompt_id": "cine-redcoat-v1",
+  "run_id": "M1/omni_12-cine-redcoat-v1-r1-9ab089"
+ },
+ "B": {
+  "model": "grok-imagine-video-1.5",
+  "prompt_id": "cine-redcoat-v1",
+  "run_id": "M1/grok_15-cine-redcoat-v1-r1-000135"
+ },
+ "C": {
+  "model": "grok-imagine-video-1.5",
+  "prompt_id": "obj-compass-v1",
+  "run_id": "M1/grok_15-obj-compass-v1-r1-77db01"
+ },
+ "D": {
+  "model": "gemini-omni-1.2-flash",
+  "prompt_id": "obj-compass-v1",
+  "run_id": "M1/omni_12-obj-compass-v1-r1-1f8fa1"
+ }
+}

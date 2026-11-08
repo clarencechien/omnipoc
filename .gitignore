@@ -1,11 +1,11 @@
 # secrets
 .env
 *.key
-# generated media (keep ledger + meta.json)
-runs/**/*.mp4
-runs/**/*.webm
-runs/**/*.png
-runs/**/*.jpg
+# generated media: originals ARE committed (small project, ephemeral sandbox). Re-enable these if the repo grows.
+# runs/**/*.mp4
+# runs/**/*.webm
+# runs/**/*.png
+# runs/**/*.jpg
 assets/**/*.mp4
 assets/**/*.mov
 # python

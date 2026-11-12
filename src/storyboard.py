@@ -78,9 +78,12 @@ def main(path):
             return "the approved art style: sculpted matte clay figurines placed in a painted storybook set"
         return "the location, lighting and art direction for this scene: match this place"
 
+    FIRST = ("the exact first frame of this shot: begin the video from this image and keep its composition, characters, "
+             "lighting and clay storybook style")
     def full_prompt(sh):
         lines, present = [], []
-        parts = [f"image {i} shows {describe(refs[r])}" for i, r in enumerate(sh["refs"], 1)]
+        parts = [f"image {i} shows {FIRST if (i == 1 and sh.get('first_frame')) else describe(refs[r])}"
+                 for i, r in enumerate(sh["refs"], 1)]
         if parts:
             lines.append("Reference images, in order: " + "; ".join(parts) + ".")
         for r in sh["refs"]:
@@ -110,8 +113,8 @@ def main(path):
         if x.get("path"): d["out"] = x["path"]
         return d
     gen_refs = [img_spec(r) for r in sb["refs"] if r.get("status") == "todo"]
-    still_specs = [img_spec(s) for s in sb["stills"]]
-    for r in sb["refs"]:
+    still_specs = [img_spec(s) for s in sb["stills"] if s.get("status") != "done"]
+    for r in list(sb["refs"]) + list(sb["stills"]):
         if r.get("status") == "done" and not os.path.exists(os.path.join(ROOT, r["path"])):
             fail(f"ref {r['id']} marked done but {r['path']} is missing")
 
@@ -123,6 +126,10 @@ def main(path):
     dump("videos.yaml", "videos", videos)
     dump("refs.yaml", "images", gen_refs)
     dump("stills.yaml", "images", still_specs)
+    test = sb.get("test_shots")
+    if test:
+        tv = [v for v in videos if v["id"] in test["ids"]]
+        dump("videos-test.yaml", "videos", tv, f"# Test batch {test['exp']} at {test['res']}. Run only after Clarence says go.\n")
 
     # ---------- cost ----------
     d, f = meta["drafts_per_shot"], meta["finals_per_shot"]
@@ -215,7 +222,11 @@ def main(path):
                 w("```text\n" + full_prompt(sh) + "\n```\n</details>\n")
             elif sh["kind"] == "still":
                 w("<details><summary>Nano Banana prompt</summary>\n")
-                w("```text\n" + " ".join(stills[sh["id"]]["prompt"].split()) + "\n```\n</details>\n")
+                st = stills[sh["id"]]
+                if st.get("prompt"):
+                    w("```text\n" + " ".join(st["prompt"].split()) + "\n```\n</details>\n")
+                else:
+                    w(f"已完成：`{st['path']}`\n</details>\n")
         layer = []
         for v in seg.get("vo", []):
             layer.append(f"| {v['tc']} | 旁白／口白（{v['speaker']}） | {v['text']} | TTS 語氣：{v['style']} |")
@@ -255,7 +266,20 @@ def main(path):
             w(f"| {c['tc']} | {c['text']} | {c['where']} |")
     w("")
 
-    w("## 5. 風險\n")
+    if test:
+        w("## 5. 360p 測試鏡頭（等 Clarence 說 go）\n")
+        w("| 鏡頭 | 秒數 | 測什麼 | 第一格 | 估價 |\n|---|---|---|---|---|")
+        tot_s = 0
+        for seg in sb["segments"]:
+            for sh in seg["shots"]:
+                if sh["id"] in test["ids"]:
+                    tot_s += sh["duration"]
+                    ff = f"`{refs[sh['refs'][0]]['path']}`" if sh.get("first_frame") else "—"
+                    w(f"| `{sh['id']}` | {sh['duration']} | {test['why'].get(sh['id'], '')} | {ff} | ${sh['duration']*P360:.2f} |")
+        w(f"| **合計** | {tot_s} | | | **${tot_s*P360:.2f}** |\n")
+        w(f"單價 ${P360}/s 是我們帳本裡 360p 的實測值（含 thought 與參考圖輸入 token）。同四支升 720p 定稿約 ${tot_s*P720:.2f}。")
+        w(f"跑法：`python3 src/run.py --exp {test['exp']} --model omni_12 --spec prompts/{name}/videos-test.yaml --res {test['res']}`\n")
+    w("## 6. 風險\n")
     w("- **兩個角色 × " + str(n_omni) + " 支的一致性還沒驗證。** 靜態參考圖已經一致；影片端只證明過 1 個角色加 1 個道具。建議先用 360p 跑 3–4 支雙人鏡頭確認。")
     w("- **風格漂移。** 只拿空景當風格參考時，人物會變成平面插畫；每支都要附 `style-clay`（陶土人物在場景裡的畫面）。")
     w("- **畫面中文字。** Omni 會把招牌、證書、校名寫錯；prompt 已要求無字，所有中文字一律後製。")
@@ -263,7 +287,7 @@ def main(path):
     w("- **Letterbox 黑邊。** prompt 禁止無效，定稿每支都要 `cropdetect`，有黑邊就裁切或全片統一加黑邊。")
     w("- **分割畫面裁切。** 第 2 段兩支要裁成窄條，動作必須留在中間三分之一。\n")
 
-    w("## 6. 待決問題\n")
+    w("## 7. 待決問題\n")
     for q in sb["open_questions"]:
         w(f"- {q}")
     w("")

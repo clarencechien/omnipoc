@@ -1,4 +1,4 @@
-# 分鏡完整描述 — 兩條河之間（暫名）（v2）
+# 分鏡完整描述 — 兩條河之間（暫名）（v3）
 
 > 由 `src/storyboard.py` 從 `prompts/wedding/storyboard.yaml` 產生，改內容請改 YAML 後重跑。
 > 原始分鏡由 Clarence 提供；本文件補上每個鏡頭的製作方式、Omni prompt、參考圖、聲音與字幕時間。
@@ -8,9 +8,9 @@
 | 項目 | 數值 |
 |---|---|
 | 片長 | 300 秒，14 段 |
-| Omni 影片鏡頭 | 24 支，共 267 秒（單支 3–15 秒） |
-| 圖片鏡頭 | 3 張（Ken Burns／合成底圖） |
-| 參考圖 | 14 張（已完成 10、待生成 4） |
+| Omni 影片鏡頭 | 25 支，共 272 秒（單支 3–15 秒） |
+| 圖片鏡頭 | 0 張（Ken Burns／合成底圖） |
+| 參考圖 | 23 張（已完成 23、待生成 0） |
 | 旁白／口白 | 7 句，TTS（gemini-3.8-flash-tts） |
 | 配樂 | 5 段 Lyria |
 | 輸出 | 16:9，草稿 360p，定稿 720p |
@@ -19,13 +19,13 @@
 
 | 項目 | 算法 | 費用 |
 |---|---|---|
-| Omni 草稿 | 267 秒 × 2 支 × $0.0243/s（360p，measured） | $12.98 |
-| Omni 定稿 720p | 267 秒 × 1.2 支 × $0.0707/s（measured） | $22.65 |
-| 參考圖＋圖片鏡頭 | 7 張 × 2 次 × $0.0673 | $0.94 |
-| TTS | 約 100 字 ÷ 4.5 字/秒 × 3 次 | $0.01 |
+| Omni 草稿 | 272 秒 × 2 支 × $0.0243/s（360p，measured） | $13.22 |
+| Omni 定稿 720p | 272 秒 × 1.2 支 × $0.0707/s（measured） | $23.08 |
+| 參考圖＋圖片鏡頭 | 0 張 × 2 次 × $0.0673 | $0.00 |
+| TTS | 約 141 字 ÷ 4.5 字/秒 × 3 次 | $0.02 |
 | 配樂 | Lyria × 2 次 | $0.72 |
-| **合計（720p 定稿＋本機放大到 1080p）** | | **$37.31** |
-| 合計（改用 Google 1080p 定稿，$0.1061/s） | | $48.65 |
+| **合計（720p 定稿＋本機放大到 1080p）** | | **$37.04** |
+| 合計（改用 Google 1080p 定稿，$0.1061/s） | | $48.59 |
 
 估價假設每支影片 2 支 360p 草稿、平均 1.2 支定稿；草稿和定稿是分開生成的兩支，不是把草稿放大。單價取自 `ledger/spend.jsonl` 的實測。
 
@@ -72,15 +72,24 @@ Animated 3D storybook short film in the approved style of The Playbill: the coup
 | `couple-casual` | 雙人 | 雙人便服全身 | `refs/wedding/couple-casual.jpg` | 已完成 |
 | `couple-wedding` | 雙人 | 雙人登記日服裝（playbill 定案圖） | `refs/wedding/source/playbill-couple-4heads.png` | 已完成 |
 | `style-clay` | 風格 | 風格錨點（playbill 謝幕畫面：陶土人物在繪本場景裡） | `refs/wedding/source/playbill-finale-clay-in-scene.png` | 已完成 |
-| `loc-bridge` | 地點 | 新北大橋日出（由 Commons 照片轉繪） | `refs/wedding/kf01-bridge.jpg` | 已完成 |
-| `loc-bopiliao` | 地點 | 剝皮寮紅磚騎樓（由 Commons 照片轉繪） | `refs/wedding/kf06-bopiliao-v2.jpg` | 已完成 |
-| `loc-guesthouse` | 地點 | 台北賓館夜（由 Commons 照片轉繪） | `refs/wedding/kf08-guesthouse-v2.jpg` | 已完成 |
-| `loc-sanheyuan` | 地點 | 雲林三合院（由 Commons 照片轉繪） | `refs/wedding/kf12-sanheyuan.jpg` | 已完成 |
-| `loc-4444` | 地點 | 四四南村（playbill 繪本主視覺） | `refs/wedding/source/playbill-nancun-hero.png` | 已完成 |
-| `loc-park4` | 地點 | 永和四號公園噴水池（Commons 找不到照片，生成） | `refs/wedding/kf10-park4.jpg` | 待生成 |
-| `loc-riverside` | 地點 | 永和河濱公園（Commons 只找到快速道路照片，生成） | `refs/wedding/kf11-riverside.jpg` | 待生成 |
-| `loc-school` | 地點 | 男主母校校門（校名未知，生成通用校門） | `refs/wedding/kf12b-school.jpg` | 待生成 |
-| `loc-paddy` | 地點 | 雲林稻田晨光（由 Commons 照片轉繪） | `refs/wedding/kf14-paddy.jpg` | 待生成 |
+| `kf01` | 地點 | 第 1、3 段・新北大橋日出（Commons 照片轉繪） | `refs/wedding/kf01-bridge.jpg` | 已完成 |
+| `kf02a` | 地點 | 第 2 段・她的永和小公寓，窗外 101 | `refs/wedding/kf02a-she-home.jpg` | 已完成 |
+| `kf02b` | 地點 | 第 2 段・他的三重宿舍 | `refs/wedding/kf02b-he-dorm.jpg` | 已完成 |
+| `kf03` | 地點 | 第 3 段・兩輛公車在橋上交會 | `refs/wedding/kf03-bus-v2.jpg` | 已完成 |
+| `kf05` | 地點 | 第 5 段・日式蛋糕店 | `refs/wedding/kf05-cake.jpg` | 已完成 |
+| `kf06` | 地點 | 第 6 段・剝皮寮紅磚騎樓（Commons 照片轉繪） | `refs/wedding/kf06-bopiliao-v2.jpg` | 已完成 |
+| `kf07` | 地點 | 第 7 段・迴轉壽司，她坐他腿上 | `refs/wedding/kf07-sushi-v2.jpg` | 已完成 |
+| `kf08` | 地點 | 第 8 段・台北賓館夜（Commons 照片轉繪） | `refs/wedding/kf08-guesthouse-v2.jpg` | 已完成 |
+| `kf09a` | 地點 | 第 9 段・戲院舞台燈亮 | `refs/wedding/kf09a-theatre.jpg` | 已完成 |
+| `kf09b` | 地點 | 第 9 段・四四南村黃昏背靠背（Clarence 提供照片轉繪） | `refs/wedding/kf09b-4444.jpg` | 已完成 |
+| `kf10` | 地點 | 第 10 段・四號公園噴水池夜（Commons 照片轉繪） | `refs/wedding/kf10-park4.jpg` | 已完成 |
+| `kf11` | 地點 | 第 11 段・永和河濱雙載 | `refs/wedding/kf11-riverside.jpg` | 已完成 |
+| `kf12a` | 地點 | 第 12 段・雲林透天老家（Clarence 提供街景轉繪） | `refs/wedding/kf12a-home.jpg` | 已完成 |
+| `kf12b` | 地點 | 第 12 段・雲林科技大學校門（Commons 照片轉繪） | `refs/wedding/kf12b-yuntech.jpg` | 已完成 |
+| `kf13a` | 地點 | 第 13 段・戶政事務所櫃檯 | `refs/wedding/kf13a-registry.jpg` | 已完成 |
+| `kf13b` | 地點 | 第 13 段・回到四四南村舉證書，背景 101 | `refs/wedding/kf13b-4444-cert.jpg` | 已完成 |
+| `kf14a` | 地點 | 第 14 段・永和河堤日落 | `refs/wedding/kf14a-levee.jpg` | 已完成 |
+| `kf14b` | 地點 | 第 14 段・雲林稻田晨光（Commons 照片轉繪） | `refs/wedding/kf14b-paddy.jpg` | 已完成 |
 
 地點照片來源與授權見 `refs/wedding/ATTRIBUTION.md`。
 
@@ -95,7 +104,7 @@ Animated 3D storybook short film in the approved style of The Playbill: the coup
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w01-bridge` | Omni 影片 | 15 | 0–15 全段；0–2 秒由黑淡入 | `loc-bridge`, `style-clay` | $2.00 |
+| `w01-bridge` | Omni 影片 | 15 | 0–15 全段；0–2 秒由黑淡入 | `kf01`, `style-clay` | $2.00 |
 
 **`w01-bridge`**：日出航拍新北大橋，車流緩慢；後段鏡頭下搖到大漢溪水面，橋與朝霞的倒影。
 
@@ -122,16 +131,16 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w02a-she-ready` | Omni 影片 | 10 | 15–25 分割畫面左半（裁中間 640×720） | `she-sheet`, `style-clay` | $1.33 |
-| `w02b-he-leave` | Omni 影片 | 10 | 15–25 分割畫面右半（裁中間 640×720） | `he-sheet`, `style-clay` | $1.33 |
-| `w02c-she-101` | Omni 影片 | 8 | 25–27 中線滑開轉場、27–35 全畫面 | `she-sheet`, `style-clay` | $1.07 |
+| `w02a-she-ready` | Omni 影片 | 10 | 15–25 分割畫面左半（裁中間 640×720） | `kf02a`, `she-sheet`, `style-clay` | $1.33 |
+| `w02b-he-leave` | Omni 影片 | 10 | 15–25 分割畫面右半（裁中間 640×720） | `kf02b`, `he-sheet`, `style-clay` | $1.33 |
+| `w02c-she-101` | Omni 影片 | 8 | 25–27 中線滑開轉場、27–35 全畫面 | `kf02a`, `she-sheet`, `style-clay` | $1.07 |
 
 **`w02a-she-ready`**：永和小公寓清晨，她綁頭髮、檢查包包、從架上拿鑰匙；廚房傳來鍋鏟聲。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Early morning in a small, cozy apartment in Yonghe. The woman from the reference images, in her casual outfit, ties her hair back, checks her tan crossbody bag and picks up her keys from a shelf. Handheld follow shot. Keep her and all of her action inside the central third of the frame at all times, because the frame will be cropped to a narrow vertical strip. Audio: only ambient sound — a frying pan sizzling and a spatula scraping in the kitchen nearby, keys jingling. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Early morning in a small, cozy apartment in Yonghe. The woman from the reference images, in her casual outfit, ties her hair back, checks her tan crossbody bag and picks up her keys from a shelf. Handheld follow shot. Keep her and all of her action inside the central third of the frame at all times, because the frame will be cropped to a narrow vertical strip. Audio: only ambient sound — a frying pan sizzling and a spatula scraping in the kitchen nearby, keys jingling. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -140,7 +149,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Early morning in a simple shared university dormitory room in Sanchong. The man from the reference images swings his black backpack onto his shoulder, zips its front pocket shut, opens the door and steps out into the corridor. Handheld follow shot. Keep him and all of his action inside the central third of the frame at all times, because the frame will be cropped to a narrow vertical strip. Audio: only ambient sound — a zipper closing, the door latch, footsteps, distant scooters outside. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Early morning in a simple shared university dormitory room in Sanchong. The man from the reference images swings his black backpack onto his shoulder, zips its front pocket shut, opens the door and steps out into the corridor. Handheld follow shot. Keep him and all of his action inside the central third of the frame at all times, because the frame will be cropped to a narrow vertical strip. Audio: only ambient sound — a zipper closing, the door latch, footsteps, distant scooters outside. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -149,7 +158,7 @@ Reference images, in order: image 1 shows the man's character model sheet (front
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. The woman from the reference images steps to her apartment window; far away through the glass, Taipei 101 rises above the city in soft morning haze. She pauses and smiles softly. Slow push-in from behind her shoulder around to her smiling profile. Audio: only ambient sound — quiet room tone, faint city outside. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. The woman from the reference images steps to her apartment window; far away through the glass, Taipei 101 rises above the city in soft morning haze. She pauses and smiles softly. Slow push-in from behind her shoulder around to her smiling profile. Audio: only ambient sound — quiet room tone, faint city outside. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -172,7 +181,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w03-buses` | Omni 影片 | 15 | 35–50 全段 | `she-sheet`, `he-sheet`, `loc-bridge`, `style-clay` | $2.00 |
+| `w03-buses` | Omni 影片 | 15 | 35–50 全段 | `kf03`, `she-sheet`, `he-sheet`, `style-clay` | $2.00 |
 | `w03-freeze` | 定格（ffmpeg） | 5 | 50–55 取 w03 最後一格定格 + 緩慢推近 | — | $0 |
 
 **`w03-buses`**：公車上橋→她在車窗邊→兩車在橋上交會、隔著兩層車窗四目相接→連跳河濱、自行車道、遠方另一座橋，停在 101。
@@ -180,7 +189,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-4s] Exterior, morning: a city bus drives up onto the long river bridge from the location reference, the river and riverside bike paths below, another bus approaching from the opposite direction. [4-8s] Inside the first bus: the woman sits by the window in morning light, watching the river; the camera pans slowly along the window. [8-11s] The two buses pass each other on the bridge; through two layers of bus windows, the woman and the man, who sits in the other bus, catch each other's eyes for a brief moment. [11-15s] Quick jump cuts seen through the bus window: the riverside park, cyclists on the bike path, another bridge in the distance, ending on a clear view of Taipei 101 on the skyline. Audio: only ambient sound — bus engine, air brakes hissing, soft city hum. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-4s] Exterior, morning: a city bus drives up onto the long river bridge from the location reference, the river and riverside bike paths below, another bus approaching from the opposite direction. [4-8s] Inside the first bus: the woman sits by the window in morning light, watching the river; the camera pans slowly along the window. [8-11s] The two buses pass each other on the bridge; through two layers of bus windows, the woman and the man, who sits in the other bus, catch each other's eyes for a brief moment. [11-15s] Quick jump cuts seen through the bus window: the riverside park, cyclists on the bike path, another bridge in the distance, ending on a clear view of Taipei 101 on the skyline. Audio: only ambient sound — bus engine, air brakes hissing, soft city hum. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -208,9 +217,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 <details><summary>Nano Banana prompt</summary>
 
-```text
-Close-up of the woman's hands (from the reference model sheet, same clay style as the style reference) holding a smartphone upright in a cozy room at night, warm lamp light. The phone screen faces the camera, is in sharp focus, and is completely blank, plain light grey, with no interface, no text and no icons. Background softly blurred. Warm matte clay and gouache storybook style, no text.
-```
+已完成：`refs/wedding/st-phone.jpg`
 </details>
 
 | 時碼 | 層 | 內容 | 說明 |
@@ -232,15 +239,15 @@ Close-up of the woman's hands (from the reference model sheet, same clay style a
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w05a-cake` | Omni 影片 | 12 | 70–82 | `she-sheet`, `he-sheet`, `style-clay` | $1.60 |
-| `w05b-cake-high` | Omni 影片 | 8 | 82–90 | `she-sheet`, `he-sheet`, `style-clay` | $1.07 |
+| `w05a-cake` | Omni 影片 | 12 | 70–82 | `kf05`, `she-sheet`, `he-sheet`, `style-clay` | $1.60 |
+| `w05b-cake-high` | Omni 影片 | 8 | 82–90 | `kf05`, `she-sheet`, `he-sheet`, `style-clay` | $1.07 |
 
 **`w05a-cake`**：叉子切草莓鮮奶油蛋糕的微距→平順拉遠，兩人在窗邊小木桌對坐，有點害羞地笑。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-5s] Macro close-up: a fork slices into a Japanese strawberry shortcake, soft sponge, whipped cream and a glossy strawberry. [5-12s] The camera pulls back smoothly in one continuous move to reveal the woman and the man sitting across from each other at a small wooden table by the window of a bright, minimal Japanese-style cake shop, both a little shy, smiling at each other. Audio: only ambient sound — café chatter murmuring, cups and saucers clinking, a soft espresso machine. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-5s] Macro close-up: a fork slices into a Japanese strawberry shortcake, soft sponge, whipped cream and a glossy strawberry. [5-12s] The camera pulls back smoothly in one continuous move to reveal the woman and the man sitting across from each other at a small wooden table by the window of a bright, minimal Japanese-style cake shop, both a little shy, smiling at each other. Audio: only ambient sound — café chatter murmuring, cups and saucers clinking, a soft espresso machine. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -249,7 +256,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. The camera slides sideways and rises to a 45-degree high angle above the small table in the Japanese cake shop; the woman and the man share the strawberry shortcake, laughing easily together. Audio: only ambient sound — café chatter murmuring, cups and saucers clinking. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. The camera slides sideways and rises to a 45-degree high angle above the small table in the Japanese cake shop; the woman and the man share the strawberry shortcake, laughing easily together. Audio: only ambient sound — café chatter murmuring, cups and saucers clinking. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -267,7 +274,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w06-bopiliao` | Omni 影片 | 15 | 90–105 | `she-sheet`, `he-sheet`, `loc-bopiliao`, `style-clay` | $2.00 |
+| `w06-bopiliao` | Omni 影片 | 15 | 90–105 | `kf06`, `she-sheet`, `he-sheet`, `style-clay` | $2.00 |
 | `w06-polaroid` | 定格（ffmpeg） | 5 | 105–110 定格→加白框、微傾、陰影變拍立得，快門聲 | — | $0 |
 
 **`w06-bopiliao`**：午後紅磚騎樓巷，兩人背對鏡頭並肩慢走、逆光成剪影、邊走邊聊；手持從後跟拍。
@@ -275,7 +282,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Late afternoon in the old red-brick arcade street from the location reference. The woman and the man walk slowly side by side away from the camera toward the low sun, backlit into near-silhouettes, talking and gesturing as they go. Handheld follow shot from behind. Audio: only ambient sound — footsteps on brick, distant city murmur, a bicycle bell far away. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the exact first frame of this shot: begin the video from this image and keep its composition, characters, lighting and clay storybook style; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Late afternoon in the old red-brick arcade street from the location reference. The woman and the man walk slowly side by side away from the camera toward the low sun, backlit into near-silhouettes, talking and gesturing as they go. Handheld follow shot from behind. Audio: only ambient sound — footsteps on brick, distant city murmur, a bicycle bell far away. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -296,15 +303,15 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w07a-sushi` | Omni 影片 | 10 | 110–120 | `she-sheet`, `he-sheet`, `style-clay` | $1.33 |
-| `w07b-blush` | Omni 影片 | 10 | 120–130 | `she-sheet`, `style-clay` | $1.33 |
+| `w07a-sushi` | Omni 影片 | 10 | 110–120 | `kf07`, `she-sheet`, `he-sheet`, `style-clay` | $1.33 |
+| `w07b-blush` | Omni 影片 | 10 | 120–130 | `kf07`, `she-sheet`, `style-clay` | $1.33 |
 
 **`w07a-sushi`**：午餐尖峰，吧檯只剩一張椅子，他坐下拍拍大腿，她猶豫一下坐上去，又窘又笑；壽司盤從面前滑過。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. A busy conveyor-belt sushi bar in Sanchong at lunchtime. Every stool along the counter is taken except one. The man sits down on it, laughs and pats his lap; the woman hesitates, then sits on his lap, embarrassed and smiling, as plates of sushi glide past on the belt in front of them. Medium two-shot from across the belt. Audio: only ambient sound — restaurant buzz, the conveyor belt clattering softly, plates clinking. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. A busy conveyor-belt sushi bar in Sanchong at lunchtime. Every stool along the counter is taken except one. The man sits down on it, laughs and pats his lap; the woman hesitates, then sits on his lap, embarrassed and smiling, as plates of sushi glide past on the belt in front of them. Medium two-shot from across the belt. Audio: only ambient sound — restaurant buzz, the conveyor belt clattering softly, plates clinking. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -313,7 +320,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Extreme slow motion, close-up of the woman's face as she blushes and looks down, then lifts her eyes with a shy smile; warm light, the conveyor belt softly blurred behind her. Audio: only ambient sound — muffled restaurant buzz. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Extreme slow motion, close-up of the woman's face as she blushes and looks down, then lifts her eyes with a shy smile; warm light, the conveyor belt softly blurred behind her. Audio: only ambient sound — muffled restaurant buzz. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -327,29 +334,29 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 - **原分鏡畫面**：台北賓館外夜色：兩人並肩而行，男方小指碰觸→牽手成功
 - **劇情／字幕／旁白**：男方旁白「原來手心的溫度，是這樣的剛好。」
-- **鏡頭運動與轉場**：移動長鏡頭→鏡頭上移對剪塔尖
+- **鏡頭運動與轉場**：移動長鏡頭→牽手特寫→鏡頭從牽著的手升起，停在台北賓館亮燈的屋頂（原「塔尖」改為台北賓館本身）
 - **音樂／環境音**：弦樂再次漸起
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w08-guesthouse` | Omni 影片 | 15 | 130–145 | `she-sheet`, `he-sheet`, `loc-guesthouse`, `style-clay` | $2.00 |
-| `st-tower` | 圖片（Ken Burns） | 5 | 145–150 對剪塔尖，慢速上推 | — | $0.13 |
+| `w08a-guesthouse` | Omni 影片 | 12 | 130–142 | `kf08`, `she-sheet`, `he-sheet`, `style-clay` | $1.60 |
+| `w08b-guesthouse-rise` | Omni 影片 | 8 | 142–150 | `kf08`, `she-sheet`, `he-sheet`, `style-clay` | $1.07 |
 
-**`w08-guesthouse`**：夜裡沿台北賓館鐵欄外的人行道並肩走（側面長鏡頭）→手部特寫：小指碰到、牽起→鏡頭從牽著的手上搖到夜空。
+**`w08a-guesthouse`**：沿台北賓館鐵欄外的人行道並肩走（側面跟拍）→ 手部特寫：他的小指碰到她的，猶豫一下，牽起來。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-8s] Night, outside the ornate white mansion behind its black iron fence from the location reference: the woman and the man walk side by side along the tree-lined sidewalk; a long, smooth tracking shot from the side. [8-12s] Close-up of their hands swinging between them: his little finger brushes hers, hesitates, then their hands clasp. [12-15s] The camera tilts up from their joined hands to the treetops and the night sky. Audio: only ambient sound — quiet night traffic far away, footsteps, leaves rustling. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the exact first frame of this shot: begin the video from this image and keep its composition, characters, lighting and clay storybook style; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-7s] Night, outside the ornate white mansion behind its black iron fence: the woman and the man walk slowly side by side along the lamp-lit sidewalk; a smooth side-on tracking shot moving with them. [7-12s] The camera eases down into a close-up of their hands swinging between them: his little finger brushes hers, hesitates, then their hands clasp and hold. Audio: only ambient sound — quiet night street far away, footsteps on stone, leaves rustling. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
-**`st-tower`**：塔尖夜景照片做 Ken Burns。
+**`w08b-guesthouse-rise`**：從牽著的手開始，鏡頭慢慢升起後退，兩人變小，停在台北賓館亮燈的馬薩式屋頂與星空。
 
-<details><summary>Nano Banana prompt</summary>
+<details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Low-angle night view of the illuminated central tower of the red-brick Presidential Office Building in Taipei, deep blue night sky, in the warm matte clay and gouache storybook style of the reference, no readable text.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Start on a close-up of the couple's joined hands, then the camera slowly cranes up and pulls back in one continuous move: the two of them become small on the sidewalk in front of the iron fence, and the frame settles on the softly glowing mansard roof and dormer windows of the white mansion against a deep blue starry sky. Audio: only ambient sound — a soft night breeze, distant city hum. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -369,16 +376,16 @@ Low-angle night view of the illuminated central tower of the red-brick President
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w09a-theatre` | Omni 影片 | 6 | 150–156 | `she-sheet`, `he-sheet`, `style-clay` | $0.80 |
-| `w09b-4444-wide` | Omni 影片 | 12 | 156–168（依鼓點切成 2–3 段） | `she-sheet`, `he-sheet`, `loc-4444`, `style-clay` | $1.60 |
-| `w09c-4444-close` | Omni 影片 | 12 | 168–180（依鼓點切） | `she-sheet`, `he-sheet`, `loc-4444`, `style-clay` | $1.60 |
+| `w09a-theatre` | Omni 影片 | 6 | 150–156 | `kf09a`, `she-sheet`, `he-sheet`, `style-clay` | $0.80 |
+| `w09b-4444-wide` | Omni 影片 | 12 | 156–168（依鼓點切成 2–3 段） | `kf09b`, `she-sheet`, `he-sheet`, `style-clay` | $1.60 |
+| `w09c-4444-close` | Omni 影片 | 12 | 168–180（依鼓點切） | `kf09b`, `she-sheet`, `he-sheet`, `style-clay` | $1.60 |
 
 **`w09a-theatre`**：全黑→舞台燈啪地亮起；從後方看兩人坐在觀眾席的剪影。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Inside a theatre: complete darkness, then the stage lights snap on and warm spotlights flood the stage. Seen from behind, the woman and the man sit side by side in the audience, silhouetted against the bright stage. Audio: only ambient sound — an audience hush, the clunk of stage lights switching on. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Inside a theatre: complete darkness, then the stage lights snap on and warm spotlights flood the stage. Seen from behind, the woman and the man sit side by side in the audience, silhouetted against the bright stage. Audio: only ambient sound — an audience hush, the clunk of stage lights switching on. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -387,7 +394,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Dusk at the old village houses and lawn from the location reference, Taipei 101 rising directly behind. The woman and the man sit back to back on the grass, laughing and leaning their weight against each other. Slow arc shot around them. Audio: only ambient sound — evening breeze, distant city, crickets starting. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Dusk at the old village houses and lawn from the location reference, Taipei 101 rising directly behind. The woman and the man sit back to back on the grass, laughing and leaning their weight against each other. Slow arc shot around them. Audio: only ambient sound — evening breeze, distant city, crickets starting. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -396,7 +403,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-4s] Close-up of the woman laughing, head tilted back against the man's shoulder, 101 softly out of focus behind. [4-8s] Close-up of the man laughing, eyes closed. [8-12s] Close-up of their shoulders and backs pressed together, her hand finding his on the grass. Audio: only ambient sound — evening breeze, crickets. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. [0-4s] Close-up of the woman laughing, head tilted back against the man's shoulder, 101 softly out of focus behind. [4-8s] Close-up of the man laughing, eyes closed. [8-12s] Close-up of their shoulders and backs pressed together, her hand finding his on the grass. Audio: only ambient sound — evening breeze, crickets. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -416,15 +423,15 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w10a-fountain` | Omni 影片 | 15 | 180–195 | `she-sheet`, `he-sheet`, `loc-park4`, `style-clay` | $2.00 |
-| `w10b-fireworks` | Omni 影片 | 10 | 195–205；最後一格閃白接下一段 | `she-sheet`, `he-sheet`, `style-clay` | $1.33 |
+| `w10a-fountain` | Omni 影片 | 15 | 180–195 | `kf10`, `she-sheet`, `he-sheet`, `style-clay` | $2.00 |
+| `w10b-fireworks` | Omni 影片 | 10 | 195–205；最後一格閃白接下一段 | `kf10`, `she-sheet`, `he-sheet`, `style-clay` | $1.33 |
 
-**`w10a-fountain`**：噴水池燈光前，他對她認真說話（大多從他肩後看她的反應），手持繞兩人一整圈；她掩嘴輕笑、點頭。
+**`w10a-fountain`**：噴水池燈光前，他認真看著她（不開口，告白由旁白式口白承接），手持繞兩人一整圈；她掩嘴笑、點頭。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Night in the neighborhood park from the location reference, the lit fountain shooting colored jets of water behind them. The man stands facing the woman and speaks to her earnestly; we mostly see him from behind his shoulder and see her reaction. The handheld camera slowly orbits a full 360 degrees around the two of them. She covers her mouth, laughs softly, then nods. Audio: only ambient sound — splashing fountain water, a quiet park at night. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the exact first frame of this shot: begin the video from this image and keep its composition, characters, lighting and clay storybook style; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Night at the park pond with the lit fountain. The man stands facing the woman and looks at her earnestly, mouth closed, as if his words are being heard in voice-over; she covers her mouth with one hand, smiling, then nods. The handheld camera slowly orbits a full 360 degrees around the two of them, keeping both in frame; their faces, glasses, hair and outfits stay identical from every angle, matching the front, three-quarter and back views of the model sheets. Audio: only ambient sound — splashing fountain water, a quiet park at night. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -433,17 +440,19 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. The woman nods with a teary smile and the two embrace; fireworks burst in the sky above the park, bright flashes lighting up their faces. In the final second a bright flash fills the whole frame with white. Audio: only ambient sound — fireworks booming and crackling, the fountain splashing. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. The woman nods with a teary smile and the two embrace; fireworks burst in the sky above the park, bright flashes lighting up their faces. In the final second a bright flash fills the whole frame with white. Audio: only ambient sound — fireworks booming and crackling, the fountain splashing. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
 | 時碼 | 層 | 內容 | 說明 |
 |---|---|---|---|
-| 186–196 | 旁白／口白（男主） | （告白台詞，待 Clarence 提供） | TTS 語氣：earnest, nervous, warm |
+| 183–196 | 旁白／口白（男主） | 如果把妳和我，連成一條線，我想再靠近一點，跨過這條線。如果把兩隻手，牽成一個圓，妳願不願意，讓我再勇敢一點——牽起這段緣？ | TTS 語氣：earnest, nervous, warm, unhurried |
 | 197–199 | 旁白／口白（女主） | <laugh> | TTS 語氣：soft laugh |
 | | 配樂 | M4 收成鋼琴＋弦樂 | |
 
-> ⚠️ 告白是正面說話的戲：TTS 對不上嘴型，所以構圖以他的肩後、她的反應為主。原分鏡沒寫台詞，需要補。
+> ⚠️ 告白詞依 Clarence 給的語境潤飾：「線」呼應開場的橋，「圓」接到牽手，最後一句改成問她，好接她點頭。約 51 字、約 12 秒。
+
+> ⚠️ Commons 的四號公園照片只看到水池，沒確認有音樂噴泉；參考圖在水池中加了噴泉。
 
 ### 11 · 205–225 秒 · 永和河濱・雙載
 
@@ -454,15 +463,15 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w11a-bike` | Omni 影片 | 12 | 205–217 | `she-sheet`, `he-sheet`, `loc-riverside`, `style-clay` | $1.60 |
-| `w11b-bike-away` | Omni 影片 | 8 | 217–225 | `she-sheet`, `he-sheet`, `loc-riverside`, `style-clay` | $1.07 |
+| `w11a-bike` | Omni 影片 | 12 | 205–217 | `kf11`, `she-sheet`, `he-sheet`, `style-clay` | $1.60 |
+| `w11b-bike-away` | Omni 影片 | 8 | 217–225 | `kf11`, `she-sheet`, `he-sheet`, `style-clay` | $1.07 |
 
 **`w11a-bike`**：鏡頭穿過前景的高草，出來後跟著他們：他騎車、她側坐後座扶著他的腰，頭髮被風吹起；對岸遠處 101。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Golden late afternoon on the riverside bike path from the location reference. The camera pushes forward through tall riverside grass in the foreground and emerges tracking alongside a bicycle: the man pedals and the woman sits sideways on the rear rack, one hand on his waist, her hair blowing in the wind. Taipei 101 stands small on the distant skyline across the river. Audio: only ambient sound — a light breeze, the bicycle chain ticking, faint wind chimes. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Golden late afternoon on the riverside bike path from the location reference. The camera pushes forward through tall riverside grass in the foreground and emerges tracking alongside a bicycle: the man pedals and the woman sits sideways on the rear rack, one hand on his waist, her hair blowing in the wind. Taipei 101 stands small on the distant skyline across the river. Audio: only ambient sound — a light breeze, the bicycle chain ticking, faint wind chimes. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -471,7 +480,7 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Low tracking shot at wheel height beside the bicycle on the riverside path, then the camera slows and lets the couple ride away toward the city skyline and the low sun. Audio: only ambient sound — a light breeze, the bicycle chain ticking, faint wind chimes. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Low tracking shot at wheel height beside the bicycle on the riverside path, then the camera slows and lets the couple ride away toward the city skyline and the low sun. Audio: only ambient sound — a light breeze, the bicycle chain ticking, faint wind chimes. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -480,44 +489,42 @@ Reference images, in order: image 1 shows the woman's character model sheet (fro
 | 208–220 | 字幕 | 在河風裡，我們任意奔跑 | 畫面右側直排或下方，逐字淡入，2D 文青手寫字體 |
 | | 配樂 | M5 開始（輕快木吉他） | |
 
-### 12 · 225–255 秒 · 雲林老家・母校
+### 12 · 225–255 秒 · 雲林・他帶她回家看看
 
-- **原分鏡畫面**：雲林老家三合院門口合影；Cut 到男方大學男校門口；舊制服彩蛋
+- **原分鏡畫面**：雲林老家透天厝門口，只有男女主，男方帶她回家看看；Cut 到男方母校雲林科技大學校門；大學時期老照片彩蛋
 - **劇情／字幕／旁白**：字幕「從這裡啟程，載著所有祝福回台北。」
 - **鏡頭運動與轉場**：Drone Rising→L-cut
 - **音樂／環境音**：鄉村蟲鳴＋吉他
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w12a-sanheyuan` | Omni 影片 | 14 | 225–239 | `she-sheet`, `he-sheet`, `loc-sanheyuan`, `style-clay` | $1.87 |
-| `w12b-school` | Omni 影片 | 10 | 239–249；前 2 秒延續上一段的蟲鳴（L-cut） | `she-sheet`, `he-sheet`, `loc-school`, `style-clay` | $1.33 |
-| `st-uniform` | 圖片（Ken Burns） | 6 | 249–255 舊照片 Ken Burns（舊制服彩蛋），紙相片質感邊框 | — | $0.13 |
+| `w12a-home` | Omni 影片 | 14 | 225–239 | `kf12a`, `she-sheet`, `he-sheet`, `style-clay` | $1.87 |
+| `w12b-yuntech` | Omni 影片 | 10 | 239–249；前 2 秒延續上一段的蟬聲（L-cut） | `kf12b`, `she-sheet`, `he-sheet`, `style-clay` | $1.33 |
+| `st-oldphoto` | 圖片（Ken Burns） | 6 | 249–255 老照片 Ken Burns（大學時期彩蛋） | — | $0.13 |
 
-**`w12a-sanheyuan`**：三合院正門前，兩人和長輩們排好合影；空拍慢慢往後上升，露出整個院子和周圍稻田。
-
-<details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
-
-```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Morning in rural Yunlin at the red-brick courtyard house from the location reference. The woman and the man stand at the main doorway with smiling elderly grandparents and parents, posing together for a family photo. The drone camera rises slowly up and back to reveal the whole courtyard and the green rice fields around it. Audio: only ambient sound — insects buzzing, a rooster far away, a soft breeze over the fields. No dialogue, no speech, no singing, no music.
-```
-</details>
-
-**`w12b-school`**：母校校門前，他指著校門跟她講當年的事，她笑出來。
+**`w12a-home`**：雲林透天老家門口，他得意地比著房子介紹，她抬頭看、好奇又開心；空拍慢慢往後上升，露出整條街。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 2 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the location, lighting and art direction for this scene: match this place; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. In front of the school gate from the location reference on a sunny day, the man points at the gate and tells the woman an old story; she laughs. Medium two-shot, gentle handheld. Audio: only ambient sound — cicadas, a quiet street, distant school bell. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. A sunny afternoon in Yunlin in front of the man's narrow three-story family townhouse with white window grilles and rolling shutters. He gestures proudly toward the house, showing her his home; she looks up at it, curious and happy, then smiles at him. The camera then rises slowly up and back like a drone, revealing the quiet street of townhouses and trees. Only the two of them. Audio: only ambient sound — cicadas, a scooter passing far away, a light breeze. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
-**`st-uniform`**：高中時期的他穿舊制服的「老照片」。
+**`w12b-yuntech`**：雲科大校門前，他指著校門講當年的事，她笑出來。
+
+<details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
+
+```text
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 3 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 4 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. A sunny day at the university gate with the round stone gatehouse and red flower planter. The man points at the gate and tells the woman about his student days; she laughs. Medium two-shot, gentle handheld. Audio: only ambient sound — cicadas, birds in the trees, a quiet campus. No dialogue, no speech, no singing, no music.
+```
+</details>
+
+**`st-oldphoto`**：他大學時期穿系服的老照片。
 
 <details><summary>Nano Banana prompt</summary>
 
-```text
-A faded, slightly overexposed snapshot photo from about ten years ago: the man from the reference model sheet as a 17-year-old high-school student, same clay storybook style, same face and glasses, younger, grinning at the camera in a light khaki short-sleeve Taiwanese school uniform shirt, standing in front of a school building. Film-photo look with soft vignetting. No readable text, name tag blank.
-```
+已完成：`refs/wedding/st-oldphoto-v2.jpg`
 </details>
 
 | 時碼 | 層 | 內容 | 說明 |
@@ -525,39 +532,39 @@ A faded, slightly overexposed snapshot photo from about ten years ago: the man f
 | 228–236 | 字幕 | 從這裡啟程，載著所有祝福回台北。 | 下方置中 |
 | | 配樂 | M5 鄉村吉他 | |
 
-**剪接**：w12a → w12b 用 L-cut，蟲鳴延續到 w12b 前 2 秒。
+**剪接**：w12a → w12b 用 L-cut，蟬聲延續到 w12b 前 2 秒。
 
-> ⚠️ 母校名稱與校門牌匾若入鏡，Omni 會寫錯中文字；prompt 已要求無字，若出現就裁掉或後製蓋掉。
+> ⚠️ 原分鏡「舊制服彩蛋」：大學沒有制服，暫時解讀為大學時期穿系服的老照片。
 
-> ⚠️ 合影中的長輩是生成的路人臉；若要真的家人入鏡，需用照片並取得同意。
+> ⚠️ 雲科大校門參考圖上有 YunTech 標誌字樣，是校方真實標誌；其他看板留白。
 
-### 13 · 255–275 秒 · 戶政事務所
+### 13 · 255–275 秒 · 登記日・戶政事務所→回到四四南村
 
-- **原分鏡畫面**：簽字、蓋章、領證書特寫；門口新人證書舉高
+- **原分鏡畫面**：簽字、蓋章、領證書特寫；回到四四南村，彩色門窗老屋前、背景 101，新人舉起證書
 - **劇情／字幕／旁白**：女方旁白「紙張薄薄，愛卻滿溢。」
 - **鏡頭運動與轉場**：閃亮字幕「Married！」
 - **音樂／環境音**：管樂短暫歡呼
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w13a-registry` | Omni 影片 | 10 | 255–265 | `couple-wedding`, `style-clay` | $1.33 |
-| `w13b-door` | Omni 影片 | 10 | 265–275 | `couple-wedding`, `style-clay` | $1.33 |
+| `w13a-registry` | Omni 影片 | 10 | 255–265 | `kf13a`, `couple-wedding`, `style-clay` | $1.33 |
+| `w13b-4444-cert` | Omni 影片 | 10 | 265–275 | `kf13b`, `couple-wedding`, `style-clay` | $1.33 |
 
 **`w13a-registry`**：筆簽名（字跡看不清）→紅印章蓋下抬起→櫃檯遞出證書，兩人的手接過。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 2 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Inside a bright household registration office. [0-3s] Macro: a pen signs a form, the handwriting illegible. [3-6s] A red seal stamp presses down onto the paper and lifts away. [6-10s] A clerk's hands pass a certificate across the counter, and the woman's and the man's hands receive it together. No readable text on any document. Audio: only ambient sound — quiet office murmur, the soft thud of the stamp, paper rustling. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Inside a bright household registration office. [0-3s] Macro: a pen signs a form, the handwriting illegible. [3-6s] A red seal stamp presses down onto the paper and lifts away. [6-10s] A clerk's hands pass a certificate across the counter, and the woman's and the man's hands receive it together. No readable text on any document. Audio: only ambient sound — quiet office murmur, the soft thud of the stamp, paper rustling. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
-**`w13b-door`**：戶政事務所門口，兩人一起把證書舉高、笑得燦爛，朋友在旁拍手。
+**`w13b-4444-cert`**：回到四四南村，藍天白雲，彩色門窗老屋前、背後 101，兩人一起把證書舉高、笑得燦爛。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 2 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Outside the entrance of a household registration office on a sunny day, the woman and the man hold up their certificate together, beaming, as a few friends clap and cheer around them. The certificate faces away from the camera. Audio: only ambient sound — friends clapping and cheering, street ambience. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the exact first frame of this shot: begin the video from this image and keep its composition, characters, lighting and clay storybook style; image 2 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Back at Four Four South Village on a bright sunny day with deep blue sky and white clouds: in front of the old grey village houses with colorful green, blue and red doors, Taipei 101 towering behind. The couple in their registration-day outfits lift their certificate up together, beaming, then lower it and lean their heads together; she holds her bouquet. The certificate faces away from the camera. Slow gentle push-in. Audio: only ambient sound — birds, a light breeze, distant city. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -576,15 +583,15 @@ Reference images, in order: image 1 shows the couple in the outfits for this sce
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w14a-levee` | Omni 影片 | 10 | 275–295 與 w14b 每 5 秒交錯 cross-fade | `couple-wedding`, `loc-riverside`, `style-clay` | $1.33 |
-| `w14b-paddy` | Omni 影片 | 10 | 275–295 與 w14a 交錯 | `couple-wedding`, `loc-paddy`, `style-clay` | $1.33 |
+| `w14a-levee` | Omni 影片 | 10 | 275–295 與 w14b 每 5 秒交錯 cross-fade | `kf14a`, `couple-wedding`, `style-clay` | $1.33 |
+| `w14b-paddy` | Omni 影片 | 10 | 275–295 與 w14a 交錯 | `kf14b`, `couple-wedding`, `style-clay` | $1.33 |
 
 **`w14a-levee`**：永和河堤日落，從背後看兩人牽手往夕陽走。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 2 shows the location, lighting and art direction for this scene: match this place; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Sunset on the river levee path from the location reference. Seen from behind, the woman and the man walk forward hand in hand toward the setting sun, golden backlight, long shadows. Audio: only ambient sound — slow footsteps, a light breeze. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Sunset on the river levee path from the location reference. Seen from behind, the woman and the man walk forward hand in hand toward the setting sun, golden backlight, long shadows. Audio: only ambient sound — slow footsteps, a light breeze. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -593,7 +600,7 @@ Reference images, in order: image 1 shows the couple in the outfits for this sce
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 2 shows the location, lighting and art direction for this scene: match this place; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Dawn over the misty green rice paddies from the location reference. Seen from behind, the woman and the man walk hand in hand along a narrow earthen ridge path into the soft morning light. Audio: only ambient sound — slow footsteps, morning birds, a light breeze. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 3 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Dawn over the misty green rice paddies from the location reference. Seen from behind, the woman and the man walk hand in hand along a narrow earthen ridge path into the soft morning light. Audio: only ambient sound — slow footsteps, morning birds, a light breeze. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -614,7 +621,7 @@ Reference images, in order: image 1 shows the couple in the outfits for this sce
 | 44–50 | 旁白 | 走過大橋，看見 101，就像回到家。 | warm, smiling |
 | 78–84 | 女主 | 甜點，是我們的序章。 | soft, smiling, intimate |
 | 138–145 | 男主 | 原來手心的溫度，是這樣的剛好。 | shy, tender, low |
-| 186–196 | 男主 | （告白台詞，待 Clarence 提供） | earnest, nervous, warm |
+| 183–196 | 男主 | 如果把妳和我，連成一條線，我想再靠近一點，跨過這條線。如果把兩隻手，牽成一個圓，妳願不願意，讓我再勇敢一點——牽起這段緣？ | earnest, nervous, warm, unhurried |
 | 197–199 | 女主 | <laugh> | soft laugh |
 | 257–263 | 女主 | 紙張薄薄，愛卻滿溢。 | tender, quietly happy |
 
@@ -645,19 +652,30 @@ Reference images, in order: image 1 shows the couple in the outfits for this sce
 | 268–273 | Married! | 置中，閃亮粒子效果 |
 | 295–299 | to be continued… | 白屏置中，打字機式逐字出現 |
 
-## 5. 風險
+## 5. 360p 測試鏡頭（等 Clarence 說 go）
 
-- **兩個角色 × 24 支的一致性還沒驗證。** 靜態參考圖已經一致；影片端只證明過 1 個角色加 1 個道具。建議先用 360p 跑 3–4 支雙人鏡頭確認。
+| 鏡頭 | 秒數 | 測什麼 | 第一格 | 估價 |
+|---|---|---|---|---|
+| `w06-bopiliao` | 15 | 雙人背影走路：陶土質感與人物在動態中是否穩定 | `refs/wedding/kf06-bopiliao-v2.jpg` | $0.36 |
+| `w08a-guesthouse` | 12 | 新運鏡＋手部互動：小指碰觸到牽手是最容易崩的細節 | `refs/wedding/kf08-guesthouse-v2.jpg` | $0.29 |
+| `w10a-fountain` | 15 | 360° 環繞：最難的一致性測試，三視圖的背面派上用場 | `refs/wedding/kf10-park4.jpg` | $0.36 |
+| `w13b-4444-cert` | 10 | 登記日服裝＋真實地點＋101：換裝參考與地標能不能守住 | `refs/wedding/kf13b-4444-cert.jpg` | $0.24 |
+| **合計** | 52 | | | **$1.26** |
+
+單價 $0.0243/s 是我們帳本裡 360p 的實測值（含 thought 與參考圖輸入 token）。同四支升 720p 定稿約 $3.68。
+跑法：`python3 src/run.py --exp W2 --model omni_12 --spec prompts/wedding/videos-test.yaml --res 360p`
+
+## 6. 風險
+
+- **兩個角色 × 25 支的一致性還沒驗證。** 靜態參考圖已經一致；影片端只證明過 1 個角色加 1 個道具。建議先用 360p 跑 3–4 支雙人鏡頭確認。
 - **風格漂移。** 只拿空景當風格參考時，人物會變成平面插畫；每支都要附 `style-clay`（陶土人物在場景裡的畫面）。
 - **畫面中文字。** Omni 會把招牌、證書、校名寫錯；prompt 已要求無字，所有中文字一律後製。
 - **正面說話的戲。** 全片人物不開口（沿用 playbill 的閉嘴微笑）；台詞全由 TTS 旁白承接。
 - **Letterbox 黑邊。** prompt 禁止無效，定稿每支都要 `cropdetect`，有黑邊就裁切或全片統一加黑邊。
 - **分割畫面裁切。** 第 2 段兩支要裁成窄條，動作必須留在中間三分之一。
 
-## 6. 待決問題
+## 7. 待決問題
 
-- 永和四號公園、永和河濱公園、男主母校在維基共享資源找不到可用照片，目前以生成代替；有自己拍的照片可以替換。母校名稱也請提供。
-- 第 10 段告白台詞要補。
-- 第 8 段「塔尖」是否指總統府中央塔？
-- 新北大橋跨大漢溪、不在永和與三重之間；目前當象徵保留，要不要改？
-- 第 13、14 段（登記日之後）已改穿 playbill 的登記日服裝；其他段落穿便服。是否同意？
+- 第 12 段「舊制服彩蛋」暫時改成大學時期穿系服的老照片，對嗎？
+- 四號公園（八二三紀念公園）照片只看到水池，沒確認有音樂噴泉；參考圖加了噴泉，要保留嗎？
+- 四四南村黃昏那張（第 9 段）的 101 顏色偏米色，第 13 段是正確的藍綠色；正式出片會在 prompt 指定。

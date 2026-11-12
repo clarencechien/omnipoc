@@ -5,6 +5,7 @@ Google 影片生成 API 實測（2026-11-07，已告一段落）。總花費 $7.
 **先讀 `REPORT.md` 第 0 節**：場景 → 做法結論表與花費總表。
 
 ## 文件
+- `docs/storyboard-wedding.md` — 5 分鐘愛情故事短片的完整分鏡（由 `prompts/wedding/storyboard.yaml` 經 `src/storyboard.py` 產生）
 - `REPORT.md` — 總結、第一部分（Omni 1.2 vs Grok 1.5 盲測）、第二部分（Omni 尋寶開場 S0–S4）
 - `docs/decisions.md` — 決策紀錄與踩坑規則
 - `docs/PLAN-opening.md` — 計劃 v0.3（開場；S0–S4 已執行，S5–S6 未做）
@@ -23,6 +24,7 @@ prompts/                 # 版本化 prompt；opening/ 下是開場用
 src/run.py               # 影片：--prompt 單支 或 --spec 批次；估價→cap→呼叫→落檔→ledger
 src/run_image.py         # 圖：Nano Banana 2 批次
 src/spend.py             # 累計花費（按實驗 × 模型）
+src/storyboard.py        # 分鏡 YAML → 文件 + videos/refs/stills prompt 檔 + 估價
 src/budget.py            # 估價、ledger、cap
 src/probe.py             # ffprobe
 src/clients/omni.py      # Omni Interactions API（含參考圖、delivery=uri）

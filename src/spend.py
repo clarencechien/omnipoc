@@ -11,3 +11,4 @@ for prov in ("omni", "xai"):
     print(f"new spend {prov}: {budget.spent(prov):.3f} / cap {budget.CFG['budget']['caps_usd'][prov]:.2f}")
 
 print(f"opening (O*) spend: {budget.spent_opening():.3f} / cap {budget.CFG['budget']['caps_usd']['opening']:.2f}")
+print(f"wedding (W*) spend: {budget.spent_prefix('W'):.3f} / cap {budget.CFG['budget']['caps_usd']['wedding']:.2f}")

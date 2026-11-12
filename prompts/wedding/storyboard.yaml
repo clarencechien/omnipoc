@@ -3,7 +3,7 @@
 # prompts/wedding/refs.yaml 與 stills.yaml（給 src/run_image.py）。改內容請改這個檔，不要改產出物。
 meta:
   title: 兩條河之間（暫名）
-  version: v1
+  version: v2
   duration_s: 300
   aspect: "16:9"
   final_res: 720p        # 定稿 720p，本機放大到 1080p（Google 1080p 為選項，見文件第 1 節）
@@ -11,176 +11,108 @@ meta:
   drafts_per_shot: 2
   finals_per_shot: 1.2   # 平均定稿支數（含重試）
 
-# 每支 Omni 影片 prompt 都會自動加上這段風格與音訊規則
+# 每支 Omni 影片 prompt 都會自動加上這段風格與音訊規則（v2：改用 theplaybillv2 定案的 Q 版陶土繪本風）
 style: >-
-  Live-action romantic short-film footage shot on location in Taipei and New Taipei, Taiwan. Natural, warm,
-  slightly desaturated color grade with soft peach highlights and teal shadows, subtle 35mm film grain, shallow
-  depth of field, cinematic 24fps look. Realistic people and places. No readable text, signs, captions or logos
-  anywhere in the frame.
+  Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult,
+  rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional
+  hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden
+  lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in
+  every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No
+  readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no
+  glossy plastic.
 audio_rule: No dialogue, no speech, no singing, no music.
 
 characters:
   she:
-    zh: 女主・永和女生，20 代後半，及肩黑直髮、空氣瀏海，淡妝，纖細
-    en: a Taiwanese woman in her late 20s with shoulder-length straight black hair and soft see-through bangs, light natural makeup, gentle eyes, slim build
+    zh: 女主（取自 theplaybillv2 定案人物）：約 4 頭身，公主頭半束深棕波浪長髮、圓臉腮紅、閉嘴微笑。便服＝燕麥色針織毛衣、鼠尾草綠百褶長裙、白布鞋、棕色斜背小包；登記日＝粉色針織外套、象牙白長洋裝、象牙白瑪莉珍鞋、捧花
+    en: about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile
     label: the woman
   he:
-    zh: 男主・三重男生（雲林出身），20 代後半，短黑髮、細黑框眼鏡，笑容親切，中等身材
-    en: a Taiwanese man in his late 20s with short neat black hair and thin black rectangular glasses, a friendly smile, medium build
+    zh: 男主（取自 theplaybillv2 定案人物）：約 4 頭身，黑框方眼鏡、後梳短黑髮、圓臉。便服＝海軍藍襯衫外套敞開、白 T、卡其褲、白布鞋、黑後背包；登記日＝黑色休閒西裝、白色圓領 T、黑皮鞋
+    en: about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile
     label: the man
 
-# 參考圖。source: photo = 請 Clarence 提供自己拍的或有授權的照片（優先）；generate = 用 Nano Banana 2 生成（備案）
+# 參考圖（v2）。kind: character / couple / style / location。status: done = 已在 path；todo = 要用 prompt 生成。
+# 地點照片來源與授權見 refs/wedding/ATTRIBUTION.md；角色與風格來源是 clarencechien/theplaybillv2。
 refs:
-  - id: she-front
-    kind: character
-    who: she
-    source: generate
-    aspect: "1:1"
-    prompt: >-
-      Character reference portrait, front view, head and shoulders, plain light-grey background, soft even studio
-      light. A Taiwanese woman in her late 20s with shoulder-length straight black hair and soft see-through bangs,
-      light natural makeup, gentle eyes, slim build, wearing a cream knit cardigan over a white blouse. Photo-real,
-      sharp focus, no text.
-  - id: she-34
-    kind: character
-    who: she
-    source: generate
-    aspect: "1:1"
-    from: [she-front]
-    prompt: >-
-      The same woman as the reference image, now in a three-quarter view, slight smile, head and shoulders, same hair,
-      same makeup, same cream knit cardigan, plain light-grey background, soft studio light. Photo-real, no text.
-  - id: she-full
-    kind: character
-    who: she
-    source: generate
-    aspect: "1:1"
-    from: [she-front]
-    prompt: >-
-      The same woman as the reference image, full-body standing pose, cream knit cardigan over a white blouse, light
-      blue jeans, white sneakers, small tan crossbody bag, plain light-grey background, soft studio light. Photo-real,
-      no text.
-  - id: he-front
-    kind: character
-    who: he
-    source: generate
-    aspect: "1:1"
-    prompt: >-
-      Character reference portrait, front view, head and shoulders, plain light-grey background, soft even studio
-      light. A Taiwanese man in his late 20s with short neat black hair and thin black rectangular glasses, a friendly
-      smile, medium build, wearing a navy casual shirt over a grey T-shirt. Photo-real, sharp focus, no text.
-  - id: he-34
-    kind: character
-    who: he
-    source: generate
-    aspect: "1:1"
-    from: [he-front]
-    prompt: >-
-      The same man as the reference image, now in a three-quarter view, relaxed smile, head and shoulders, same hair,
-      same glasses, same navy shirt over grey T-shirt, plain light-grey background, soft studio light. Photo-real, no text.
-  - id: he-full
-    kind: character
-    who: he
-    source: generate
-    aspect: "1:1"
-    from: [he-front]
-    prompt: >-
-      The same man as the reference image, full-body standing pose, navy casual shirt over a grey T-shirt, khaki
-      chinos, canvas sneakers, a black backpack on one shoulder, plain light-grey background, soft studio light.
-      Photo-real, no text.
-  - id: loc-bridge
-    kind: location
-    zh: 新北大橋（大漢溪）
-    source: photo
-    aspect: "16:9"
-    prompt: >-
-      A long modern road bridge in New Taipei City spanning the wide Dahan River, seen from the riverbank at sunrise,
-      light morning mist on the water, photo-real, no readable text.
-  - id: loc-bopiliao
-    kind: location
-    zh: 剝皮寮歷史街區
-    source: photo
-    aspect: "16:9"
-    prompt: >-
-      Bopiliao Historic Block in Wanhua, Taipei: a narrow pedestrian street lined with old red-brick shophouses with
-      arched arcades, late-afternoon sun low at the end of the street, photo-real, no readable signage.
-  - id: loc-guesthouse
-    kind: location
-    zh: 台北賓館外（夜）
-    source: photo
-    aspect: "16:9"
-    prompt: >-
-      Taipei Guest House at night: an ornate white Western-style historic mansion behind a black iron fence, softly lit
-      facade, tree-lined sidewalk in front, photo-real, no readable text.
-  - id: loc-4444
-    kind: location
-    zh: 四四南村
-    source: photo
-    aspect: "16:9"
-    prompt: >-
-      Four Four South Village in Xinyi District, Taipei, at dusk: rows of low old grey-brick military-dependents'
-      village houses beside an open grassy lawn, Taipei 101 towering directly behind, photo-real, no readable text.
+  - {id: he-sheet, kind: character, who: he, status: done, path: refs/wedding/he-sheet.jpg, zh: 男主便服三視圖}
+  - {id: she-sheet, kind: character, who: she, status: done, path: refs/wedding/she-sheet.jpg, zh: 女主便服三視圖}
+  - {id: couple-casual, kind: couple, status: done, path: refs/wedding/couple-casual.jpg, zh: 雙人便服全身}
+  - {id: couple-wedding, kind: couple, status: done, path: refs/wedding/source/playbill-couple-4heads.png, zh: 雙人登記日服裝（playbill 定案圖）}
+  - {id: style-clay, kind: style, status: done, path: refs/wedding/source/playbill-finale-clay-in-scene.png, zh: 風格錨點（playbill 謝幕畫面：陶土人物在繪本場景裡）}
+  - {id: loc-bridge, kind: location, status: done, path: refs/wedding/kf01-bridge.jpg, zh: 新北大橋日出（由 Commons 照片轉繪）}
+  - {id: loc-bopiliao, kind: location, status: done, path: refs/wedding/kf06-bopiliao-v2.jpg, zh: 剝皮寮紅磚騎樓（由 Commons 照片轉繪）}
+  - {id: loc-guesthouse, kind: location, status: done, path: refs/wedding/kf08-guesthouse-v2.jpg, zh: 台北賓館夜（由 Commons 照片轉繪）}
+  - {id: loc-sanheyuan, kind: location, status: done, path: refs/wedding/kf12-sanheyuan.jpg, zh: 雲林三合院（由 Commons 照片轉繪）}
+  - {id: loc-4444, kind: location, status: done, path: refs/wedding/source/playbill-nancun-hero.png, zh: 四四南村（playbill 繪本主視覺）}
   - id: loc-park4
     kind: location
-    zh: 永和四號公園噴水池（夜）
-    source: photo
+    status: todo
+    path: refs/wedding/kf10-park4.jpg
+    zh: 永和四號公園噴水池（Commons 找不到照片，生成）
     aspect: "16:9"
+    from: [style-clay]
     prompt: >-
-      Yonghe No. 4 Park in New Taipei City at night: a large neighborhood park with a musical fountain lit in warm and
-      colored lights, trees around, photo-real, no readable text.
+      Image 1 is the approved art style. A neighborhood park in Yonghe, New Taipei, at night in that warm matte clay
+      and gouache storybook style: a large round musical fountain shooting jets of water lit in warm and soft colored
+      lights, trees with fairy lights, paved plaza, apartment blocks softly lit behind. No characters, no text.
   - id: loc-riverside
     kind: location
-    zh: 永和河濱公園／河堤
-    source: photo
+    status: todo
+    path: refs/wedding/kf11-riverside.jpg
+    zh: 永和河濱公園（Commons 只找到快速道路照片，生成）
     aspect: "16:9"
+    from: [style-clay]
     prompt: >-
-      Yonghe Riverside Park along the Xindian River in late afternoon: a riverside bike path, wide grass, a low river
-      levee, and the Taipei skyline with Taipei 101 across the river, photo-real, no readable text.
-  - id: loc-sanheyuan
-    kind: location
-    zh: 雲林老家三合院
-    source: photo
-    aspect: "16:9"
-    prompt: >-
-      A traditional red-brick sanheyuan courtyard house in rural Yunlin, Taiwan, with curved swallowtail roof ridges,
-      a sunlit front courtyard, surrounded by green rice fields, morning, photo-real, no readable text.
+      Image 1 is the approved art style. Yonghe Riverside Park in late golden afternoon in that warm matte clay and
+      gouache storybook style: a riverside bike path along a low levee, tall swaying grass, the wide Xindian River, and
+      across the river the Taipei skyline with Taipei 101 small in the distance. No characters, no text.
   - id: loc-school
     kind: location
-    zh: 男主母校（男校）校門
-    source: photo
+    status: todo
+    path: refs/wedding/kf12b-school.jpg
+    zh: 男主母校校門（校名未知，生成通用校門）
     aspect: "16:9"
+    from: [style-clay]
     prompt: >-
-      The front gate of a Taiwanese boys' senior high school on a sunny day, a plain modern gate with trees and a
-      school building behind, photo-real, no readable text or signage.
+      Image 1 is the approved art style. The front gate of a Taiwanese boys' senior high school on a sunny day in that
+      warm matte clay and gouache storybook style: a simple gate with blank plaques, trees and a school building behind.
+      No characters, no readable text.
   - id: loc-paddy
     kind: location
-    zh: 雲林稻田晨光
-    source: generate
+    status: todo
+    path: refs/wedding/kf14-paddy.jpg
+    zh: 雲林稻田晨光（由 Commons 照片轉繪）
     aspect: "16:9"
+    from_paths: [refs/wedding/loc/loc-paddy.jpg]
+    from: [style-clay]
     prompt: >-
-      Green rice paddies in Yunlin, Taiwan, at dawn, low mist over the fields, a narrow earthen ridge path leading into
-      the soft golden light, photo-real, no text.
+      Image 1 is a real photo of rice paddies in Lunbei, Yunlin at dawn; image 2 is the approved art style. Recreate the
+      flat paddy landscape, distant mountains and dawn sky from image 1 in the warm matte clay and gouache storybook
+      style of image 2: soft mist over the young rice, a narrow earthen ridge path leading toward the rising light.
+      No characters, no text.
 
 # 不用影片、用圖做的鏡頭（Ken Burns／合成底圖）
 stills:
   - id: st-phone
     aspect: "16:9"
-    from: [she-front]
+    from: [she-sheet, style-clay]
     prompt: >-
-      Close-up of the woman's hands (from the reference image) holding a smartphone upright in a cozy room at night,
+      Close-up of the woman's hands (from the reference model sheet, same clay style as the style reference) holding a smartphone upright in a cozy room at night,
       warm lamp light. The phone screen faces the camera, is in sharp focus, and is completely blank, plain light grey,
-      with no interface, no text and no icons. Background softly blurred. Photo-real, no text.
+      with no interface, no text and no icons. Background softly blurred. Warm matte clay and gouache storybook style, no text.
   - id: st-tower
     aspect: "16:9"
+    from: [style-clay]
     prompt: >-
       Low-angle night view of the illuminated central tower of the red-brick Presidential Office Building in Taipei,
-      deep blue night sky, photo-real, no readable text.
+      deep blue night sky, in the warm matte clay and gouache storybook style of the reference, no readable text.
   - id: st-uniform
     aspect: "4:3"
-    from: [he-front]
+    from: [he-sheet]
     prompt: >-
-      A faded, slightly overexposed snapshot photo from about ten years ago: the man from the reference image as a
-      17-year-old high-school student, same face, younger, grinning at the camera in a light khaki short-sleeve
+      A faded, slightly overexposed snapshot photo from about ten years ago: the man from the reference model sheet as a
+      17-year-old high-school student, same clay storybook style, same face and glasses, younger, grinning at the camera in a light khaki short-sleeve
       Taiwanese school uniform shirt, standing in front of a school building. Film-photo look with soft vignetting.
       No readable text, name tag blank.
 
@@ -197,7 +129,7 @@ segments:
       - id: w01-bridge
         kind: omni
         duration: 15
-        refs: [loc-bridge]
+        refs: [loc-bridge, style-clay]
         use: 0–15 全段；0–2 秒由黑淡入
         zh: 日出航拍新北大橋，車流緩慢；後段鏡頭下搖到大漢溪水面，橋與朝霞的倒影。
         prompt: >-
@@ -225,19 +157,19 @@ segments:
       - id: w02a-she-ready
         kind: omni
         duration: 10
-        refs: [she-front, she-34, she-full]
+        refs: [she-sheet, style-clay]
         use: 15–25 分割畫面左半（裁中間 640×720）
         zh: 永和小公寓清晨，她綁頭髮、檢查包包、從架上拿鑰匙；廚房傳來鍋鏟聲。
         prompt: >-
-          Early morning in a small, cozy apartment in Yonghe. The woman from the reference images, wearing the cream
-          knit cardigan, ties her hair back, checks her tan crossbody bag and picks up her keys from a shelf. Handheld
+          Early morning in a small, cozy apartment in Yonghe. The woman from the reference images, in her casual outfit,
+          ties her hair back, checks her tan crossbody bag and picks up her keys from a shelf. Handheld
           follow shot. Keep her and all of her action inside the central third of the frame at all times, because the
           frame will be cropped to a narrow vertical strip.
         ambient: a frying pan sizzling and a spatula scraping in the kitchen nearby, keys jingling
       - id: w02b-he-leave
         kind: omni
         duration: 10
-        refs: [he-front, he-34, he-full]
+        refs: [he-sheet, style-clay]
         use: 15–25 分割畫面右半（裁中間 640×720）
         zh: 三重宿舍清晨，他把黑色背包甩上肩、拉上拉鍊，開門走進走廊。
         prompt: >-
@@ -249,7 +181,7 @@ segments:
       - id: w02c-she-101
         kind: omni
         duration: 8
-        refs: [she-front, she-34]
+        refs: [she-sheet, style-clay]
         use: 25–27 中線滑開轉場、27–35 全畫面
         zh: 她走到窗邊，遠方晨霧中的台北 101；鏡頭從肩後推到側臉，她微微一笑。
         prompt: >-
@@ -277,7 +209,7 @@ segments:
       - id: w03-buses
         kind: omni
         duration: 15
-        refs: [she-front, she-34, he-front, he-34, loc-bridge]
+        refs: [she-sheet, he-sheet, loc-bridge, style-clay]
         use: 35–50 全段
         zh: 公車上橋→她在車窗邊→兩車在橋上交會、隔著兩層車窗四目相接→連跳河濱、自行車道、遠方另一座橋，停在 101。
         prompt: >-
@@ -335,7 +267,7 @@ segments:
       - id: w05a-cake
         kind: omni
         duration: 12
-        refs: [she-front, she-34, he-front, he-34]
+        refs: [she-sheet, he-sheet, style-clay]
         use: 70–82
         zh: 叉子切草莓鮮奶油蛋糕的微距→平順拉遠，兩人在窗邊小木桌對坐，有點害羞地笑。
         prompt: >-
@@ -347,7 +279,7 @@ segments:
       - id: w05b-cake-high
         kind: omni
         duration: 8
-        refs: [she-front, she-34, he-front, he-34]
+        refs: [she-sheet, he-sheet, style-clay]
         use: 82–90
         zh: 鏡頭側滑並升到 45° 俯角，兩人邊吃邊笑。
         prompt: >-
@@ -370,7 +302,7 @@ segments:
       - id: w06-bopiliao
         kind: omni
         duration: 15
-        refs: [she-front, he-front, loc-bopiliao]
+        refs: [she-sheet, he-sheet, loc-bopiliao, style-clay]
         use: 90–105
         zh: 午後紅磚騎樓巷，兩人背對鏡頭並肩慢走、逆光成剪影、邊走邊聊；手持從後跟拍。
         prompt: >-
@@ -400,7 +332,7 @@ segments:
       - id: w07a-sushi
         kind: omni
         duration: 10
-        refs: [she-front, she-34, he-front, he-34]
+        refs: [she-sheet, he-sheet, style-clay]
         use: 110–120
         zh: 午餐尖峰，吧檯只剩一張椅子，他坐下拍拍大腿，她猶豫一下坐上去，又窘又笑；壽司盤從面前滑過。
         prompt: >-
@@ -411,7 +343,7 @@ segments:
       - id: w07b-blush
         kind: omni
         duration: 10
-        refs: [she-front, she-34, she-full]
+        refs: [she-sheet, style-clay]
         use: 120–130
         zh: 慢動作臉部特寫，她臉紅低頭再抬眼害羞一笑。
         prompt: >-
@@ -434,7 +366,7 @@ segments:
       - id: w08-guesthouse
         kind: omni
         duration: 15
-        refs: [she-front, she-34, he-front, he-34, loc-guesthouse]
+        refs: [she-sheet, he-sheet, loc-guesthouse, style-clay]
         use: 130–145
         zh: 夜裡沿台北賓館鐵欄外的人行道並肩走（側面長鏡頭）→手部特寫：小指碰到、牽起→鏡頭從牽著的手上搖到夜空。
         prompt: >-
@@ -466,7 +398,7 @@ segments:
       - id: w09a-theatre
         kind: omni
         duration: 6
-        refs: [she-front, he-front]
+        refs: [she-sheet, he-sheet, style-clay]
         use: 150–156
         zh: 全黑→舞台燈啪地亮起；從後方看兩人坐在觀眾席的剪影。
         prompt: >-
@@ -476,7 +408,7 @@ segments:
       - id: w09b-4444-wide
         kind: omni
         duration: 12
-        refs: [she-front, she-34, he-front, he-34, loc-4444]
+        refs: [she-sheet, he-sheet, loc-4444, style-clay]
         use: 156–168（依鼓點切成 2–3 段）
         zh: 黃昏四四南村草地，背後就是 101；兩人背靠背坐著大笑，鏡頭繞弧。
         prompt: >-
@@ -487,7 +419,7 @@ segments:
       - id: w09c-4444-close
         kind: omni
         duration: 12
-        refs: [she-front, she-34, he-front, he-34, loc-4444]
+        refs: [she-sheet, he-sheet, loc-4444, style-clay]
         use: 168–180（依鼓點切）
         zh: 三個近景：她笑、他笑、兩人肩膀相靠。
         prompt: >-
@@ -512,7 +444,7 @@ segments:
       - id: w10a-fountain
         kind: omni
         duration: 15
-        refs: [she-front, she-34, he-front, he-34, loc-park4]
+        refs: [she-sheet, he-sheet, loc-park4, style-clay]
         use: 180–195
         zh: 噴水池燈光前，他對她認真說話（大多從他肩後看她的反應），手持繞兩人一整圈；她掩嘴輕笑、點頭。
         prompt: >-
@@ -524,7 +456,7 @@ segments:
       - id: w10b-fireworks
         kind: omni
         duration: 10
-        refs: [she-front, she-34, he-front, he-34]
+        refs: [she-sheet, he-sheet, style-clay]
         use: 195–205；最後一格閃白接下一段
         zh: 她含淚笑著點頭、兩人擁抱，天空煙火炸開照亮臉，最後一道閃光把畫面刷白。
         prompt: >-
@@ -550,7 +482,7 @@ segments:
       - id: w11a-bike
         kind: omni
         duration: 12
-        refs: [she-front, she-34, he-front, he-34, loc-riverside]
+        refs: [she-sheet, he-sheet, loc-riverside, style-clay]
         use: 205–217
         zh: 鏡頭穿過前景的高草，出來後跟著他們：他騎車、她側坐後座扶著他的腰，頭髮被風吹起；對岸遠處 101。
         prompt: >-
@@ -562,7 +494,7 @@ segments:
       - id: w11b-bike-away
         kind: omni
         duration: 8
-        refs: [she-front, he-front, loc-riverside]
+        refs: [she-sheet, he-sheet, loc-riverside, style-clay]
         use: 217–225
         zh: 輪子高度側跟，接著兩人騎遠、朝向天際線。
         prompt: >-
@@ -585,7 +517,7 @@ segments:
       - id: w12a-sanheyuan
         kind: omni
         duration: 14
-        refs: [she-front, she-34, he-front, he-34, loc-sanheyuan]
+        refs: [she-sheet, he-sheet, loc-sanheyuan, style-clay]
         use: 225–239
         zh: 三合院正門前，兩人和長輩們排好合影；空拍慢慢往後上升，露出整個院子和周圍稻田。
         prompt: >-
@@ -596,7 +528,7 @@ segments:
       - id: w12b-school
         kind: omni
         duration: 10
-        refs: [she-front, he-front, he-34, he-full, loc-school]
+        refs: [she-sheet, he-sheet, loc-school, style-clay]
         use: 239–249；前 2 秒延續上一段的蟲鳴（L-cut）
         zh: 母校校門前，他指著校門跟她講當年的事，她笑出來。
         prompt: >-
@@ -628,7 +560,7 @@ segments:
       - id: w13a-registry
         kind: omni
         duration: 10
-        refs: [she-front, he-front]
+        refs: [couple-wedding, style-clay]
         use: 255–265
         zh: 筆簽名（字跡看不清）→紅印章蓋下抬起→櫃檯遞出證書，兩人的手接過。
         prompt: >-
@@ -639,7 +571,7 @@ segments:
       - id: w13b-door
         kind: omni
         duration: 10
-        refs: [she-front, she-34, he-front, he-34]
+        refs: [couple-wedding, style-clay]
         use: 265–275
         zh: 戶政事務所門口，兩人一起把證書舉高、笑得燦爛，朋友在旁拍手。
         prompt: >-
@@ -665,7 +597,7 @@ segments:
       - id: w14a-levee
         kind: omni
         duration: 10
-        refs: [she-front, he-front, loc-riverside]
+        refs: [couple-wedding, loc-riverside, style-clay]
         use: 275–295 與 w14b 每 5 秒交錯 cross-fade
         zh: 永和河堤日落，從背後看兩人牽手往夕陽走。
         prompt: >-
@@ -675,7 +607,7 @@ segments:
       - id: w14b-paddy
         kind: omni
         duration: 10
-        refs: [she-front, he-front, loc-paddy]
+        refs: [couple-wedding, loc-paddy, style-clay]
         use: 275–295 與 w14a 交錯
         zh: 雲林稻田清晨，從背後看兩人牽手走在田埂上，薄霧。
         prompt: >-
@@ -695,7 +627,7 @@ music:
   - {id: M5, tc: "205–300", model: lyria-3.5, prompt: "Breezy acoustic guitar with a pastoral countryside feel, a short joyful brass flourish in the middle, gentle fade-out ending"}
 
 voices:
-  旁白: 成熟溫暖的女聲或中性聲（也可直接用女主聲音，見待決問題）
+  旁白: 獨立的第三個聲音（Clarence 指定）：沉穩、溫暖、略帶說書感的中性聲線，跟男女主都明顯不同
   女主: 年輕、柔和、帶笑意的女聲
   男主: 年輕、溫和、略害羞的男聲
 tts_model: gemini-3.8-flash-tts
@@ -706,9 +638,8 @@ fonts:
   - {use: 拍立得手寫（第 6 段）, name: 芫荽 Iansui, license: OFL}
 
 open_questions:
-  - 這是真實的一對新人嗎？如果是，要用兩人的照片當角色參考圖（並取得兩人同意）；目前以 Nano Banana 生成的虛構角色撰寫。真人照片能否被 Omni 穩定還原、會不會被政策擋，需要先用 1 支草稿測。
-  - 地點照片：新北大橋、剝皮寮、台北賓館、四四南村、永和四號公園、永和河濱、雲林三合院、男主母校，最好用自己拍的照片當參考；生成的地點會「像」但不會是真的那個地方。台北 101 模型認得，不需要照片。
+  - 永和四號公園、永和河濱公園、男主母校在維基共享資源找不到可用照片，目前以生成代替；有自己拍的照片可以替換。母校名稱也請提供。
   - 第 10 段告白台詞要補。
-  - 旁白要獨立一個聲音，還是直接用女主的聲音？
   - 第 8 段「塔尖」是否指總統府中央塔？
-  - 新北大橋的地理位置（見第 1 段註記）要不要改成真正在兩河交會附近的橋？
+  - 新北大橋跨大漢溪、不在永和與三重之間；目前當象徵保留，要不要改？
+  - 第 13、14 段（登記日之後）已改穿 playbill 的登記日服裝；其他段落穿便服。是否同意？

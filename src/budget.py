@@ -32,21 +32,26 @@ def spent(provider, exclude_exp=("S0",)):
                 tot += e.get("est_cost", 0)   # failed (4xx) calls are not billed
     return round(tot, 4)
 
-def spent_opening():
-    pre = CFG["budget"].get("opening_exp_prefix", "O"); tot = 0.0
+def spent_prefix(pre):
+    tot = 0.0
     for e in entries():
         if str(e.get("exp", "")).startswith(pre) and e.get("status") == "ok":
             tot += e.get("actual_cost") if e.get("actual_cost") is not None else e.get("est_cost", 0)
     return round(tot, 4)
 
+def spent_opening():
+    return spent_prefix(CFG["budget"].get("opening_exp_prefix", "O"))
+
 def check_cap(provider, est, exp=None):
-    if provider == "opening" or (exp and str(exp).startswith(CFG["budget"].get("opening_exp_prefix", "O"))):
-        cap = CFG["budget"]["caps_usd"]["opening"]; s = spent_opening()
-        if s + est > cap:
-            raise SystemExit(f"BUDGET STOP: opening spent {s:.3f} + est {est:.3f} > cap {cap:.2f}")
-        if s + est > 0.7 * cap:
-            print(f"WARNING: opening spend {s+est:.2f} passes 70% of cap {cap:.2f}", flush=True)
-        return s
+    # project budgets keyed by experiment prefix (O* = opening, W* = wedding); falls back to per-provider caps
+    for pre, cap_key in (CFG["budget"].get("prefix_caps") or {"O": "opening"}).items():
+        if exp and str(exp).startswith(pre):
+            cap = CFG["budget"]["caps_usd"][cap_key]; s = spent_prefix(pre)
+            if s + est > cap:
+                raise SystemExit(f"BUDGET STOP: {cap_key} spent {s:.3f} + est {est:.3f} > cap {cap:.2f}")
+            if s + est > 0.7 * cap:
+                print(f"WARNING: {cap_key} spend {s+est:.2f} passes 70% of cap {cap:.2f}", flush=True)
+            return s
     cap = CFG["budget"]["caps_usd"][provider]
     s = spent(provider)
     if s + est > cap:

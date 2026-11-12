@@ -1,0 +1,77 @@
+# W0 — first reference images (see git history for notes). v2 adds clay-style retries for kf06/kf08.
+version: w0-v2
+images:
+- id: he-sheet
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/source/playbill-couple-4heads.png
+  text: 'The reference image shows an approved adult storybook couple. Use ONLY the man on the left: black rectangular glasses, short swept black hair, rounded cheeks with soft blush, small gentle closed-mouth smile. Create a character turnaround model sheet of this SAME man with identical face, glasses, hair and proportions (about four heads tall, adult, not a child). Three full-body views side by side at the same scale, feet on one ground line: front view, three-quarter view, back view. Casual everyday outfit instead of the suit: navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, a black backpack on one shoulder (visible in the back view). Warm matte sculpted clay with painted gouache texture and fine fabric grain, rounded dimensional hands and shoes. Plain warm ivory background with soft contact shadows. No text, no labels, no numbers, no extra people, no photorealism, no glossy plastic.'
+- id: she-sheet
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/source/playbill-couple-4heads.png
+  text: 'The reference image shows an approved adult storybook couple. Use ONLY the woman on the right: half-up princess-style wavy dark-brown hair with twisted strands gathered at the back and loose lower waves, rounded cheeks with soft blush, small gentle closed-mouth smile. Create a character turnaround model sheet of this SAME woman with identical face, hair and proportions (about four heads tall, adult, not a child). Three full-body views side by side at the same scale, feet on one ground line: front view, three-quarter view, back view; the back view clearly shows the twisted half-up princess hairstyle. Casual everyday outfit instead of the wedding dress: oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Warm matte sculpted clay with painted gouache texture and fine fabric grain, rounded dimensional hands and shoes. Plain warm ivory background with soft contact shadows. No text, no labels, no numbers, no extra people, no photorealism,
+    no glossy plastic.'
+- id: couple-casual
+  aspect: '3:4'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/source/playbill-couple-4heads.png
+  text: Image 1 is the man's model sheet, image 2 is the woman's model sheet, image 3 is the approved couple in their wedding outfits. Draw the SAME couple together in their casual outfits from images 1 and 2, full bodies, front view with a slight inward turn, inner hands joined, feet on one ground line, the man a little taller. Identical faces, glasses, hair and four-head adult proportions as image 3. Warm matte clay and gouache storybook finish. Plain warm ivory background, soft contact shadows. No text, no extra people, no photorealism.
+- id: kf01-bridge
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/loc/loc-bridge.jpg
+  - refs/wedding/source/playbill-nancun-hero.png
+  text: 'Image 1 is a real photo of New Taipei Bridge: a cable-stayed bridge with ONE tall white pylon and fanned cables over a wide river with riverside parks. Image 2 is the approved art style. Recreate the bridge from image 1, with its single tall pylon and fanned cables, as a wide establishing landscape at sunrise in exactly the warm matte clay and gouache storybook style of image 2: pink and gold sky, low sun, thin mist over the wide Dahan River, the bridge and sky mirrored on the calm water, light traffic on the deck, green riverside park in the foreground. Cinematic 16:9. No characters, no text, no signs, no photorealism.'
+- id: kf06-bopiliao
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-bopiliao.jpg
+  - refs/wedding/source/playbill-nancun-hero.png
+  text: Image 1 is the man's model sheet, image 2 the woman's model sheet, image 3 a real photo of the red-brick arcade of Bopiliao Historic Block in Taipei, image 4 the approved art style. Recreate the arcade from image 3 (red-brick columns and arches, wooden shopfronts, terracotta floor tiles) in the warm matte clay and gouache storybook style of image 4, late afternoon, golden backlight streaming down the arcade. The SAME couple in their casual outfits walk side by side away from the camera along the arcade, softly backlit, her half-up princess hair and his backpack visible, full bodies about four heads tall, filling about 40 percent of the frame height. Cinematic 16:9. No readable text or signs, no extra people, no photorealism.
+- id: kf08-guesthouse
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-guesthouse.jpg
+  - refs/wedding/source/playbill-nancun-hero.png
+  text: Image 1 is the man's model sheet, image 2 the woman's model sheet, image 3 a real photo of the Taipei Guest House, image 4 the approved art style. Recreate the ornate white Western-style mansion from image 3 at night, softly lit, behind a black iron fence with a tree-lined sidewalk in front, in the warm matte clay and gouache storybook style of image 4, deep blue night sky, warm street lamps. The SAME couple in their casual outfits walk side by side along the sidewalk in side view, their inner hands just about to touch, full bodies about four heads tall. Cinematic 16:9. No readable text, no extra people, no photorealism.
+- id: kf12-sanheyuan
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-sanheyuan.jpg
+  - refs/wedding/source/playbill-nancun-hero.png
+  text: Image 1 is the man's model sheet, image 2 the woman's model sheet, image 3 a real photo of a traditional red-brick sanheyuan courtyard house in Yunlin, Taiwan, image 4 the approved art style. Recreate the courtyard house from image 3 (red brick, tiled roof, low walls) on a sunny morning in the warm matte clay and gouache storybook style of image 4, green rice fields beyond. The SAME couple in their casual outfits stand at the main doorway with two smiling elderly grandparents in the same clay style, posing together for a family photo, full bodies. Cinematic 16:9. No readable text, no photorealism.
+- id: kf06-bopiliao-v2
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-bopiliao.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: Image 1 is the man's model sheet, image 2 the woman's model sheet, image 3 a real photo of the red-brick arcade of Bopiliao Historic Block in Taipei, image 4 the approved art style (sculpted matte clay figurines placed in a painted storybook set). Recreate the arcade from image 3 (red-brick columns and arches, wooden shopfronts, terracotta floor tiles) in the warm matte clay and gouache storybook style of image 4, late afternoon, golden backlight streaming down the arcade. The SAME couple in their casual outfits walk side by side away from the camera along the arcade, softly backlit, her half-up princess hair and his backpack visible, full bodies about four heads tall, filling about 40 percent of the frame height. Cinematic 16:9. No readable text or signs, no extra people, no photorealism. The couple must be rendered as dimensional sculpted matte clay figurines exactly like the people in image 4, with soft volume, subsurface warmth and contact shadows, never as flat 2D drawings.
+    Any shop signs or plaques are blank.
+- id: kf08-guesthouse-v2
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-guesthouse.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: Image 1 is the man's model sheet, image 2 the woman's model sheet, image 3 a real photo of the Taipei Guest House, image 4 the approved art style (sculpted matte clay figurines placed in a painted storybook set). Recreate the ornate white Western-style mansion from image 3 at night, softly lit, behind a black iron fence with a tree-lined sidewalk in front, in the warm matte clay and gouache storybook style of image 4, deep blue night sky, warm street lamps. The SAME couple in their casual outfits walk side by side along the sidewalk in side view, their inner hands just about to touch, full bodies about four heads tall. Cinematic 16:9. No readable text, no extra people, no photorealism. The couple must be rendered as dimensional sculpted matte clay figurines exactly like the people in image 4, with soft volume, subsurface warmth and contact shadows, never as flat 2D drawings. Any shop signs or plaques are blank.

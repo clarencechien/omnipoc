@@ -10,14 +10,14 @@ items:
   - {id: kf07a-kura, path: refs/wedding/kf07a-kura.jpg, who: [she, he]}
   - {id: kf08-guesthouse-v2, path: refs/wedding/kf08-guesthouse-v2.jpg, who: [she, he]}
   - {id: kf09a-lpc, path: refs/wedding/kf09a-lpc.jpg, who: [she, he]}
-  - {id: kf09b-4444, path: refs/wedding/kf09b-4444.jpg, who: [she, he]}
   - {id: kf10-library, path: refs/wedding/kf10-library.jpg, who: [she, he]}
-  - {id: kf11-ubike, path: refs/wedding/kf11-ubike.jpg, who: [she, he]}
   - {id: kf12a-home, path: refs/wedding/kf12a-home.jpg, who: [she, he]}
   - {id: kf12b-yuntech, path: refs/wedding/kf12b-yuntech.jpg, who: [she, he]}
   - {id: st-oldphoto-v3, path: refs/wedding/st-oldphoto-v3.jpg, who: [he-face]}
-  - {id: kf13a-registry, path: refs/wedding/kf13a-registry.jpg, who: [wed]}
   - {id: kf14a-levee, path: refs/wedding/kf14a-levee.jpg, who: [wed]}
   - {id: kf14b-paddy, path: refs/wedding/kf14b-paddy.jpg, who: [wed]}
   - {id: kf07b-metropark-v2, path: refs/wedding/kf07b-metropark-v2.jpg, who: [she, he]}
-  - {id: kf13b-4444-cert-v2, path: refs/wedding/kf13b-4444-cert-v2.jpg, who: [wed]}
+  - {id: kf13a-registry-v2, path: refs/wedding/kf13a-registry-v2.jpg, who: [wed]}
+  - {id: kf13b-4444-cert-v3, path: refs/wedding/kf13b-4444-cert-v3.jpg, who: [wed]}
+  - {id: kf11-ubike-v3, path: refs/wedding/kf11-ubike-v3.jpg, who: [she, he]}
+  - {id: kf09b-4444-v3, path: refs/wedding/kf09b-4444-v3.jpg, who: [she, he]}

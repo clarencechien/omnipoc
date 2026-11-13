@@ -107,15 +107,6 @@
    "white canvas sneakers"
   ]
  },
- "kf09b-4444": {
-  "path": "refs/wedding/kf09b-4444.jpg",
-  "verdict": "pass",
-  "mismatches": [],
-  "clay_3d": true,
-  "readable_text": "",
-  "summary": "Both characters perfectly match their respective model sheets with accurate clothing, hair, accessories, and consistent 3D matte clay figurine style.",
-  "not_visible": []
- },
  "kf10-library": {
   "path": "refs/wedding/kf10-library.jpg",
   "verdict": "pass",
@@ -123,15 +114,6 @@
   "clay_3d": true,
   "readable_text": "",
   "summary": "Both characters match the reference sheets accurately, maintaining their clothing, hair, accessories, and distinct 3D matte clay figurine art style in front of a building scene at dusk.",
-  "not_visible": []
- },
- "kf11-ubike": {
-  "path": "refs/wedding/kf11-ubike.jpg",
-  "verdict": "pass",
-  "mismatches": [],
-  "clay_3d": true,
-  "readable_text": "",
-  "summary": "Both characters perfectly match their reference sheets, featuring consistent styling, clothing, accessories, and colors while riding bicycles outdoors.",
   "not_visible": []
  },
  "kf12a-home": {
@@ -160,19 +142,6 @@
   "readable_text": "",
   "summary": "The character in the candidate frame matches the reference sheet regarding facial features, hair, and glasses, while wearing a different outfit suited for biking.",
   "not_visible": []
- },
- "kf13a-registry": {
-  "path": "refs/wedding/kf13a-registry.jpg",
-  "verdict": "pass",
-  "mismatches": [],
-  "clay_3d": true,
-  "readable_text": "",
-  "summary": "The characters match the reference closely, maintaining their 3D matte clay art style, outfits, and hairstyles, though some lower body items are hidden by the desk.",
-  "not_visible": [
-   "black shoes",
-   "ivory calf-length dress",
-   "ivory Mary Jane shoes"
-  ]
  },
  "kf14a-levee": {
   "path": "refs/wedding/kf14a-levee.jpg",
@@ -203,13 +172,44 @@
   "summary": "Both characters match their model sheet references completely in features, clothing, and accessories while seated together on a park bench.",
   "not_visible": []
  },
- "kf13b-4444-cert-v2": {
-  "path": "refs/wedding/kf13b-4444-cert-v2.jpg",
+ "kf13a-registry-v2": {
+  "path": "refs/wedding/kf13a-registry-v2.jpg",
   "verdict": "pass",
   "mismatches": [],
   "clay_3d": true,
   "readable_text": "",
-  "summary": "Both characters match the reference model sheets accurately, maintaining consistent hair, clothing, and accessories while rendered in the specified 3D clay style.",
+  "summary": "The characters maintain high consistency with the reference sheet, featuring the same clothing styles, hair, and accessories, rendered in a 3D clay-figure art style.",
+  "not_visible": [
+   "black shoes",
+   "ivory calf-length dress",
+   "ivory Mary Jane shoes"
+  ]
+ },
+ "kf13b-4444-cert-v3": {
+  "path": "refs/wedding/kf13b-4444-cert-v3.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match the reference images closely in clothing, hairstyle, and accessories. The image features 3D matte clay figurines against a sculpted backdrop.",
+  "not_visible": []
+ },
+ "kf11-ubike-v3": {
+  "path": "refs/wedding/kf11-ubike-v3.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "YouBike",
+  "summary": "Both characters perfectly match their approved reference model sheets in all visible attributes, including outfits, hair, accessories, and overall 3D matte clay figurine style.",
+  "not_visible": []
+ },
+ "kf09b-4444-v3": {
+  "path": "refs/wedding/kf09b-4444-v3.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match their respective approved model sheets perfectly in style, attire, hair, accessories, and clay 3D figurine rendering.",
   "not_visible": []
  }
 }

@@ -1,9 +1,9 @@
-# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v4）
+# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v5）
 # 由 src/storyboard.py 產生 docs/storyboard-wedding.md、prompts/wedding/videos.yaml、refs.yaml、stills.yaml。
 # 改內容請改這個檔，不要改產出物。
 meta:
   title: 兩條河之間（暫名）
-  version: v4
+  version: v5
   duration_s: 300
   aspect: '16:9'
   final_res: 720p
@@ -87,8 +87,8 @@ refs:
 - id: kf09b
   kind: location
   status: done
-  path: refs/wedding/kf09b-4444.jpg
-  zh: 第 9 段・四四南村黃昏背靠背（Clarence 提供照片轉繪）
+  path: refs/wedding/kf09b-4444-v3.jpg
+  zh: 第 9 段・四四南村黃昏，和第 13 段同一排長屋、同色 101
 - id: kf10
   kind: location
   status: done
@@ -97,8 +97,8 @@ refs:
 - id: kf11
   kind: location
   status: done
-  path: refs/wedding/kf11-ubike.jpg
-  zh: 第 11 段・永和河濱各騎一台 YouBike
+  path: refs/wedding/kf11-ubike-v3.jpg
+  zh: 第 11 段・永和河濱，各騎一台 YouBike 一前一後
 - id: kf12a
   kind: location
   status: done
@@ -112,13 +112,13 @@ refs:
 - id: kf13a
   kind: location
   status: done
-  path: refs/wedding/kf13a-registry.jpg
-  zh: 第 13 段・戶政事務所櫃檯
+  path: refs/wedding/kf13a-registry-v2.jpg
+  zh: 第 13 段・戶政事務所，櫃檯遞出證書（你們證書的簡化版）
 - id: kf13b
   kind: location
   status: done
-  path: refs/wedding/kf13b-4444-cert-v2.jpg
-  zh: 第 13 段・回到四四南村舉證書（含捧花），背景 101
+  path: refs/wedding/kf13b-4444-cert-v3.jpg
+  zh: 第 13 段・回到四四南村，證書正面朝鏡頭、捧花、背景 101
 - id: kf14a
   kind: location
   status: done
@@ -154,6 +154,11 @@ refs:
   status: done
   path: refs/wedding/kf07b-metropark-v2.jpg
   zh: 第 7 段・新北大都會公園長椅（Commons 照片轉繪）
+- id: cert
+  kind: location
+  status: done
+  path: refs/wedding/source/certificate-design.jpg
+  zh: 證書設計（Clarence 提供，畫面中只做簡化版）
 stills:
 - id: st-phone
   status: done
@@ -532,7 +537,7 @@ segments:
     - style-clay
     use: 156–168（依鼓點切成 2–3 段）
     zh: 黃昏四四南村草地，背後就是 101；兩人背靠背坐著大笑，鏡頭繞弧。
-    prompt: Dusk at the old village houses and lawn from the location reference, Taipei 101 rising directly behind. The woman and the man sit back to back on the grass, laughing and leaning their weight against each other. Slow arc shot around them.
+    prompt: Dusk at the old village houses and lawn from the location reference, the blue-green Taipei 101 rising directly behind. The woman and the man sit back to back on the grass, laughing and leaning their weight against each other. Slow arc shot around them.
     ambient: evening breeze, distant city, crickets starting
   - id: w09c-4444-close
     kind: omni
@@ -585,8 +590,8 @@ segments:
     - he-sheet
     - style-clay
     use: 195–205；最後一格閃白接下一段
-    zh: 她含淚笑著點頭、兩人擁抱，天空煙火炸開照亮臉，最後一道閃光把畫面刷白。
-    prompt: The woman nods with a teary smile and the two embrace; fireworks burst in the sky above the library and the park, bright flashes lighting up their faces. In the final second a bright flash fills the whole frame with white.
+    zh: 她含淚笑著點頭、兩人擁抱；圖書館上空煙火一發接一發炸開（可以小小浮誇），照亮兩人的臉，最後一道閃光把畫面刷白。
+    prompt: The woman nods with a teary smile and the two embrace. Above the library and the park, a generous, slightly over-the-top burst of fireworks goes off one after another in gold, pink and teal, lighting up their faces and the glass facade. In the final second a bright flash fills the whole frame with white.
     ambient: fireworks booming and crackling, the fountain splashing
   vo:
   - tc: 183–196
@@ -607,7 +612,7 @@ segments:
   - 225
   title: 永和河濱・雙載
   board:
-    picture: 永和河濱公園：兩人各騎一台 YouBike 並排、風鈴聲；鏡頭帶出遠處 101
+    picture: 永和河濱公園：兩人各騎一台 YouBike，一前一後、風鈴聲；鏡頭帶出遠處 101
     story: 無旁白，慢速 2D 文青字體「在河風裡，我們任意奔跑」
     camera: 穿越鏡
     sound: 清風與單車鏈條聲
@@ -621,8 +626,8 @@ segments:
     - he-sheet
     - style-clay
     use: 205–217
-    zh: 鏡頭穿過前景高草，出來後跟著兩人：各騎一台 YouBike 2.0 並排騎，互看一眼笑；對岸遠處 101。
-    prompt: Golden late afternoon on the riverside bike path. The camera pushes forward through tall riverside grass in the foreground and emerges tracking alongside the woman and the man, each riding their own YouBike 2.0 shared bicycle (white frame, yellow fenders and chain guard, front basket) side by side; they glance at each other and smile, her hair blowing in the wind. Taipei 101 stands small on the distant skyline across the river.
+    zh: 鏡頭穿過前景高草，出來後跟著兩台 YouBike：他騎在前、她跟在後，同一個方向，她看著他的背影笑；對岸遠處 101。
+    prompt: 'Golden late afternoon on the riverside bike path. The camera pushes forward through tall riverside grass in the foreground and emerges tracking alongside two YouBike 2.0 shared bicycles (white frame, yellow fenders and chain guard, front basket) riding in single file in the SAME direction: the man rides in front, the woman follows two bike lengths behind him, smiling at his back, her hair blowing in the wind. Taipei 101 stands small on the distant skyline across the river.'
     ambient: a light breeze, the bicycle chain ticking, faint wind chimes
   - id: w11b-bike-away
     kind: omni
@@ -633,8 +638,8 @@ segments:
     - he-sheet
     - style-clay
     use: 217–225
-    zh: 輪子高度側跟兩台 YouBike，接著兩人並排騎遠、朝向天際線。
-    prompt: Low tracking shot at wheel height beside the two YouBike 2.0 bicycles riding side by side on the riverside path, then the camera slows and lets the couple ride away together toward the city skyline and the low sun.
+    zh: 輪子高度側跟一前一後的兩台 YouBike，接著兩人騎遠、朝向天際線。
+    prompt: Low tracking shot at wheel height beside the two YouBike 2.0 bicycles riding one behind the other on the riverside path, he in front and she behind, then the camera slows and lets them ride away toward the city skyline and the low sun.
     ambient: a light breeze, the bicycle chain ticking, faint wind chimes
   captions:
   - tc: 208–220
@@ -696,7 +701,7 @@ segments:
   - 275
   title: 登記日・戶政事務所→回到四四南村
   board:
-    picture: 簽字、蓋章、領證書特寫；回到四四南村，彩色門窗老屋前、背景 101，新人舉起證書
+    picture: 簽字、蓋章、領證書（你們證書的簡化版）；回到四四南村，彩色門窗老屋前、背景 101，新人舉起證書正面
     story: 女方旁白「紙張薄薄，愛卻滿溢。」
     camera: 閃亮字幕「Married！」
     sound: 管樂短暫歡呼
@@ -707,10 +712,11 @@ segments:
     refs:
     - kf13a
     - couple-wedding
+    - cert
     - style-clay
     use: 255–265
     zh: 筆簽名（字跡看不清）→紅印章蓋下抬起→櫃檯遞出證書，兩人的手接過。
-    prompt: 'Inside a bright household registration office. [0-3s] Macro: a pen signs a form, the handwriting illegible. [3-6s] A red seal stamp presses down onto the paper and lifts away. [6-10s] A clerk''s hands pass a certificate across the counter, and the woman''s and the man''s hands receive it together. No readable text on any document.'
+    prompt: 'Inside a bright household registration office. [0-3s] Macro: a pen signs a form, the handwriting illegible. [3-6s] A red seal stamp presses down onto the paper and lifts away. [6-10s] The clerk slides the new marriage certificate across the counter and the couple''s hands receive it together, its front facing the camera. The certificate is a SIMPLIFIED version of the couple''s own illustrated card: top half a cheerful blue illustrated night sky with tiny fireworks, a little city skyline and a tiny waving cartoon couple; bottom half white with a few faint lines; no readable words, names or numbers.'
     ambient: quiet office murmur, the soft thud of the stamp, paper rustling
   - id: w13b-4444-cert
     kind: omni
@@ -718,10 +724,11 @@ segments:
     refs:
     - kf13b
     - couple-wedding
+    - cert
     - style-clay
     use: 265–275
     zh: 回到四四南村，藍天白雲，彩色門窗老屋前、背後 101，兩人一起把證書舉高、笑得燦爛。
-    prompt: 'Back at Four Four South Village on a bright sunny day with deep blue sky and white clouds: in front of the old grey village houses with colorful green, blue and red doors, Taipei 101 towering behind. The couple in their registration-day outfits lift their certificate up together, beaming, then lower it and lean their heads together; she holds her bouquet in her other hand the whole time. The certificate faces away from the camera. Slow gentle push-in.'
+    prompt: 'Back at Four Four South Village on a bright sunny day with deep blue sky and white clouds: in front of the old grey village houses with colorful green, blue and red doors, the blue-green Taipei 101 towering behind. The couple in their registration-day outfits lift their certificate up together with its FRONT facing the camera, beaming, then lower it and lean their heads together; she holds her bouquet in her other hand the whole time. Slow gentle push-in. The certificate is a SIMPLIFIED version of the couple''s own illustrated card: top half a cheerful blue illustrated night sky with tiny fireworks, a little city skyline and a tiny waving cartoon couple; bottom half white with a few faint lines; no readable words, names or numbers.'
     ambient: birds, a light breeze, distant city
     first_frame: true
   vo:
@@ -812,8 +819,7 @@ fonts:
   name: 芫荽 Iansui
   license: OFL
 open_questions:
-- 第 9 段四四南村黃昏那張的 101 顏色偏米色，第 13 段是正確的藍綠色；正式出片會在 prompt 指定。
-- 第 10 段結尾的煙火保留嗎？（原分鏡有「煙火閃光轉場」）
+- 第 9 段參考圖兩人是並肩靠著坐，影片 prompt 仍寫背靠背；要哪一種？
 test_shots:
   exp: W2
   res: 360p

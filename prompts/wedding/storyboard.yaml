@@ -1,9 +1,9 @@
-# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v6）
+# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v7）
 # 由 src/storyboard.py 產生 docs/storyboard-wedding.md、prompts/wedding/videos.yaml、refs.yaml、stills.yaml。
 # 改內容請改這個檔，不要改產出物。
 meta:
   title: 兩條河之間（暫名）
-  version: v6
+  version: v7
   duration_s: 300
   aspect: '16:9'
   final_res: 720p
@@ -76,13 +76,13 @@ refs:
 - id: kf02b
   kind: location
   status: done
-  path: refs/wedding/kf02b-he-room.jpg
-  zh: 第 2 段・他的三重房間（Clarence 照片簡化）
+  path: refs/wedding/kf02b-he-room-ff.jpg
+  zh: 第 2 段・他的三重房間（Clarence 照片簡化）（已修臉）
 - id: kf05
   kind: location
   status: done
-  path: refs/wedding/kf05-cake.jpg
-  zh: 第 5 段・日式蛋糕店
+  path: refs/wedding/kf05-cake-ff.jpg
+  zh: 第 5 段・日式蛋糕店（已修臉）
 - id: kf06
   kind: location
   status: done
@@ -91,13 +91,13 @@ refs:
 - id: kf08
   kind: location
   status: done
-  path: refs/wedding/kf08-guesthouse-v2.jpg
-  zh: 第 8 段・台北賓館夜（Commons 照片轉繪）
+  path: refs/wedding/kf08-guesthouse-v2-ff.jpg
+  zh: 第 8 段・台北賓館夜（Commons 照片轉繪）（已修臉）
 - id: kf09a
   kind: location
   status: done
-  path: refs/wedding/kf09a-lpc.jpg
-  zh: 第 9 段・南村劇場看 LPC（Clarence 照片＋playbill 舞台）
+  path: refs/wedding/kf09a-lpc-ff2.jpg
+  zh: 第 9 段・南村劇場看 LPC（Clarence 照片＋playbill 舞台）（已修臉）
 - id: kf09b
   kind: location
   status: done
@@ -106,18 +106,18 @@ refs:
 - id: kf10
   kind: location
   status: done
-  path: refs/wedding/kf10-library.jpg
-  zh: 第 10 段・四號公園國立臺灣圖書館前夜（Clarence 照片＋Commons）
+  path: refs/wedding/kf10-library-ff.jpg
+  zh: 第 10 段・四號公園國立臺灣圖書館前夜（Clarence 照片＋Commons）（已修臉）
 - id: kf11
   kind: location
   status: done
-  path: refs/wedding/kf11-ubike-v3.jpg
-  zh: 第 11 段・永和河濱，各騎一台 YouBike 一前一後
+  path: refs/wedding/kf11-ubike-v3-ff.jpg
+  zh: 第 11 段・永和河濱，各騎一台 YouBike 一前一後（已修臉）
 - id: kf12a
   kind: location
   status: done
-  path: refs/wedding/kf12a-home.jpg
-  zh: 第 12 段・雲林透天老家（Clarence 提供街景轉繪）
+  path: refs/wedding/kf12a-home-ff2.jpg
+  zh: 第 12 段・雲林透天老家（Clarence 提供街景轉繪）（已修臉）
 - id: kf12b
   kind: location
   status: done
@@ -126,8 +126,8 @@ refs:
 - id: kf13a
   kind: location
   status: done
-  path: refs/wedding/kf13a-registry-v2.jpg
-  zh: 第 13 段・戶政事務所，櫃檯遞出證書（你們證書的簡化版）
+  path: refs/wedding/kf13a-registry-v2-ff.jpg
+  zh: 第 13 段・戶政事務所，櫃檯遞出證書（你們證書的簡化版）（已修臉）
 - id: kf13b
   kind: location
   status: done
@@ -141,8 +141,8 @@ refs:
 - id: kf14b
   kind: location
   status: done
-  path: refs/wedding/kf14b-paddy.jpg
-  zh: 第 14 段・雲林稻田晨光（Commons 照片轉繪）
+  path: refs/wedding/kf14b-paddy-ff.jpg
+  zh: 第 14 段・雲林稻田晨光（Commons 照片轉繪）（已修臉）
 - id: kf02c
   kind: location
   status: done
@@ -151,8 +151,8 @@ refs:
 - id: kf03a
   kind: location
   status: done
-  path: refs/wedding/kf03a-she-bus.jpg
-  zh: 第 3 段・左半：她在永和市區公車上望向右方遠處
+  path: refs/wedding/kf03a-she-bus-ff.jpg
+  zh: 第 3 段・左半：她在永和市區公車上望向右方遠處（已修臉）
 - id: kf03b
   kind: location
   status: done
@@ -161,8 +161,8 @@ refs:
 - id: kf07a
   kind: location
   status: done
-  path: refs/wedding/kf07a-kura.jpg
-  zh: 第 7 段・三重藏壽司包廂（盤子參考 Commons 照片）
+  path: refs/wedding/kf07a-kura-ff.jpg
+  zh: 第 7 段・三重藏壽司包廂（盤子參考 Commons 照片）（已修臉）
 - id: kf07b
   kind: location
   status: done
@@ -878,7 +878,7 @@ fonts:
   name: 芫荽 Iansui
   license: OFL
 open_questions:
-- 第 9 段參考圖兩人是並肩靠著坐，影片 prompt 仍寫背靠背；要哪一種？
+- 第 9 段 LPC 劇場那張修臉時多了兩位觀眾，要保留嗎？
 test_shots:
   exp: W2
   res: 360p

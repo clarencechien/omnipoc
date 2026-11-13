@@ -1,34 +1,4 @@
 {
- "kf02a-she-room": {
-  "path": "refs/wedding/kf02a-she-room.jpg",
-  "faces": {
-   "she": {
-    "score": 3,
-    "note": "The open eyes are noticeably smaller and bead-like, lacking distinct white catchlights compared to the reference.",
-    "crop": "review/wedding/face-crops/kf02a-she-room-she.jpg",
-    "face_px": 222
-   }
-  },
-  "verdict": "drift"
- },
- "kf05-cake": {
-  "path": "refs/wedding/kf05-cake.jpg",
-  "faces": {
-   "she": {
-    "score": 4,
-    "note": "Closed smiling eyes are present, but button nose shape, eyebrow thickness, round facial structure, and cheek blush match the reference accurately with no major drift.",
-    "crop": "review/wedding/face-crops/kf05-cake-she.jpg",
-    "face_px": 255
-   },
-   "he": {
-    "score": 3,
-    "note": "Known drift: open eyes are shrunk to smaller bead-like dots and lack distinct white catchlights.",
-    "crop": "review/wedding/face-crops/kf05-cake-he.jpg",
-    "face_px": 231
-   }
-  },
-  "verdict": "drift"
- },
  "kf13b-4444-cert-v3": {
   "path": "refs/wedding/kf13b-4444-cert-v3.jpg",
   "faces": {
@@ -46,24 +16,6 @@
    }
   },
   "verdict": "pass"
- },
- "kf09b-4444-v3": {
-  "path": "refs/wedding/kf09b-4444-v3.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "Known drift present: open eyes are shrunk to smaller, darker bead-like dots with minimal catchlight visibility compared to the reference.",
-    "crop": "review/wedding/face-crops/kf09b-4444-v3-he.jpg",
-    "face_px": 156
-   },
-   "she": {
-    "score": 3,
-    "note": "Known drift present: open eyes have shrunk to smaller bead-like dots with less prominent catchlights, and eyebrows appear slightly darker.",
-    "crop": "review/wedding/face-crops/kf09b-4444-v3-she.jpg",
-    "face_px": 163
-   }
-  },
-  "verdict": "drift"
  },
  "kf09b-4444-v4": {
   "path": "refs/wedding/kf09b-4444-v4.jpg",
@@ -95,18 +47,6 @@
   },
   "verdict": "pass"
  },
- "kf02b-he-room": {
-  "path": "refs/wedding/kf02b-he-room.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "The character exhibits eye drift: the open eyes lack distinct white catchlight highlights compared to the reference, appearing more flat and bead-like.",
-    "crop": "review/wedding/face-crops/kf02b-he-room-he.jpg",
-    "face_px": 202
-   }
-  },
-  "verdict": "drift"
- },
  "kf02c-he-entrance": {
   "path": "refs/wedding/kf02c-he-entrance.jpg",
   "faces": {
@@ -118,18 +58,6 @@
    }
   },
   "verdict": "pass"
- },
- "kf03a-she-bus": {
-  "path": "refs/wedding/kf03a-she-bus.jpg",
-  "faces": {
-   "she": {
-    "score": 3,
-    "note": "Drift pattern present: open eyes are shrunk to smaller beads lacking the distinct white catchlights seen in the reference.",
-    "crop": "review/wedding/face-crops/kf03a-she-bus-she.jpg",
-    "face_px": 234
-   }
-  },
-  "verdict": "drift"
  },
  "kf03b-he-bus-bridge": {
   "path": "refs/wedding/kf03b-he-bus-bridge.jpg",
@@ -156,94 +84,6 @@
    }
   },
   "verdict": "pass"
- },
- "kf07a-kura": {
-  "path": "refs/wedding/kf07a-kura.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "The character exhibits the drift pattern of open eyes lacking clear white catchlights, appearing flatter and slightly beadier than the reference.",
-    "crop": "review/wedding/face-crops/kf07a-kura-he.jpg",
-    "face_px": 249
-   },
-   "she": {
-    "score": 3,
-    "note": "Known drift pattern present: open eyes lack distinct white catchlights and appear slightly reduced in size compared to the reference, alongside fainter cheek blush.",
-    "crop": "review/wedding/face-crops/kf07a-kura-she.jpg",
-    "face_px": 275
-   }
-  },
-  "verdict": "drift"
- },
- "kf08-guesthouse-v2": {
-  "path": "refs/wedding/kf08-guesthouse-v2.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "Open eyes are smaller and beady with minimal catchlights compared to the reference, though general face shape and glasses match well.",
-    "crop": "review/wedding/face-crops/kf08-guesthouse-v2-he.jpg",
-    "face_px": 100
-   },
-   "she": {
-    "score": 4,
-    "note": "Minor reduction in eye size relative to the face, but the overall facial proportions, nose, jawline, and catchlights remain consistent with the reference.",
-    "crop": "review/wedding/face-crops/kf08-guesthouse-v2-she.jpg",
-    "face_px": 118
-   }
-  },
-  "verdict": "drift"
- },
- "kf09a-lpc": {
-  "path": "refs/wedding/kf09a-lpc.jpg",
-  "faces": {
-   "she": {
-    "score": null,
-    "note": "face not visible"
-   },
-   "he": {
-    "score": 3,
-    "note": "Eye drift: the open eye is reduced to a small dark dot lacking white catchlights, unlike the reference eye structure.",
-    "crop": "review/wedding/face-crops/kf09a-lpc-he.jpg",
-    "face_px": 145
-   }
-  },
-  "verdict": "drift"
- },
- "kf10-library": {
-  "path": "refs/wedding/kf10-library.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "The open eyes drift toward small black beads lacking prominent white catchlights compared to the reference sheet.",
-    "crop": "review/wedding/face-crops/kf10-library-he.jpg",
-    "face_px": 124
-   },
-   "she": {
-    "score": 3,
-    "note": "Features exhibit drift with open eyes shrunk to small black dots lacking clear white catchlights, though overall face and nose shape remain largely consistent.",
-    "crop": "review/wedding/face-crops/kf10-library-she.jpg",
-    "face_px": 136
-   }
-  },
-  "verdict": "drift"
- },
- "kf12a-home": {
-  "path": "refs/wedding/kf12a-home.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "The open eyes drift toward smaller, elongated black bead eyes rather than retaining the large round irises with clear white catchlights seen in the reference.",
-    "crop": "review/wedding/face-crops/kf12a-home-he.jpg",
-    "face_px": 140
-   },
-   "she": {
-    "score": 3,
-    "note": "The open eyes are reduced in size and lack distinct white catchlights, matching the known drift pattern of shrunken, bead-like eyes. General face shape and other features remain consistent.",
-    "crop": "review/wedding/face-crops/kf12a-home-she.jpg",
-    "face_px": 161
-   }
-  },
-  "verdict": "drift"
  },
  "kf12b-yuntech": {
   "path": "refs/wedding/kf12b-yuntech.jpg",
@@ -291,24 +131,6 @@
   },
   "verdict": "pass"
  },
- "kf14b-paddy": {
-  "path": "refs/wedding/kf14b-paddy.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "Hair texture is noticeably clumpier and curlier compared to the reference, though overall profile, glasses, and button nose align well.",
-    "crop": "review/wedding/face-crops/kf14b-paddy-he.jpg",
-    "face_px": 127
-   },
-   "she": {
-    "score": 4,
-    "note": "Consistent facial structure, nose shape, and profile proportions matching the reference, with closed smiling eyes accurately reflecting the design style.",
-    "crop": "review/wedding/face-crops/kf14b-paddy-she.jpg",
-    "face_px": 127
-   }
-  },
-  "verdict": "drift"
- },
  "kf07b-metropark-v2": {
   "path": "refs/wedding/kf07b-metropark-v2.jpg",
   "faces": {
@@ -327,40 +149,166 @@
   },
   "verdict": "pass"
  },
- "kf13a-registry-v2": {
-  "path": "refs/wedding/kf13a-registry-v2.jpg",
-  "faces": {
-   "he": {
-    "score": 3,
-    "note": "The open eyes are reduced to simple black beads and lack white catchlights, fitting the specified eye drift pattern despite matching face shape and glasses.",
-    "crop": "review/wedding/face-crops/kf13a-registry-v2-he.jpg",
-    "face_px": 290
-   },
-   "she": {
-    "score": 3,
-    "note": "The open eyes drift by lacking white catchlights, appearing more like solid dark beads, alongside slightly thicker eyebrows.",
-    "crop": "review/wedding/face-crops/kf13a-registry-v2-she.jpg",
-    "face_px": 262
-   }
-  },
-  "verdict": "drift"
- },
- "kf11-ubike-v3": {
-  "path": "refs/wedding/kf11-ubike-v3.jpg",
+ "kf02b-he-room-ff": {
+  "path": "refs/wedding/kf02b-he-room-ff.jpg",
   "faces": {
    "he": {
     "score": 4,
-    "note": "The facial structure, button nose, cheek fullness, and thick rectangular glasses align closely with the profile reference, with no notable drift patterns.",
-    "crop": "review/wedding/face-crops/kf11-ubike-v3-he.jpg",
-    "face_px": 148
-   },
-   "she": {
-    "score": 3,
-    "note": "Eye exhibits drift pattern: shrunk to a smaller bead-like shape with reduced catchlight clarity.",
-    "crop": "review/wedding/face-crops/kf11-ubike-v3-she.jpg",
-    "face_px": 241
+    "note": "No drift detected; eye size, white catchlights, button nose, face shape, and glasses match the reference sheet closely.",
+    "crop": "review/wedding/face-crops/kf02b-he-room-ff-he.jpg",
+    "face_px": 211
    }
   },
-  "verdict": "drift"
+  "verdict": "pass"
+ },
+ "kf03a-she-bus-ff": {
+  "path": "refs/wedding/kf03a-she-bus-ff.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Facial proportions closely align with the reference, retaining large dark eyes with white catchlights, a small button nose, and a rounded face structure.",
+    "crop": "review/wedding/face-crops/kf03a-she-bus-ff-she.jpg",
+    "face_px": 229
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf05-cake-ff": {
+  "path": "refs/wedding/kf05-cake-ff.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial features, eye size with catchlights, nose, round head shape, and glasses closely match the reference with negligible variation.",
+    "crop": "review/wedding/face-crops/kf05-cake-ff-he.jpg",
+    "face_px": 234
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf07a-kura-ff": {
+  "path": "refs/wedding/kf07a-kura-ff.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "The facial structure, eye size with catchlights, nose shape, and rectangular glasses closely match the reference model with no noticeable drift.",
+    "crop": "review/wedding/face-crops/kf07a-kura-ff-he.jpg",
+    "face_px": 258
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial proportions, hair, nose, and cheeks closely match the reference; eye catchlights are slightly less distinct.",
+    "crop": "review/wedding/face-crops/kf07a-kura-ff-she.jpg",
+    "face_px": 274
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf08-guesthouse-v2-ff": {
+  "path": "refs/wedding/kf08-guesthouse-v2-ff.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial features closely match the reference, retaining the large round eyes with catchlights, rectangular glasses, small button nose, and round face structure with only slight rendering variations.",
+    "crop": "review/wedding/face-crops/kf08-guesthouse-v2-ff-he.jpg",
+    "face_px": 109
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf10-library-ff": {
+  "path": "refs/wedding/kf10-library-ff.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial proportions, round eyes with white catchlights, small button nose, and thick rectangular glasses align closely with the reference sheet with negligible drift.",
+    "crop": "review/wedding/face-crops/kf10-library-ff-he.jpg",
+    "face_px": 127
+   },
+   "she": {
+    "score": 4,
+    "note": "No drift patterns detected. Eye size, white catchlights, button nose, eyebrow shape, and round face structure remain highly consistent with the reference.",
+    "crop": "review/wedding/face-crops/kf10-library-ff-she.jpg",
+    "face_px": 131
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf11-ubike-v3-ff": {
+  "path": "refs/wedding/kf11-ubike-v3-ff.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Consistent facial structure with matching large eyes, white catchlights, button nose, and round face; no major drift patterns present.",
+    "crop": "review/wedding/face-crops/kf11-ubike-v3-ff-she.jpg",
+    "face_px": 245
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf13a-registry-v2-ff": {
+  "path": "refs/wedding/kf13a-registry-v2-ff.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial proportions, eye size with catchlights, thick rectangular glasses, button nose, and round face shape closely match the reference with negligible variation.",
+    "crop": "review/wedding/face-crops/kf13a-registry-v2-ff-he.jpg",
+    "face_px": 286
+   },
+   "she": {
+    "score": 4,
+    "note": "Matches the reference well with round face, button nose, and large eyes with catchlights; slight addition of delicate upper eyelashes is the only subtle variation.",
+    "crop": "review/wedding/face-crops/kf13a-registry-v2-ff-she.jpg",
+    "face_px": 265
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf14b-paddy-ff": {
+  "path": "refs/wedding/kf14b-paddy-ff.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference, maintaining the round cheek, small button nose, and thick rectangular glasses frames. No drift patterns are evident.",
+    "crop": "review/wedding/face-crops/kf14b-paddy-ff-he.jpg",
+    "face_px": 125
+   },
+   "she": {
+    "score": 4,
+    "note": "Features closely match the reference profile, including the small button nose, round cheek profile, and hair shape. Eyes are closed in an expression, with no drift patterns present.",
+    "crop": "review/wedding/face-crops/kf14b-paddy-ff-she.jpg",
+    "face_px": 127
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf09a-lpc-ff2": {
+  "path": "refs/wedding/kf09a-lpc-ff2.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial features align well with the reference, retaining the large eyes with catchlights, small button nose, round face shape, and correct glasses style.",
+    "crop": "review/wedding/face-crops/kf09a-lpc-ff2-he.jpg",
+    "face_px": 168
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf12a-home-ff2": {
+  "path": "refs/wedding/kf12a-home-ff2.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial proportions, large eyes with clear catchlights, button nose, and thick rectangular glasses match the reference well, with minor differences in glasses frame thickness and curvature.",
+    "crop": "review/wedding/face-crops/kf12a-home-ff2-he.jpg",
+    "face_px": 149
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial proportions closely align with the reference, retaining the large eyes with catchlights, small button nose, full cheeks, and matching brow shape.",
+    "crop": "review/wedding/face-crops/kf12a-home-ff2-she.jpg",
+    "face_px": 161
+   }
+  },
+  "verdict": "pass"
  }
 }

@@ -3,13 +3,14 @@ budget:
     omni: 1.1
     xai: 1.5
     opening: 8.0
-    wedding: 5.0
+    wedding: 8.0
   stop_if_actual_vs_est_over: 0.3
   max_retries: 2
   opening_exp_prefix: O
   prefix_caps:
     O: opening
     W: wedding
+  wedding_hard_ceiling_usd: 10.0
 models:
   omni_12:
     id: gemini-omni-1.2-flash

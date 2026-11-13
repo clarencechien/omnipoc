@@ -1,4 +1,4 @@
-# 分鏡完整描述 — 兩條河之間（暫名）（v6）
+# 分鏡完整描述 — 兩條河之間（暫名）（v7）
 
 > 由 `src/storyboard.py` 從 `prompts/wedding/storyboard.yaml` 產生，改內容請改 YAML 後重跑。
 > 原始分鏡由 Clarence 提供；本文件補上每個鏡頭的製作方式、Omni prompt、參考圖、聲音與字幕時間。
@@ -76,24 +76,24 @@ Animated 3D storybook short film in the approved style of The Playbill: the coup
 | `style-clay` | 風格 | 風格錨點（playbill 謝幕畫面：陶土人物在繪本場景裡） | `refs/wedding/source/playbill-finale-clay-in-scene.png` | 已完成 |
 | `kf01` | 地點 | 第 1、3 段・新北大橋日出（Commons 照片轉繪） | `refs/wedding/kf01-bridge.jpg` | 已完成 |
 | `kf02a` | 地點 | 第 2 段・她的房間（已修臉），窗外 101 | `refs/wedding/kf02a-she-room-facefix.jpg` | 已完成 |
-| `kf02b` | 地點 | 第 2 段・他的三重房間（Clarence 照片簡化） | `refs/wedding/kf02b-he-room.jpg` | 已完成 |
-| `kf05` | 地點 | 第 5 段・日式蛋糕店 | `refs/wedding/kf05-cake.jpg` | 已完成 |
+| `kf02b` | 地點 | 第 2 段・他的三重房間（Clarence 照片簡化）（已修臉） | `refs/wedding/kf02b-he-room-ff.jpg` | 已完成 |
+| `kf05` | 地點 | 第 5 段・日式蛋糕店（已修臉） | `refs/wedding/kf05-cake-ff.jpg` | 已完成 |
 | `kf06` | 地點 | 第 6 段・剝皮寮紅磚騎樓（Commons 照片轉繪） | `refs/wedding/kf06-bopiliao-v2.jpg` | 已完成 |
-| `kf08` | 地點 | 第 8 段・台北賓館夜（Commons 照片轉繪） | `refs/wedding/kf08-guesthouse-v2.jpg` | 已完成 |
-| `kf09a` | 地點 | 第 9 段・南村劇場看 LPC（Clarence 照片＋playbill 舞台） | `refs/wedding/kf09a-lpc.jpg` | 已完成 |
+| `kf08` | 地點 | 第 8 段・台北賓館夜（Commons 照片轉繪）（已修臉） | `refs/wedding/kf08-guesthouse-v2-ff.jpg` | 已完成 |
+| `kf09a` | 地點 | 第 9 段・南村劇場看 LPC（Clarence 照片＋playbill 舞台）（已修臉） | `refs/wedding/kf09a-lpc-ff2.jpg` | 已完成 |
 | `kf09b` | 地點 | 第 9 段・四四南村黃昏背靠背（2K，鎖臉重畫） | `refs/wedding/kf09b-4444-v4.jpg` | 已完成 |
-| `kf10` | 地點 | 第 10 段・四號公園國立臺灣圖書館前夜（Clarence 照片＋Commons） | `refs/wedding/kf10-library.jpg` | 已完成 |
-| `kf11` | 地點 | 第 11 段・永和河濱，各騎一台 YouBike 一前一後 | `refs/wedding/kf11-ubike-v3.jpg` | 已完成 |
-| `kf12a` | 地點 | 第 12 段・雲林透天老家（Clarence 提供街景轉繪） | `refs/wedding/kf12a-home.jpg` | 已完成 |
+| `kf10` | 地點 | 第 10 段・四號公園國立臺灣圖書館前夜（Clarence 照片＋Commons）（已修臉） | `refs/wedding/kf10-library-ff.jpg` | 已完成 |
+| `kf11` | 地點 | 第 11 段・永和河濱，各騎一台 YouBike 一前一後（已修臉） | `refs/wedding/kf11-ubike-v3-ff.jpg` | 已完成 |
+| `kf12a` | 地點 | 第 12 段・雲林透天老家（Clarence 提供街景轉繪）（已修臉） | `refs/wedding/kf12a-home-ff2.jpg` | 已完成 |
 | `kf12b` | 地點 | 第 12 段・雲林科技大學校門（Commons 照片轉繪） | `refs/wedding/kf12b-yuntech.jpg` | 已完成 |
-| `kf13a` | 地點 | 第 13 段・戶政事務所，櫃檯遞出證書（你們證書的簡化版） | `refs/wedding/kf13a-registry-v2.jpg` | 已完成 |
+| `kf13a` | 地點 | 第 13 段・戶政事務所，櫃檯遞出證書（你們證書的簡化版）（已修臉） | `refs/wedding/kf13a-registry-v2-ff.jpg` | 已完成 |
 | `kf13b` | 地點 | 第 13 段・回到四四南村，證書正面朝鏡頭、捧花、背景 101 | `refs/wedding/kf13b-4444-cert-v3.jpg` | 已完成 |
 | `kf14a` | 地點 | 第 14 段・永和河堤日落 | `refs/wedding/kf14a-levee.jpg` | 已完成 |
-| `kf14b` | 地點 | 第 14 段・雲林稻田晨光（Commons 照片轉繪） | `refs/wedding/kf14b-paddy.jpg` | 已完成 |
+| `kf14b` | 地點 | 第 14 段・雲林稻田晨光（Commons 照片轉繪）（已修臉） | `refs/wedding/kf14b-paddy-ff.jpg` | 已完成 |
 | `kf02c` | 地點 | 第 2 段・他的三重住處大樓門口（街景轉繪） | `refs/wedding/kf02c-he-entrance.jpg` | 已完成 |
-| `kf03a` | 地點 | 第 3 段・左半：她在永和市區公車上望向右方遠處 | `refs/wedding/kf03a-she-bus.jpg` | 已完成 |
+| `kf03a` | 地點 | 第 3 段・左半：她在永和市區公車上望向右方遠處（已修臉） | `refs/wedding/kf03a-she-bus-ff.jpg` | 已完成 |
 | `kf03b` | 地點 | 第 3 段・右半：他在新北大橋的公車上望向左方遠處 | `refs/wedding/kf03b-he-bus-bridge.jpg` | 已完成 |
-| `kf07a` | 地點 | 第 7 段・三重藏壽司包廂（盤子參考 Commons 照片） | `refs/wedding/kf07a-kura.jpg` | 已完成 |
+| `kf07a` | 地點 | 第 7 段・三重藏壽司包廂（盤子參考 Commons 照片）（已修臉） | `refs/wedding/kf07a-kura-ff.jpg` | 已完成 |
 | `kf07b` | 地點 | 第 7 段・新北大都會公園長椅（Commons 照片轉繪） | `refs/wedding/kf07b-metropark-v2.jpg` | 已完成 |
 | `cert` | 地點 | 證書設計（Clarence 提供，畫面中只做簡化版） | `refs/wedding/source/certificate-design.jpg` | 已完成 |
 
@@ -684,8 +684,8 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 | 鏡頭 | 秒數 | 測什麼 | 第一格 | 估價 |
 |---|---|---|---|---|
 | `w06-bopiliao` | 15 | 雙人背影走路：陶土質感與人物在動態中是否穩定 | `refs/wedding/kf06-bopiliao-v2.jpg` | $0.36 |
-| `w08a-guesthouse` | 12 | 新運鏡＋手部互動：小指碰觸到牽手是最容易崩的細節 | `refs/wedding/kf08-guesthouse-v2.jpg` | $0.29 |
-| `w10a-library` | 15 | 360° 環繞：最難的一致性測試，三視圖的背面派上用場（地點改到圖書館前） | `refs/wedding/kf10-library.jpg` | $0.36 |
+| `w08a-guesthouse` | 12 | 新運鏡＋手部互動：小指碰觸到牽手是最容易崩的細節 | `refs/wedding/kf08-guesthouse-v2-ff.jpg` | $0.29 |
+| `w10a-library` | 15 | 360° 環繞：最難的一致性測試，三視圖的背面派上用場（地點改到圖書館前） | `refs/wedding/kf10-library-ff.jpg` | $0.36 |
 | `w13b-4444-cert` | 10 | 登記日服裝＋真實地點＋101：換裝參考與地標能不能守住 | `refs/wedding/kf13b-4444-cert-v3.jpg` | $0.24 |
 | **合計** | 52 | | | **$1.26** |
 
@@ -703,4 +703,4 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 ## 7. 待決問題
 
-- 第 9 段參考圖兩人是並肩靠著坐，影片 prompt 仍寫背靠背；要哪一種？
+- 第 9 段 LPC 劇場那張修臉時多了兩位觀眾，要保留嗎？

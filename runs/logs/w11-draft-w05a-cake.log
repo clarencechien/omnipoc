@@ -1,0 +1,2 @@
+[W11/omni_12-w05a-cake-r1-595a38] est $0.278 (spent omni 8.053) -> gemini-omni-1.2-flash 12s 360p 16:9 refs=6
+[W11/omni_12-w05a-cake-r1-595a38] OK latency 42.3s actual $0.2953 probe {"duration_s": 12.032, "size_bytes": 2660046, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

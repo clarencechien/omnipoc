@@ -1,0 +1,2 @@
+[W11/omni_12-w11a-bike-r1-34e54c] est $0.278 (spent omni 8.053) -> gemini-omni-1.2-flash 12s 360p 16:9 refs=6
+[W11/omni_12-w11a-bike-r1-34e54c] OK latency 45.6s actual $0.2995 probe {"duration_s": 12.032, "size_bytes": 3666498, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

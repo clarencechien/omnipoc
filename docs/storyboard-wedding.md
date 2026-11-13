@@ -10,7 +10,7 @@
 | 片長 | 300 秒，14 段 |
 | Omni 影片鏡頭 | 28 支，共 282 秒（單支 3–15 秒） |
 | 圖片鏡頭 | 0 張（Ken Burns／合成底圖） |
-| 參考圖 | 34 張（已完成 31、待生成 3） |
+| 參考圖 | 34 張（已完成 32、待生成 2） |
 | 旁白／口白 | 7 句，TTS（gemini-3.8-flash-tts） |
 | 配樂 | 5 段 Lyria |
 | 輸出 | 16:9，草稿 360p，定稿 720p |
@@ -20,12 +20,12 @@
 | 項目 | 算法 | 費用 |
 |---|---|---|
 | Omni 草稿 | 282 秒 × 2 支 × $0.0248/s（360p，measured） | $13.99 |
-| Omni 定稿 720p | 282 秒 × 1.2 支 × $0.0707/s（measured） | $23.92 |
-| 參考圖＋圖片鏡頭 | 3 張 × 2 次 × $0.0673 | $0.40 |
+| Omni 定稿 720p | 282 秒 × 1.2 支 × $0.0708/s（measured） | $23.96 |
+| 參考圖＋圖片鏡頭 | 2 張 × 2 次 × $0.0673 | $0.27 |
 | TTS | 約 141 字 ÷ 4.5 字/秒 × 3 次 | $0.02 |
 | 配樂 | Lyria × 2 次 | $0.72 |
-| **合計（720p 定稿＋本機放大到 1080p）** | | **$39.06** |
-| 合計（改用 Google 1080p 定稿，$0.1061/s） | | $51.04 |
+| **合計（720p 定稿＋本機放大到 1080p）** | | **$38.96** |
+| 合計（改用 Google 1080p 定稿，$0.1063/s） | | $50.97 |
 
 估價假設每支影片 2 支 360p 草稿、平均 1.2 支定稿；草稿和定稿是分開生成的兩支，不是把草稿放大。單價取自 `ledger/spend.jsonl` 的實測。
 
@@ -99,7 +99,7 @@ Animated 3D storybook short film in the approved style of The Playbill: the coup
 | `kf10mid` | 地點 | 第 10 段・環繞到背面的中間畫面（頭尾給圖用） | `refs/wedding/kf10-mid.jpg` | 已完成 |
 | `kf07b-start` | 地點 | 第 7 段・頭尾給圖的開頭：兩人沿大都會公園步道走來 | `refs/wedding/kf07b-start.jpg` | 待生成 |
 | `kf08-roof` | 地點 | 第 8 段・頭尾給圖的結尾：鏡頭升起，台北賓館亮燈屋頂與星空，兩人在下方變小 | `refs/wedding/kf08-roof.jpg` | 待生成 |
-| `kf12a-high` | 地點 | 第 12 段・頭尾給圖的結尾：空拍升高，整條透天厝街道，兩人在門口變小 | `refs/wedding/kf12a-high.jpg` | 待生成 |
+| `kf12a-high` | 地點 | 第 12 段・頭尾給圖的結尾：空拍升高，整條透天厝街道，兩人在門口變小 | `refs/wedding/kf12a-high.jpg` | 已完成 |
 | `kf13b-last` | 地點 | 第 13 段・結尾：兩人靠頭一起笑瞇眼 | `refs/wedding/kf13b-last.jpg` | 已完成 |
 
 地點照片來源與授權見 `refs/wedding/ATTRIBUTION.md`。
@@ -142,8 +142,8 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w02a-she-ready` | Omni 影片 | 10 | 15–25 分割畫面左半（裁中間 640×720） | `kf02a`, `she-face`, `she-sheet`, `style-clay` | $1.34 |
-| `w02b-he-leave` | Omni 影片 | 10 | 15–25 分割畫面右半（裁中間 640×720） | `kf02b`, `he-face`, `kf02c`, `he-sheet`, `style-clay` | $1.34 |
+| `w02a-she-ready` | Omni 影片 | 10 | 15–25 分割畫面左半（裁中間 640×720） | `kf02a`, `she-face`, `she-sheet`, `style-clay` | $1.35 |
+| `w02b-he-leave` | Omni 影片 | 10 | 15–25 分割畫面右半（裁中間 640×720） | `kf02b`, `he-face`, `kf02c`, `he-sheet`, `style-clay` | $1.35 |
 | `w02c-she-101` | Omni 影片 | 8 | 25–27 中線滑開轉場、27–35 全畫面 | `kf02a`, `she-face`, `she-sheet`, `style-clay` | $1.08 |
 
 **`w02a-she-ready`**：永和小公寓清晨，她綁頭髮、檢查包包、從架上拿鑰匙；廚房傳來鍋鏟聲。
@@ -337,7 +337,7 @@ Reference images, in order: image 1 shows the exact first frame of this shot: be
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
 | `w07a-kura` | Omni 影片 | 8 | 110–118 | `kf07a`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.08 |
-| `w07b-metropark` | Omni 影片 | 10 | 118–128 | `kf07b-start`, `kf07b`, `she-face`, `he-face`, `style-clay` | $1.34 |
+| `w07b-metropark` | Omni 影片 | 10 | 118–128 | `kf07b-start`, `kf07b`, `she-face`, `he-face`, `style-clay` | $1.35 |
 | `w07b-hold` | 定格（ffmpeg） | 2 | 128–130 最後一格停住 | — | $0 |
 
 **`w07a-kura`**：藏壽司包廂：迴轉帶上蓋著透明圓蓋的盤子，兩人邊吃邊聊，扭蛋機在桌上方。
@@ -545,7 +545,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w12a-home` | Omni 影片 | 10 | 225–235 | `kf12a`, `kf12a-high`, `she-face`, `he-face`, `style-clay` | $1.34 |
+| `w12a-home` | Omni 影片 | 10 | 225–235 | `kf12a`, `kf12a-high`, `she-face`, `he-face`, `style-clay` | $1.35 |
 | `w12a-hold` | 定格（ffmpeg） | 2 | 235–237 高處畫面停住 | — | $0 |
 | `w12b-yuntech` | Omni 影片 | 12 | 237–249；前 2 秒延續上一段的蟬聲（L-cut） | `kf12b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
 | `st-oldphoto` | 圖片（Ken Burns） | 6 | 249–255 老照片 Ken Burns（大學時期彩蛋） | — | $0.13 |
@@ -597,8 +597,8 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w13a-registry` | Omni 影片 | 10 | 255–265 | `kf13a`, `she-face`, `he-face`, `couple-wedding`, `cert`, `style-clay` | $1.34 |
-| `w13b-4444-cert` | Omni 影片 | 10 | 265–275 | `kf13b`, `kf13b-last`, `she-face`, `he-face`, `cert`, `style-clay` | $1.34 |
+| `w13a-registry` | Omni 影片 | 10 | 255–265 | `kf13a`, `she-face`, `he-face`, `couple-wedding`, `cert`, `style-clay` | $1.35 |
+| `w13b-4444-cert` | Omni 影片 | 10 | 265–275 | `kf13b`, `kf13b-last`, `she-face`, `he-face`, `cert`, `style-clay` | $1.35 |
 
 **`w13a-registry`**：筆簽名（字跡看不清）→紅印章蓋下抬起→櫃檯遞出證書，兩人的手接過。
 
@@ -633,8 +633,8 @@ Reference images, in order: image 1 shows the exact first frame of this shot: be
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w14a-levee` | Omni 影片 | 10 | 275–295 與 w14b 每 5 秒交錯 cross-fade | `kf14a`, `she-face`, `he-face`, `couple-wedding`, `style-clay` | $1.34 |
-| `w14b-paddy` | Omni 影片 | 10 | 275–295 與 w14a 交錯 | `kf14b`, `she-face`, `he-face`, `couple-wedding`, `style-clay` | $1.34 |
+| `w14a-levee` | Omni 影片 | 10 | 275–295 與 w14b 每 5 秒交錯 cross-fade | `kf14a`, `she-face`, `he-face`, `couple-wedding`, `style-clay` | $1.35 |
+| `w14b-paddy` | Omni 影片 | 10 | 275–295 與 w14a 交錯 | `kf14b`, `she-face`, `he-face`, `couple-wedding`, `style-clay` | $1.35 |
 
 **`w14a-levee`**：永和河堤日落，從背後看兩人牽手往夕陽走。
 
@@ -712,7 +712,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 | `w13b-4444-cert` | 10 | 登記日服裝＋真實地點＋101：換裝參考與地標能不能守住 | `refs/wedding/kf13b-first.jpg` | $0.25 |
 | **合計** | 45 | | | **$1.12** |
 
-單價 $0.0248/s 是我們帳本裡 360p 的實測值（含 thought 與參考圖輸入 token）。同四支升 720p 定稿約 $3.18。
+單價 $0.0248/s 是我們帳本裡 360p 的實測值（含 thought 與參考圖輸入 token）。同四支升 720p 定稿約 $3.19。
 跑法：`python3 src/run.py --exp W2 --model omni_12 --spec prompts/wedding/videos-test.yaml --res 360p`
 
 ## 5b. 全片預算（用實測單價）
@@ -724,11 +724,11 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 |---|---|---|
 | 360p 草稿 | $10.78 | $4.80（12 支、126 秒：頭尾給圖、手部、分割裁切、微距等） |
 | 720p 定稿 | $26.32 | $26.32 |
-| 參考圖／頭尾圖／修臉 | $1.37 | $1.37 |
+| 參考圖／頭尾圖／修臉 | $1.25 | $1.25 |
 | 影格檢查 | $1.82 | $1.82 |
 | TTS＋配樂 | $0.74 | $0.74 |
-| 小計 | $41.03 | $35.05 |
-| **含 15% 預備** | **$47.18** | **$40.30** |
+| 小計 | $40.90 | $34.92 |
+| **含 15% 預備** | **$47.04** | **$40.16** |
 | 改用 Google 1080p 定稿 | +$14.67 | +$14.67 |
 
 ## 6. 風險

@@ -13,7 +13,7 @@ def who_from_refs(refs):
         if r.endswith(("she-sheet.jpg", "she-face.jpg")) and "she" not in w: w.append("she")
         elif r.endswith(("he-sheet.jpg", "he-face.jpg")) and not r.endswith("she-face.jpg") and "he" not in w: w.append("he")
         elif "playbill-couple" in r: w.append("wed")
-    return w
+    return ["wed"] if "wed" in w else w   # registration-day shots: check the wedding outfits, not the casual ones
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--exp", required=True)

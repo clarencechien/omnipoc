@@ -1,0 +1,2 @@
+[W11/omni_12-w12a-home-r1-d1bffe] est $0.232 (spent omni 8.053) -> gemini-omni-1.2-flash 10s 360p 16:9 refs=5
+[W11/omni_12-w12a-home-r1-d1bffe] OK latency 31.0s actual $0.2468 probe {"duration_s": 10.027, "size_bytes": 3832624, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

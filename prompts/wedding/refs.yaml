@@ -19,11 +19,3 @@ images:
   - refs/wedding/kf08-guesthouse-v2-ff.jpg
   - refs/wedding/source/playbill-finale-clay-in-scene.png
   out: refs/wedding/kf08-roof.jpg
-- id: kf12a-high
-  aspect: '16:9'
-  size: 1K
-  text: Image 1 is the scene to match; image 2 the art style. The SAME townhouse and street as image 1 seen from a high drone position looking down the quiet street of three-story townhouses and leafy trees in afternoon light; the couple are small in front of the man's house. Same clay storybook style, gentle colors.
-  refs:
-  - refs/wedding/kf12a-home-ff2.jpg
-  - refs/wedding/source/playbill-finale-clay-in-scene.png
-  out: refs/wedding/kf12a-high.jpg

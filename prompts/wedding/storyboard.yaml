@@ -203,7 +203,7 @@ refs:
   prompt: 'Image 1 is the scene to match; image 2 the art style. The SAME mansion, fence and sidewalk as image 1 seen from a high crane position: the softly glowing mansard roof and dormer windows of the white mansion fill the upper frame against a deep blue starry sky, and far below on the sidewalk the couple are tiny, holding hands. Same clay storybook style, gentle colors.'
 - id: kf12a-high
   kind: location
-  status: todo
+  status: done
   path: refs/wedding/kf12a-high.jpg
   zh: 第 12 段・頭尾給圖的結尾：空拍升高，整條透天厝街道，兩人在門口變小
   aspect: '16:9'
@@ -978,3 +978,30 @@ test_shots:
     w13b-4444-cert: 登記日服裝＋真實地點＋101：換裝參考與地標能不能守住
     w10a-library-a: 頭尾給圖環繞（已驗證，作為全片的運鏡範本）
   look_check: 每支取第 1 秒、中段、最後 1 秒三格，用 src/check_look.py 和設定圖比對；任何一格造型跑掉就標記。
+trial_c:
+  ids:
+  - w01-bridge
+  - w02a-she-ready
+  - w02b-he-leave
+  - w03a-she-bus
+  - w03b-he-bridge
+  - w05a-cake
+  - w06-bopiliao
+  - w07a-kura
+  - w08a-guesthouse
+  - w09b-4444-wide
+  - w10a-library-a
+  - w10a-library-b
+  - w11a-bike
+  - w12a-home
+  - w14a-levee
+  done:
+  - w13b-4444-cert
+  draft_first:
+  - w02a-she-ready
+  - w02b-he-leave
+  - w03a-she-bus
+  - w03b-he-bridge
+  - w05a-cake
+  - w11a-bike
+  - w12a-home

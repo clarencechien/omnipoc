@@ -58,6 +58,7 @@ def main(path):
         for sh in seg["shots"]:
             if sh["kind"] == "omni":
                 if not (3 <= sh["duration"] <= 15): fail(f"{sh['id']} duration {sh['duration']} outside 3–15 s")
+                if sh.get("last_frame") and sh["duration"] > 10: fail(f"{sh['id']} first+last-frame shots are limited to 3–10 s")
                 if len(sh["refs"]) > 6: fail(f"{sh['id']} has {len(sh['refs'])} refs (max 6)")
                 for who in chars:
                     n = sum(1 for r in sh["refs"] if refs.get(r, {}).get("who") == who)
@@ -84,7 +85,8 @@ def main(path):
              "lighting and clay storybook style")
     def full_prompt(sh):
         lines, present = [], []
-        parts = [f"image {i} shows {FIRST if (i == 1 and sh.get('first_frame')) else describe(refs[r])}"
+        LAST = "the exact LAST frame of this shot: end the video exactly on this image"
+        parts = [f"image {i} shows {FIRST if (i == 1 and sh.get('first_frame')) else LAST if (i == 2 and sh.get('last_frame')) else describe(refs[r])}"
                  for i, r in enumerate(sh["refs"], 1)]
         if parts:
             lines.append("Reference images, in order: " + "; ".join(parts) + ".")
@@ -281,6 +283,37 @@ def main(path):
         w(f"| **合計** | {tot_s} | | | **${tot_s*P360:.2f}** |\n")
         w(f"單價 ${P360}/s 是我們帳本裡 360p 的實測值（含 thought 與參考圖輸入 token）。同四支升 720p 定稿約 ${tot_s*P720:.2f}。")
         w(f"跑法：`python3 src/run.py --exp {test['exp']} --model omni_12 --spec prompts/{name}/videos-test.yaml --res {test['res']}`\n")
+    # ---- full-film budget from measured numbers
+    shots = [sh for seg in sb["segments"] for sh in seg["shots"] if sh["kind"] == "omni"]
+    S = sum(sh["duration"] for sh in shots); N = len(shots)
+    OV = 0.023                                   # measured extra per call with 5–6 reference images (thought + image input)
+    R360, R720 = 0.0232, 0.0695                  # list price per second
+    risky = [sh for sh in shots if sh.get("draft")]   # shots flagged in the YAML as needing a 360p draft first
+    Sr, Nr = sum(x["duration"] for x in risky), len(risky)
+    draft_all = 1.5 * (S * R360 + N * OV); draft_lean = 1.5 * (Sr * R360 + Nr * OV)
+    final720 = 1.3 * (S * R720 + N * OV); final1080 = 1.3 * (S * 0.1043 + N * OV)
+    todo_imgs = len(gen_refs) + len(still_specs)
+    imgs = todo_imgs * (IMG_1K + 0.015) * 1.5 + 0.10 * 10   # new frames incl. checks, plus ~10 redo/face-fix for feedback
+    checks = 1.3 * N * 0.05                       # 4-frame face check + 1 outfit check per final clip
+    audio = c_tts + c_music
+    def tot(x): return x * 1.15
+    w("## 5b. 全片預算（用實測單價）\n")
+    w(f"影片 {N} 支、{S} 秒。單價：360p ${R360}/s、720p ${R720}/s，每支另加約 ${OV}（附 5–6 張參考圖時的 thought 與圖片輸入，W2 實測）。")
+    w(f"草稿每支平均 1.5 次、定稿 1.3 次；圖片含新增的頭尾圖與約 10 張修改；另加 15% 預備。\n")
+    w("| 項目 | 全部打草稿 | 只對複雜鏡頭打草稿 |\n|---|---|---|")
+    w(f"| 360p 草稿 | ${draft_all:.2f} | ${draft_lean:.2f}（{Nr} 支、{Sr} 秒：頭尾給圖、手部、分割裁切、微距等） |")
+    w(f"| 720p 定稿 | ${final720:.2f} | ${final720:.2f} |")
+    w(f"| 參考圖／頭尾圖／修臉 | ${imgs:.2f} | ${imgs:.2f} |")
+    w(f"| 影格檢查 | ${checks:.2f} | ${checks:.2f} |")
+    w(f"| TTS＋配樂 | ${audio:.2f} | ${audio:.2f} |")
+    a = draft_all + final720 + imgs + checks + audio; b = draft_lean + final720 + imgs + checks + audio
+    w(f"| 小計 | ${a:.2f} | ${b:.2f} |")
+    w(f"| **含 15% 預備** | **${tot(a):.2f}** | **${tot(b):.2f}** |")
+    w(f"| 改用 Google 1080p 定稿 | +${(final1080 - final720) * 1.15:.2f} | +${(final1080 - final720) * 1.15:.2f} |\n")
+    budget_summary = {"N": N, "S": S, "all": round(tot(a), 2), "lean": round(tot(b), 2), "g1080": round((final1080 - final720) * 1.15, 2),
+                      "draft_all": round(draft_all, 2), "draft_lean": round(draft_lean, 2), "final720": round(final720, 2), "imgs": round(imgs, 2),
+                      "checks": round(checks, 2), "audio": round(audio, 2), "risky": Nr}
+    json.dump(budget_summary, open(os.path.join(out_dir, "budget.json"), "w"), indent=1)
     w("## 6. 風險\n")
     w("- **兩個角色 × " + str(n_omni) + " 支的一致性還沒驗證。** 靜態參考圖已經一致；影片端只證明過 1 個角色加 1 個道具。建議先用 360p 跑 3–4 支雙人鏡頭確認。")
     w("- **風格漂移。** 只拿空景當風格參考時，人物會變成平面插畫；每支都要附 `style-clay`（陶土人物在場景裡的畫面）。")

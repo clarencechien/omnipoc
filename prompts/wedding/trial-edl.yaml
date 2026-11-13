@@ -8,7 +8,7 @@ pieces:
   - {exp: W12, id: w03a-she-bus,    in: 2.0,  out: 7.0,  note: 她在永和公車上望向右方}
   - {exp: W12, id: w03b-he-bridge,  in: 4.0,  out: 9.0,  note: 他過新北大橋望向左方（避開 1–3 秒背景乘客變形）}
   - {exp: W12, id: w05a-cake,       in: 0.0,  out: 3.8,  note: 叉子切蛋糕微距（4.2 秒起開始拉遠換景，剪掉）}
-  - {exp: W12, id: w05a-cake,       in: 10.0, out: 12.0, note: 窗邊對坐（9.75 秒前桌子還在移動，剪掉）}
+  - {exp: W12, id: w05a-cake,       in: 10.5, out: 12.0, note: 窗邊對坐（9.75 秒前桌子在移動、10.2–10.5 秒蛋糕消失，剪掉）}
   - {exp: W12, id: w06-bopiliao,    in: 0.2,  out: 3.0,  note: 剝皮寮並肩走（3 秒後人物變大但腳在往前，像倒退，剪掉）}
   - {exp: W13, id: w07a-kura,       in: 0.5,  out: 5.5,  note: 藏壽司簡化版重生}
   - {exp: W12, id: w08a-guesthouse, in: 0.0,  out: 6.6,  note: 台北賓館並肩走}

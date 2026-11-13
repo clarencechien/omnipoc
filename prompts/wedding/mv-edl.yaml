@@ -12,8 +12,8 @@ pieces:
   - {at: 18.0,  exp: W12, id: w02a-she-ready,  in: 0.0,  note: 「我的午後 總是待在安靜的咖啡廳」}
   - {at: 22.5,  exp: W12, id: w03a-she-bus,    in: 2.0,  note: 「跟姐妹們聊著戀愛的話題」}
   - {at: 27.0,  split: [{exp: W12, id: w03a-she-bus, in: 7.0}, {exp: W12, id: w03b-he-bridge, in: 6.0}], note: 「完全不同的 兩人世界」左右分割對望}
-  - {at: 31.0,  exp: W12, id: w05a-cake,       in: 0.3,  note: 「就像那天的 水果蛋糕一樣」}
-  - {at: 34.0,  exp: W12, id: w05a-cake,       in: 9.9,  note: 窗邊對坐}
+  - {at: 31.0,  exp: W12, id: w05a-cake,       in: 0.0,  note: 「就像那天的 水果蛋糕一樣」}
+  - {at: 34.5,  exp: W12, id: w05a-cake,       in: 10.4, note: 窗邊對坐（10.2–10.5 秒叉子上的蛋糕憑空消失，從 10.4 秒起用）}
   - {at: 35.8,  exp: W12, id: w06-bopiliao,    in: 0.0,  note: 「甜蜜地 不可思議地 混合在一起了」}
   - {at: 38.5,  exp: W13, id: w07a-kura,       in: 0.2,  note: 副歌「Like a Fruit Cake」}
   - {at: 45.0,  exp: W12, id: w08a-guesthouse, in: 0.0,  note: 「妳的朋友 變成了我的朋友」}

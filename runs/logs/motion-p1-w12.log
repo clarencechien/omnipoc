@@ -1,0 +1,28 @@
+WARNING: wedding spend 23.93 passes 70% of cap 29.00
+w01-bridge         clean 0.0-14.0s | $0.007 | none
+WARNING: wedding spend 23.94 passes 70% of cap 29.00
+w02a-she-ready     clean 0.0-7.0s | $0.004 | 7.0-9.0s duplication: Keys remain on the tray even after the character picks a set
+WARNING: wedding spend 23.95 passes 70% of cap 29.00
+w02b-he-leave      clean 0.0-5.5s | $0.006 | 5.5-8.5s foot sliding: Character exhibits minor foot sliding along the pavement whi
+WARNING: wedding spend 23.96 passes 70% of cap 29.00
+w03a-she-bus       clean 0.0-11.0s | $0.004 | none
+WARNING: wedding spend 23.97 passes 70% of cap 29.00
+w03b-he-bridge     clean 2.5-11.0s | $0.010 | 0.0-2.5s morphing: In the background on the right, the seated passenger's face 
+WARNING: wedding spend 23.99 passes 70% of cap 29.00
+w05a-cake          clean 0.0-9.0s | $0.009 | 9.0-11.0s disappearing: the piece of strawberry cake on the fork disappears into thi; 10.0-11.0s artifact: flickering AI text/watermark artifact emerges near the lower
+WARNING: wedding spend 24.01 passes 70% of cap 29.00
+w06-bopiliao       clean 0.0-5.0s | $0.007 | 5.0-14.0s sliding feet: Both characters stop taking steps and glide smoothly across ; 7.5-8.8s morphing: The man and woman's inner hands reach toward each other, cli
+WARNING: wedding spend 24.02 passes 70% of cap 29.00
+w08a-guesthouse    clean 0.0-7.0s | $0.009 | 7.2-9.0s hands passing through objects: As the characters reach to hold hands in close-up, their fin
+WARNING: wedding spend 24.03 passes 70% of cap 29.00
+w09b-4444-wide     clean 0.0-11.0s | $0.004 | none
+WARNING: wedding spend 24.04 passes 70% of cap 29.00
+w10a-library-a     clean 0.0-7.0s | $0.006 | none
+WARNING: wedding spend 24.07 passes 70% of cap 29.00
+w10a-library-b     clean 0.0-2.2s | $0.013 | 2.2-4.8s layout change: As the camera orbits, the background architecture abruptly s; 5.4-6.6s morphing: The girl's right hand abruptly jumps from resting at her wai
+WARNING: wedding spend 24.09 passes 70% of cap 29.00
+w11a-bike          clean 0.0-11.0s | $0.008 | none
+WARNING: wedding spend 24.10 passes 70% of cap 29.00
+w12a-home          clean 0.0-9.3s | $0.004 | none
+WARNING: wedding spend 24.12 passes 70% of cap 29.00
+w14a-levee         clean 4.0-9.0s | $0.012 | 3.0-4.0s disappearing object: The wooden park bench on the right side of the walkway sudde

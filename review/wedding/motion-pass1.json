@@ -1,0 +1,225 @@
+{
+ "W12:w01-bridge": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 14.0,
+  "verdict": "The animated shot is exceptionally smooth and stable with consistent geometry, natural camera movement, and no noticeable visual glitches.",
+  "run": "runs/W12/omni_12-w01-bridge-r1-7c4970",
+  "video_tokens": 1365
+ },
+ "W12:w02a-she-ready": {
+  "glitches": [
+   {
+    "start": 7.0,
+    "end": 9.0,
+    "kind": "duplication",
+    "what": "Keys remain on the tray even after the character picks a set up from it"
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 7.0,
+  "verdict": "Animation is mostly consistent, but a duplication glitch occurs when picking up keys.",
+  "run": "runs/W12/omni_12-w02a-she-ready-r1-d0559d",
+  "video_tokens": 910
+ },
+ "W12:w02b-he-leave": {
+  "glitches": [
+   {
+    "start": 5.5,
+    "end": 8.5,
+    "kind": "foot sliding",
+    "what": "Character exhibits minor foot sliding along the pavement while walking forward."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 5.5,
+  "verdict": "Overall smooth animation with only minor foot skating during the outdoor walking sequence.",
+  "run": "runs/W12/omni_12-w02b-he-leave-r1-492817",
+  "video_tokens": 910
+ },
+ "W12:w03a-she-bus": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 11.0,
+  "verdict": "The video is completely clean with smooth camera movement, consistent animation, and no continuity errors or visual glitches.",
+  "run": "runs/W12/omni_12-w03a-she-bus-r1-a0a9d8",
+  "video_tokens": 1092
+ },
+ "W12:w03b-he-bridge": {
+  "glitches": [
+   {
+    "start": 0.0,
+    "end": 2.5,
+    "kind": "morphing",
+    "what": "In the background on the right, the seated passenger's face morphs with glitchy yellow artifacts while the passenger beside her disappears, and a logo briefly flashes onto the top-right ceiling panel."
+   }
+  ],
+  "clean_start": 2.5,
+  "clean_end": 11.0,
+  "verdict": "The first two and a half seconds contain background morphing and artifacting on the other passengers, but the rest of the clip is completely stable and clean.",
+  "run": "runs/W12/omni_12-w03b-he-bridge-r1-a6929d",
+  "video_tokens": 1092
+ },
+ "W12:w05a-cake": {
+  "glitches": [
+   {
+    "start": 9.0,
+    "end": 11.0,
+    "kind": "disappearing",
+    "what": "the piece of strawberry cake on the fork disappears into thin air as the woman lowers her hand"
+   },
+   {
+    "start": 10.0,
+    "end": 11.0,
+    "kind": "artifact",
+    "what": "flickering AI text/watermark artifact emerges near the lower-left window frame"
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 9.0,
+  "verdict": "The video maintains clean stop-motion clay style continuity until around 9 seconds, where the cake on the fork spontaneously vanishes and text artifacts appear at the bottom.",
+  "run": "runs/W12/omni_12-w05a-cake-r1-28b5c6",
+  "video_tokens": 1092
+ },
+ "W12:w06-bopiliao": {
+  "glitches": [
+   {
+    "start": 5.0,
+    "end": 14.0,
+    "kind": "sliding feet",
+    "what": "Both characters stop taking steps and glide smoothly across the brick pavement while their legs remain largely frozen."
+   },
+   {
+    "start": 7.5,
+    "end": 8.8,
+    "kind": "morphing",
+    "what": "The man and woman's inner hands reach toward each other, clipping and morphing together unnaturally before abruptly separating."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 5.0,
+  "verdict": "The video starts with natural walking animation until approximately 5 seconds in, after which the characters glide along the ground without stepping, accompanied by a brief hand-clipping glitch around the 8-second mark.",
+  "run": "runs/W12/omni_12-w06-bopiliao-r1-d456da",
+  "video_tokens": 1365
+ },
+ "W12:w08a-guesthouse": {
+  "glitches": [
+   {
+    "start": 7.2,
+    "end": 9.0,
+    "kind": "hands passing through objects",
+    "what": "As the characters reach to hold hands in close-up, their fingers unnaturally clip, distort, and morph through each other before settling into a clasp."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 7.0,
+  "verdict": "The wide walking shot is well-animated and stable, but a noticeable finger-morphing and clipping glitch occurs during the close-up hand clasp.",
+  "run": "runs/W12/omni_12-w08a-guesthouse-r1-c53a11",
+  "video_tokens": 1092
+ },
+ "W12:w09b-4444-wide": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 11.0,
+  "verdict": "The animation is smooth and consistent throughout with no perceptible glitches or continuity errors.",
+  "run": "runs/W12/omni_12-w09b-4444-wide-r1-f15210",
+  "video_tokens": 1092
+ },
+ "W12:w10a-library-a": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 7.0,
+  "verdict": "The shot is clean and maintains consistent animation and character modeling throughout the camera orbit.",
+  "run": "runs/W12/omni_12-w10a-library-a-r1-bfb9f5",
+  "video_tokens": 728
+ },
+ "W12:w10a-library-b": {
+  "glitches": [
+   {
+    "start": 2.2,
+    "end": 4.8,
+    "kind": "layout change",
+    "what": "As the camera orbits, the background architecture abruptly swaps sides and morphs: the gazebo jumps from left to right, and the library teleports and morphs into a massive centered building behind the characters."
+   },
+   {
+    "start": 5.4,
+    "end": 6.6,
+    "kind": "morphing",
+    "what": "The girl's right hand abruptly jumps from resting at her waist to covering her mouth, popping into the earlier giggling pose."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 2.2,
+  "verdict": "The animation starts smoothly, but during the camera orbit the background environment flips and morphs inconsistently, followed by the girl's arm jumping back to her face.",
+  "run": "runs/W12/omni_12-w10a-library-b-r1-fab104",
+  "video_tokens": 728
+ },
+ "W12:w11a-bike": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 11.0,
+  "verdict": "The animation is consistently smooth and well-rendered, with no visual glitches, morphing, or continuity issues detected.",
+  "run": "runs/W12/omni_12-w11a-bike-r1-ce8e99",
+  "video_tokens": 1092
+ },
+ "W12:w12a-home": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 9.27,
+  "verdict": "The video maintains consistent claymation animation and solid geometry throughout the camera's crane-up shot without any detectable glitches.",
+  "run": "runs/W12/omni_12-w12a-home-r1-d62865",
+  "video_tokens": 910
+ },
+ "W12:w14a-levee": {
+  "glitches": [
+   {
+    "start": 3.0,
+    "end": 4.0,
+    "kind": "disappearing object",
+    "what": "The wooden park bench on the right side of the walkway suddenly disappears from the scene."
+   }
+  ],
+  "clean_start": 4.0,
+  "clean_end": 9.0,
+  "verdict": "The animation is mostly consistent, but the wooden park bench on the right side of the path vanishes abruptly between 3 and 4 seconds.",
+  "run": "runs/W12/omni_12-w14a-levee-r1-98997c",
+  "video_tokens": 910
+ },
+ "W13:w07a-kura": {
+  "glitches": [
+   {
+    "start": 2.0,
+    "end": 3.2,
+    "kind": "clipping",
+    "what": "Sushi piece clips through the woman's mouth while being eaten."
+   },
+   {
+    "start": 5.2,
+    "end": 6.5,
+    "kind": "morphing",
+    "what": "Woman's fingers and chopsticks jitter and warp."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 2.0,
+  "verdict": "Moderate visual consistency with minor clipping during eating and hand warping toward the end.",
+  "run": "runs/W13/omni_12-w07a-kura-r1-9d916f",
+  "video_tokens": 728
+ },
+ "W13:w09a-theatre": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 5.0,
+  "verdict": "The sequence is smooth and consistent, executing the lighting change and subtle character head-turns without visual artifacts or continuity errors.",
+  "run": "runs/W13/omni_12-w09a-theatre-r1-fbcaaf",
+  "video_tokens": 546
+ },
+ "W10:w13b-4444-cert": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 9.0,
+  "verdict": "The animation is high quality, consistent, and free of any visible visual glitches or continuity errors throughout the shot.",
+  "run": "runs/W10/omni_12-w13b-4444-cert-r1-c97c5b",
+  "video_tokens": 910
+ }
+}

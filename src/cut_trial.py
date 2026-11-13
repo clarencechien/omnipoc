@@ -25,5 +25,5 @@ for k in range(1, len(pieces)):
 fv.append(f"{lv}fade=t=in:st=0:d=0.8,fade=t=out:st={t-1.2:.3f}:d=1.2[vout]")
 fa.append(f"{la}afade=t=in:st=0:d=0.8,afade=t=out:st={t-1.2:.3f}:d=1.2[aout]")
 subprocess.run(["ffmpeg", "-y", "-v", "error"] + args + ["-filter_complex", ";".join(fv + fa), "-map", "[vout]", "-map", "[aout]",
-                "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", os.path.join(ROOT, out)], check=True)
+                "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-pix_fmt", "yuv420p", "-profile:v", "high", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", os.path.join(ROOT, out)], check=True)
 print(f"{len(pieces)} pieces, {t:.1f}s -> {out}")

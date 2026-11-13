@@ -83,5 +83,5 @@ k = len(files)
 fc.append(f"[{k}:a]atrim=start={s_in}:end={s_out},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.6,afade=t=out:st={total - 3.0:.3f}:d=3.0[aout]")
 os.makedirs(os.path.dirname(os.path.join(ROOT, a.out)), exist_ok=True)
 subprocess.run(["ffmpeg", "-y", "-v", "error"] + args + ["-i", e["song"], "-filter_complex", ";".join(fc), "-map", "[vout]", "-map", "[aout]",
-                "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", os.path.join(ROOT, a.out)], check=True)
+                "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p", "-profile:v", "high", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", os.path.join(ROOT, a.out)], check=True)
 print(f"{len(files)} pieces, video {t:.1f}s, song {total:.1f}s -> {a.out}")

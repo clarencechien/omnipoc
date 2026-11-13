@@ -461,5 +461,54 @@
    "white low sneakers",
    "white canvas sneakers"
   ]
+ },
+ "kf13b-first": {
+  "path": "refs/wedding/kf13b-first.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "Exact match to character reference."
+   },
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "Exact match to character reference."
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "BEAOSE",
+  "summary": "The candidate frame successfully depicts both characters in 3D clay style with matching hairstyles, outfits, and accessories as specified in the reference sheets, though feet and shoes are out of frame.",
+  "not_visible": [
+   "black shoes",
+   "ivory calf-length dress",
+   "ivory Mary Jane shoes"
+  ]
+ },
+ "kf13b-last": {
+  "path": "refs/wedding/kf13b-last.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "Consistent facial features, glasses, and hair style matching the reference."
+   },
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "Consistent facial features, hair style, and blush matching the reference."
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The candidate frame successfully maintains character consistency with the 3D clay figurines, matching all visible attributes, clothing, and facial features for both characters.",
+  "not_visible": [
+   "black shoes",
+   "ivory Mary Jane shoes"
+  ]
  }
 }

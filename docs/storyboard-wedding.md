@@ -1,4 +1,4 @@
-# 分鏡完整描述 — 兩條河之間（暫名）（v8）
+# 分鏡完整描述 — 兩條河之間（暫名）（v9）
 
 > 由 `src/storyboard.py` 從 `prompts/wedding/storyboard.yaml` 產生，改內容請改 YAML 後重跑。
 > 原始分鏡由 Clarence 提供；本文件補上每個鏡頭的製作方式、Omni prompt、參考圖、聲音與字幕時間。
@@ -10,7 +10,7 @@
 | 片長 | 300 秒，14 段 |
 | Omni 影片鏡頭 | 28 支，共 282 秒（單支 3–15 秒） |
 | 圖片鏡頭 | 0 張（Ken Burns／合成底圖） |
-| 參考圖 | 33 張（已完成 30、待生成 3） |
+| 參考圖 | 34 張（已完成 31、待生成 3） |
 | 旁白／口白 | 7 句，TTS（gemini-3.8-flash-tts） |
 | 配樂 | 5 段 Lyria |
 | 輸出 | 16:9，草稿 360p，定稿 720p |
@@ -87,7 +87,7 @@ Animated 3D storybook short film in the approved style of The Playbill: the coup
 | `kf12a` | 地點 | 第 12 段・雲林透天老家（Clarence 提供街景轉繪）（已修臉） | `refs/wedding/kf12a-home-ff2.jpg` | 已完成 |
 | `kf12b` | 地點 | 第 12 段・雲林科技大學校門（Commons 照片轉繪） | `refs/wedding/kf12b-yuntech.jpg` | 已完成 |
 | `kf13a` | 地點 | 第 13 段・戶政事務所，櫃檯遞出證書（你們證書的簡化版）（已修臉） | `refs/wedding/kf13a-registry-v2-ff.jpg` | 已完成 |
-| `kf13b` | 地點 | 第 13 段・回到四四南村舉證書（色調已調淡） | `refs/wedding/kf13b-4444-cert-v4-graded.jpg` | 已完成 |
+| `kf13b` | 地點 | 第 13 段・開頭：四四南村舉證書、張眼微笑（色調與其他場景一致） | `refs/wedding/kf13b-first.jpg` | 已完成 |
 | `kf14a` | 地點 | 第 14 段・永和河堤日落 | `refs/wedding/kf14a-levee.jpg` | 已完成 |
 | `kf14b` | 地點 | 第 14 段・雲林稻田晨光（Commons 照片轉繪）（已修臉） | `refs/wedding/kf14b-paddy-ff.jpg` | 已完成 |
 | `kf02c` | 地點 | 第 2 段・他的三重住處大樓門口（街景轉繪） | `refs/wedding/kf02c-he-entrance.jpg` | 已完成 |
@@ -100,6 +100,7 @@ Animated 3D storybook short film in the approved style of The Playbill: the coup
 | `kf07b-start` | 地點 | 第 7 段・頭尾給圖的開頭：兩人沿大都會公園步道走來 | `refs/wedding/kf07b-start.jpg` | 待生成 |
 | `kf08-roof` | 地點 | 第 8 段・頭尾給圖的結尾：鏡頭升起，台北賓館亮燈屋頂與星空，兩人在下方變小 | `refs/wedding/kf08-roof.jpg` | 待生成 |
 | `kf12a-high` | 地點 | 第 12 段・頭尾給圖的結尾：空拍升高，整條透天厝街道，兩人在門口變小 | `refs/wedding/kf12a-high.jpg` | 待生成 |
+| `kf13b-last` | 地點 | 第 13 段・結尾：兩人靠頭一起笑瞇眼 | `refs/wedding/kf13b-last.jpg` | 已完成 |
 
 地點照片來源與授權見 `refs/wedding/ATTRIBUTION.md`。
 
@@ -597,7 +598,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
 | `w13a-registry` | Omni 影片 | 10 | 255–265 | `kf13a`, `she-face`, `he-face`, `couple-wedding`, `cert`, `style-clay` | $1.34 |
-| `w13b-4444-cert` | Omni 影片 | 10 | 265–275 | `kf13b`, `she-face`, `he-face`, `couple-wedding`, `cert`, `style-clay` | $1.34 |
+| `w13b-4444-cert` | Omni 影片 | 10 | 265–275 | `kf13b`, `kf13b-last`, `she-face`, `he-face`, `cert`, `style-clay` | $1.34 |
 
 **`w13a-registry`**：筆簽名（字跡看不清）→紅印章蓋下抬起→櫃檯遞出證書，兩人的手接過。
 
@@ -608,12 +609,12 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 ```
 </details>
 
-**`w13b-4444-cert`**：回到四四南村，柔和的藍天、色調收斂；兩人舉起證書正面，靠頭、一起笑瞇眼，停在笑瞇眼到最後，女方不再睜眼。固定機位慢推。
+**`w13b-4444-cert`**：頭尾給圖：四四南村舉證書張眼微笑→靠頭一起笑瞇眼，停在笑瞇眼到最後一格。固定機位，色調與其他場景一致。重要場景，直接出 720p。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the exact first frame of this shot: begin the video from this image and keep its composition, characters, lighting and clay storybook style; image 2 shows the woman's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 3 shows the man's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 4 shows the couple in the outfits for this scene: keep exactly these faces, hairstyles and outfits; image 5 shows the location, lighting and art direction for this scene: match this place; image 6 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots. Colors are soft and natural like a warm storybook, never oversaturated; skies are gentle, not electric blue. Camera moves are simple and slow. Back at Four Four South Village on a bright, gentle afternoon with a soft natural blue sky and white clouds, colors calm and warm like the other scenes, never oversaturated: in front of the old grey village houses with colorful green, blue and red doors, the blue-green Taipei 101 behind. The couple in their registration-day outfits hold their certificate up together with its FRONT facing the camera; she holds her bouquet in her other hand the whole time. They lean their heads together and both laugh with their eyes squeezed shut into happy crescents, and they HOLD that eyes-closed laugh until the very last frame; she does not open her eyes again. Locked-off camera with a very slow push-in. The certificate is a SIMPLIFIED version of the couple's own illustrated card: top half a cheerful blue illustrated night sky with tiny fireworks, a little city skyline and a tiny waving cartoon couple; bottom half white with a few faint lines; no readable words, names or numbers. Audio: only ambient sound — birds, a light breeze, distant city. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the exact first frame of this shot: begin the video from this image and keep its composition, characters, lighting and clay storybook style; image 2 shows the exact LAST frame of this shot: end the video exactly on this image; image 3 shows the woman's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 4 shows the man's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 5 shows the location, lighting and art direction for this scene: match this place; image 6 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots. Colors are soft and natural like a warm storybook, never oversaturated; skies are gentle, not electric blue. Camera moves are simple and slow. A gentle sunny afternoon back at Four Four South Village, soft warm light and a pale soft-blue sky, colors muted and warm, never oversaturated. The couple in their registration-day outfits hold their marriage certificate up together, its front facing the camera, she holds her bouquet in her other hand; they smile at the camera, then lean their heads together and both burst into a happy laugh with their eyes squeezed shut into curved crescents, and they HOLD that eyes-closed laugh until the very last frame; neither of them opens their eyes again. Locked-off camera, no camera movement. The certificate keeps the same simple illustration on top and faint plain lines below, with no letters. Audio: only ambient sound — birds, a light breeze, distant city. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -708,7 +709,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 | `w06-bopiliao` | 15 | 雙人背影走路：陶土質感與人物在動態中是否穩定 | `refs/wedding/kf06-bopiliao-v2.jpg` | $0.37 |
 | `w08a-guesthouse` | 12 | 新運鏡＋手部互動：小指碰觸到牽手是最容易崩的細節 | `refs/wedding/kf08-guesthouse-v2-ff.jpg` | $0.30 |
 | `w10a-library-a` | 8 | 頭尾給圖環繞（已驗證，作為全片的運鏡範本） | `refs/wedding/kf10-library-ff.jpg` | $0.20 |
-| `w13b-4444-cert` | 10 | 登記日服裝＋真實地點＋101：換裝參考與地標能不能守住 | `refs/wedding/kf13b-4444-cert-v4-graded.jpg` | $0.25 |
+| `w13b-4444-cert` | 10 | 登記日服裝＋真實地點＋101：換裝參考與地標能不能守住 | `refs/wedding/kf13b-first.jpg` | $0.25 |
 | **合計** | 45 | | | **$1.12** |
 
 單價 $0.0248/s 是我們帳本裡 360p 的實測值（含 thought 與參考圖輸入 token）。同四支升 720p 定稿約 $3.18。
@@ -721,13 +722,13 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 項目 | 全部打草稿 | 只對複雜鏡頭打草稿 |
 |---|---|---|
-| 360p 草稿 | $10.78 | $5.18（13 支、136 秒：頭尾給圖、手部、分割裁切、微距等） |
+| 360p 草稿 | $10.78 | $4.80（12 支、126 秒：頭尾給圖、手部、分割裁切、微距等） |
 | 720p 定稿 | $26.32 | $26.32 |
 | 參考圖／頭尾圖／修臉 | $1.37 | $1.37 |
 | 影格檢查 | $1.82 | $1.82 |
 | TTS＋配樂 | $0.74 | $0.74 |
-| 小計 | $41.03 | $35.43 |
-| **含 15% 預備** | **$47.18** | **$40.74** |
+| 小計 | $41.03 | $35.05 |
+| **含 15% 預備** | **$47.18** | **$40.30** |
 | 改用 Google 1080p 定稿 | +$14.67 | +$14.67 |
 
 ## 6. 風險

@@ -37,3 +37,5 @@ items:
   - {id: kf09a-lpc-ff2, path: refs/wedding/kf09a-lpc-ff2.jpg, who: [he]}
   - {id: kf12a-home-ff2, path: refs/wedding/kf12a-home-ff2.jpg, who: [she, he]}
   - {id: kf10-mid, path: refs/wedding/kf10-mid.jpg, who: [she, he]}
+  - {id: kf13b-first, path: refs/wedding/kf13b-first.jpg, who: [wed]}
+  - {id: kf13b-last, path: refs/wedding/kf13b-last.jpg, who: [wed]}

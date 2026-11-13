@@ -720,5 +720,41 @@
    }
   },
   "verdict": "drift"
+ },
+ "kf13b-first": {
+  "path": "refs/wedding/kf13b-first.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference sheet, retaining large round eyes with catchlights, a small button nose, full round face, and rectangular glasses frame.",
+    "crop": "review/wedding/face-crops/kf13b-first-he.jpg",
+    "face_px": 281
+   },
+   "she": {
+    "score": 4,
+    "note": "Consistent facial proportions, eye size, catchlights, and button nose with no drift detected.",
+    "crop": "review/wedding/face-crops/kf13b-first-she.jpg",
+    "face_px": 295
+   }
+  },
+  "verdict": "pass"
+ },
+ "kf13b-last": {
+  "path": "refs/wedding/kf13b-last.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference, with consistent round head shape, button nose, cheek blush, and rectangular glasses frames. No significant drift patterns observed.",
+    "crop": "review/wedding/face-crops/kf13b-last-he.jpg",
+    "face_px": 288
+   },
+   "she": {
+    "score": 4,
+    "note": "The character displays closed smiling eyes due to expression, but facial proportions, round jaw shape, small button nose, and cheek blush align closely with the reference sheet without noticeable drift.",
+    "crop": "review/wedding/face-crops/kf13b-last-she.jpg",
+    "face_px": 297
+   }
+  },
+  "verdict": "pass"
  }
 }

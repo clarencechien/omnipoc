@@ -1,9 +1,9 @@
-# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v8）
+# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v9）
 # 由 src/storyboard.py 產生 docs/storyboard-wedding.md、prompts/wedding/videos.yaml、refs.yaml、stills.yaml。
 # 改內容請改這個檔，不要改產出物。
 meta:
   title: 兩條河之間（暫名）
-  version: v8
+  version: v9
   duration_s: 300
   aspect: '16:9'
   final_res: 720p
@@ -132,8 +132,8 @@ refs:
 - id: kf13b
   kind: location
   status: done
-  path: refs/wedding/kf13b-4444-cert-v4-graded.jpg
-  zh: 第 13 段・回到四四南村舉證書（色調已調淡）
+  path: refs/wedding/kf13b-first.jpg
+  zh: 第 13 段・開頭：四四南村舉證書、張眼微笑（色調與其他場景一致）
 - id: kf14a
   kind: location
   status: done
@@ -211,6 +211,11 @@ refs:
   - kf12a
   - style-clay
   prompt: Image 1 is the scene to match; image 2 the art style. The SAME townhouse and street as image 1 seen from a high drone position looking down the quiet street of three-story townhouses and leafy trees in afternoon light; the couple are small in front of the man's house. Same clay storybook style, gentle colors.
+- id: kf13b-last
+  kind: location
+  status: done
+  path: refs/wedding/kf13b-last.jpg
+  zh: 第 13 段・結尾：兩人靠頭一起笑瞇眼
 stills:
 - id: st-phone
   status: done
@@ -854,17 +859,18 @@ segments:
     duration: 10
     refs:
     - kf13b
+    - kf13b-last
     - she-face
     - he-face
-    - couple-wedding
     - cert
     - style-clay
     use: 265–275
-    zh: 回到四四南村，柔和的藍天、色調收斂；兩人舉起證書正面，靠頭、一起笑瞇眼，停在笑瞇眼到最後，女方不再睜眼。固定機位慢推。
-    prompt: 'Back at Four Four South Village on a bright, gentle afternoon with a soft natural blue sky and white clouds, colors calm and warm like the other scenes, never oversaturated: in front of the old grey village houses with colorful green, blue and red doors, the blue-green Taipei 101 behind. The couple in their registration-day outfits hold their certificate up together with its FRONT facing the camera; she holds her bouquet in her other hand the whole time. They lean their heads together and both laugh with their eyes squeezed shut into happy crescents, and they HOLD that eyes-closed laugh until the very last frame; she does not open her eyes again. Locked-off camera with a very slow push-in. The certificate is a SIMPLIFIED version of the couple''s own illustrated card: top half a cheerful blue illustrated night sky with tiny fireworks, a little city skyline and a tiny waving cartoon couple; bottom half white with a few faint lines; no readable words, names or numbers.'
+    zh: 頭尾給圖：四四南村舉證書張眼微笑→靠頭一起笑瞇眼，停在笑瞇眼到最後一格。固定機位，色調與其他場景一致。重要場景，直接出 720p。
+    prompt: A gentle sunny afternoon back at Four Four South Village, soft warm light and a pale soft-blue sky, colors muted and warm, never oversaturated. The couple in their registration-day outfits hold their marriage certificate up together, its front facing the camera, she holds her bouquet in her other hand; they smile at the camera, then lean their heads together and both burst into a happy laugh with their eyes squeezed shut into curved crescents, and they HOLD that eyes-closed laugh until the very last frame; neither of them opens their eyes again. Locked-off camera, no camera movement. The certificate keeps the same simple illustration on top and faint plain lines below, with no letters.
     ambient: birds, a light breeze, distant city
     first_frame: true
-    draft: true
+    draft: false
+    last_frame: true
   vo:
   - tc: 257–263
     speaker: 女主

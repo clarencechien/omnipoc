@@ -20,24 +20,44 @@ Google 影片生成 API 實測與婚禮微 MV。總花費 **$31.61**（Gemini $2
 
 ## 程式
 ```
-config.yaml              # model IDs、價表、預算 cap（單一事實來源）
-prompts/                 # 版本化 prompt；opening/ 下是開場用
-src/run.py               # 影片：--prompt 單支 或 --spec 批次；估價→cap→呼叫→落檔→ledger
-src/run_image.py         # 圖：Nano Banana 2 批次
-src/spend.py             # 累計花費（按實驗 × 模型）
-src/storyboard.py        # 分鏡 YAML → 文件 + videos/refs/stills prompt 檔 + 估價
-src/budget.py            # 估價、ledger、cap
-src/probe.py             # ffprobe
-src/clients/omni.py      # Omni Interactions API（含參考圖、delivery=uri）
-src/clients/image.py     # gemini-3.1-flash-image（Interactions API）
-src/clients/xai.py       # Grok Imagine（保留，不再使用）
-runs/<exp>/<run_id>/     # meta.json 進 repo，影片 gitignore
+config.yaml                  # model IDs、價表、預算 cap（單一事實來源）
+prompts/                     # 版本化 prompt；opening/ 尋寶片頭、wedding/ 婚禮短片
+prompts/wedding/storyboard.yaml   # 婚禮分鏡單一事實來源 → src/storyboard.py 產生文件與 prompt 檔
+prompts/wedding/trial-edl.yaml    # 試片剪接表；mv-edl.yaml = MV 剪接表（對歌詞時間）
+src/run.py / run_image.py    # 影片／圖片生成：估價→cap→呼叫→落檔→ledger
+src/storyboard.py            # 分鏡 YAML → docs/storyboard-wedding.md、videos/refs/stills.yaml、預算
+src/check_look.py            # 參考圖服裝檢查（3.5 flash-lite）
+src/check_faces.py           # 框臉放大的臉部檢查（3.8 flash）
+src/check_motion.py          # 看整支影片找穿幫（3.8 flash；建議預設設定跑兩次）
+src/check_video_frames.py    # 影片抽格做臉部／服裝檢查
+src/check_decision.py        # Gemini Decision 1 粗篩（實驗，未採用）
+src/cut_trial.py             # 依剪接表剪試片
+src/cut_mv.py                # 依歌詞時間剪 MV、字幕、歌；--pieces-only / --pieces-dir 供 1080p 流程
+src/modal_upscale.py         # Real-ESRGAN 放大（Modal T4，取自 theplaybillv2）
+src/wedding_gallery.py       # 參考圖審片頁
+src/spend.py / budget.py     # 花費統計、預算 cap
+assets/fonts/LyricSerif.ttf  # 歌詞字型（Noto Serif TC/JP 子集，OFL）
+runs/<exp>/<run_id>/         # 每次生成的 meta.json 與原檔
 ```
 
-執行需要環境變數 `gemini_key`（或 `GEMINI_API_KEY`）。Secret 不 commit、不印 log。
+環境變數：`gemini_key`（Gemini）、`xai_key`（Grok，已不用）、`modal`／`modal_secret`（Modal，執行前設成 `MODAL_TOKEN_ID`／`MODAL_TOKEN_SECRET`）。Secret 不 commit、不印 log。
+
+婚禮 MV 從頭重出（720p → 1080p）：
 
 ```bash
-python3 src/run.py --exp O4 --model omni_12 --spec prompts/opening/s4.yaml --res 720p --only s4-hunter
+python3 src/cut_mv.py prompts/wedding/mv-edl.yaml review/wedding/mv/mv-720p.mp4
+```
+
+```bash
+python3 src/cut_mv.py prompts/wedding/mv-edl.yaml review/wedding/mv/unused.mp4 --pieces-only
+```
+
+```bash
+MODAL_TOKEN_ID="$modal" MODAL_TOKEN_SECRET="$modal_secret" modal run src/modal_upscale.py::batch --src-dir runs/mv-pieces --dst-dir runs/mv-pieces-1080
+```
+
+```bash
+python3 src/cut_mv.py prompts/wedding/mv-edl.yaml review/wedding/mv/mv-1080p.mp4 --height 1080 --pieces-dir runs/mv-pieces-1080
 ```
 
 ```bash
@@ -45,5 +65,6 @@ python3 src/spend.py
 ```
 
 ## 接續點
-- S5：1080p 對照（Google 重生成 vs 本機 lanczos／Real-ESRGAN），約 $0.62。
-- S6：組裝（Lyria 3.5 配樂 $0.08、ffmpeg 字卡、地圖 Ken Burns、混音、letterbox 統一）。定稿素材清單在 REPORT.md 第二部分第 4 節。
+- **婚禮完整 5 分鐘版**：剩 11 支、100 秒，約 $14（見 `docs/wedding-mv-lessons.md` 第 6 節）。流程見 `docs/storyboard-wedding.md` 第 1 節。
+- **分享**：MV 1080p 上 YouTube（不公開）或放到 playbill 網站的 R2。
+- 尋寶片頭的 S5／S6 仍未做（REPORT.md 第二部分第 4 節）。

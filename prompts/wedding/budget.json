@@ -10,12 +10,5 @@
  "imgs": 1.25,
  "checks": 1.82,
  "audio": 0.74,
- "risky": 12,
- "remaining_after_trial_c": {
-  "shots": 11,
-  "seconds": 100,
-  "subtotal": 12.45,
-  "with_reserve": 14.32,
-  "as_of": "2026-11-13"
- }
+ "risky": 12
 }

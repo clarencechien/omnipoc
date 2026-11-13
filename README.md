@@ -5,6 +5,7 @@ Google 影片生成 API 實測（2026-11-07，已告一段落）。總花費 $7.
 **先讀 `REPORT.md` 第 0 節**：場景 → 做法結論表與花費總表。
 
 ## 文件
+- `docs/wedding-mv-lessons.md` — 婚禮微 MV 的完整製作過程與 lessons learned（先讀這份）
 - `docs/storyboard-wedding.md` — 5 分鐘愛情故事短片的完整分鏡（由 `prompts/wedding/storyboard.yaml` 經 `src/storyboard.py` 產生）
 - `REPORT.md` — 總結、第一部分（Omni 1.2 vs Grok 1.5 盲測）、第二部分（Omni 尋寶開場 S0–S4）
 - `docs/decisions.md` — 決策紀錄與踩坑規則

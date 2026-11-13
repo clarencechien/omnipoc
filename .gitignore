@@ -13,3 +13,5 @@ __pycache__/
 .venv/
 *.pyc
 runs/*.log
+runs/mv-pieces/
+runs/trial-pieces/

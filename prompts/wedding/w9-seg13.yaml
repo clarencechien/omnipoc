@@ -1,0 +1,23 @@
+# W9 — seg 13 (important scene): new first/last keyframes with the same palette as the other scenes
+version: w9-v1
+images:
+  - id: kf13b-first
+    aspect: "16:9"
+    size: 1K
+    refs: [refs/wedding/source/playbill-couple-4heads.png, refs/wedding/she-face.jpg, refs/wedding/he-face.jpg, refs/wedding/source/certificate-design.jpg, refs/wedding/kf09b-4444-v4.jpg, refs/wedding/kf13a-registry-v2-ff.jpg, refs/wedding/source/playbill-finale-clay-in-scene.png]
+    text: >-
+      Image 1 is the couple in their registration-day outfits (he: black rectangular glasses, black relaxed suit over a
+      white crewneck, black shoes; she: half-up wavy brown hair, blush pink cardigan, ivory calf-length dress, ivory Mary
+      Jane shoes, small blush and cream bouquet). Images 2 and 3 are the woman's and the man's FACE reference sheets: copy
+      their faces exactly (large round dark-brown eyes with white catchlights, small button noses, round blushing cheeks).
+      Image 4 is their marriage certificate design. Image 5 is Four Four South Village already drawn in the approved style:
+      use the SAME long two-story grey house with the upstairs balcony and the green, blue and red doors, and the same
+      blue-green Taipei 101 behind it. Image 6 shows the approved warm daylight color palette and image 7 the approved art
+      style. Scene: a gentle sunny afternoon back at Four Four South Village, soft warm light, a pale soft-blue sky with a
+      few soft white clouds, colors muted and warm exactly like images 5, 6 and 7 - NOT a saturated electric-blue sky.
+      Medium shot from the knees up, faces large and clear: the couple stand side by side in front of the house and hold
+      their marriage certificate up together with their inner hands, its FRONT facing the camera; she holds her bouquet in
+      her other hand. Both smile warmly at the camera with their eyes OPEN. The certificate is a simplified version of image
+      4: top half a blue illustrated night sky with tiny fireworks, a little city skyline and a tiny waving cartoon couple;
+      bottom half white with a few faint lines; no readable words, names or numbers. Sculpted matte clay figurines, never
+      flat 2D. No other people, no readable text, no photorealism.

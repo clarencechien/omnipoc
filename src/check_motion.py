@@ -26,11 +26,13 @@ SCHEMA = {"type": "OBJECT", "properties": {
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--exp", required=True); ap.add_argument("--only"); ap.add_argument("--spec", default="prompts/wedding/videos.yaml")
+    ap.add_argument("--fps", type=float, default=0); ap.add_argument("--res", default="", help="low|medium|high")
+    ap.add_argument("--out", default="review/wedding/motion-check.json")
     a = ap.parse_args(); key = os.environ.get("GEMINI_API_KEY") or os.environ.get("gemini_key")
     sb = yaml.safe_load(open(os.path.join(budget.ROOT, "prompts/wedding/storyboard.yaml")))
     zh = {sh["id"]: sh for seg in sb["segments"] for sh in seg["shots"]}
     only = a.only.split(",")
-    out_path = os.path.join(budget.ROOT, "review", "wedding", "motion-check.json")
+    out_path = os.path.join(budget.ROOT, a.out)
     res = json.load(open(out_path)) if os.path.exists(out_path) else {}
     for vid in only:
         metas = sorted(glob.glob(os.path.join(budget.ROOT, "runs", a.exp, f"*-{vid}-r*", "meta.json")), key=os.path.getmtime)
@@ -38,19 +40,22 @@ def main():
         if not metas: print("no run for", vid); continue
         d = os.path.dirname(metas[-1]); data = base64.b64encode(open(os.path.join(d, "video.mp4"), "rb").read()).decode()
         desc = " ".join(zh[vid].get("prompt", "").split())[:900]
-        budget.check_cap("vision", 0.03, exp=a.exp)
-        body = {"contents": [{"role": "user", "parts": [{"inline_data": {"mime_type": "video/mp4", "data": data}}, {"text": ASK.format(desc=desc)}]}],
-                "generationConfig": {"responseMimeType": "application/json", "responseSchema": SCHEMA, "temperature": 0}}
+        budget.check_cap("vision", 0.10, exp="WM")
+        vpart = {"inline_data": {"mime_type": "video/mp4", "data": data}}
+        if a.fps: vpart["video_metadata"] = {"fps": a.fps}
+        gen = {"responseMimeType": "application/json", "responseSchema": SCHEMA, "temperature": 0}
+        if a.res: gen["mediaResolution"] = "MEDIA_RESOLUTION_" + a.res.upper()
+        body = {"contents": [{"role": "user", "parts": [vpart, {"text": ASK.format(desc=desc)}]}], "generationConfig": gen}
         t0 = time.time()
         r = requests.post(URL, headers={"x-goog-api-key": key, "Content-Type": "application/json"}, json=body, timeout=300)
-        entry = dict(exp="WM", provider="gemini", model=MODEL, prompt_id="motion:" + vid, rep=1, params={"run": os.path.relpath(d, budget.ROOT)}, est_cost=0.02)
+        entry = dict(exp="WM", provider="gemini", model=MODEL, prompt_id=f"motion:{a.exp}:{vid}", rep=1, params={"run": os.path.relpath(d, budget.ROOT), "fps": a.fps or 1, "res": a.res or "default"}, est_cost=0.04)
         if r.status_code != 200:
             budget.record(**entry, status="failed", error=r.text[:300]); print("ERR", vid, r.text[:200]); continue
         j = r.json(); u = j.get("usageMetadata", {})
         cost = u.get("promptTokenCount", 0) * PRICE_IN / 1e6 + (u.get("candidatesTokenCount", 0) + u.get("thoughtsTokenCount", 0)) * PRICE_OUT / 1e6
         budget.record(**entry, status="ok", error=None, usage=u, actual_cost=round(cost, 5), latency_s=round(time.time() - t0, 1))
         out = json.loads(j["candidates"][0]["content"]["parts"][0]["text"]); out["run"] = os.path.relpath(d, budget.ROOT)
-        res[vid] = out; json.dump(res, open(out_path, "w"), ensure_ascii=False, indent=1)
+        res[f"{a.exp}:{vid}"] = out; out["video_tokens"] = sum(x.get("tokenCount", 0) for x in u.get("promptTokensDetails", []) if x.get("modality") == "VIDEO"); json.dump(res, open(out_path, "w"), ensure_ascii=False, indent=1)
         g = "; ".join(f"{x['start']:.1f}-{x['end']:.1f}s {x['kind']}: {x['what'][:60]}" for x in out["glitches"]) or "none"
         print(f"{vid:18} clean {out['clean_start']:.1f}-{out['clean_end']:.1f}s | ${cost:.3f} | {g}", flush=True)
 

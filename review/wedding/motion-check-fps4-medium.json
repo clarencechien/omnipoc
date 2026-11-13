@@ -1,0 +1,116 @@
+{
+ "W12:w06-bopiliao": {
+  "glitches": [
+   {
+    "start": 8.25,
+    "end": 9.25,
+    "kind": "morphing",
+    "what": "The woman's hand unnaturally stretches and fuses with the man's hand before suddenly popping away into a raised gesturing position."
+   },
+   {
+    "start": 11.75,
+    "end": 12.0,
+    "kind": "jump",
+    "what": "The woman's left arm instantly teleports from a raised gesture down to her side between consecutive frames."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 8.25,
+  "verdict": "The animation maintains good visual consistency in the clay style, but includes an awkward hand morphing artifact around 8-9 seconds and an abrupt arm position jump around 12 seconds.",
+  "run": "runs/W12/omni_12-w06-bopiliao-r1-d456da",
+  "video_tokens": 4335
+ },
+ "W12:w05a-cake": {
+  "glitches": [
+   {
+    "start": 9.5,
+    "end": 10.5,
+    "kind": "morphing",
+    "what": "The lifted piece of cake merges back onto the plate as the fork lowers, causing the missing chunk to vanish and the cake slice to become completely whole and untouched again."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 9.5,
+  "verdict": "The animation is smooth and consistent until around 9.5s, when the cut slice of cake regenerates back into an intact piece.",
+  "run": "runs/W12/omni_12-w05a-cake-r1-28b5c6",
+  "video_tokens": 3468
+ },
+ "W12:w07a-kura": {
+  "glitches": [
+   {
+    "start": 1.0,
+    "end": 1.4,
+    "kind": "disappearing",
+    "what": "the sushi piece held in the man's hand suddenly vanishes as he reaches forward"
+   },
+   {
+    "start": 3.0,
+    "end": 3.5,
+    "kind": "disappearing",
+    "what": "the clear plastic dome cover lifted off the sushi plate vanishes into thin air"
+   },
+   {
+    "start": 4.7,
+    "end": 5.1,
+    "kind": "appearing",
+    "what": "chopsticks suddenly materialize out of nowhere into the woman's hand"
+   },
+   {
+    "start": 5.7,
+    "end": 6.2,
+    "kind": "multiplying",
+    "what": "a piece of sushi duplicates into the man's hand while both sushi pieces remain on his plate"
+   }
+  ],
+  "clean_start": 6.2,
+  "clean_end": 8.0,
+  "verdict": "The clip features multiple object glitches, including disappearing food and a dome cover, chopsticks abruptly popping into hand, and duplicated sushi.",
+  "run": "runs/W12/omni_12-w07a-kura-r1-29cce5",
+  "video_tokens": 2312
+ },
+ "W12:w08a-guesthouse": {
+  "glitches": [
+   {
+    "start": 0.0,
+    "end": 7.0,
+    "kind": "moonwalking feet",
+    "what": "The characters walk in place while the camera and background remain static, causing their feet to slide along the pavement."
+   }
+  ],
+  "clean_start": 7.0,
+  "clean_end": 11.75,
+  "verdict": "The first shot features walking-in-place feet sliding across the ground, followed by a clean close-up shot of the characters holding hands.",
+  "run": "runs/W12/omni_12-w08a-guesthouse-r1-c53a11",
+  "video_tokens": 3468
+ },
+ "W12:w09b-4444-wide": {
+  "glitches": [
+   {
+    "start": 6.0,
+    "end": 11.75,
+    "kind": "disappearing",
+    "what": "The potted plants in the foreground on both the left and right sides suddenly vanish from the scene."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 6.0,
+  "verdict": "The animation is smooth and consistent until 6 seconds, when both sets of potted plants in the foreground abruptly disappear as the camera pushes in.",
+  "run": "runs/W12/omni_12-w09b-4444-wide-r1-f15210",
+  "video_tokens": 3468
+ },
+ "W13:w07a-kura": {
+  "glitches": [
+   {
+    "start": 4.25,
+    "end": 7.75,
+    "kind": "item_duplication",
+    "what": "The piece of sushi that the woman just ate magically reappears on her plate."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 4.25,
+  "verdict": "The animation is smooth and consistent until around 4.25 seconds, when the sushi piece the woman consumed suddenly reappears on her plate.",
+  "run": "runs/W13/omni_12-w07a-kura-r1-9d916f",
+  "video_tokens": 2312
+ }
+}

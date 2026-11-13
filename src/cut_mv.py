@@ -3,11 +3,13 @@ usage: python3 src/cut_mv.py prompts/wedding/mv-edl.yaml review/wedding/mv/mv-72
 import argparse, glob, json, os, subprocess, yaml
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ap = argparse.ArgumentParser(); ap.add_argument("edl"); ap.add_argument("out"); ap.add_argument("--height", type=int, default=720)
-ap.add_argument("--no-subs", action="store_true"); ap.add_argument("--src-height", type=int, default=0, help="use upscaled sources video_<h>p.mp4 if present")
+ap.add_argument("--no-subs", action="store_true"); ap.add_argument("--pieces-only", action="store_true", help="only cut the 720p pieces (CRF 10) and stop")
+ap.add_argument("--pieces-dir", default="", help="read ready-made pieces NN.mp4 (e.g. upscaled) from this folder instead of cutting"); ap.add_argument("--src-height", type=int, default=0, help="use upscaled sources video_<h>p.mp4 if present")
 a = ap.parse_args()
 e = yaml.safe_load(open(os.path.join(ROOT, a.edl))); X = e["xfade"]; H = a.height; W = H * 16 // 9
 s_in, s_out = e["song_in"], e["song_out"]; total = s_out - s_in
 tmp = os.path.join(ROOT, "runs", "mv-pieces"); os.makedirs(tmp, exist_ok=True)
+CRF = "10" if a.pieces_only else "16"
 def src(exp, vid):
     m = [p for p in sorted(glob.glob(os.path.join(ROOT, "runs", exp, f"*-{vid}-r*", "meta.json")), key=os.path.getmtime) if "error" not in json.load(open(p))][-1]
     d = os.path.dirname(m); up = os.path.join(d, f"video_{a.src_height}p.mp4")
@@ -18,6 +20,8 @@ for i, p in enumerate(P):
     x = p.get("xfade", X) if i + 1 < len(P) else 0
     dur = end - p["at"] + x
     out = os.path.join(tmp, f"{i:02d}.mp4")
+    if a.pieces_dir:
+        files.append(os.path.join(ROOT, a.pieces_dir, f"{i:02d}.mp4")); durs.append(dur); xs.append(x); continue
     norm = f"scale={W}:{H}:flags=lanczos,fps=24,format=yuv420p,setsar=1"
     if "split" in p:
         ins = []
@@ -25,21 +29,24 @@ for i, p in enumerate(P):
             f, L = src(q["exp"], q["id"]); st = min(q["in"], max(0, L - dur)); ins += ["-ss", f"{st:.3f}", "-t", f"{dur:.3f}", "-i", f]
         fc = (f"[0:v]scale={W}:{H},crop={W//2}:{H}:{W//4}:0[l];[1:v]scale={W}:{H},crop={W//2}:{H}:{W//4}:0[r];"
               f"[l][r]hstack=inputs=2,drawbox=x={W//2-1}:y=0:w=2:h={H}:color=white@0.85:t=fill,fps=24,format=yuv420p,setsar=1[v]")
-        subprocess.run(["ffmpeg", "-y", "-v", "error"] + ins + ["-filter_complex", fc, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", out], check=True)
+        subprocess.run(["ffmpeg", "-y", "-v", "error"] + ins + ["-filter_complex", fc, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", CRF, "-preset", "veryfast", out], check=True)
     else:
         f, L = src(p["exp"], p["id"]); st = p["in"]
         if st + dur > L - 0.01:
             print(f"  piece {i} {p['id']}: {st}+{dur:.2f} > {L:.2f}, shifting in-point"); st = max(0, L - 0.01 - dur)
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-ss", f"{st:.3f}", "-t", f"{dur:.3f}", "-i", f, "-vf", norm, "-an",
-                        "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", out], check=True)
+                        "-c:v", "libx264", "-crf", CRF, "-preset", "veryfast", out], check=True)
     files.append(out); durs.append(dur); xs.append(x)
-# video chain
+if a.pieces_only:
+    print(f"cut {len(files)} pieces into {tmp}"); raise SystemExit(0)
+# video chain (pieces may be 720p or upscaled; normalise to the output size)
 args = []
 for f in files: args += ["-i", f]
-fc, lv, t = [], "[0:v]", durs[0]
+fc = [f"[{k}:v]scale={W}:{H}:flags=lanczos,fps=24,format=yuv420p,setsar=1,trim=duration={durs[k]:.3f},setpts=PTS-STARTPTS[n{k}]" for k in range(len(files))]
+lv, t = "[n0]", durs[0]
 for k in range(1, len(files)):
     x = xs[k - 1]; t -= x
-    fc.append(f"{lv}[{k}:v]xfade=transition=fade:duration={x}:offset={t:.3f}[v{k}]"); lv = f"[v{k}]"; t += durs[k]
+    fc.append(f"{lv}[n{k}]xfade=transition=fade:duration={x}:offset={t:.3f}[v{k}]"); lv = f"[v{k}]"; t += durs[k]
 # lyrics
 subs = os.path.join(tmp, "lyrics.ass")
 if not a.no_subs:

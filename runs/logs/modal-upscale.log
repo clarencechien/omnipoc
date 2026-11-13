@@ -1,0 +1,178 @@
+✓ Initialized. View run at 
+https://modal.com/apps/clarence-chien/main/ap-1hEhcQUwcZxYyOQGrwNH2k
+✓ Created objects.
+├── ✓ Uploaded /home/user/omnipoc/src/modal_upscale.py
+└── ✓ Created Function upscale.
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 92 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 104 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 116 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+1280x720 @ 24.000 fps, 116 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+60/92 frames, 0.51s/frame
+60/104 frames, 0.51s/frame
+60/116 frames, 0.59s/frame
+60/116 frames, 0.60s/frame
+done: 92 frames in 49s
+saved runs/mv-pieces-1080/00.mp4 3151770 bytes
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 116 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 103 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 81 frames -> 1920x1080
+1280x720 @ 24.000 fps, 50 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 72 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 144 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+done: 104 frames in 56s
+saved runs/mv-pieces-1080/01.mp4 4296132 bytes
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 58 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 164 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+done: 116 frames in 70s
+done: 116 frames in 70s
+saved runs/mv-pieces-1080/02.mp4 3638671 bytes
+saved runs/mv-pieces-1080/03.mp4 3480935 bytes
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 108 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 116 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+60/116 frames, 0.51s/frame
+done: 50 frames in 29s
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 77 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+60/81 frames, 0.51s/frame
+60/103 frames, 0.52s/frame
+60/144 frames, 0.52s/frame
+60/72 frames, 0.55s/frame
+done: 58 frames in 32s
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 70 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+done: 81 frames in 42s
+done: 72 frames in 41s
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 260 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 192 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+60/164 frames, 0.64s/frame
+done: 103 frames in 54s
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 191 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+done: 116 frames in 60s
+saved runs/mv-pieces-1080/04.mp4 3718478 bytes
+saved runs/mv-pieces-1080/05.mp4 3544481 bytes
+saved runs/mv-pieces-1080/06.mp4 1881952 bytes
+saved runs/mv-pieces-1080/07.mp4 1436083 bytes
+saved runs/mv-pieces-1080/08.mp4 3037083 bytes
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 240 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+60/108 frames, 0.58s/frame
+60/77 frames, 0.54s/frame
+120/144 frames, 0.51s/frame
+60/116 frames, 0.59s/frame
+60/70 frames, 0.52s/frame
+done: 77 frames in 42s
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 240 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+60/260 frames, 0.51s/frame
+done: 70 frames in 38s
+done: 144 frames in 76s
+120/164 frames, 0.60s/frame
+60/192 frames, 0.66s/frame
+60/191 frames, 0.50s/frame
+60/240 frames, 0.50s/frame
+done: 108 frames in 66s
+done: 116 frames in 71s
+done: 164 frames in 96s
+120/260 frames, 0.51s/frame
+saved runs/mv-pieces-1080/09.mp4 3775750 bytes
+saved runs/mv-pieces-1080/10.mp4 7870121 bytes
+saved runs/mv-pieces-1080/11.mp4 2037514 bytes
+saved runs/mv-pieces-1080/12.mp4 4273717 bytes
+saved runs/mv-pieces-1080/13.mp4 5393945 bytes
+saved runs/mv-pieces-1080/14.mp4 5563361 bytes
+saved runs/mv-pieces-1080/15.mp4 4757212 bytes
+60/240 frames, 0.55s/frame
+120/192 frames, 0.58s/frame
+120/191 frames, 0.50s/frame
+120/240 frames, 0.50s/frame
+180/260 frames, 0.51s/frame
+120/240 frames, 0.54s/frame
+180/192 frames, 0.55s/frame
+180/191 frames, 0.50s/frame
+180/240 frames, 0.50s/frame
+done: 192 frames in 107s
+done: 191 frames in 97s
+240/260 frames, 0.51s/frame
+180/240 frames, 0.55s/frame
+done: 260 frames in 134s
+saved runs/mv-pieces-1080/16.mp4 14964134 bytes
+saved runs/mv-pieces-1080/17.mp4 7390619 bytes
+saved runs/mv-pieces-1080/18.mp4 9332230 bytes
+240/240 frames, 0.50s/frame
+done: 240 frames in 121s
+saved runs/mv-pieces-1080/19.mp4 6533892 bytes
+240/240 frames, 0.55s/frame
+done: 240 frames in 132s
+saved runs/mv-pieces-1080/20.mp4 11809292 bytes
+an error occurred during closing of asynchronous generator <async_generator object async_merge at 0x7fc8cafe39c0>
+asyncgen: <async_generator object async_merge at 0x7fc8cafe39c0>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/modal/_utils/async_utils.py", line 858, in __iter__
+    yield from run_async_gen(runner, self._async_iterable)
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/clarence-chien/main/ap-1hEhcQUwcZxYyOQGrwNH2k

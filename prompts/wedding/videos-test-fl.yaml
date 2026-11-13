@@ -1,0 +1,24 @@
+version: fl-v1
+videos:
+- id: w10a-library-fl-a
+  duration: 8
+  refs:
+  - refs/wedding/kf10-library-ff.jpg
+  - refs/wedding/kf10-mid.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the FIRST frame of the video and image 2 is the LAST frame: start exactly on image 1 and end exactly on image 2. Image 3 is the woman''s FACE reference sheet and image 4 the man''s FACE reference sheet: keep their faces identical to these in every frame (large round eyes with white catchlights, small button noses, round blushing cheeks; his thick black rectangular glasses). Image 5 is the approved art style. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei,
+    New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots. Night on the plaza in front of the library. The man looks at the woman earnestly, mouth closed, as if his words are heard in voice-over; she raises one hand to cover her smiling mouth. The handheld camera orbits smoothly 180 degrees around the two of them, from the side that shows the library to the opposite side where we see her face over his shoulder. Audio: only
+    ambient sound — a quiet park at night, insects, leaves rustling. No dialogue, no speech, no singing, no music.'
+- id: w10a-library-fl-b
+  duration: 8
+  refs:
+  - refs/wedding/kf10-mid.jpg
+  - refs/wedding/kf10-library-ff.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the FIRST frame of the video and image 2 is the LAST frame: start exactly on image 1 and end exactly on image 2. Image 3 is the woman''s FACE reference sheet and image 4 the man''s FACE reference sheet: keep their faces identical to these in every frame (large round eyes with white catchlights, small button noses, round blushing cheeks; his thick black rectangular glasses). Image 5 is the approved art style. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei,
+    New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots. Night on the plaza in front of the library. Over his shoulder she smiles behind her hand, then lowers it and nods. The handheld camera continues orbiting smoothly another 180 degrees around the two of them, back to the side where the glowing library facade is behind them. Audio: only ambient sound — a quiet park at night, insects, leaves rustling. No dialogue, no
+    speech, no singing, no music.'

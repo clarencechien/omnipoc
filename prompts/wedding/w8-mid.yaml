@@ -1,0 +1,17 @@
+# W8 — middle keyframe for the first+last-frame version of the library orbit (seg 10)
+version: w8-v1
+images:
+  - id: kf10-mid
+    aspect: "16:9"
+    size: 1K
+    refs: [refs/wedding/kf10-library-ff.jpg, refs/wedding/she-face.jpg, refs/wedding/he-face.jpg, refs/wedding/she-sheet.jpg, refs/wedding/he-sheet.jpg, refs/wedding/source/playbill-finale-clay-in-scene.png]
+    text: >-
+      Image 1 is a frame from a scene; image 2 is the woman's FACE reference sheet and image 3 the man's FACE reference
+      sheet - copy their faces exactly (large round dark-brown eyes with white catchlights, small button noses, round
+      blushing cheeks; he wears thick black rectangular glasses); images 4 and 5 are their full-body model sheets; image 6
+      is the art style. Draw the SAME moment as image 1 from the OPPOSITE side: the camera has orbited 180 degrees around
+      the couple. Now the man stands with his back and black backpack toward the camera on the left, and over his shoulder
+      we see the woman facing the camera, one hand covering her mouth, smiling, eyes open and bright. Behind her is the
+      night plaza of the park with trees, garden lights and a stone bench; a soft teal glow from the library's glass
+      facade (now behind the camera) lights her face. Same night lighting, same outfits, same clay storybook style.
+      Medium shot, her face large and clearly visible. No readable text, no other people, no photorealism.

@@ -310,5 +310,415 @@
    }
   },
   "verdict": "pass"
+ },
+ "kf10-mid": {
+  "path": "refs/wedding/kf10-mid.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference, including large eyes with catchlights, small button nose, and round jaw shape, with only minor stylistic rendering variances.",
+    "crop": "review/wedding/face-crops/kf10-mid-she.jpg",
+    "face_px": 331
+   },
+   "he": {
+    "score": null,
+    "note": "face not visible"
+   }
+  },
+  "verdict": "pass"
+ },
+ "w06-bopiliao@t1": {
+  "path": "runs/W2/omni_12-w06-bopiliao-r1-034a50/frame-t1.jpg",
+  "faces": {
+   "she": {
+    "score": null,
+    "note": "face not visible"
+   },
+   "he": {
+    "score": null,
+    "note": "face not visible"
+   }
+  },
+  "verdict": "pass"
+ },
+ "w06-bopiliao@t33": {
+  "path": "runs/W2/omni_12-w06-bopiliao-r1-034a50/frame-t33.jpg",
+  "faces": {
+   "she": {
+    "score": null,
+    "note": "face not visible"
+   },
+   "he": {
+    "score": 3,
+    "note": "The character is shown from behind, obscuring the eyes, eyebrows, nose, and mouth for direct comparison, though the hairstyle, ear, and glasses arm remain consistent.",
+    "crop": "review/wedding/face-crops/w06-bopiliao@t33-he.jpg",
+    "face_px": 80
+   }
+  },
+  "verdict": "drift"
+ },
+ "w06-bopiliao@t66": {
+  "path": "runs/W2/omni_12-w06-bopiliao-r1-034a50/frame-t66.jpg",
+  "faces": {
+   "she": {
+    "score": null,
+    "note": "face not visible"
+   },
+   "he": {
+    "score": 3,
+    "note": "The glasses frame appears noticeably thinner than the reference model, consistent with the thin glasses drift pattern, while overall head profile and hair shape remain mostly consistent.",
+    "crop": "review/wedding/face-crops/w06-bopiliao@t66-he.jpg",
+    "face_px": 92
+   }
+  },
+  "verdict": "drift"
+ },
+ "w06-bopiliao@end": {
+  "path": "runs/W2/omni_12-w06-bopiliao-r1-034a50/frame-end.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Facial profile silhouette, ear placement, and clay hair structure align closely with the reference sheet without visible drift.",
+    "crop": "review/wedding/face-crops/w06-bopiliao@end-she.jpg",
+    "face_px": 97
+   },
+   "he": {
+    "score": 4,
+    "note": "No major drift patterns detected; hair structure, ear shape, and glasses frame profile remain consistent with the reference despite the rear three-quarter view.",
+    "crop": "review/wedding/face-crops/w06-bopiliao@end-he.jpg",
+    "face_px": 96
+   }
+  },
+  "verdict": "pass"
+ },
+ "w08a-guesthouse@t1": {
+  "path": "runs/W2/omni_12-w08a-guesthouse-r1-1d3b0f/frame-t1.jpg",
+  "faces": {
+   "she": {
+    "score": 3,
+    "note": "The open eyes are reduced to smaller bead-like shapes lacking clear white catchlights, matching a known drift pattern.",
+    "crop": "review/wedding/face-crops/w08a-guesthouse@t1-she.jpg",
+    "face_px": 98
+   },
+   "he": {
+    "score": 3,
+    "note": "Character exhibits the known drift pattern where the open eyes are shrunk to small black dot-like beads without distinct irises or white catchlights, accompanied by thicker, blockier eyebrows.",
+    "crop": "review/wedding/face-crops/w08a-guesthouse@t1-he.jpg",
+    "face_px": 88
+   }
+  },
+  "verdict": "drift"
+ },
+ "w08a-guesthouse@t33": {
+  "path": "runs/W2/omni_12-w08a-guesthouse-r1-1d3b0f/frame-t33.jpg",
+  "faces": {
+   "she": {
+    "score": 3,
+    "note": "Drift pattern present: open eyes are shrunk to smaller dark beads lacking clear white catchlights, though face shape and blush remain mostly consistent.",
+    "crop": "review/wedding/face-crops/w08a-guesthouse@t33-she.jpg",
+    "face_px": 109
+   },
+   "he": {
+    "score": 3,
+    "note": "The open eyes drift to simplified dark beads lacking clear white catchlights, though the general face shape, nose, blush, and glasses frames remain fairly consistent.",
+    "crop": "review/wedding/face-crops/w08a-guesthouse@t33-he.jpg",
+    "face_px": 94
+   }
+  },
+  "verdict": "drift"
+ },
+ "w08a-guesthouse@t66": {
+  "path": "runs/W2/omni_12-w08a-guesthouse-r1-1d3b0f/frame-t66.jpg",
+  "faces": {},
+  "verdict": "pass"
+ },
+ "w08a-guesthouse@end": {
+  "path": "runs/W2/omni_12-w08a-guesthouse-r1-1d3b0f/frame-end.jpg",
+  "faces": {},
+  "verdict": "pass"
+ },
+ "w10a-library@t1": {
+  "path": "runs/W2/omni_12-w10a-library-r1-ca1050/frame-t1.jpg",
+  "faces": {
+   "he": {
+    "score": 3,
+    "note": "Open eyes have shrunk to small black dots lacking clear white catchlights, and glasses frames appear slightly thinner.",
+    "crop": "review/wedding/face-crops/w10a-library@t1-he.jpg",
+    "face_px": 106
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial structure closely aligns with reference, preserving eye size, subtle catchlights, small button nose, and round cheek shape with minimal variation.",
+    "crop": "review/wedding/face-crops/w10a-library@t1-she.jpg",
+    "face_px": 119
+   }
+  },
+  "verdict": "drift"
+ },
+ "w10a-library@t33": {
+  "path": "runs/W2/omni_12-w10a-library-r1-ca1050/frame-t33.jpg",
+  "faces": {
+   "he": {
+    "score": 3,
+    "note": "The open eye exhibits the known drift pattern of being reduced to a small black dot or bead lacking visible white catchlights, contrasting with the large highlighted eyes of the reference.",
+    "crop": "review/wedding/face-crops/w10a-library@t33-he.jpg",
+    "face_px": 139
+   },
+   "she": {
+    "score": 3,
+    "note": "The open eyes lack distinct white catchlights, appearing darker and flatter than the reference sheet, though head shape and nose proportions remain consistent.",
+    "crop": "review/wedding/face-crops/w10a-library@t33-she.jpg",
+    "face_px": 155
+   }
+  },
+  "verdict": "drift"
+ },
+ "w10a-library@t66": {
+  "path": "runs/W2/omni_12-w10a-library-r1-ca1050/frame-t66.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Face is viewed primarily from the rear-quarter angle with most frontal features obscured; visible hair sculpt, ear shape, and glasses frame profile match the reference with minor smoothing.",
+    "crop": "review/wedding/face-crops/w10a-library@t66-he.jpg",
+    "face_px": 183
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial features match the reference sheet closely, including large eyes with clear catchlights, small button nose, soft eyebrow shape, and round face contour. No drift detected.",
+    "crop": "review/wedding/face-crops/w10a-library@t66-she.jpg",
+    "face_px": 202
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library@end": {
+  "path": "runs/W2/omni_12-w10a-library-r1-ca1050/frame-end.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Consistent facial proportions, eye shape with catchlights, and rectangular glasses matching the reference.",
+    "crop": "review/wedding/face-crops/w10a-library@end-he.jpg",
+    "face_px": 168
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference with round cheeks, button nose, and proper eye highlights, exhibiting only minor softening in feature definition.",
+    "crop": "review/wedding/face-crops/w10a-library@end-she.jpg",
+    "face_px": 235
+   }
+  },
+  "verdict": "pass"
+ },
+ "w13b-4444-cert@t1": {
+  "path": "runs/W2/omni_12-w13b-4444-cert-r1-871281/frame-t1.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference with round face shape, button nose, and correct eye proportions with catchlights; no major drift patterns detected.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@t1-she.jpg",
+    "face_px": 142
+   },
+   "he": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference, maintaining the correct button nose, eye size with catchlights, round jaw, and rectangular glasses with only minor softness in eyebrow definition.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@t1-he.jpg",
+    "face_px": 125
+   }
+  },
+  "verdict": "pass"
+ },
+ "w13b-4444-cert@t33": {
+  "path": "runs/W2/omni_12-w13b-4444-cert-r1-871281/frame-t33.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Facial structure closely matches the reference, including large eyes with catchlights, round face, and button nose, with only minor softness in definition.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@t33-she.jpg",
+    "face_px": 150
+   },
+   "he": {
+    "score": 4,
+    "note": "Consistent facial structure, eyes with catchlights, button nose, and glasses match the reference sheet closely.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@t33-he.jpg",
+    "face_px": 141
+   }
+  },
+  "verdict": "pass"
+ },
+ "w13b-4444-cert@t66": {
+  "path": "runs/W2/omni_12-w13b-4444-cert-r1-871281/frame-t66.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "The character features closed smiling eyes which match the stylized expression allowances. Facial roundness, small button nose, blush, and eyebrow styling remain consistent with no significant drift patterns detected.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@t66-she.jpg",
+    "face_px": 208
+   },
+   "he": {
+    "score": 4,
+    "note": "Consistent facial structure, nose, glasses shape, and hairline, with eyes closed in a smile.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@t66-he.jpg",
+    "face_px": 175
+   }
+  },
+  "verdict": "pass"
+ },
+ "w13b-4444-cert@end": {
+  "path": "runs/W2/omni_12-w13b-4444-cert-r1-871281/frame-end.jpg",
+  "faces": {
+   "she": {
+    "score": 4,
+    "note": "Facial proportions closely match the reference, including large eyes with catchlights, round face, and button nose. Subtle minor variation in eyebrow arch angle.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@end-she.jpg",
+    "face_px": 248
+   },
+   "he": {
+    "score": 4,
+    "note": "No major drift detected. Facial structure, nose shape, round cheeks, hairline, and thick rectangular glasses match the reference closely, with eyes closed in expression.",
+    "crop": "review/wedding/face-crops/w13b-4444-cert@end-he.jpg",
+    "face_px": 221
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-a@t1": {
+  "path": "runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t1.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Consistent facial structure, eye size with catchlights, nose shape, and glasses frame match the reference closely with no drift patterns present.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@t1-he.jpg",
+    "face_px": 162
+   },
+   "she": {
+    "score": 4,
+    "note": "No drift detected; facial structure, eye size with catchlights, nose shape, and cheek fullness closely match the reference.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@t1-she.jpg",
+    "face_px": 185
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-a@t33": {
+  "path": "runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t33.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial proportions, eye shape with catchlights, nose size, and thick rectangular glasses frames closely align with the reference sheet, showing negligible drift.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@t33-he.jpg",
+    "face_px": 182
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial proportions, large eyes with catchlights, small button nose, and round face shape closely match the reference sheet with no noticeable drift.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@t33-she.jpg",
+    "face_px": 196
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-a@t66": {
+  "path": "runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t66.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "The hair sculpting, ear shape, cheek contour, and glasses frames align closely with the reference, showing no obvious drift patterns.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@t66-he.jpg",
+    "face_px": 283
+   },
+   "she": {
+    "score": 4,
+    "note": "Minor differences only; facial shape, nose, cheeks, and hairline align well with the reference.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@t66-she.jpg",
+    "face_px": 236
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-a@end": {
+  "path": "runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-end.jpg",
+  "faces": {
+   "he": {
+    "score": null,
+    "note": "face not visible"
+   },
+   "she": {
+    "score": 4,
+    "note": "Consistent facial structure with large eyes, clear catchlights, round face shape, and button nose matching the reference.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-a@end-she.jpg",
+    "face_px": 258
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-b@t1": {
+  "path": "runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t1.jpg",
+  "faces": {
+   "he": {
+    "score": null,
+    "note": "face not visible"
+   },
+   "she": {
+    "score": 4,
+    "note": "The facial structure, round head shape, button nose, and large eyes with white catchlights match the reference closely, with only minor variations in eye shape and brow curvature.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@t1-she.jpg",
+    "face_px": 153
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-b@t33": {
+  "path": "runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t33.jpg",
+  "faces": {
+   "he": {
+    "score": 4,
+    "note": "Facial profile, nose, and sculpted hair closely match the reference, with minor variance in glasses temple thickness.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@t33-he.jpg",
+    "face_px": 151
+   },
+   "she": {
+    "score": 4,
+    "note": "Facial proportions closely match the reference, including the round face, small button nose, thin eyebrows, and large eyes with catchlights, with only minor softness due to resolution.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@t33-she.jpg",
+    "face_px": 155
+   }
+  },
+  "verdict": "pass"
+ },
+ "w10a-library-fl-b@t66": {
+  "path": "runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t66.jpg",
+  "faces": {
+   "he": {
+    "score": 3,
+    "note": "Open eyes shrunk to small dark beads lacking distinct white catchlights, matching a known drift pattern.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@t66-he.jpg",
+    "face_px": 78
+   },
+   "she": {
+    "score": 3,
+    "note": "Open eyes are reduced to smaller dark beads lacking prominent catchlights, matching a known drift pattern.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@t66-she.jpg",
+    "face_px": 84
+   }
+  },
+  "verdict": "drift"
+ },
+ "w10a-library-fl-b@end": {
+  "path": "runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-end.jpg",
+  "faces": {
+   "he": {
+    "score": 3,
+    "note": "The glasses drift toward rounder, thinner frames instead of the approved thick rectangular style.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@end-he.jpg",
+    "face_px": 59
+   },
+   "she": {
+    "score": 3,
+    "note": "Open eyes appear shrunk without visible catchlights, alongside a narrower head shape and elongated facial proportions.",
+    "crop": "review/wedding/face-crops/w10a-library-fl-b@end-she.jpg",
+    "face_px": 66
+   }
+  },
+  "verdict": "drift"
  }
 }

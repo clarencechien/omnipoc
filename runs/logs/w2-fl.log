@@ -1,0 +1,6 @@
+WARNING: wedding spend 5.69 passes 70% of cap 8.00
+[W2/omni_12-w10a-library-fl-a-r1-2c533b] est $0.185 (spent omni 5.505) -> gemini-omni-1.2-flash 8s 360p 16:9 refs=5
+[W2/omni_12-w10a-library-fl-a-r1-2c533b] OK latency 29.5s actual $0.2031 probe {"duration_s": 8.043, "size_bytes": 2479453, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}
+WARNING: wedding spend 5.89 passes 70% of cap 8.00
+[W2/omni_12-w10a-library-fl-b-r1-08ca59] est $0.185 (spent omni 5.708) -> gemini-omni-1.2-flash 8s 360p 16:9 refs=5
+[W2/omni_12-w10a-library-fl-b-r1-08ca59] OK latency 28.5s actual $0.2002 probe {"duration_s": 8.043, "size_bytes": 2800616, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

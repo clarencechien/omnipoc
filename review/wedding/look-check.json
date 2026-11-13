@@ -296,5 +296,170 @@
   "readable_text": "",
   "summary": "Both characters in the candidate frame are completely consistent with their respective model sheet references in terms of hair, clothing, accessories, and artistic style.",
   "not_visible": []
+ },
+ "w06-bopiliao@t33": {
+  "path": "runs/W2/omni_12-w06-bopiliao-r1-034a50/frame-t33.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters are walking away through a brick arcade corridor, perfectly matching all visible outfits, hair styles, accessories, and the 3D clay figurine art style from the model sheets.",
+  "not_visible": [
+   "rounded face with blushing cheeks, small closed-mouth smile",
+   "white crewneck T-shirt under it"
+  ]
+ },
+ "w08a-guesthouse@t33": {
+  "path": "runs/W2/omni_12-w08a-guesthouse-r1-1d3b0f/frame-t33.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "No notable differences; perfectly consistent with the character references."
+   },
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "No notable differences; perfectly consistent with the character references."
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match their reference sheets exceptionally well, featuring correct hair, clothing, accessories, and distinct 3D matte clay figurine styling.",
+  "not_visible": []
+ },
+ "w10a-library@t33": {
+  "path": "runs/W2/omni_12-w10a-library-r1-ca1050/frame-t33.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "Features match the reference model sheet precisely."
+   },
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "Features match the reference model sheet precisely."
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters in the candidate frame are highly consistent with the approved reference model sheets, maintaining exact hair, clothing, accessories, and stylistic traits in a 3D clay-matte rendering.",
+  "not_visible": [
+   "white low sneakers",
+   "white canvas sneakers"
+  ]
+ },
+ "w13b-4444-cert@t33": {
+  "path": "runs/W2/omni_12-w13b-4444-cert-r1-871281/frame-t33.jpg",
+  "verdict": "fail",
+  "mismatches": [
+   {
+    "who": "she",
+    "attribute": "oatmeal / beige knit sweater",
+    "status": "mismatch",
+    "note": "wearing ivory dress and pink cardigan instead"
+   },
+   {
+    "who": "she",
+    "attribute": "sage-green pleated midi skirt",
+    "status": "mismatch",
+    "note": "wearing ivory dress"
+   },
+   {
+    "who": "she",
+    "attribute": "white low sneakers",
+    "status": "mismatch",
+    "note": "wearing ivory Mary Jane shoes"
+   },
+   {
+    "who": "he",
+    "attribute": "navy overshirt worn open",
+    "status": "mismatch",
+    "note": "wearing a black suit instead"
+   },
+   {
+    "who": "he",
+    "attribute": "khaki chinos",
+    "status": "mismatch",
+    "note": "wearing black trousers"
+   }
+  ],
+  "faces": [
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "Consistent with reference model"
+   },
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "Consistent with reference model"
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "Certificate text is stylized and illegible scribble.",
+  "summary": "The candidate frame correctly depicts both the male and female characters in 3D claymation style consistent with the references. The characters are dressed in their wedding attire (as seen in reference 5), which differs from their casual everyday outfits in references 2 and 4, but their faces and hairstyles match the approved models.",
+  "not_visible": [
+   "small tan leather crossbody bag",
+   "white canvas sneakers",
+   "black backpack",
+   "man: black shoes",
+   "woman: ivory Mary Jane shoes"
+  ]
+ },
+ "w10a-library-fl-a@t33": {
+  "path": "runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t33.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "Features, hairstyle, and blushing cheeks perfectly match the model sheet references."
+   },
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "Glasses shape, hairstyle, facial proportions, and expression match the character model sheets."
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters in the candidate frame are highly consistent with the character model sheets, maintaining their 3D clay aesthetic, clothing, hairstyles, and facial features.",
+  "not_visible": [
+   "white low sneakers",
+   "khaki chinos",
+   "white canvas sneakers"
+  ]
+ },
+ "w10a-library-fl-b@t33": {
+  "path": "runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t33.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "faces": [
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "No noticeable differences, facial proportions and features match the reference perfectly."
+   },
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "No noticeable differences, facial proportions and features match the reference perfectly."
+   }
+  ],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters in the candidate frame are extremely consistent with the character model sheets, matching all visible clothing, colors, hair, and facial features precisely in a 3D clay figurine style.",
+  "not_visible": [
+   "white low sneakers",
+   "white canvas sneakers"
+  ]
  }
 }

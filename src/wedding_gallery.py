@@ -15,6 +15,8 @@ def main():
     refs = {r["id"]: r for r in d["refs"]}; stills = {s["id"]: s for s in d["stills"]}
     checks = json.load(open("review/wedding/look-check.json")) if os.path.exists("review/wedding/look-check.json") else {}
     by_path = {v["path"]: v for v in checks.values()}
+    faces = json.load(open("review/wedding/face-check.json")) if os.path.exists("review/wedding/face-check.json") else {}
+    face_by_path = {v["path"]: v for v in faces.values()}
     spent = {}
     for l in open("ledger/spend.jsonl"):
         e = json.loads(l)
@@ -26,12 +28,17 @@ def main():
         files[f"{name}.jpg"] = f"review/wedding/w1/{name}.jpg"
         return f"{name}.jpg"
     def badge(path):
+        f = face_by_path.get(path)
+        fb = ""
+        if f:
+            sc = " ".join(f"{'女' if w == 'she' else '男'}{v['score']}" for w, v in f["faces"].items() if v.get("score") is not None)
+            fb = (f' <span class="ok">臉 ✓ {sc}</span>' if f["verdict"] == "pass" else f' <span class="bad">臉跑掉 {sc}</span>')
         c = by_path.get(path)
-        if not c: return ""
-        if c["verdict"] == "pass": return '<span class="ok">造型檢查 ✓</span>'
-        return '<span class="bad">造型檢查 ✗ ' + "；".join(m["attribute"] for m in c["mismatches"]) + "</span>"
+        if not c: return fb
+        if c["verdict"] == "pass": return '<span class="ok">服裝 ✓</span>' + fb
+        return '<span class="bad">服裝 ✗ ' + "；".join(m["attribute"] for m in c["mismatches"]) + "</span>" + fb
     cards = []
-    chars = [("refs/wedding/he-sheet.jpg", "he-sheet", "男主便服三視圖"), ("refs/wedding/she-sheet.jpg", "she-sheet", "女主便服三視圖"),
+    chars = [("refs/wedding/he-face.jpg", "he-face", "男主臉部設定（2K）"), ("refs/wedding/she-face.jpg", "she-face", "女主臉部設定（2K）"), ("refs/wedding/he-sheet.jpg", "he-sheet", "男主便服三視圖"), ("refs/wedding/she-sheet.jpg", "she-sheet", "女主便服三視圖"),
              ("refs/wedding/couple-casual.jpg", "couple-casual", "雙人便服"), ("refs/wedding/source/playbill-couple-4heads.png", "couple-wedding", "登記日服裝（playbill 定案）")]
     cards.append('<div class="card"><h2>角色設定（所有畫面都以這四張為準）</h2><div class="grid">' +
                  "".join(f'<figure><img src="{thumb(p, n)}" alt="{z}" loading="lazy"><figcaption>{z}</figcaption></figure>' for p, n, z in chars) + "</div></div>")
@@ -74,7 +81,7 @@ ul {{ padding-left:18px; margin:6px 0; font-size:.92rem; }} code {{ font-size:.8
 table {{ width:100%; border-collapse:collapse; font-size:.92rem; }} td {{ border-top:1px solid var(--line); padding:6px 4px; vertical-align:top; }}
 </style></head><body>
 <h1>愛情短片・每一幕參考圖（{d["meta"]["version"]}）</h1>
-<p class="mut">風格沿用 theplaybillv2。造型檢查：每張都用 gemini-3.5-flash-lite 和設定圖逐項比對（眼鏡、髮型、衣服、包、鞋、陶土質感），{n_pass}/{len(checks)} 張通過，另外人工看過一遍。參考圖累計花費 ${total:.2f}。地點來源見 refs/wedding/ATTRIBUTION.md。</p>
+<p class="mut">風格沿用 theplaybillv2。服裝檢查（gemini-3.5-flash-lite）比對眼鏡、髮型、衣服、包、鞋；臉部檢查（gemini-3.8-flash）先框出臉、放大裁切，再和臉部設定圖比五官，分數 1–5，低於 4 算跑掉。參考圖累計花費 ${total:.2f}。地點來源見 refs/wedding/ATTRIBUTION.md。</p>
 <div class="card"><h2>360p 測試：4 支，共 {test_s} 秒，估 ${test_s*P360:.2f}（等你說 go）</h2><table>{rows}</table>
 <p class="mut">四支都以該幕參考圖當影片第一格，再附角色設定圖與風格錨點。生成後每支抽 3 格再做一次造型檢查。跑完約 ${total + test_s*P360 + 0.03:.2f}，婚禮預算上限 $5。</p></div>
 {"".join(cards)}

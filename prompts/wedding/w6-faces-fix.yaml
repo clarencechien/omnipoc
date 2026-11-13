@@ -1,0 +1,28 @@
+# W6 — face-locked regeneration and face-only repaint tests
+version: w6-v1
+images:
+  - id: kf09b-4444-v4
+    aspect: "16:9"
+    size: 2K
+    refs: [refs/wedding/he-face.jpg, refs/wedding/she-face.jpg, refs/wedding/he-sheet.jpg, refs/wedding/she-sheet.jpg, refs/wedding/kf13b-4444-cert-v3.jpg, refs/wedding/source/playbill-finale-clay-in-scene.png]
+    text: >-
+      Image 1 is the man's FACE reference sheet and image 2 the woman's FACE reference sheet: copy their faces exactly -
+      large round dark-brown eyes with white catchlight highlights, small button noses, round full blushing cheeks, small
+      closed-mouth smiles; he wears thick black rectangular glasses. Image 3 and image 4 are their full-body model sheets:
+      he wears a navy overshirt open over a white crewneck, khaki chinos, white sneakers, black backpack; she has half-up
+      princess-style wavy dark-brown hair, an oatmeal knit sweater, a sage-green pleated midi skirt, white sneakers and a
+      small tan crossbody bag. Image 5 is the village already drawn in the approved style and image 6 is the art style.
+      Golden dusk at Four Four South Village: the SAME long two-story grey house as image 5 with its upstairs balcony and
+      green, blue and red doors, the same blue-green Taipei 101 behind it, under a warm pink and gold dusk sky. On the open
+      square the man and the woman sit on the ground BACK TO BACK, their backs pressed together, both turning their heads
+      slightly toward the camera and keeping their eyes OPEN, large and bright, and laughing softly. Framed from the knees up so their faces are large and clearly visible. Sculpted matte clay figurines
+      exactly like image 6, never flat 2D. No readable text, no other people, no photorealism.
+  - id: kf02a-she-room-facefix
+    aspect: "16:9"
+    size: 1K
+    refs: [refs/wedding/kf02a-she-room.jpg, refs/wedding/she-face.jpg]
+    text: >-
+      Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the room, the window and Taipei 101, the
+      lighting, her pose, her hands, her hair and her clothes. Change ONLY her face so it matches the face reference sheet in
+      image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose,
+      round full cheeks with soft pink blush and a small closed-mouth smile, in the same matte clay style.

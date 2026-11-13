@@ -21,3 +21,5 @@ items:
   - {id: kf13b-4444-cert-v3, path: refs/wedding/kf13b-4444-cert-v3.jpg, who: [wed]}
   - {id: kf11-ubike-v3, path: refs/wedding/kf11-ubike-v3.jpg, who: [she, he]}
   - {id: kf09b-4444-v3, path: refs/wedding/kf09b-4444-v3.jpg, who: [she, he]}
+  - {id: kf09b-4444-v4, path: refs/wedding/kf09b-4444-v4.jpg, who: [she, he]}
+  - {id: kf02a-she-room-facefix, path: refs/wedding/kf02a-she-room-facefix.jpg, who: [she]}

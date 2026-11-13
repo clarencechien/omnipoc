@@ -1,16 +1,16 @@
-# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v5）
+# 婚禮／愛情故事 5 分鐘短片 — 分鏡單一事實來源（v6）
 # 由 src/storyboard.py 產生 docs/storyboard-wedding.md、prompts/wedding/videos.yaml、refs.yaml、stills.yaml。
 # 改內容請改這個檔，不要改產出物。
 meta:
   title: 兩條河之間（暫名）
-  version: v5
+  version: v6
   duration_s: 300
   aspect: '16:9'
   final_res: 720p
   draft_res: 360p
   drafts_per_shot: 2
   finals_per_shot: 1.2
-style: 'Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic.'
+style: 'Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots.'
 audio_rule: No dialogue, no speech, no singing, no music.
 characters:
   she:
@@ -22,6 +22,20 @@ characters:
     en: about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile
     label: the man
 refs:
+- id: she-face
+  kind: character
+  who: she
+  face: true
+  status: done
+  path: refs/wedding/she-face.jpg
+  zh: 女主臉部設定（正面、3/4、側面，2K）
+- id: he-face
+  kind: character
+  who: he
+  face: true
+  status: done
+  path: refs/wedding/he-face.jpg
+  zh: 男主臉部設定（正面、3/4、側面，2K）
 - id: he-sheet
   kind: character
   who: he
@@ -57,8 +71,8 @@ refs:
 - id: kf02a
   kind: location
   status: done
-  path: refs/wedding/kf02a-she-room.jpg
-  zh: 第 2 段・她的永和房間（Clarence 照片簡化），窗外 101
+  path: refs/wedding/kf02a-she-room-facefix.jpg
+  zh: 第 2 段・她的房間（已修臉），窗外 101
 - id: kf02b
   kind: location
   status: done
@@ -87,8 +101,8 @@ refs:
 - id: kf09b
   kind: location
   status: done
-  path: refs/wedding/kf09b-4444-v3.jpg
-  zh: 第 9 段・四四南村黃昏，和第 13 段同一排長屋、同色 101
+  path: refs/wedding/kf09b-4444-v4.jpg
+  zh: 第 9 段・四四南村黃昏背靠背（2K，鎖臉重畫）
 - id: kf10
   kind: location
   status: done
@@ -214,6 +228,7 @@ segments:
     duration: 10
     refs:
     - kf02a
+    - she-face
     - she-sheet
     - style-clay
     use: 15–25 分割畫面左半（裁中間 640×720）
@@ -225,6 +240,7 @@ segments:
     duration: 10
     refs:
     - kf02b
+    - he-face
     - kf02c
     - he-sheet
     - style-clay
@@ -237,6 +253,7 @@ segments:
     duration: 8
     refs:
     - kf02a
+    - she-face
     - she-sheet
     - style-clay
     use: 25–27 中線滑開轉場、27–35 全畫面
@@ -270,6 +287,7 @@ segments:
     duration: 12
     refs:
     - kf03a
+    - she-face
     - she-sheet
     - style-clay
     use: 35–47 分割畫面左半（裁中間 640×720）
@@ -281,6 +299,7 @@ segments:
     duration: 12
     refs:
     - kf03b
+    - he-face
     - he-sheet
     - kf01
     - style-clay
@@ -360,6 +379,8 @@ segments:
     duration: 12
     refs:
     - kf05
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -372,6 +393,8 @@ segments:
     duration: 8
     refs:
     - kf05
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -401,6 +424,8 @@ segments:
     duration: 15
     refs:
     - kf06
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -437,6 +462,8 @@ segments:
     duration: 8
     refs:
     - kf07a
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -449,6 +476,8 @@ segments:
     duration: 12
     refs:
     - kf07b
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -476,6 +505,8 @@ segments:
     duration: 12
     refs:
     - kf08
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -489,6 +520,8 @@ segments:
     duration: 8
     refs:
     - kf08
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -520,6 +553,8 @@ segments:
     duration: 6
     refs:
     - kf09a
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -532,6 +567,8 @@ segments:
     duration: 12
     refs:
     - kf09b
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -544,6 +581,8 @@ segments:
     duration: 12
     refs:
     - kf09b
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -573,6 +612,8 @@ segments:
     duration: 15
     refs:
     - kf10
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -586,6 +627,8 @@ segments:
     duration: 10
     refs:
     - kf10
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -622,6 +665,8 @@ segments:
     duration: 12
     refs:
     - kf11
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -634,6 +679,8 @@ segments:
     duration: 8
     refs:
     - kf11
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -662,6 +709,8 @@ segments:
     duration: 14
     refs:
     - kf12a
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -674,6 +723,8 @@ segments:
     duration: 10
     refs:
     - kf12b
+    - she-face
+    - he-face
     - she-sheet
     - he-sheet
     - style-clay
@@ -711,6 +762,8 @@ segments:
     duration: 10
     refs:
     - kf13a
+    - she-face
+    - he-face
     - couple-wedding
     - cert
     - style-clay
@@ -723,6 +776,8 @@ segments:
     duration: 10
     refs:
     - kf13b
+    - she-face
+    - he-face
     - couple-wedding
     - cert
     - style-clay
@@ -757,6 +812,8 @@ segments:
     duration: 10
     refs:
     - kf14a
+    - she-face
+    - he-face
     - couple-wedding
     - style-clay
     use: 275–295 與 w14b 每 5 秒交錯 cross-fade
@@ -768,6 +825,8 @@ segments:
     duration: 10
     refs:
     - kf14b
+    - she-face
+    - he-face
     - couple-wedding
     - style-clay
     use: 275–295 與 w14a 交錯

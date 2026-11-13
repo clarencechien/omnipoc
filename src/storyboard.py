@@ -70,6 +70,8 @@ def main(path):
     # ---------- prompt assembly ----------
     def describe(ref):
         k = ref["kind"]
+        if k == "character" and ref.get("face"):
+            return f"{chars[ref['who']]['label']}'s FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth)"
         if k == "character":
             return f"{chars[ref['who']]['label']}'s character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit"
         if k == "couple":

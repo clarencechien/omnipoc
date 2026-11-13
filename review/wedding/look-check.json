@@ -66,9 +66,10 @@
   "path": "refs/wedding/kf06-bopiliao-v2.jpg",
   "verdict": "pass",
   "mismatches": [],
+  "faces": [],
   "clay_3d": true,
   "readable_text": "",
-  "summary": "Both characters match their reference model sheets completely in the candidate image.",
+  "summary": "Both characters are shown from behind walking hand-in-hand along an arched brick corridor. All visible attire, hair styling, accessories, and shoes match the character reference sheets perfectly.",
   "not_visible": [
    "rounded face with blushing cheeks, small closed-mouth smile",
    "black rectangular glasses",
@@ -187,11 +188,23 @@
  },
  "kf13b-4444-cert-v3": {
   "path": "refs/wedding/kf13b-4444-cert-v3.jpg",
-  "verdict": "pass",
+  "verdict": "fail",
   "mismatches": [],
+  "faces": [
+   {
+    "who": "he",
+    "face_score": 4,
+    "difference": "Facial features closely align with the model sheet, showing slightly squinted eyes in a warm smile."
+   },
+   {
+    "who": "she",
+    "face_score": 3,
+    "difference": "Eyes are closed in smiling crescents unlike the open eyes shown in the references."
+   }
+  ],
   "clay_3d": true,
   "readable_text": "",
-  "summary": "Both characters match the reference images closely in clothing, hairstyle, and accessories. The image features 3D matte clay figurines against a sculpted backdrop.",
+  "summary": "Both characters strongly match their reference models in outfit, hair, and clay 3D medium.",
   "not_visible": []
  },
  "kf11-ubike-v3": {
@@ -207,9 +220,21 @@
   "path": "refs/wedding/kf09b-4444-v3.jpg",
   "verdict": "pass",
   "mismatches": [],
+  "faces": [
+   {
+    "who": "she",
+    "face_score": 5,
+    "difference": "Consistent eye shape, cheek blush, nose, and closed-mouth gentle smile matching the reference."
+   },
+   {
+    "who": "he",
+    "face_score": 5,
+    "difference": "Consistent glasses, eye spacing, eyebrows, and smile matching the reference."
+   }
+  ],
   "clay_3d": true,
   "readable_text": "",
-  "summary": "Both characters match their respective approved model sheets perfectly in style, attire, hair, accessories, and clay 3D figurine rendering.",
+  "summary": "Both characters perfectly match their reference model sheets in clothing, hair, proportions, and matte clay stop-motion 3D rendering style.",
   "not_visible": []
  }
 }

@@ -1,0 +1,215 @@
+{
+ "kf05-cake": {
+  "path": "refs/wedding/kf05-cake.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match their reference sheets accurately in hair, facial features, clothing, and overall 3D matte clay art style. Minor expected occlusions occur due to their sitting pose at the cafe table.",
+  "not_visible": [
+   "small tan leather crossbody bag",
+   "black backpack"
+  ]
+ },
+ "kf02a-she-room": {
+  "path": "refs/wedding/kf02a-she-room.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The character in the candidate frame is consistent in every detail with the approved model sheet, rendered in the same 3D matte clay figurine style.",
+  "not_visible": []
+ },
+ "kf02b-he-room": {
+  "path": "refs/wedding/kf02b-he-room.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The candidate frame perfectly matches the approved character model sheet, featuring the same 3D clay-style male character wearing his signature glasses, navy overshirt, white t-shirt, khaki pants, and black backpack while looking out a bedroom window.",
+  "not_visible": [
+   "white canvas sneakers"
+  ]
+ },
+ "kf02c-he-entrance": {
+  "path": "refs/wedding/kf02c-he-entrance.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The character in the candidate frame is consistent with the model sheet, wearing the correct outfit including glasses, navy overshirt, khaki pants, white shoes, and a black backpack, rendered in a 3D clay style.",
+  "not_visible": [
+   "white crewneck T-shirt under it"
+  ]
+ },
+ "kf03a-she-bus": {
+  "path": "refs/wedding/kf03a-she-bus.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The main female character in the candidate frame matches the reference model sheet across all visible attributes, including her hair style, clothing (sweater, skirt, shoes), bag, and facial features. The scene is rendered in the same 3D matte clay figurine style.",
+  "not_visible": []
+ },
+ "kf03b-he-bus-bridge": {
+  "path": "refs/wedding/kf03b-he-bus-bridge.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The main character on the bus perfectly matches the approved 3D clay figurine model sheet in hair style, glasses, clothing, and backpack.",
+  "not_visible": [
+   "white canvas sneakers"
+  ]
+ },
+ "kf06-bopiliao-v2": {
+  "path": "refs/wedding/kf06-bopiliao-v2.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match their reference model sheets completely in the candidate image.",
+  "not_visible": [
+   "rounded face with blushing cheeks, small closed-mouth smile",
+   "black rectangular glasses",
+   "white crewneck T-shirt under it"
+  ]
+ },
+ "kf07a-kura": {
+  "path": "refs/wedding/kf07a-kura.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters are depicted in a sushi restaurant setting, perfectly matching their respective model sheets in terms of clothing, hairstyle, accessories, and overall 3D matte clay figurine style.",
+  "not_visible": []
+ },
+ "kf08-guesthouse-v2": {
+  "path": "refs/wedding/kf08-guesthouse-v2.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters in the candidate frame are completely consistent with their approved model sheet references in terms of hair, clothing, accessories, and overall 3D matte clay art style.",
+  "not_visible": []
+ },
+ "kf09a-lpc": {
+  "path": "refs/wedding/kf09a-lpc.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The candidate image depicts both characters sitting together at a table in a dimly lit, rustic cafe or studio setting. Both characters match their respective character reference model sheets precisely in clothing, hairstyle, and accessories, although some items like shoes and faces are partially or fully obscured by their seated posture.",
+  "not_visible": [
+   "white low sneakers",
+   "rounded face with blushing cheeks, small closed-mouth smile",
+   "white crewneck T-shirt under it",
+   "white canvas sneakers"
+  ]
+ },
+ "kf09b-4444": {
+  "path": "refs/wedding/kf09b-4444.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters perfectly match their respective model sheets with accurate clothing, hair, accessories, and consistent 3D matte clay figurine style.",
+  "not_visible": []
+ },
+ "kf10-library": {
+  "path": "refs/wedding/kf10-library.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match the reference sheets accurately, maintaining their clothing, hair, accessories, and distinct 3D matte clay figurine art style in front of a building scene at dusk.",
+  "not_visible": []
+ },
+ "kf11-ubike": {
+  "path": "refs/wedding/kf11-ubike.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters perfectly match their reference sheets, featuring consistent styling, clothing, accessories, and colors while riding bicycles outdoors.",
+  "not_visible": []
+ },
+ "kf12a-home": {
+  "path": "refs/wedding/kf12a-home.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters in the candidate frame are completely consistent with their respective reference sheets, maintaining all clothing, hair, accessories, and distinct 3D matte clay figurine art style.",
+  "not_visible": []
+ },
+ "kf12b-yuntech": {
+  "path": "refs/wedding/kf12b-yuntech.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "YunTech, 瀚海單位, Asetatne Space",
+  "summary": "Both characters match their reference sheets in every visible detail, maintaining consistency in hair, clothing, accessories, and style. The rendering is in 3D matte clay figurine style.",
+  "not_visible": []
+ },
+ "st-oldphoto-v3": {
+  "path": "refs/wedding/st-oldphoto-v3.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The character in the candidate frame matches the reference sheet regarding facial features, hair, and glasses, while wearing a different outfit suited for biking.",
+  "not_visible": []
+ },
+ "kf13a-registry": {
+  "path": "refs/wedding/kf13a-registry.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "The characters match the reference closely, maintaining their 3D matte clay art style, outfits, and hairstyles, though some lower body items are hidden by the desk.",
+  "not_visible": [
+   "black shoes",
+   "ivory calf-length dress",
+   "ivory Mary Jane shoes"
+  ]
+ },
+ "kf14a-levee": {
+  "path": "refs/wedding/kf14a-levee.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match the reference design perfectly in outfit, hair, and style, rendered as 3D clay figurines in a sunset scene.",
+  "not_visible": []
+ },
+ "kf14b-paddy": {
+  "path": "refs/wedding/kf14b-paddy.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match their reference attributes in style and clothing, shown in a back view standing on a rural path during sunset.",
+  "not_visible": [
+   "black rectangular glasses"
+  ]
+ },
+ "kf07b-metropark-v2": {
+  "path": "refs/wedding/kf07b-metropark-v2.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match their model sheet references completely in features, clothing, and accessories while seated together on a park bench.",
+  "not_visible": []
+ },
+ "kf13b-4444-cert-v2": {
+  "path": "refs/wedding/kf13b-4444-cert-v2.jpg",
+  "verdict": "pass",
+  "mismatches": [],
+  "clay_3d": true,
+  "readable_text": "",
+  "summary": "Both characters match the reference model sheets accurately, maintaining consistent hair, clothing, and accessories while rendered in the specified 3D clay style.",
+  "not_visible": []
+ }
+}

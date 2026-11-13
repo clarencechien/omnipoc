@@ -516,8 +516,8 @@ segments:
     - he-sheet
     - style-clay
     use: 110–118
-    zh: 藏壽司包廂：迴轉帶上蓋著透明圓蓋的盤子，兩人邊吃邊聊，扭蛋機在桌上方。
-    prompt: 'Inside the Kura Sushi booth: plates under clear dome covers glide along the conveyor lane beside the table; the man lifts a plate off the lane and offers it to the woman, she laughs and takes it; both eat happily. Medium two-shot, gentle handheld.'
+    zh: 簡化版：桌上固定兩盤壽司兩杯茶、不增不減；她夾壽司吃、笑，他看著她笑。固定機位。
+    prompt: 'Inside the Kura Sushi booth. A simple, calm shot: on the table in front of them there are exactly TWO plates of sushi and two cups of green tea, and nothing on the table changes during the shot - no plates are added or removed, no dome covers, no chopsticks appear or vanish. The woman takes a bite of sushi with her chopsticks and laughs; the man smiles at her. The conveyor lane behind them moves slowly in the background. Locked-off medium two-shot, no camera movement.'
     ambient: restaurant buzz, the conveyor lane clicking softly, plates clinking
   - id: w07b-metropark
     kind: omni
@@ -989,6 +989,7 @@ trial_c:
   - w06-bopiliao
   - w07a-kura
   - w08a-guesthouse
+  - w09a-theatre
   - w09b-4444-wide
   - w10a-library-a
   - w10a-library-b

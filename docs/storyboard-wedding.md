@@ -20,12 +20,12 @@
 | 項目 | 算法 | 費用 |
 |---|---|---|
 | Omni 草稿 | 282 秒 × 2 支 × $0.0248/s（360p，measured） | $13.99 |
-| Omni 定稿 720p | 282 秒 × 1.2 支 × $0.0708/s（measured） | $23.96 |
+| Omni 定稿 720p | 282 秒 × 1.2 支 × $0.071/s（measured） | $24.03 |
 | 參考圖＋圖片鏡頭 | 2 張 × 2 次 × $0.0673 | $0.27 |
 | TTS | 約 141 字 ÷ 4.5 字/秒 × 3 次 | $0.02 |
 | 配樂 | Lyria × 2 次 | $0.72 |
-| **合計（720p 定稿＋本機放大到 1080p）** | | **$38.96** |
-| 合計（改用 Google 1080p 定稿，$0.1063/s） | | $50.97 |
+| **合計（720p 定稿＋本機放大到 1080p）** | | **$39.02** |
+| 合計（改用 Google 1080p 定稿，$0.1066/s） | | $51.07 |
 
 估價假設每支影片 2 支 360p 草稿、平均 1.2 支定稿；草稿和定稿是分開生成的兩支，不是把草稿放大。單價取自 `ledger/spend.jsonl` 的實測。
 
@@ -192,8 +192,8 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w03a-she-bus` | Omni 影片 | 12 | 35–47 分割畫面左半（裁中間 640×720） | `kf03a`, `she-face`, `she-sheet`, `style-clay` | $1.61 |
-| `w03b-he-bridge` | Omni 影片 | 12 | 35–47 分割畫面右半（裁中間 640×720） | `kf03b`, `he-face`, `he-sheet`, `kf01`, `style-clay` | $1.61 |
+| `w03a-she-bus` | Omni 影片 | 12 | 35–47 分割畫面左半（裁中間 640×720） | `kf03a`, `she-face`, `she-sheet`, `style-clay` | $1.62 |
+| `w03b-he-bridge` | Omni 影片 | 12 | 35–47 分割畫面右半（裁中間 640×720） | `kf03b`, `he-face`, `he-sheet`, `kf01`, `style-clay` | $1.62 |
 | `w03c-cutaways` | Omni 影片 | 5 | 47–52 快速剪接 | `kf01`, `style-clay` | $0.67 |
 | `w03-freeze` | 定格（ffmpeg） | 3 | 52–55 w03c 最後一格定格 101＋緩慢推近 | — | $0 |
 
@@ -272,7 +272,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w05a-cake` | Omni 影片 | 12 | 70–82 | `kf05`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
+| `w05a-cake` | Omni 影片 | 12 | 70–82 | `kf05`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.62 |
 | `w05b-cake-high` | Omni 影片 | 8 | 82–90 | `kf05`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.08 |
 
 **`w05a-cake`**：叉子切草莓鮮奶油蛋糕的微距→平順拉遠，兩人在窗邊小木桌對坐，有點害羞地笑。
@@ -340,12 +340,12 @@ Reference images, in order: image 1 shows the exact first frame of this shot: be
 | `w07b-metropark` | Omni 影片 | 10 | 118–128 | `kf07b-start`, `kf07b`, `she-face`, `he-face`, `style-clay` | $1.35 |
 | `w07b-hold` | 定格（ffmpeg） | 2 | 128–130 最後一格停住 | — | $0 |
 
-**`w07a-kura`**：藏壽司包廂：迴轉帶上蓋著透明圓蓋的盤子，兩人邊吃邊聊，扭蛋機在桌上方。
+**`w07a-kura`**：簡化版：桌上固定兩盤壽司兩杯茶、不增不減；她夾壽司吃、笑，他看著她笑。固定機位。
 
 <details><summary>Omni prompt（完整，含自動附加的參考圖說明、風格、音訊規則）</summary>
 
 ```text
-Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 3 shows the man's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 4 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 5 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 6 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots. Colors are soft and natural like a warm storybook, never oversaturated; skies are gentle, not electric blue. Camera moves are simple and slow. Inside the Kura Sushi booth: plates under clear dome covers glide along the conveyor lane beside the table; the man lifts a plate off the lane and offers it to the woman, she laughs and takes it; both eat happily. Medium two-shot, gentle handheld. Audio: only ambient sound — restaurant buzz, the conveyor lane clicking softly, plates clinking. No dialogue, no speech, no singing, no music.
+Reference images, in order: image 1 shows the location, lighting and art direction for this scene: match this place; image 2 shows the woman's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 3 shows the man's FACE reference sheet: copy this face exactly (eye size and catchlights, nose, cheeks, mouth); image 4 shows the woman's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 5 shows the man's character model sheet (front, three-quarter and back views): keep exactly this face, hairstyle, accessories and outfit; image 6 shows the approved art style: sculpted matte clay figurines placed in a painted storybook set. The woman is about four heads tall with half-up princess-style wavy dark-brown hair, rounded blushing cheeks and a small gentle smile. The man is about four heads tall with black rectangular glasses, short swept black hair, rounded cheeks and a small gentle smile. Animated 3D storybook short film in the approved style of The Playbill: the couple are about four heads tall, adult, rendered as sculpted matte clay figurines with painted gouache texture and fine fabric grain and rounded dimensional hands, placed inside painted storybook versions of real places in Taipei, New Taipei and Yunlin, warm soft golden lighting, gentle cinematic camera, 24fps. Keep faces, glasses, hairstyles and outfits identical to the references in every frame. The characters do not talk: mouths stay closed in small gentle smiles unless they laugh softly. No readable text, signs, captions or logos anywhere in the frame; any sign or plaque is blank. No photorealism, no glossy plastic. Faces are rigid sculpted figurine faces: keep eye size, the white catchlights in the eyes, the small button nose and the round blushing cheeks identical to the face reference sheets in every frame; never shrink the eyes into small dots. Colors are soft and natural like a warm storybook, never oversaturated; skies are gentle, not electric blue. Camera moves are simple and slow. Inside the Kura Sushi booth. A simple, calm shot: on the table in front of them there are exactly TWO plates of sushi and two cups of green tea, and nothing on the table changes during the shot - no plates are added or removed, no dome covers, no chopsticks appear or vanish. The woman takes a bite of sushi with her chopsticks and laughs; the man smiles at her. The conveyor lane behind them moves slowly in the background. Locked-off medium two-shot, no camera movement. Audio: only ambient sound — restaurant buzz, the conveyor lane clicking softly, plates clinking. No dialogue, no speech, no singing, no music.
 ```
 </details>
 
@@ -374,7 +374,7 @@ Reference images, in order: image 1 shows the exact first frame of this shot: be
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w08a-guesthouse` | Omni 影片 | 12 | 130–142 | `kf08`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
+| `w08a-guesthouse` | Omni 影片 | 12 | 130–142 | `kf08`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.62 |
 | `w08b-guesthouse-rise` | Omni 影片 | 8 | 142–150 | `kf08`, `kf08-roof`, `she-face`, `he-face`, `style-clay` | $1.08 |
 
 **`w08a-guesthouse`**：沿台北賓館鐵欄外的人行道並肩走（側面跟拍）→ 手部特寫：他的小指碰到她的，猶豫一下，牽起來。
@@ -412,8 +412,8 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
 | `w09a-theatre` | Omni 影片 | 6 | 150–156 | `kf09a`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $0.81 |
-| `w09b-4444-wide` | Omni 影片 | 12 | 156–168（依鼓點切成 2–3 段） | `kf09b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
-| `w09c-4444-close` | Omni 影片 | 12 | 168–180（依鼓點切） | `kf09b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
+| `w09b-4444-wide` | Omni 影片 | 12 | 156–168（依鼓點切成 2–3 段） | `kf09b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.62 |
+| `w09c-4444-close` | Omni 影片 | 12 | 168–180（依鼓點切） | `kf09b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.62 |
 
 **`w09a-theatre`**：南村劇場看 LPC：全暗→舞台燈亮，紅牆、燈串、白色網架屋頂；從後方看兩人坐在圓桌旁的觀眾席。
 
@@ -510,7 +510,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 
 | 鏡頭 | 做法 | 秒數 | 時間軸用法 | 參考圖 | 草稿＋定稿估價 |
 |---|---|---|---|---|---|
-| `w11a-bike` | Omni 影片 | 12 | 205–217 | `kf11`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
+| `w11a-bike` | Omni 影片 | 12 | 205–217 | `kf11`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.62 |
 | `w11b-bike-away` | Omni 影片 | 8 | 217–225 | `kf11`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.08 |
 
 **`w11a-bike`**：側面平移跟拍，前景高草滑過；他在前、她在後，各騎一台 YouBike。
@@ -547,7 +547,7 @@ Reference images, in order: image 1 shows the location, lighting and art directi
 |---|---|---|---|---|---|
 | `w12a-home` | Omni 影片 | 10 | 225–235 | `kf12a`, `kf12a-high`, `she-face`, `he-face`, `style-clay` | $1.35 |
 | `w12a-hold` | 定格（ffmpeg） | 2 | 235–237 高處畫面停住 | — | $0 |
-| `w12b-yuntech` | Omni 影片 | 12 | 237–249；前 2 秒延續上一段的蟬聲（L-cut） | `kf12b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.61 |
+| `w12b-yuntech` | Omni 影片 | 12 | 237–249；前 2 秒延續上一段的蟬聲（L-cut） | `kf12b`, `she-face`, `he-face`, `she-sheet`, `he-sheet`, `style-clay` | $1.62 |
 | `st-oldphoto` | 圖片（Ken Burns） | 6 | 249–255 老照片 Ken Burns（大學時期彩蛋） | — | $0.13 |
 
 **`w12a-home`**：頭尾給圖：他比著房子介紹、她抬頭看，鏡頭慢慢升高，停在整條透天厝街道的高處，兩人變小。

@@ -1,0 +1,127 @@
+version: w7-v2
+images:
+- id: kf02b-he-room-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf02b-he-room.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the man''s face (and hair) so it matches the face reference sheet in image 2: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - he
+- id: kf03a-she-bus-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf03a-she-bus.jpg
+  - refs/wedding/she-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - she
+- id: kf05-cake-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf05-cake.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the man''s face (and hair) so it matches the face reference sheet in image 2: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - he
+- id: kf07a-kura-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf07a-kura.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile; and the man''s face (and hair) so it matches the face reference sheet in image 3: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - she
+  - he
+- id: kf08-guesthouse-v2-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf08-guesthouse-v2.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the man''s face (and hair) so it matches the face reference sheet in image 2: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - he
+- id: kf09a-lpc-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf09a-lpc.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the man''s face (and hair) so it matches the face reference sheet in image 2: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who: &id001
+  - he
+- id: kf10-library-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf10-library.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile; and the man''s face (and hair) so it matches the face reference sheet in image 3: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - she
+  - he
+- id: kf11-ubike-v3-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf11-ubike-v3.jpg
+  - refs/wedding/she-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - she
+- id: kf12a-home-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf12a-home.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile; and the man''s face (and hair) so it matches the face reference sheet in image 3: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who: &id002
+  - she
+  - he
+- id: kf13a-registry-v2-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf13a-registry-v2.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile; and the man''s face (and hair) so it matches the face reference sheet in image 3: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - she
+  - he
+- id: kf14b-paddy-ff
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf14b-paddy.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the man''s face (and hair) so it matches the face reference sheet in image 2: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1.'
+  who:
+  - he
+- id: kf09a-lpc-ff2
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf09a-lpc-ff.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the man''s face (and hair) so it matches the face reference sheet in image 2: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1. His face is seen in profile: in profile his single visible eye must still be large, round and dark with a clear white highlight, exactly like the PROFILE view in image 2.'
+  who: *id001
+- id: kf12a-home-ff2
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf12a-home-ff.jpg
+  - refs/wedding/she-face.jpg
+  - refs/wedding/he-face.jpg
+  text: 'Edit image 1. Keep EVERYTHING in image 1 exactly the same: the composition, the background, the lighting, every pose, hand, hairstyle silhouette, outfit and prop, and any other people. Change ONLY the woman''s face (and hair) so it matches the face reference sheet in image 2: large round dark-brown eyes with white catchlight highlights, short soft brown eyebrows, a small button nose, round full cheeks with soft pink blush and a small closed-mouth smile; and the man''s face (and hair) so it matches the face reference sheet in image 3: thick black rectangular glasses, round dark eyes with white catchlight highlights behind them, short thick black eyebrows, a small rounded nose, round cheeks with soft pink blush and a small closed-mouth smile, short swept black hair with soft tufts. Open eyes must stay large and round with clear white highlights, never small dots. Same matte clay style and the same lighting as image 1. His eyes must be clearly OPEN, large and round with white highlights
+    as he looks up at the house, like the three-quarter view in image 2, not squinting.'
+  who: *id002

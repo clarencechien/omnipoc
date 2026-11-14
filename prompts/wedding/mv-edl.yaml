@@ -1,0 +1,29 @@
+# Micro MV: Fruit Cake Love (theplaybillv2/data/songs/fruit-cake-love.json timing). Song 6.0-112.7 s.
+# Each piece starts at a song time; it runs until the next piece (+ crossfade). split = two shots side by side.
+song: /home/user/family-feast/site/assets/music/Fruit_Cake_Love.mp3
+lyrics: /home/user/theplaybillv2/data/songs/fruit-cake-love.json
+song_in: 6.0
+song_out: 112.7
+xfade: 0.3
+pieces:
+  - {at: 6.0,   exp: W12, id: w01-bridge,      in: 0.0,  note: 前奏・新北大橋日出}
+  - {at: 9.5,   exp: W12, id: w02b-he-leave,   in: 2.5,  note: 「我的週末 總是跟那群死黨」}
+  - {at: 13.5,  exp: W12, id: w03b-he-bridge,  in: 4.0,  note: 「像傻瓜一樣吵鬧大笑」}
+  - {at: 18.0,  exp: W12, id: w02a-she-ready,  in: 0.0,  note: 「我的午後 總是待在安靜的咖啡廳」}
+  - {at: 22.5,  exp: W12, id: w03a-she-bus,    in: 2.0,  note: 「跟姐妹們聊著戀愛的話題」}
+  - {at: 27.0,  split: [{exp: W12, id: w03a-she-bus, in: 7.0}, {exp: W12, id: w03b-he-bridge, in: 6.0}], note: 「完全不同的 兩人世界」左右分割對望}
+  - {at: 31.0,  exp: W12, id: w05a-cake,       in: 0.0,  note: 「就像那天的 水果蛋糕一樣」}
+  - {at: 34.5,  exp: W12, id: w05a-cake,       in: 10.4, note: 窗邊對坐（10.2–10.5 秒叉子上的蛋糕憑空消失，從 10.4 秒起用）}
+  - {at: 35.8,  exp: W12, id: w06-bopiliao,    in: 0.0,  note: 「甜蜜地 不可思議地 混合在一起了」}
+  - {at: 38.5,  exp: W13, id: w07a-kura,       in: 0.2,  note: 副歌「Like a Fruit Cake」}
+  - {at: 45.0,  exp: W12, id: w08a-guesthouse, in: 0.0,  note: 「妳的朋友 變成了我的朋友」}
+  - {at: 50.7,  exp: W12, id: w08a-guesthouse, in: 9.6,  note: 牽手}
+  - {at: 52.8,  exp: W13, id: w09a-theatre,    in: 0.0,  note: 「烘焙成了 一份圓滿的愛」}
+  - {at: 57.0,  exp: W12, id: w09b-4444-wide,  in: 1.0,  note: 「Sweetest life, with you」}
+  - {at: 61.5,  exp: W12, id: w12a-home,       in: 0.0,  note: 「第一次去妳家的那天」}
+  - {at: 64.4,  exp: W12, id: w12a-home,       in: 7.1,  note: 「你超緊張的 臉都紅了」}
+  - {at: 67.0,  exp: W12, id: w11a-bike,       in: 0.5,  note: 「現在大家 都能相視而笑」}
+  - {at: 77.5,  exp: W12, id: w10a-library-a,  in: 0.0,  xfade: 0.25, note: 橋段「不同的材料 不同的顏色」}
+  - {at: 85.3,  exp: W12, id: w10a-library-b,  in: 0.04, note: 「從今以後 永遠在一起」}
+  - {at: 93.0,  exp: W10, id: w13b-4444-cert,  in: 0.0,  note: 「妳的一切 變成我的一切」…「成為一個圓滿的家人吧」}
+  - {at: 102.7, exp: W12, id: w14a-levee,      in: 0.0,  note: 「Sweetest life, forever」「He and She... Became We」}

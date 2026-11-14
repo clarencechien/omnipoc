@@ -1,0 +1,2 @@
+[W12/omni_12-w07a-kura-r1-29cce5] est $0.556 (spent omni 14.159) -> gemini-omni-1.2-flash 8s 720p 16:9 refs=6
+[W12/omni_12-w07a-kura-r1-29cce5] OK latency 46.2s actual $0.578 probe {"duration_s": 8.043, "size_bytes": 3900811, "width": 1280, "height": 720, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

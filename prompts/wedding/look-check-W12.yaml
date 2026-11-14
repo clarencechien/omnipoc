@@ -1,0 +1,289 @@
+items:
+- id: w01-bridge@t1
+  path: runs/W12/omni_12-w01-bridge-r1-7c4970/frame-t1.jpg
+  who: []
+- id: w01-bridge@t33
+  path: runs/W12/omni_12-w01-bridge-r1-7c4970/frame-t33.jpg
+  who: []
+- id: w01-bridge@t66
+  path: runs/W12/omni_12-w01-bridge-r1-7c4970/frame-t66.jpg
+  who: []
+- id: w01-bridge@end
+  path: runs/W12/omni_12-w01-bridge-r1-7c4970/frame-end.jpg
+  who: []
+- id: w02a-she-ready@t1
+  path: runs/W12/omni_12-w02a-she-ready-r1-d0559d/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w02a-she-ready@t33
+  path: runs/W12/omni_12-w02a-she-ready-r1-d0559d/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w02a-she-ready@t66
+  path: runs/W12/omni_12-w02a-she-ready-r1-d0559d/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w02a-she-ready@end
+  path: runs/W12/omni_12-w02a-she-ready-r1-d0559d/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w02b-he-leave@t1
+  path: runs/W12/omni_12-w02b-he-leave-r1-492817/frame-t1.jpg
+  who:
+  - he
+- id: w02b-he-leave@t33
+  path: runs/W12/omni_12-w02b-he-leave-r1-492817/frame-t33.jpg
+  who:
+  - he
+- id: w02b-he-leave@t66
+  path: runs/W12/omni_12-w02b-he-leave-r1-492817/frame-t66.jpg
+  who:
+  - he
+- id: w02b-he-leave@end
+  path: runs/W12/omni_12-w02b-he-leave-r1-492817/frame-end.jpg
+  who:
+  - he
+- id: w03a-she-bus@t1
+  path: runs/W12/omni_12-w03a-she-bus-r1-a0a9d8/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w03a-she-bus@t33
+  path: runs/W12/omni_12-w03a-she-bus-r1-a0a9d8/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w03a-she-bus@t66
+  path: runs/W12/omni_12-w03a-she-bus-r1-a0a9d8/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w03a-she-bus@end
+  path: runs/W12/omni_12-w03a-she-bus-r1-a0a9d8/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w03b-he-bridge@t1
+  path: runs/W12/omni_12-w03b-he-bridge-r1-a6929d/frame-t1.jpg
+  who:
+  - he
+- id: w03b-he-bridge@t33
+  path: runs/W12/omni_12-w03b-he-bridge-r1-a6929d/frame-t33.jpg
+  who:
+  - he
+- id: w03b-he-bridge@t66
+  path: runs/W12/omni_12-w03b-he-bridge-r1-a6929d/frame-t66.jpg
+  who:
+  - he
+- id: w03b-he-bridge@end
+  path: runs/W12/omni_12-w03b-he-bridge-r1-a6929d/frame-end.jpg
+  who:
+  - he
+- id: w05a-cake@t1
+  path: runs/W12/omni_12-w05a-cake-r1-28b5c6/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w05a-cake@t33
+  path: runs/W12/omni_12-w05a-cake-r1-28b5c6/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w05a-cake@t66
+  path: runs/W12/omni_12-w05a-cake-r1-28b5c6/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w05a-cake@end
+  path: runs/W12/omni_12-w05a-cake-r1-28b5c6/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w06-bopiliao@t1
+  path: runs/W12/omni_12-w06-bopiliao-r1-d456da/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w06-bopiliao@t33
+  path: runs/W12/omni_12-w06-bopiliao-r1-d456da/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w06-bopiliao@t66
+  path: runs/W12/omni_12-w06-bopiliao-r1-d456da/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w06-bopiliao@end
+  path: runs/W12/omni_12-w06-bopiliao-r1-d456da/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w07a-kura@t1
+  path: runs/W12/omni_12-w07a-kura-r1-29cce5/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w07a-kura@t33
+  path: runs/W12/omni_12-w07a-kura-r1-29cce5/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w07a-kura@t66
+  path: runs/W12/omni_12-w07a-kura-r1-29cce5/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w07a-kura@end
+  path: runs/W12/omni_12-w07a-kura-r1-29cce5/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w08a-guesthouse@t1
+  path: runs/W12/omni_12-w08a-guesthouse-r1-c53a11/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w08a-guesthouse@t33
+  path: runs/W12/omni_12-w08a-guesthouse-r1-c53a11/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w08a-guesthouse@t66
+  path: runs/W12/omni_12-w08a-guesthouse-r1-c53a11/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w08a-guesthouse@end
+  path: runs/W12/omni_12-w08a-guesthouse-r1-c53a11/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w09b-4444-wide@t1
+  path: runs/W12/omni_12-w09b-4444-wide-r1-f15210/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w09b-4444-wide@t33
+  path: runs/W12/omni_12-w09b-4444-wide-r1-f15210/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w09b-4444-wide@t66
+  path: runs/W12/omni_12-w09b-4444-wide-r1-f15210/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w09b-4444-wide@end
+  path: runs/W12/omni_12-w09b-4444-wide-r1-f15210/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-a@t1
+  path: runs/W12/omni_12-w10a-library-a-r1-bfb9f5/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-a@t33
+  path: runs/W12/omni_12-w10a-library-a-r1-bfb9f5/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-a@t66
+  path: runs/W12/omni_12-w10a-library-a-r1-bfb9f5/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-a@end
+  path: runs/W12/omni_12-w10a-library-a-r1-bfb9f5/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-b@t1
+  path: runs/W12/omni_12-w10a-library-b-r1-fab104/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-b@t33
+  path: runs/W12/omni_12-w10a-library-b-r1-fab104/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-b@t66
+  path: runs/W12/omni_12-w10a-library-b-r1-fab104/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-b@end
+  path: runs/W12/omni_12-w10a-library-b-r1-fab104/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w11a-bike@t1
+  path: runs/W12/omni_12-w11a-bike-r1-ce8e99/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w11a-bike@t33
+  path: runs/W12/omni_12-w11a-bike-r1-ce8e99/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w11a-bike@t66
+  path: runs/W12/omni_12-w11a-bike-r1-ce8e99/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w11a-bike@end
+  path: runs/W12/omni_12-w11a-bike-r1-ce8e99/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w12a-home@t1
+  path: runs/W12/omni_12-w12a-home-r1-d62865/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w12a-home@t33
+  path: runs/W12/omni_12-w12a-home-r1-d62865/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w12a-home@t66
+  path: runs/W12/omni_12-w12a-home-r1-d62865/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w12a-home@end
+  path: runs/W12/omni_12-w12a-home-r1-d62865/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w14a-levee@t1
+  path: runs/W12/omni_12-w14a-levee-r1-98997c/frame-t1.jpg
+  who:
+  - she
+  - he
+  - wed
+- id: w14a-levee@t33
+  path: runs/W12/omni_12-w14a-levee-r1-98997c/frame-t33.jpg
+  who:
+  - she
+  - he
+  - wed
+- id: w14a-levee@t66
+  path: runs/W12/omni_12-w14a-levee-r1-98997c/frame-t66.jpg
+  who:
+  - she
+  - he
+  - wed
+- id: w14a-levee@end
+  path: runs/W12/omni_12-w14a-levee-r1-98997c/frame-end.jpg
+  who:
+  - she
+  - he
+  - wed

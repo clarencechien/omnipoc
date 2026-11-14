@@ -1,0 +1,2 @@
+[W12/omni_12-w01-bridge-r1-7c4970] est $1.043 (spent omni 9.983) -> gemini-omni-1.2-flash 15s 720p 16:9 refs=2
+[W12/omni_12-w01-bridge-r1-7c4970] OK latency 69.4s actual $1.0527 probe {"duration_s": 15.04, "size_bytes": 6200350, "width": 1280, "height": 720, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

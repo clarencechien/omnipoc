@@ -1,0 +1,3 @@
+WARNING: wedding spend 22.71 passes 70% of cap 29.00
+[W13/omni_12-w09a-theatre-r1-fbcaaf] est $0.417 (spent omni 22.297) -> gemini-omni-1.2-flash 6s 720p 16:9 refs=6
+[W13/omni_12-w09a-theatre-r1-fbcaaf] OK latency 45.2s actual $0.4415 probe {"duration_s": 6.037, "size_bytes": 3246267, "width": 1280, "height": 720, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

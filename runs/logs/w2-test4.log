@@ -1,0 +1,11 @@
+[W2/omni_12-w06-bopiliao-r1-034a50] est $0.348 (spent omni 5.033) -> gemini-omni-1.2-flash 15s 360p 16:9 refs=6
+[W2/omni_12-w06-bopiliao-r1-034a50] OK latency 57.5s actual $0.3925 probe {"duration_s": 15.04, "size_bytes": 3579506, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}
+WARNING: wedding spend 5.78 passes 70% of cap 8.00
+[W2/omni_12-w08a-guesthouse-r1-1d3b0f] est $0.278 (spent omni 5.505) -> gemini-omni-1.2-flash 12s 360p 16:9 refs=6
+[W2/omni_12-w08a-guesthouse-r1-1d3b0f] OK latency 46.1s actual $0.2986 probe {"duration_s": 12.032, "size_bytes": 3207598, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}
+WARNING: wedding spend 6.35 passes 70% of cap 8.00
+[W2/omni_12-w10a-library-r1-ca1050] est $0.348 (spent omni 6.007) -> gemini-omni-1.2-flash 15s 360p 16:9 refs=6
+[W2/omni_12-w10a-library-r1-ca1050] OK latency 50.6s actual $0.3701 probe {"duration_s": 15.04, "size_bytes": 3441659, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}
+WARNING: wedding spend 6.81 passes 70% of cap 8.00
+[W2/omni_12-w13b-4444-cert-r1-871281] est $0.232 (spent omni 6.577) -> gemini-omni-1.2-flash 10s 360p 16:9 refs=6
+[W2/omni_12-w13b-4444-cert-r1-871281] OK latency 33.8s actual $0.2508 probe {"duration_s": 10.027, "size_bytes": 2652189, "width": 640, "height": 360, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

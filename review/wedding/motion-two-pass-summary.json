@@ -1,0 +1,31 @@
+{
+ "date": "2026-11-13",
+ "method": "gemini-3.8-flash default (1 fps), two passes per clip, 17 MV clips, then frame-by-frame human check of every flag inside a used range",
+ "cost_usd": 0.25,
+ "real_and_fixed": [
+  {
+   "clip": "W12:w05a-cake",
+   "time": "10.2-10.5 s",
+   "issue": "cake piece on the fork vanishes",
+   "fix": "two-shot now starts at 10.4 s (MV) / 10.5 s (trial)"
+  }
+ ],
+ "false_positives_in_use": [
+  "W12:w05a-cake 10-11 s text artifact (none visible)",
+  "W12:w14a-levee 3-4 s bench vanishes (it scrolls out of frame)",
+  "W13:w07a-kura 2.0-3.2 s sushi through mouth (normal bite)",
+  "W13:w07a-kura 5.2-6.5 s fingers jitter (pass 1 only)",
+  "W13:w09a-theatre 1.2-2.1 s legs vanish (pass 2 only)",
+  "W12:w10a-library-b 2.2-4.8 s layout swap (camera orbit) and 5.4-6.6 s hand jump (natural raise)",
+  "W12:w02b-he-leave 5.5-8.5 s foot slide (normal walk)"
+ ],
+ "minor_kept": [
+  "W12:w14a-levee 5-9 s a roadside plaque reappears in the background (pass 2 only, hard to notice)"
+ ],
+ "outside_used_ranges": [
+  "w02a keys 7-9 s",
+  "w03b passenger face 0-2.5 s",
+  "w06 sliding 5-14 s and hands 7.5-8.8 s",
+  "w08a fingers 7.2-9.0 s"
+ ]
+}

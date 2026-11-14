@@ -1,0 +1,2 @@
+[W12/omni_12-w02b-he-leave-r1-492817] est $0.695 (spent omni 9.983) -> gemini-omni-1.2-flash 10s 720p 16:9 refs=5
+[W12/omni_12-w02b-he-leave-r1-492817] OK latency 49.2s actual $0.7145 probe {"duration_s": 10.027, "size_bytes": 5575301, "width": 1280, "height": 720, "fps": "24/1", "vcodec": "h264", "audio": true, "acodec": "aac", "channels": 2}

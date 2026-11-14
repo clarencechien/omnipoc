@@ -9,7 +9,7 @@ only = set(a.only.split(",")) if a.only else None
 for s in spec["images"]:
     if only and s["id"] not in only: continue
     size = s.get("size", "1K"); est = round(cfg["pricing_usd"]["nb2_tokens_per_image"][size] * cfg["pricing_usd"]["nb2_output_per_m_tok"] / 1e6, 4)
-    budget.check_cap("opening", est, exp=a.exp)
+    budget.check_cap("image", est, exp=a.exp)
     run_id = f"{a.exp}/nb2-{s['id']}-{uuid.uuid4().hex[:6]}"; out_dir = os.path.join(budget.ROOT, "runs", run_id); os.makedirs(out_dir, exist_ok=True)
     out = os.path.join(out_dir, "image.jpg")
     entry = dict(exp=a.exp, provider="nanobanana", model=m["id"], prompt_id=s["id"], rep=1, params={"aspect": s.get("aspect", "16:9"), "size": size, "refs": s.get("refs", [])}, est_cost=est, run_id=run_id)

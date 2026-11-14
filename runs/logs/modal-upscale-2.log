@@ -1,0 +1,31 @@
+✓ Initialized. View run at 
+https://modal.com/apps/clarence-chien/main/ap-6EPbkgcMV5Tjz91B2hbzmZ
+✓ Created objects.
+├── ✓ Uploaded /home/user/omnipoc/src/modal_upscale.py
+└── ✓ Created Function upscale.
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 92 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+cuda: True Tesla T4
+1280x720 @ 24.000 fps, 38 frames -> 1920x1080
+/root/modal_upscale.py:55: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load('/root/realesr-animevideov3.pth' if device.type == 'cuda' else WEIGHTS_LOCAL, map_location='cpu')
+done: 38 frames in 23s
+60/92 frames, 0.52s/frame
+done: 92 frames in 49s
+saved /tmp/claude-0/-home-user/e754b5c4-7c35-5515-9d92-707f162abdcb/scratchpad/up-1080/06.mp4 2004591 bytes
+saved /tmp/claude-0/-home-user/e754b5c4-7c35-5515-9d92-707f162abdcb/scratchpad/up-1080/07.mp4 976409 bytes
+an error occurred during closing of asynchronous generator <async_generator object async_merge at 0x7f6f68fe36e0>
+asyncgen: <async_generator object async_merge at 0x7f6f68fe36e0>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/modal/_utils/async_utils.py", line 858, in __iter__
+    yield from run_async_gen(runner, self._async_iterable)
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/clarence-chien/main/ap-6EPbkgcMV5Tjz91B2hbzmZ

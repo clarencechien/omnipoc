@@ -1,0 +1,9 @@
+version: x
+images:
+- id: kf12a-high-v2
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/kf12a-home-ff2.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the scene to match; image 2 the art style. The SAME townhouse and street as image 1 seen from a high drone position looking down the quiet street of three-story townhouses and leafy trees in afternoon light; the couple are small in front of the man''s house. Same clay storybook style, gentle colors. This is a small town in rural Yunlin, far from Taipei: there is NO Taipei 101 and NO big-city skyline anywhere; beyond the rooftops are only low hills, green farmland and a few low buildings under a warm afternoon sky. The woman holds nothing in her hands (no flowers); both wear their casual outfits from the scene in image 1.'

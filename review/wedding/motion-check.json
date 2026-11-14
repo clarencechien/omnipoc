@@ -1,0 +1,182 @@
+{
+ "w05a-cake": {
+  "glitches": [
+   {
+    "start": 9.0,
+    "end": 11.83,
+    "kind": "text_glitch",
+    "what": "Garbled, colorful text hallucinates and morphs onto the lower glass panel of the door."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 9.0,
+  "verdict": "Smooth and high-quality claymation zoom-out, with only an AI text hallucination appearing on the door glass near the very end.",
+  "run": "runs/W12/omni_12-w05a-cake-r1-28b5c6"
+ },
+ "w06-bopiliao": {
+  "glitches": [
+   {
+    "start": 6.0,
+    "end": 14.0,
+    "kind": "sliding",
+    "what": "Both characters cease taking walking steps and slide smoothly forward along the pavement with frozen, stiff legs."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 6.0,
+  "verdict": "The figurines walk naturally with coordinated footsteps until 6 seconds, after which their lower body animations freeze and they glide forward along the floor.",
+  "run": "runs/W12/omni_12-w06-bopiliao-r1-d456da"
+ },
+ "w07a-kura": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 7.0,
+  "verdict": "The animation is stable with no noticeable continuity errors, morphing, or object clipping.",
+  "run": "runs/W13/omni_12-w07a-kura-r1-9d916f"
+ },
+ "w01-bridge": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 14.0,
+  "verdict": "Smooth and continuous shot with no visible visual anomalies or glitches.",
+  "run": "runs/W12/omni_12-w01-bridge-r1-7c4970"
+ },
+ "w02a-she-ready": {
+  "glitches": [
+   {
+    "start": 7.0,
+    "end": 8.2,
+    "kind": "duplication",
+    "what": "A key spawns in her hand while the keys remain on the tray undisturbed"
+   },
+   {
+    "start": 8.3,
+    "end": 9.0,
+    "kind": "disappearance",
+    "what": "The picked-up key vanishes from her hand as she lowers it"
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 7.0,
+  "verdict": "Consistent clay animation throughout until the key duplicates on the tray and vanishes from her hand.",
+  "run": "runs/W12/omni_12-w02a-she-ready-r1-d0559d"
+ },
+ "w02b-he-leave": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 10.0,
+  "verdict": "Smooth claymation with consistent character models, clear motion, and no notable continuity errors.",
+  "run": "runs/W12/omni_12-w02b-he-leave-r1-492817"
+ },
+ "w03a-she-bus": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 11.63,
+  "verdict": "No glitches detected; the clay animation camera push-in and background motion remain completely coherent and stable throughout.",
+  "run": "runs/W12/omni_12-w03a-she-bus-r1-a0a9d8"
+ },
+ "w03b-he-bridge": {
+  "glitches": [
+   {
+    "start": 1.0,
+    "end": 2.0,
+    "kind": "appearing object",
+    "what": "A colorful logo or decal abruptly appears on the ceiling panel in the upper-right corner and disappears a second later."
+   },
+   {
+    "start": 1.0,
+    "end": 3.0,
+    "kind": "morphing",
+    "what": "The face of the female passenger in the background on the right morphs with yellow and brown distorted visual artifacts before returning to normal."
+   }
+  ],
+  "clean_start": 3.0,
+  "clean_end": 11.0,
+  "verdict": "A brief set of visual artifacts and morphing affects the background passenger and upper ceiling rack between 1 and 3 seconds, after which the push-in shot remains smooth and clean.",
+  "run": "runs/W12/omni_12-w03b-he-bridge-r1-a6929d"
+ },
+ "w08a-guesthouse": {
+  "glitches": [
+   {
+    "start": 7.2,
+    "end": 9.2,
+    "kind": "morphing",
+    "what": "The characters' fingers morph, intertwine unnaturally, and pass through each other as they clasp hands."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 7.2,
+  "verdict": "The wide walking tracking shot is smooth and well-rendered, but the close-up shot experiences finger morphing and clipping as the characters hold hands.",
+  "run": "runs/W12/omni_12-w08a-guesthouse-r1-c53a11"
+ },
+ "w09b-4444-wide": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 11.0,
+  "verdict": "The animation is consistent and stable throughout, with smooth character motion and no noticeable visual glitches.",
+  "run": "runs/W12/omni_12-w09b-4444-wide-r1-f15210"
+ },
+ "w10a-library-a": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 7.0,
+  "verdict": "The animation is smooth and consistent throughout, showing stable character models and flawless camera motion with no noticeable visual glitches.",
+  "run": "runs/W12/omni_12-w10a-library-a-r1-bfb9f5"
+ },
+ "w10a-library-b": {
+  "glitches": [
+   {
+    "start": 2,
+    "end": 4,
+    "kind": "sudden scene or layout changes inside one continuous shot",
+    "what": "The background layout abruptly flips and transforms during camera rotation: the gazebo jumps from the left side to the right side, and the library building morphs from a modest low-rise entrance into a massive multi-story glass complex."
+   }
+  ],
+  "clean_start": 4,
+  "clean_end": 7,
+  "verdict": "The video experiences an unnatural background morph and layout shift between 2 and 4 seconds as the camera attempts to orbit around the characters.",
+  "run": "runs/W12/omni_12-w10a-library-b-r1-fab104"
+ },
+ "w11a-bike": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 11.4,
+  "verdict": "The video is exceptionally clean and consistent throughout, featuring smooth tracking motion, coherent clay-style character models, and no noticeable visual glitches or morphing.",
+  "run": "runs/W12/omni_12-w11a-bike-r1-ce8e99"
+ },
+ "w12a-home": {
+  "glitches": [
+   {
+    "start": 3.2,
+    "end": 5.0,
+    "kind": "spontaneous appearance",
+    "what": "A tree spontaneously materializes on the left side of the street in front of the neighboring garage and entrance where the driveway was previously empty."
+   }
+  ],
+  "clean_start": 0.0,
+  "clean_end": 3.2,
+  "verdict": "The video starts smoothly with consistent stop-motion/clay style animation, but as the camera rises and pulls back, a tree suddenly appears on the left sidewalk where open pavement was previously visible.",
+  "run": "runs/W12/omni_12-w12a-home-r1-d62865"
+ },
+ "w14a-levee": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 9.17,
+  "verdict": "The animation is consistently smooth throughout, with no visual anomalies, morphing, or continuity glitches.",
+  "run": "runs/W12/omni_12-w14a-levee-r1-98997c"
+ },
+ "w13b-4444-cert": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 9.0,
+  "verdict": "The video is completely clean with no glitches, maintaining consistent character models, stable hands, and smooth, natural claymation movement throughout.",
+  "run": "runs/W10/omni_12-w13b-4444-cert-r1-c97c5b"
+ },
+ "w09a-theatre": {
+  "glitches": [],
+  "clean_start": 0.0,
+  "clean_end": 5.0,
+  "verdict": "The animation is consistent and smooth throughout with no visual glitches or continuity errors.",
+  "run": "runs/W13/omni_12-w09a-theatre-r1-fbcaaf"
+ }
+}

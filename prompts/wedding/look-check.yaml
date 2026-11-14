@@ -1,0 +1,41 @@
+# Images whose characters must match the model sheets (src/check_look.py)
+items:
+  - {id: kf02a-she-room, path: refs/wedding/kf02a-she-room.jpg, who: [she]}
+  - {id: kf02b-he-room, path: refs/wedding/kf02b-he-room.jpg, who: [he]}
+  - {id: kf02c-he-entrance, path: refs/wedding/kf02c-he-entrance.jpg, who: [he]}
+  - {id: kf03a-she-bus, path: refs/wedding/kf03a-she-bus.jpg, who: [she]}
+  - {id: kf03b-he-bus-bridge, path: refs/wedding/kf03b-he-bus-bridge.jpg, who: [he]}
+  - {id: kf05-cake, path: refs/wedding/kf05-cake.jpg, who: [she, he]}
+  - {id: kf06-bopiliao-v2, path: refs/wedding/kf06-bopiliao-v2.jpg, who: [she, he]}
+  - {id: kf07a-kura, path: refs/wedding/kf07a-kura.jpg, who: [she, he]}
+  - {id: kf08-guesthouse-v2, path: refs/wedding/kf08-guesthouse-v2.jpg, who: [she, he]}
+  - {id: kf09a-lpc, path: refs/wedding/kf09a-lpc.jpg, who: [she, he]}
+  - {id: kf10-library, path: refs/wedding/kf10-library.jpg, who: [she, he]}
+  - {id: kf12a-home, path: refs/wedding/kf12a-home.jpg, who: [she, he]}
+  - {id: kf12b-yuntech, path: refs/wedding/kf12b-yuntech.jpg, who: [she, he]}
+  - {id: st-oldphoto-v3, path: refs/wedding/st-oldphoto-v3.jpg, who: [he-face]}
+  - {id: kf14a-levee, path: refs/wedding/kf14a-levee.jpg, who: [wed]}
+  - {id: kf14b-paddy, path: refs/wedding/kf14b-paddy.jpg, who: [wed]}
+  - {id: kf07b-metropark-v2, path: refs/wedding/kf07b-metropark-v2.jpg, who: [she, he]}
+  - {id: kf13a-registry-v2, path: refs/wedding/kf13a-registry-v2.jpg, who: [wed]}
+  - {id: kf13b-4444-cert-v3, path: refs/wedding/kf13b-4444-cert-v3.jpg, who: [wed]}
+  - {id: kf11-ubike-v3, path: refs/wedding/kf11-ubike-v3.jpg, who: [she, he]}
+  - {id: kf09b-4444-v3, path: refs/wedding/kf09b-4444-v3.jpg, who: [she, he]}
+  - {id: kf09b-4444-v4, path: refs/wedding/kf09b-4444-v4.jpg, who: [she, he]}
+  - {id: kf02a-she-room-facefix, path: refs/wedding/kf02a-she-room-facefix.jpg, who: [she]}
+  - {id: kf02b-he-room-ff, path: refs/wedding/kf02b-he-room-ff.jpg, who: [he]}
+  - {id: kf03a-she-bus-ff, path: refs/wedding/kf03a-she-bus-ff.jpg, who: [she]}
+  - {id: kf05-cake-ff, path: refs/wedding/kf05-cake-ff.jpg, who: [he]}
+  - {id: kf07a-kura-ff, path: refs/wedding/kf07a-kura-ff.jpg, who: [she, he]}
+  - {id: kf08-guesthouse-v2-ff, path: refs/wedding/kf08-guesthouse-v2-ff.jpg, who: [he]}
+  - {id: kf09a-lpc-ff, path: refs/wedding/kf09a-lpc-ff.jpg, who: [he]}
+  - {id: kf10-library-ff, path: refs/wedding/kf10-library-ff.jpg, who: [she, he]}
+  - {id: kf11-ubike-v3-ff, path: refs/wedding/kf11-ubike-v3-ff.jpg, who: [she]}
+  - {id: kf12a-home-ff, path: refs/wedding/kf12a-home-ff.jpg, who: [she, he]}
+  - {id: kf13a-registry-v2-ff, path: refs/wedding/kf13a-registry-v2-ff.jpg, who: [wed]}
+  - {id: kf14b-paddy-ff, path: refs/wedding/kf14b-paddy-ff.jpg, who: [wed]}
+  - {id: kf09a-lpc-ff2, path: refs/wedding/kf09a-lpc-ff2.jpg, who: [he]}
+  - {id: kf12a-home-ff2, path: refs/wedding/kf12a-home-ff2.jpg, who: [she, he]}
+  - {id: kf10-mid, path: refs/wedding/kf10-mid.jpg, who: [she, he]}
+  - {id: kf13b-first, path: refs/wedding/kf13b-first.jpg, who: [wed]}
+  - {id: kf13b-last, path: refs/wedding/kf13b-last.jpg, who: [wed]}

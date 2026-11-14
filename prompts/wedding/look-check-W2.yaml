@@ -1,0 +1,41 @@
+items:
+- id: w10a-library-fl-a@t1
+  path: runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-a@t33
+  path: runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-a@t66
+  path: runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-a@end
+  path: runs/W2/omni_12-w10a-library-fl-a-r1-2c533b/frame-end.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-b@t1
+  path: runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t1.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-b@t33
+  path: runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t33.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-b@t66
+  path: runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-t66.jpg
+  who:
+  - she
+  - he
+- id: w10a-library-fl-b@end
+  path: runs/W2/omni_12-w10a-library-fl-b-r1-08ca59/frame-end.jpg
+  who:
+  - she
+  - he

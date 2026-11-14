@@ -1,0 +1,122 @@
+version: w3-v2
+images:
+- id: kf02a-she-room
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-she-room.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the woman''s character model sheet; image 2 is a real photo of the woman''s bedroom; image 3 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Morning in the woman''s small bedroom in Yonghe, based on image 3 but simplified, tidy and uncluttered: a light wood desk with a few neat items and a white desk lamp, a white coat stand with a blush pink cardigan hanging on it, grey curtains pulled open beside a tall glass balcony door. Through the glass, far away in soft morning haze, Taipei 101 rises above the city. She stands in the middle of the room tying her hair back, ready to go out. Warm morning light. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal
+    knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf02b-he-room
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/loc/loc-he-room.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is a real photo of the man''s bedroom; image 3 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Morning in the man''s small bedroom on a high floor in Sanchong, based on image 3 but simplified, tidy and uncluttered: a neatly made single bed with a dark grey grid-pattern duvet, beige curtains drawn open on a big window looking out over modern high-rise apartment towers and distant hills, a small bedside shelf with only a lamp and a clock. He stands by the bed swinging his black backpack onto his shoulder. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas
+    sneakers, black backpack. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf02c-he-entrance
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/loc/loc-he-dorm-entrance.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is a real photo of the man''s apartment building entrance; image 3 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Morning outside the entrance of a modern high-rise residential building in Sanchong, based on image 3: a wide entrance canopy clad in dark textured stone above glass doors, white-framed upper floors, two leafy street trees, a few scooters parked at the curb, a quiet sidewalk. The man walks out of the glass doors onto the sidewalk with his backpack on, heading off for the day. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black
+    backpack. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf03a-she-bus
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the woman''s character model sheet; image 2 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Morning inside a city bus driving through the dense streets of Yonghe, New Taipei: shop fronts with blank signboards, scooters and low apartment blocks pass outside the window. The woman sits at a window seat in the CENTER third of the frame, her face turned toward screen-right, gazing far into the distance with a soft, wistful smile, as if looking at someone very far away. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos
+    in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No photorealism, no glossy plastic.'
+- id: kf03b-he-bus-bridge
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/kf01-bridge.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the bridge and river for this scene; image 3 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Morning inside a city bus crossing the cable-stayed bridge from image 2: through the window behind him the single tall pylon, fanned cables and the wide river are visible. The man sits at a window seat in the CENTER third of the frame, his face turned toward screen-left, gazing far into the distance with a soft smile, as if looking at someone very far away. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black backpack. Recreate any real place from
+    the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No photorealism, no glossy plastic.'
+- id: kf07a-kura
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-kura-plate.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the woman''s character model sheet; image 3 is a real photo of the restaurant''s plate design; image 4 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Inside a Kura Sushi conveyor-belt restaurant: a cozy booth with two benches facing each other, a sushi conveyor lane running along the wall beside the table with plates under clear dome covers, a plate-return slot in the table, an ordering tablet with a blank screen and a small capsule-toy prize machine above the table. Sushi is served on white plates with a blue arabesque pattern like image 3. The woman and the man sit across from each other in the booth, happily eating sushi and chatting. Other diners only as soft background shapes. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles.
+    the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black backpack; the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No photorealism, no glossy plastic.'
+- id: kf07b-metropark
+  aspect: '16:9'
+  size: 1K
+  refs: &id001
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-metropark.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the woman''s character model sheet; image 3 is a real photo of New Taipei Metropolitan Park; image 4 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Late afternoon at New Taipei Metropolitan Park from image 3: a vast riverside lawn, gentle grass slopes and wide paths, the elevated expressway and Sanchong apartment towers in the distance, golden light. The woman and the man sit very close together on a park bench, shoulders touching, she leans her head lightly toward him, both smiling quietly. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers,
+    black backpack; the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf09a-lpc
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-lpc-nancun.jpg
+  - refs/wedding/source/playbill-lpc-stage.png
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the woman''s character model sheet; image 3 is a real photo of the theatre during that show; image 4 is the same stage already drawn in the approved style; image 5 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Inside PLAYground Nancun Theater during the musical ''I Love You, You''re Perfect, Now Change'': the small intimate venue from images 3 and 4, a low wooden stage with a red back wall, warm string lights draped under an exposed white mesh roof with black stage lights, empty wooden frames and clothing racks as the set, round cafe tables and wooden chairs for the audience. Seen from behind, the woman and the man sit side by side at a small round table in the audience, watching the warmly lit stage. No performers, no projected text. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never
+    a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black backpack; the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf10-library
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-library.jpg
+  - refs/wedding/loc/loc-library-entrance.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the woman''s character model sheet; image 3 is a real photo of the National Taiwan Library; image 4 is a real photo of the library''s main entrance; image 5 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Night on the wide paved plaza in front of the National Taiwan Library in No. 4 Park, from images 3 and 4: the modern library building with a glowing teal-blue glass facade, a red-brick arched arcade wing, trees and soft garden lights, a deep blue night sky. On the plaza in front of the library the man stands facing the woman and looks at her earnestly, mouth closed; she covers her mouth with one hand, smiling, about to nod. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular
+    glasses, short swept black hair, navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black backpack; the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf11-ubike
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/she-sheet.jpg
+  - refs/wedding/loc/loc-youbike.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the woman''s character model sheet; image 3 is a real photo of a YouBike 2.0 shared bicycle; image 4 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Golden late afternoon on the Yonghe riverside bike path along a low levee by the wide Xindian River: the woman and the man each ride their own YouBike 2.0 shared bicycle side by side (white frame, yellow fenders and chain guard, front basket, like image 3), smiling at each other, her hair blowing in the wind; tall grass in the foreground; across the river the Taipei skyline with Taipei 101 small in the distance. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair, navy cotton overshirt worn open
+    over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black backpack; the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: st-oldphoto-v3
+  aspect: '4:3'
+  size: 1K
+  refs:
+  - refs/wedding/he-sheet.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the man''s character model sheet; image 2 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). A faded, slightly overexposed old snapshot from his university days, with a plain white instant-photo border that has no writing anywhere: the man from the model sheet about ten years younger, around twenty, grinning on a dirt forest trail, wearing a plain white short-sleeve cycling jersey with no logos, black baggy mountain-bike shorts and knee pads, holding a full-suspension downhill mountain bike, a full-face helmet tucked under his arm, still wearing his black rectangular glasses. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents
+    are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf07b-metropark-v2
+  aspect: '16:9'
+  size: 1K
+  refs: *id001
+  text: 'Image 1 is the man''s character model sheet; image 2 is the woman''s character model sheet; image 3 is a real photo of New Taipei Metropolitan Park; image 4 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). Late afternoon at New Taipei Metropolitan Park from image 3: a vast riverside lawn, gentle grass slopes and wide paths, the elevated expressway and Sanchong apartment towers in the distance, golden light. The grass slopes are plain green with no lettering, no giant letters and no park name anywhere. The woman and the man sit very close together on a park bench, shoulders touching, she leans her head lightly toward him, both smiling quietly. Every character is a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, never a flat 2D drawing; mouths closed in small gentle smiles. the man keeps EXACTLY his model-sheet look: black rectangular glasses, short swept black hair,
+    navy cotton overshirt worn open over a white crewneck T-shirt, khaki chinos, white canvas sneakers, black backpack; the woman keeps EXACTLY her model-sheet look: half-up princess-style wavy dark-brown hair with twisted strands at the back, oatmeal knit sweater, sage-green pleated midi skirt, white low sneakers, small tan leather crossbody bag. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text and no logos. No other people. No photorealism, no glossy plastic.'
+- id: kf13b-4444-cert-v2
+  aspect: '16:9'
+  size: 1K
+  refs:
+  - refs/wedding/source/playbill-couple-4heads.png
+  - refs/wedding/loc/loc-4444-wide.jpg
+  - refs/wedding/loc/loc-4444-doors.jpg
+  - refs/wedding/source/playbill-finale-clay-in-scene.png
+  text: 'Image 1 is the couple in their registration-day outfits; image 2 is a real photo of Four Four South Village with Taipei 101; image 3 is a real photo of the village houses'' colorful doors and windows; image 4 is the approved art style (sculpted matte clay figurines placed in a painted storybook set). A bright sunny day with deep blue sky and white clouds, back at Four Four South Village: in front of the old grey village houses with colorful green, blue and red doors and windows from images 2 and 3, Taipei 101 towering behind, the couple in their registration-day outfits hold up their marriage certificate together with their inner hands, beaming, the certificate facing away from the camera; in her OTHER hand the woman clearly holds her small blush and cream bouquet, exactly as in image 1. Every character must be rendered as a dimensional sculpted matte clay figurine exactly like the people in the art-style image, about four heads tall, adult, with faces, glasses, hairstyles and outfits
+    identical to their references, never as a flat 2D drawing. Mouths closed in small gentle smiles. Recreate any real place from the photos in the same warm matte clay and gouache storybook style. Cinematic composition. Any signs, plaques, screens or documents are blank; no readable text. No other people. No photorealism, no glossy plastic.'

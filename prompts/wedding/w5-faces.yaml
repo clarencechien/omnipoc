@@ -1,0 +1,29 @@
+# W5 — high-resolution face sheets (canonical faces from the approved playbill couple)
+version: w5-v1
+images:
+  - id: she-face
+    aspect: "16:9"
+    size: 2K
+    refs: [refs/wedding/source/playbill-couple-4heads.png, refs/wedding/she-sheet.jpg]
+    text: >-
+      Image 1 is the approved couple; image 2 is the woman's casual model sheet. Create a FACE REFERENCE SHEET of the woman
+      on the right of image 1: three large head-and-shoulders views of the SAME face side by side at the same scale -
+      front view, three-quarter view, side profile - each head filling most of the canvas height. Copy her face from image
+      1 exactly: large round dark-brown eyes with bright white catchlights, short soft brown eyebrows, a small button
+      nose, a small closed-mouth gentle smile, full rounded cheeks with soft pink blush, a soft rounded chin; half-up
+      princess-style wavy dark-brown hair with twisted strands gathered at the back and loose lower waves (the back of the
+      hair visible in the profile view). She wears the oatmeal knit sweater from image 2. Sculpted matte clay with painted
+      gouache texture, soft even studio light, plain warm ivory background. No text, no labels, no extra people.
+  - id: he-face
+    aspect: "16:9"
+    size: 2K
+    refs: [refs/wedding/source/playbill-couple-4heads.png, refs/wedding/he-sheet.jpg]
+    text: >-
+      Image 1 is the approved couple; image 2 is the man's casual model sheet. Create a FACE REFERENCE SHEET of the man on
+      the left of image 1: three large head-and-shoulders views of the SAME face side by side at the same scale - front
+      view, three-quarter view, side profile - each head filling most of the canvas height. Copy his face from image 1
+      exactly: black rectangular glasses with thick frames, round dark eyes behind them, short thick black eyebrows, a
+      small rounded nose, a small closed-mouth friendly smile, rounded cheeks with soft pink blush, slightly rounded jaw,
+      short swept black hair with soft tufts, ears visible. He wears the navy overshirt over a white crewneck from image 2.
+      Sculpted matte clay with painted gouache texture, soft even studio light, plain warm ivory background. No text, no
+      labels, no extra people.

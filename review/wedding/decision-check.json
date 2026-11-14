@@ -1,0 +1,284 @@
+{
+ "W12:w06-bopiliao": {
+  "run": "runs/W12/omni_12-w06-bopiliao-r1-d456da",
+  "answers": {
+   "walk_backwards": {
+    "confidence": 0.7463858529524253,
+    "noul": 0.2536141470475747,
+    "type": "noul"
+   },
+   "objects_change": {
+    "confidence": 0.7830228670276137,
+    "noul": 0.21697713297238633,
+    "type": "noul"
+   },
+   "follows_script": {
+    "confidence": 0.6338197249820224,
+    "score": 2.54526289069624,
+    "probabilities": {
+     "3": 0.6338197249820224,
+     "1": 0.06409103735641898,
+     "2": 0.28985633919687676,
+     "0": 0.01223289846468183
+    },
+    "legend": {
+     "3": "Fully: place, people, action and camera move all match the script.",
+     "2": "Mostly: the main action happens with small deviations.",
+     "0": "Does not follow: wrong place, people or action.",
+     "1": "Partly: the place and people match but the main action or camera move is missing or wrong."
+    },
+    "type": "score"
+   },
+   "morph": {
+    "confidence": 0.8218247083492093,
+    "noul": 0.17817529165079068,
+    "type": "noul"
+   },
+   "layout_jump": {
+    "confidence": 0.7967733647746603,
+    "noul": 0.2032266352253397,
+    "type": "noul"
+   },
+   "hands_glitch": {
+    "confidence": 0.5369594848355754,
+    "noul": 0.4630405151644246,
+    "type": "noul"
+   }
+  }
+ },
+ "W12:w05a-cake": {
+  "run": "runs/W12/omni_12-w05a-cake-r1-28b5c6",
+  "answers": {
+   "layout_jump": {
+    "confidence": 0.8224414062984041,
+    "noul": 0.17755859370159585,
+    "type": "noul"
+   },
+   "walk_backwards": {
+    "confidence": 0.7756766614104663,
+    "noul": 0.22432333858953366,
+    "type": "noul"
+   },
+   "morph": {
+    "confidence": 0.844500106170121,
+    "noul": 0.1554998938298791,
+    "type": "noul"
+   },
+   "follows_script": {
+    "confidence": 0.6546525786159754,
+    "score": 2.51967822187765,
+    "probabilities": {
+     "2": 0.23461444718891847,
+     "3": 0.6546525786159754,
+     "1": 0.08649159165188697,
+     "0": 0.024241382543219118
+    },
+    "legend": {
+     "1": "Partly: the place and people match but the main action or camera move is missing or wrong.",
+     "3": "Fully: place, people, action and camera move all match the script.",
+     "0": "Does not follow: wrong place, people or action.",
+     "2": "Mostly: the main action happens with small deviations."
+    },
+    "type": "score"
+   },
+   "hands_glitch": {
+    "confidence": 0.7475434022266823,
+    "noul": 0.2524565977733177,
+    "type": "noul"
+   },
+   "objects_change": {
+    "confidence": 0.6969185676135754,
+    "noul": 0.3030814323864246,
+    "type": "noul"
+   }
+  }
+ },
+ "W12:w07a-kura": {
+  "run": "runs/W12/omni_12-w07a-kura-r1-29cce5",
+  "answers": {
+   "hands_glitch": {
+    "confidence": 0.657809727605726,
+    "noul": 0.3421902723942741,
+    "type": "noul"
+   },
+   "follows_script": {
+    "confidence": 0.6093574947568905,
+    "score": 1.080593014198529,
+    "probabilities": {
+     "3": 0.02298443240384632,
+     "0": 0.16651696172421354,
+     "2": 0.20114111111504968,
+     "1": 0.6093574947568905
+    },
+    "legend": {
+     "0": "Does not follow: wrong place, people or action.",
+     "1": "Partly: the place and people match but the main action or camera move is missing or wrong.",
+     "3": "Fully: place, people, action and camera move all match the script.",
+     "2": "Mostly: the main action happens with small deviations."
+    },
+    "type": "score"
+   },
+   "morph": {
+    "confidence": 0.8290837923686603,
+    "noul": 0.1709162076313397,
+    "type": "noul"
+   },
+   "objects_change": {
+    "confidence": 0.5353874057622049,
+    "noul": 0.5353874057622049,
+    "type": "noul"
+   },
+   "walk_backwards": {
+    "confidence": 0.7285186689416273,
+    "noul": 0.2714813310583727,
+    "type": "noul"
+   },
+   "layout_jump": {
+    "confidence": 0.8024807631305944,
+    "noul": 0.19751923686940565,
+    "type": "noul"
+   }
+  }
+ },
+ "W12:w08a-guesthouse": {
+  "run": "runs/W12/omni_12-w08a-guesthouse-r1-c53a11",
+  "answers": {
+   "objects_change": {
+    "confidence": 0.8257491806268017,
+    "noul": 0.1742508193731983,
+    "type": "noul"
+   },
+   "follows_script": {
+    "confidence": 0.7958897542767676,
+    "score": 2.718968163242221,
+    "probabilities": {
+     "2": 0.14006042802126528,
+     "3": 0.7958897542767676,
+     "0": 0.012871773332579644,
+     "1": 0.05117804436938755
+    },
+    "legend": {
+     "3": "Fully: place, people, action and camera move all match the script.",
+     "0": "Does not follow: wrong place, people or action.",
+     "1": "Partly: the place and people match but the main action or camera move is missing or wrong.",
+     "2": "Mostly: the main action happens with small deviations."
+    },
+    "type": "score"
+   },
+   "morph": {
+    "confidence": 0.8251262102238495,
+    "noul": 0.1748737897761505,
+    "type": "noul"
+   },
+   "walk_backwards": {
+    "confidence": 0.7677782167849787,
+    "noul": 0.23222178321502127,
+    "type": "noul"
+   },
+   "hands_glitch": {
+    "confidence": 0.5401455945478233,
+    "noul": 0.45985440545217676,
+    "type": "noul"
+   },
+   "layout_jump": {
+    "confidence": 0.7582412385230428,
+    "noul": 0.24175876147695716,
+    "type": "noul"
+   }
+  }
+ },
+ "W13:w07a-kura": {
+  "run": "runs/W13/omni_12-w07a-kura-r1-9d916f",
+  "answers": {
+   "morph": {
+    "confidence": 0.808214438558084,
+    "noul": 0.19178556144191608,
+    "type": "noul"
+   },
+   "hands_glitch": {
+    "confidence": 0.7579630292733064,
+    "noul": 0.24203697072669364,
+    "type": "noul"
+   },
+   "follows_script": {
+    "confidence": 0.5792552454492288,
+    "score": 1.293850614750165,
+    "probabilities": {
+     "1": 0.5792552454492288,
+     "2": 0.2743079668773544,
+     "3": 0.05532647851540902,
+     "0": 0.09111030915800787
+    },
+    "legend": {
+     "3": "Fully: place, people, action and camera move all match the script.",
+     "1": "Partly: the place and people match but the main action or camera move is missing or wrong.",
+     "2": "Mostly: the main action happens with small deviations.",
+     "0": "Does not follow: wrong place, people or action."
+    },
+    "type": "score"
+   },
+   "objects_change": {
+    "confidence": 0.7616410418909162,
+    "noul": 0.23835895810908383,
+    "type": "noul"
+   },
+   "walk_backwards": {
+    "confidence": 0.7833857502556953,
+    "noul": 0.21661424974430463,
+    "type": "noul"
+   },
+   "layout_jump": {
+    "confidence": 0.7808953304542294,
+    "noul": 0.21910466954577057,
+    "type": "noul"
+   }
+  }
+ },
+ "W12:w09b-4444-wide": {
+  "run": "runs/W12/omni_12-w09b-4444-wide-r1-f15210",
+  "answers": {
+   "objects_change": {
+    "confidence": 0.8036442053133669,
+    "noul": 0.19635579468663308,
+    "type": "noul"
+   },
+   "layout_jump": {
+    "confidence": 0.7709904933406897,
+    "noul": 0.22900950665931027,
+    "type": "noul"
+   },
+   "morph": {
+    "confidence": 0.8406870645036718,
+    "noul": 0.1593129354963282,
+    "type": "noul"
+   },
+   "hands_glitch": {
+    "confidence": 0.7340926172444975,
+    "noul": 0.2659073827555025,
+    "type": "noul"
+   },
+   "walk_backwards": {
+    "confidence": 0.7617201979214815,
+    "noul": 0.23827980207851854,
+    "type": "noul"
+   },
+   "follows_script": {
+    "confidence": 0.5026590224460663,
+    "score": 2.363325110812103,
+    "probabilities": {
+     "0": 0.018159939163092075,
+     "2": 0.37616700508306256,
+     "1": 0.10301403330777911,
+     "3": 0.5026590224460663
+    },
+    "legend": {
+     "3": "Fully: place, people, action and camera move all match the script.",
+     "0": "Does not follow: wrong place, people or action.",
+     "2": "Mostly: the main action happens with small deviations.",
+     "1": "Partly: the place and people match but the main action or camera move is missing or wrong."
+    },
+    "type": "score"
+   }
+  }
+ }
+}
